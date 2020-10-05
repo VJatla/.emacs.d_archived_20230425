@@ -21,8 +21,5 @@
 (load-theme 'tsdh-dark 1)
 
 
-;; Loading the base init file
-;; Disclaimer:
-;;     To make it look fun I ripped off "The Hero's Journey".
-;;     Link: https://en.wikipedia.org/wiki/Hero%27s_journey
+;; The call (Beginning of customization)
 (load "/home/vj/.emacs.d/the_call.el")
