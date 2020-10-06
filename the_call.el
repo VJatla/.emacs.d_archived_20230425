@@ -43,6 +43,3 @@
 ;; Doc:
 ;;     (load FILE &optional NOERROR NOMESSAGE NOSUFFIX MUST-SUFFIX)
 (load "packages")
-
-;; Trying modalka
-(load "custom-modalka-kbd")

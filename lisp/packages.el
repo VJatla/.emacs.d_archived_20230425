@@ -8,11 +8,10 @@
 	)
       )
 
-;; initialize built-in package management
+
+;; Initialize built-in package management
 (package-initialize)
 
-;; Require modalka
-(require 'modalka)
 
-
-
+;; Shall I use modal editing? (modalka, EVil, boon, Ryo)
+;; (load "custom-modalka-kbd")

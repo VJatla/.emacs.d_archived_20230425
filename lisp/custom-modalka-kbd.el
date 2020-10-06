@@ -20,7 +20,7 @@
 ;; Commands using two spaces (rare commands I use)
 (define-key modalka-mode-map (kbd "SPC SPC s") #'ispell-word) ;; Check spelling
 
-;; Code navigation
+;; Code navigation: [trying to replicate vim]
 (define-key modalka-mode-map (kbd "j") #'previous-line) ;; C-p
 (define-key modalka-mode-map (kbd "k") #'next-line) ;; C-n
 (define-key modalka-mode-map (kbd "l") #'forward-char) ;; C-f
