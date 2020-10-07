@@ -1,5 +1,6 @@
 /*
 !init.el
 !the_call.el
-!lisp/*
+!lisp/
 !*.gitignore
+*.el~

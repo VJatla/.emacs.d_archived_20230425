@@ -1,3 +1,18 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(anaconda-mode modalka counsel-projectile ag counsel ivy helm avy ergoemacs-mode use-package boon god-mode which-key)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+
 ;; Please edit this file as per your installation
 ;;
 ;; Disclaimer:
@@ -12,8 +27,13 @@
 ;;     I use different themes in different systems. So I don't
 ;;     define theme in the `the_call.el`. A hero can take any
 ;;     form and shape.
-;; (load-theme 'misterioso 1)
+(load-theme 'leuven 1)
 
+
+;; Setting font
+;; Doc:
+;;     (set-face-attribute FACE FRAME &rest ARGS)
+(set-face-attribute 'default nil :family "Cascadia Code" :height 130) ;; 130 => 13 pt
 
 ;; The call (Beginning of customization)
 (load "C:/Users/vj/.emacs.d/the_call.el")
