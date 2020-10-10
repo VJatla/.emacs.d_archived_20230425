@@ -38,7 +38,17 @@
 (define-key modalka-mode-map (kbd "SPC w d") #'delete-window)
 
 ;; Other frequently used key bindings
-(define-key modalka-mode-map (kbd "c") #'kill-ring-save)
+(define-key modalka-mode-map (kbd "c") #'kill-ring-save);; M-w
+(define-key modalka-mode-map (kbd "v") #'yank);; C-y
+(define-key modalka-mode-map (kbd "u") #'undo);; C-_
+
+;; Deleting
+(define-key modalka-mode-map (kbd "d l") #'kill-line);; C-k
+
+
+
+
+
 
 
 ;; Git project operations (using counsel for now)
