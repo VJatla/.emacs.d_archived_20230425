@@ -1,5 +1,6 @@
 ;; Global keybindingso
 (global-set-key (kbd "<f8>") #'modalka-mode)
+(define-key key-translation-map (kbd "ESC") (kbd "C-g")) ;; C-g
 
 ;; Ivy, swiper and counsel
 ;; (global-set-key "\C-s" 'swiper)
@@ -29,11 +30,15 @@
 (define-key modalka-mode-map (kbd "SPC l") #'goto-line)
 (define-key modalka-mode-map (kbd "SPC b") #'ivy-switch-buffer)
 
+
 ;; Window management
 (define-key modalka-mode-map (kbd "SPC w o") #'other-window)
-(define-key modalka-mode-map (kbd "SPC w 1") #'delete-other-windowsoo)
+(define-key modalka-mode-map (kbd "SPC w 1") #'delete-other-windows)
 (define-key modalka-mode-map (kbd "SPC w |") #'split-window-horizontally)
 (define-key modalka-mode-map (kbd "SPC w d") #'delete-window)
+
+;; Other frequently used key bindings
+(define-key modalka-mode-map (kbd "c") #'kill-ring-save)
 
 
 ;; Git project operations (using counsel for now)
@@ -42,8 +47,8 @@
 
 
 ;; Code navigation
-(define-key modalka-mode-map (kbd "j") #'previous-line) ;; C-p
-(define-key modalka-mode-map (kbd "k") #'next-line) ;; C-n
+(define-key modalka-mode-map (kbd "k") #'previous-line) ;; C-p
+(define-key modalka-mode-map (kbd "j") #'next-line) ;; C-n
 (define-key modalka-mode-map (kbd "l") #'forward-char) ;; C-f
 (define-key modalka-mode-map (kbd "h") #'backward-char) ;; C-b
 (define-key modalka-mode-map (kbd "i") #'modalka-mode) ;;
@@ -51,7 +56,7 @@
 (define-key modalka-mode-map (kbd "0") #'move-beginning-of-line) ;; C-a
 (define-key modalka-mode-map (kbd "g g") #'beginning-of-buffer) ;; M-<
 (define-key modalka-mode-map (kbd "G") #'end-of-buffer) ;; M->
+(define-key modalka-mode-map (kbd "s") #'swiper);; C-s
 
 ;; Selection
-(modalka-define-kbd "v" "C-SPC") ;; Start mark
-
+(define-key modalka-mode-map (kbd "SPC SPC") #'set-mark-command);; C-SPC
