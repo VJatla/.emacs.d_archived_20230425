@@ -1,6 +1,5 @@
 ;; Global keybindingso
-(global-set-key (kbd "<f8>") #'modalka-mode)
-(define-key key-translation-map (kbd "ESC") (kbd "C-g")) ;; C-g
+(define-key key-translation-map (kbd "ESC") #'modalka-mode) ;; C-g
 
 ;; Ivy, swiper and counsel
 ;; (global-set-key "\C-s" 'swiper)
@@ -26,9 +25,9 @@
 (define-key modalka-mode-map (kbd "SPC s") #'save-buffer)
 (define-key modalka-mode-map (kbd "SPC o") #'counsel-find-file)
 (define-key modalka-mode-map (kbd "SPC k") #'kill-buffer)
-(define-key modalka-mode-map (kbd "SPC x") #'counsel-M-x)
+(define-key modalka-mode-map (kbd "a") #'counsel-M-x) ;; Inspired from Xah-fly keys
 (define-key modalka-mode-map (kbd "SPC l") #'goto-line)
-(define-key modalka-mode-map (kbd "SPC b") #'ivy-switch-buffer)
+(define-key modalka-mode-map (kbd "SPC f") #'ivy-switch-buffer)
 
 
 ;; Window management
@@ -37,23 +36,29 @@
 (define-key modalka-mode-map (kbd "SPC w |") #'split-window-horizontally)
 (define-key modalka-mode-map (kbd "SPC w d") #'delete-window)
 
-;; Other frequently used key bindings
+
+;; Copy paste management
 (define-key modalka-mode-map (kbd "c") #'kill-ring-save);; M-w
+(define-key modalka-mode-map (kbd "SPC c") #'simpleclip-copy)
+
+(define-key modalka-mode-map (kbd "x") #'kill-region);; C-w
+(define-key modalka-mode-map (kbd "SPC x") #'simpleclip-cut)
+
 (define-key modalka-mode-map (kbd "v") #'yank);; C-y
-(define-key modalka-mode-map (kbd "u") #'undo);; C-_
+(define-key modalka-mode-map (kbd "SPC v") #'simpleclip-paste)
+
 
 ;; Deleting
-(define-key modalka-mode-map (kbd "d l") #'kill-line);; C-k
+(define-key modalka-mode-map (kbd "d d") #'kill-line);; C-k
 
-
-
-
-
-
+;; Other common commands
+(define-key modalka-mode-map (kbd "u") #'undo);; C-_
+(define-key modalka-mode-map (kbd "e") #'newline);; Enter
 
 ;; Git project operations (using counsel for now)
 (define-key modalka-mode-map (kbd "SPC g o") #'counsel-git) ;; find files in project
 (define-key modalka-mode-map (kbd "SPC g /") #'counsel-git-grep) ;; grep inside git repository
+(define-key modalka-mode-map (kbd "SPC t") #'treemacs) ;; open treemacs
 
 
 ;; Code navigation
