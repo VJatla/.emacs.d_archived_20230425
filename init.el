@@ -12,7 +12,7 @@
 ;;     I use different themes in different systems. So I don't
 ;;     define theme in the `the_call.el`. A hero can take any
 ;;     form and shape.
-(load-theme 'sanityinc-tomorrow-eighties 1)
+(load-theme 'spacemacs-dark 1)
 
 
 ;; Setting font

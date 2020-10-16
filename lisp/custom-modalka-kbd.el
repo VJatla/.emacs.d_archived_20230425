@@ -73,5 +73,8 @@
 (define-key modalka-mode-map (kbd "G") #'end-of-buffer) ;; M->
 (define-key modalka-mode-map (kbd "s") #'swiper);; C-s
 
+;; Code editing
+(define-key modalka-mode-map (kbd "r") #'query-replace);; C-s
+
 ;; Selection
 (define-key modalka-mode-map (kbd "SPC SPC") #'set-mark-command);; C-SPC
