@@ -29,7 +29,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(simpleclip gruvbox-theme which-key treemacs spacemacs-theme planet-theme modalka counsel color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized anaconda-mode)))
+   '(multi-vterm vterm simpleclip gruvbox-theme which-key treemacs spacemacs-theme planet-theme modalka counsel color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized anaconda-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
