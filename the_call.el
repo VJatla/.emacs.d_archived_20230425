@@ -56,6 +56,10 @@
 ;;     Doc: Non-nil means try to flash the frame to represent a bell
 (setq visible-bell 1)
 
+;; Scroll margin
+;;     Doc:
+(setq scroll-margin 5)
+
 
 ;; Adding lisp directory to load path to load personal configurations
 ;; Doc:

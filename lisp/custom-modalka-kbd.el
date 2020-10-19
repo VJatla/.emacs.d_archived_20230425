@@ -1,3 +1,15 @@
+;; 
+(defun switch-to-vterm ()
+  (interactive)
+  (switch-to-buffer "vterm"))
+
+(defun  quick-buffer-switch ()
+  (interactive)
+  (switch-to-buffer nil))
+
+
+
+
 ;; Global keybindingso
 (define-key key-translation-map (kbd "ESC") #'modalka-mode) ;; ESC to exit modalka
 (define-key key-translation-map (kbd "<f8>") #'modalka-mode) ;; F8 to exit modalka
@@ -29,6 +41,8 @@
 (define-key modalka-mode-map (kbd "a") #'counsel-M-x) ;; Inspired from Xah-fly keys
 (define-key modalka-mode-map (kbd "SPC l") #'goto-line)
 (define-key modalka-mode-map (kbd "SPC f") #'ivy-switch-buffer)
+(define-key modalka-mode-map (kbd "f") #'quick-buffer-switch)
+(define-key modalka-mode-map (kbd "SPC c") #'save-buffers-kill-terminal)
 
 
 ;; Window management
@@ -50,11 +64,10 @@
 
 
 ;; Deleting
-(define-key modalka-mode-map (kbd "d d") #'kill-line);; C-k
+(define-key modalka-mode-map (kbd "d") #'delete-backward-char);; C-k
 
 ;; Other common commands
 (define-key modalka-mode-map (kbd "u") #'undo);; C-_
-(define-key modalka-mode-map (kbd "e") #'newline);; Enter
 
 ;; Git project operations (using counsel for now)
 (define-key modalka-mode-map (kbd "SPC g o") #'counsel-git) ;; find files in project
@@ -67,6 +80,9 @@
 (define-key modalka-mode-map (kbd "j") #'next-line) ;; C-n
 (define-key modalka-mode-map (kbd "l") #'forward-char) ;; C-f
 (define-key modalka-mode-map (kbd "h") #'backward-char) ;; C-b
+(define-key modalka-mode-map (kbd "w") #'forward-word) ;; C-b
+(define-key modalka-mode-map (kbd "b") #'backward-word) ;; C-b
+
 (define-key modalka-mode-map (kbd "i") #'modalka-mode) ;;
 (define-key modalka-mode-map (kbd "$") #'move-end-of-line) ;; C-e
 (define-key modalka-mode-map (kbd "0") #'move-beginning-of-line) ;; C-a
