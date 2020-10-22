@@ -39,7 +39,7 @@
 (define-key modalka-mode-map (kbd "SPC o") #'counsel-find-file)
 (define-key modalka-mode-map (kbd "SPC k") #'kill-buffer)
 (define-key modalka-mode-map (kbd "a") #'counsel-M-x) ;; Inspired from Xah-fly keys
-(define-key modalka-mode-map (kbd "SPC l") #'goto-line)
+(define-key modalka-mode-map (kbd "SPC #") #'goto-line)
 (define-key modalka-mode-map (kbd "SPC f") #'ivy-switch-buffer)
 (define-key modalka-mode-map (kbd "f") #'quick-buffer-switch)
 (define-key modalka-mode-map (kbd "SPC c") #'save-buffers-kill-terminal)
@@ -49,7 +49,12 @@
 (define-key modalka-mode-map (kbd "SPC w o") #'other-window)
 (define-key modalka-mode-map (kbd "SPC w 1") #'delete-other-windows)
 (define-key modalka-mode-map (kbd "SPC w |") #'split-window-horizontally)
+(define-key modalka-mode-map (kbd "SPC w -") #'split-window-vertically)
 (define-key modalka-mode-map (kbd "SPC w d") #'delete-window)
+(define-key modalka-mode-map (kbd "SPC h") #'window-jump-left)
+(define-key modalka-mode-map (kbd "SPC l") #'window-jump-right)
+(define-key modalka-mode-map (kbd "SPC w k") #'window-jump-up)
+(define-key modalka-mode-map (kbd "SPC w j") #'window-jump-down)
 
 
 ;; Copy paste management

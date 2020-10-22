@@ -39,6 +39,9 @@
 ;; Treemacs: A very nice sidebar having projects
 (require 'treemacs)
 
+;; Window jump easy
+(require 'window-jump)
+
 ;; anaconda-mode
 (require 'anaconda-mode)
 (load "pysettings")
