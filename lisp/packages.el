@@ -11,7 +11,6 @@
 
 ;; Initialize built-in package management
 (package-initialize)
-
 ;; Simple clip
 (require 'simpleclip)
 (simpleclip-mode 1)
@@ -42,16 +41,27 @@
 ;; Window jump easy
 (require 'window-jump)
 
-;; anaconda-mode
-(require 'anaconda-mode)
-(load "pysettings")
+;; Python
+(require 'conda)
+(custom-set-variables
+ '(conda-anaconda-home "/home/vj/anaconda3"))
+(setq
+ conda-env-home-directory "/home/vj/anaconda3"
+ conda-env-subdirectory "envs")
+(conda-env-activate "torch160")
 
+;; For now I am using elpy, should change
+;; to anaconda-mode when I have a chance
+(add-hook 'elpy-mode-hook
+	  (lambda ()
+            (add-hook 'before-save-hook
+                      'elpy-format-code nil t)))
+(require 'elpy)
+(elpy-enable)
 
 ;; Modal editing for text and code
 (require 'modalka)
 (load "custom-modalka-kbd")
 (modalka-global-mode 1)
-;;(add-hook 'text-mode-hook #'modalka-mode) ;; When to turn on modalka
-;;(add-hook 'prog-mode-hook #'modalka-mode)
 (setq-default cursor-type '(bar . 3))     ;; Shape of cursor in different modes
 (setq modalka-cursor-type 'box)

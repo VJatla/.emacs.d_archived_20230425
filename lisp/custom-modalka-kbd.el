@@ -1,11 +1,10 @@
-;; 
-(defun switch-to-vterm ()
-  (interactive)
-  (switch-to-buffer "vterm"))
-
 (defun  quick-buffer-switch ()
   (interactive)
   (switch-to-buffer nil))
+
+(defun load-elpy-keys ()
+  (define-key modalka-mode-map (kbd "SPC d") #'elpy-goto-definition)
+  )
 
 
 
@@ -41,7 +40,7 @@
 (define-key modalka-mode-map (kbd "a") #'counsel-M-x) ;; Inspired from Xah-fly keys
 (define-key modalka-mode-map (kbd "SPC #") #'goto-line)
 (define-key modalka-mode-map (kbd "SPC f") #'ivy-switch-buffer)
-(define-key modalka-mode-map (kbd "f") #'quick-buffer-switch)
+(define-key modalka-mode-map (kbd "f") #'vterm-toggle)
 (define-key modalka-mode-map (kbd "SPC c") #'save-buffers-kill-terminal)
 
 
@@ -67,10 +66,6 @@
 (define-key modalka-mode-map (kbd "v") #'yank);; C-y
 (define-key modalka-mode-map (kbd "SPC v") #'simpleclip-paste)
 
-
-;; Deleting
-(define-key modalka-mode-map (kbd "d") #'delete-backward-char);; C-k
-
 ;; Other common commands
 (define-key modalka-mode-map (kbd "u") #'undo);; C-_
 
@@ -88,15 +83,22 @@
 (define-key modalka-mode-map (kbd "w") #'forward-word) ;; C-b
 (define-key modalka-mode-map (kbd "b") #'backward-word) ;; C-b
 
-(define-key modalka-mode-map (kbd "i") #'modalka-mode) ;;
 (define-key modalka-mode-map (kbd "$") #'move-end-of-line) ;; C-e
 (define-key modalka-mode-map (kbd "0") #'move-beginning-of-line) ;; C-a
 (define-key modalka-mode-map (kbd "g g") #'beginning-of-buffer) ;; M-<
 (define-key modalka-mode-map (kbd "G") #'end-of-buffer) ;; M->
 (define-key modalka-mode-map (kbd "s") #'swiper);; C-s
+(define-key modalka-mode-map (kbd "m") #'pop-to-mark-command);; C-s
+
 
 ;; Code editing
 (define-key modalka-mode-map (kbd "r") #'query-replace);; C-s
+(define-key modalka-mode-map (kbd "i") #'modalka-mode) ;;
+(define-key modalka-mode-map (kbd "d") #'delete-backward-char);; C-k
 
 ;; Selection
 (define-key modalka-mode-map (kbd "SPC SPC") #'set-mark-command);; C-SPC
+
+
+;; Activiating major mode based keybindings
+(add-hook 'elpy-mode-hook 'load-elpy-keys)
