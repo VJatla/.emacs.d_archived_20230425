@@ -15,7 +15,7 @@
 (simpleclip-mode 1)
 
 ;; Org mode settings
-(load (expand-file-name ".emacs.d/lisp/org-settings.el"))
+(load (expand-file-name "~/.emacs.d/lisp/org-settings.el"))
 
 
 

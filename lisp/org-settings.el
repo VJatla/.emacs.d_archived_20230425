@@ -56,3 +56,16 @@
  '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
  '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
 
+  (setq org-todo-keywords
+        '((sequence "TODO" "DOING" "|" "DONE" "POSTPONED"))
+        org-todo-keyword-faces
+        '(("TODO" .  "orange" )
+          ("DOING" .  "yellow" )
+          ("DONE" . "PaleGreen")
+          ("POSTPONED" .  "red"))
+    org-fontify-done-headline t)
+
+(custom-set-faces
+ '(org-headline-done
+            ((((class color) (min-colors 16) (background dark))
+              (:strike-through t)))))
