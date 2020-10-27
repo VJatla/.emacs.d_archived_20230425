@@ -94,7 +94,8 @@
 ;; Code editing
 (define-key modalka-mode-map (kbd "r") #'query-replace);; C-s
 (define-key modalka-mode-map (kbd "i") #'modalka-mode) ;;
-(define-key modalka-mode-map (kbd "d") #'delete-backward-char);; C-k
+(define-key modalka-mode-map (kbd "d w") #'kill-word);; M-d
+(define-key modalka-mode-map (kbd "d d") #'kill-line);; M-d
 
 ;; Selection
 (define-key modalka-mode-map (kbd "SPC SPC") #'set-mark-command);; C-SPC

@@ -3,7 +3,6 @@
 ;; set package.el repositories
 (setq package-archives
       '(
-	("gnu" . "https://elpa.gnu.org/packages/")
 	("melpa" . "https://melpa.org/packages/")
 	)
       )
@@ -14,6 +13,11 @@
 ;; Simple clip
 (require 'simpleclip)
 (simpleclip-mode 1)
+
+;; Org mode settings
+(load (expand-file-name ".emacs.d/lisp/org-settings.el"))
+
+
 
 
 ;; whick-key
