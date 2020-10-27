@@ -6,9 +6,6 @@
   (define-key modalka-mode-map (kbd "SPC d") #'elpy-goto-definition)
   )
 
-
-
-
 ;; Global keybindingso
 (define-key key-translation-map (kbd "ESC") #'modalka-mode) ;; ESC to exit modalka
 (define-key key-translation-map (kbd "<f8>") #'modalka-mode) ;; F8 to exit modalka
@@ -70,6 +67,7 @@
 (define-key modalka-mode-map (kbd "u") #'undo);; C-_
 
 ;; Git project operations (using counsel for now)
+(define-key modalka-mode-map (kbd "SPC 3") #'projectile-command-map) ;; find files in project
 (define-key modalka-mode-map (kbd "SPC g o") #'counsel-git) ;; find files in project
 (define-key modalka-mode-map (kbd "SPC g /") #'counsel-git-grep) ;; grep inside git repository
 (define-key modalka-mode-map (kbd "SPC t") #'treemacs) ;; open treemacs
@@ -95,7 +93,7 @@
 (define-key modalka-mode-map (kbd "r") #'query-replace);; C-s
 (define-key modalka-mode-map (kbd "i") #'modalka-mode) ;;
 (define-key modalka-mode-map (kbd "d w") #'kill-word);; M-d
-(define-key modalka-mode-map (kbd "d d") #'kill-line);; M-d
+(define-key modalka-mode-map (kbd "d d") #'evil-delete-whole-line);; M-d
 
 ;; Selection
 (define-key modalka-mode-map (kbd "SPC SPC") #'set-mark-command);; C-SPC
@@ -103,3 +101,7 @@
 
 ;; Activiating major mode based keybindings
 (add-hook 'elpy-mode-hook 'load-elpy-keys)
+
+;; Bookmarks
+(define-key modalka-mode-map (kbd "SPC b s") #'bookmark-set);; C-x r m
+(define-key modalka-mode-map (kbd "SPC b j") #'bookmark-jump);; C-x r b
