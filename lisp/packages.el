@@ -95,16 +95,19 @@
 ;; (require 'elpy)
 ;; (elpy-enable) 
 
-;; Load evil mode but do not activate it
-(use-package evil
-	    :ensure t)
-(require 'evil)
-(evil-mode -1)
 
 (use-package xah-fly-keys
   :ensure t)
 (xah-fly-keys-set-layout "qwerty") ; required
 (xah-fly-keys 1)
+(with-eval-after-load 'xah-fly-keys
+  ;; Command mode keybindings:
+  (define-key xah-fly-command-map (kbd "SPC s") #'save-buffer)
+  (define-key xah-fly-command-map (kbd "SPC ;") #'exchange-point-and-mark)
+
+  ;; Insert mode keybindings:
+  ;; (define-key xah-fly-insert-map (kbd "KEY") #'DEFINITION)
+  )
 
 ;; Modal editing for text and code
 ;; (use-package modalka
