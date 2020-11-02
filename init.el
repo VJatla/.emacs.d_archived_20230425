@@ -1,10 +1,3 @@
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(vterm markdown-mode spacemacs-theme zenburn-theme which-key treemacs simpleclip modalka counsel anaconda-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -20,23 +13,29 @@
 ;;     Link: https://en.wikipedia.org/wiki/Hero%27s_journey
 
 
-;; Enabling theme (comes with emacs)
-;; Doc:
-;;     (load-theme THEME &optional NO-CONFIRM NO-ENABLE)
-;; Note:
-;;     I use different themes in different systems. So I don't
-;;     define theme in the `the_call.el`. A hero can take any
-;;     form and shape.
-(load-theme 'zenburn 1)
+;; Different settings for different systems
+(cond
 
+ ;; Windows
+ ((string-equal system-type "windows-nt")
+  (load "C:/Users/vj/AppData/Roaming/.emacs.d/the_call.el")
+  (set-face-attribute 'default nil :family "Consolas" :height 150)
+  (load-theme 'spacegray-easy))
 
-;; Setting font
-;; Doc:
-;;     (set-face-attribute FACE FRAME &rest ARGS)
-(set-face-attribute 'default nil :height 170) ;; 170 => 17 pt
+ ;; macOS
+ ((string-equal system-type "darwin") ;  macOS
+  (progn
+    (message "Mac OS X")))
 
-;; The call (Beginning of customization)
-;; (load "C:/Users/vj/.emacs.d/the_call.el") ;; >>> Windows
-(load "/home/vj/.emacs.d/the_call.el") ;; >>> Linux
-
-
+ ;; Linux
+ ((string-equal system-type "gnu/linux")
+  (set-face-attribute 'default nil :family "Fira Code" :height 130)
+ (load "/home/vj/.emacs.d/the_call.el")))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(conda-anaconda-home "/home/vj/anaconda3")
+ '(custom-safe-themes
+   '("b721b84f75419ba5a4176f3dbb23264439bc62c1115bc1e05dc536679ccb9f3c" default)))

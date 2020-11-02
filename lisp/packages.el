@@ -9,15 +9,22 @@
 
 ;; Initialize built-in package management
 (package-initialize)
+
+;; Install use-package if not installed yet
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; Themes
+(use-package spacegray-theme
+  :ensure t)
+
 ;; Simple clip
 (use-package simpleclip
 	      :ensure t
 	      )
 (require 'simpleclip)
 (simpleclip-mode 1)
-
-;; Org mode settings
-(load (expand-file-name "~/.emacs.d/lisp/org-settings.el"))
 
 ;; whick-key
 ;; Link: https://github.com/justbur/emacs-which-key
@@ -74,7 +81,8 @@
 (setq
  conda-env-home-directory "/home/vj/anaconda3"
  conda-env-subdirectory "envs")
-(conda-env-activate "torch160")
+;;(conda-env-activate "torch160")
+
 
 ;; For now I am using elpy, should change
 ;; to anaconda-mode when I have a chance
@@ -94,11 +102,16 @@
 (require 'evil)
 (evil-mode -1)
 
+(use-package xah-fly-keys
+  :ensure t)
+(xah-fly-keys-set-layout "qwerty") ; required
+(xah-fly-keys 1)
+
 ;; Modal editing for text and code
-(use-package modalka
-   :ensure t)
-(require 'modalka)
-(load "custom-modalka-kbd")
-(modalka-global-mode 1)
-(setq-default cursor-type '(bar . 3))     ;; Shape of cursor in different modes
-(setq modalka-cursor-type 'box)
+;; (use-package modalka
+;;    :ensure t)
+;; (require 'modalka)
+;; (load "custom-modalka-kbd")
+;; (modalka-global-mode 1)
+;; (setq-default cursor-type '(bar . 3))     ;; Shape of cursor in different modes
+;; (setq modalka-cursor-type 'box)

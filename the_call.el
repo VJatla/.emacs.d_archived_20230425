@@ -60,6 +60,11 @@
 ;;     Doc:
 (setq scroll-margin 5)
 
+;; White space mode
+(require 'whitespace)
+(setq whitespace-style '(face lines-tail))
+(global-whitespace-mode t)
+
 
 ;; Adding lisp directory to load path to load personal configurations
 ;; Doc:
