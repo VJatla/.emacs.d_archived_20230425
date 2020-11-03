@@ -5,9 +5,9 @@
  ;; If there is more than one, they won't work right.
  '(conda-anaconda-home "/home/vj/anaconda3")
  '(custom-safe-themes
-   '("b721b84f75419ba5a4176f3dbb23264439bc62c1115bc1e05dc536679ccb9f3c" default))
+   '("37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "b721b84f75419ba5a4176f3dbb23264439bc62c1115bc1e05dc536679ccb9f3c" default))
  '(package-selected-packages
-   '(lsp-mode xah-fly-keys window-jump which-key use-package treemacs spacegray-theme simpleclip projectile org-bullets modalka evil elpy counsel conda)))
+   '(company impatient-mode simple-httpd markdown-mode nord-theme ivy lsp-mode xah-fly-keys window-jump which-key use-package treemacs spacegray-theme simpleclip projectile org-bullets modalka evil elpy counsel conda)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -40,5 +40,8 @@
 
  ;; Linux
  ((string-equal system-type "gnu/linux")
-  (set-face-attribute 'default nil :family "Fira Code" :height 130)
+  (set-face-attribute 'default nil :family "Fira Code" :height 150)
+    (load-theme 'nord)
+    (add-to-list 'exec-path "/home/vj/Software/node-v14.15.0-linux-x64/")
+    (add-to-list 'exec-path "/home/vj/Software/node-v14.15.0-linux-x64/bin/")
  (load "/home/vj/.emacs.d/the_call.el")))

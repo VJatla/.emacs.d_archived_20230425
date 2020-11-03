@@ -54,6 +54,11 @@
 (setq search-default-mode #'char-fold-to-regexp)
 
 
+;; Company auto-completion
+(use-package company
+    :ensure t)
+(add-hook 'after-init-hook 'global-company-mode)
+
 ;; Projectivel to help with projects
 (use-package projectile
   :ensure t)
@@ -69,6 +74,9 @@
 (use-package window-jump
 	      :ensure t)
 (require 'window-jump)
+
+;; Markdown
+(load "markdown-settings")
 
 ;; Python
 
