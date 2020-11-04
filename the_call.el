@@ -52,6 +52,9 @@
 ;;     Doc: <<< Similar to tool-bar-mode >>>
 (menu-bar-mode -1)
 
+;; Disable scroll bar
+(scroll-bar-mode -1)
+
 ;; Removing visual bell
 ;;     Doc: Non-nil means try to flash the frame to represent a bell
 (setq visible-bell 1)
@@ -60,10 +63,19 @@
 ;;     Doc:
 (setq scroll-margin 5)
 
+;; All backup files are in one directory
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 ;; White space mode
 (require 'whitespace)
 (setq whitespace-style '(face lines-tail))
 (global-whitespace-mode t)
+
+;; Recent file mode
+(recentf-mode 1)
 
 
 ;; Adding lisp directory to load path to load personal configurations
