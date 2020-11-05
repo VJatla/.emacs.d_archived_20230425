@@ -65,18 +65,13 @@
 ;; Copy paste management
 (define-key modalka-mode-map (kbd "c") #'kill-ring-save);; M-w
 (define-key modalka-mode-map (kbd "C") #'simpleclip-copy)
-
 (define-key modalka-mode-map (kbd "x") #'kill-region);; C-w
 (define-key modalka-mode-map (kbd "X") #'simpleclip-cut)
-
 (define-key modalka-mode-map (kbd "v") #'yank);; C-y
 (define-key modalka-mode-map (kbd "V") #'simpleclip-paste)
 
-;; Other common commands
-(define-key modalka-mode-map (kbd "u") #'undo);; C-_
-
 ;; Git project operations (using counsel for now)
-(define-key modalka-mode-map (kbd "SPC g g") #'magit) ;; find files in project
+(define-key modalka-mode-map (kbd "SPC g g") #'magit-status) ;; find files in project
 (define-key modalka-mode-map (kbd "SPC g o") #'counsel-git) ;; find files in project
 (define-key modalka-mode-map (kbd "SPC g /") #'counsel-git-grep) ;; grep inside git repository
 
@@ -93,7 +88,6 @@
 (define-key modalka-mode-map (kbd "j") #'backward-char) ;; C-b
 (define-key modalka-mode-map (kbd "w") #'forward-word) ;; C-b
 (define-key modalka-mode-map (kbd "b") #'backward-word) ;; C-b
-
 (define-key modalka-mode-map (kbd "e") #'move-end-of-line) ;; C-e
 (define-key modalka-mode-map (kbd "0") #'move-beginning-of-line) ;; C-a
 (define-key modalka-mode-map (kbd "g g") #'beginning-of-buffer) ;; M-<
@@ -108,12 +102,21 @@
 (define-key modalka-mode-map (kbd "d b") #'evil-delete-backward-word);; M-d
 (define-key modalka-mode-map (kbd "d l") #'kill-whole-line);; kill till end of the line
 (define-key modalka-mode-map (kbd "d e") #'kill-line);; kill till end of the line
+(define-key modalka-mode-map (kbd ";") #'comment-dwim);; kill till end of the line
+(define-key modalka-mode-map (kbd "u") #'undo);; C-_
 
 ;; Selection
 (define-key modalka-mode-map (kbd "m s") #'set-mark-command);; C-SPC
-(define-key modalka-mode-map (kbd "m p") #'pop-to-mark-command);; C-s
+(define-key modalka-mode-map (kbd "p") #'pop-to-mark-command);; C-s
 (define-key modalka-mode-map (kbd "m l") #'xah-select-line);; C-s
 (define-key modalka-mode-map (kbd "m G") #'select-till-end);; C-s
+
+;; Company mode
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "k") #'company-select-next)
+  (define-key company-active-map (kbd "i") #'company-select-previous))
 
 ;; Activiating major mode based keybindings
 (add-hook 'elpy-mode-hook 'load-elpy-keys)
