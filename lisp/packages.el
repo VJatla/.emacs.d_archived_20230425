@@ -23,6 +23,8 @@
   :ensure t)
 (use-package zenburn-theme
   :ensure t)
+(use-package planet-theme
+  :ensure t)
 
 
 ;; Simple clip
