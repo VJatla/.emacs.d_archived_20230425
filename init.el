@@ -49,7 +49,7 @@
   (cond
    ((string-equal system-name "bazul")
    (load-theme 'nord)
-   (set-face-attribute 'default nil :family "Fira Code" :height 150)))
+   (set-face-attribute 'default nil :family "Victor Mono" :height 150)))
   (cond
    ((string-equal system-name "raven")
    (load-theme 'planet t)

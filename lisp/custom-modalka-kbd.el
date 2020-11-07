@@ -8,7 +8,7 @@
 
 
 ;; Selection functions
-(defun select-till-end ()
+(defun select-till-buffer-end ()
   (interactive)
   (xah-select-block)
   (end-of-buffer))
@@ -109,14 +109,7 @@
 (define-key modalka-mode-map (kbd "m s") #'set-mark-command);; C-SPC
 (define-key modalka-mode-map (kbd "p") #'pop-to-mark-command);; C-s
 (define-key modalka-mode-map (kbd "m l") #'xah-select-line);; C-s
-(define-key modalka-mode-map (kbd "m G") #'select-till-end);; C-s
-
-;; Company mode
-(with-eval-after-load 'company
-  (define-key company-active-map (kbd "M-n") nil)
-  (define-key company-active-map (kbd "M-p") nil)
-  (define-key company-active-map (kbd "k") #'company-select-next)
-  (define-key company-active-map (kbd "i") #'company-select-previous))
+(define-key modalka-mode-map (kbd "m G") #'select-till-buffer-end);; C-sh
 
 ;; Activiating major mode based keybindings
 (add-hook 'elpy-mode-hook 'load-elpy-keys)
