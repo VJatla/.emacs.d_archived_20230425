@@ -57,16 +57,22 @@
 ;; Counsel: a collection of Ivy-enhanced versions of common Emacs commands.
 ;; Swiper: an Ivy-enhanced alternative to isearch.
 (use-package ivy
-	      :ensure t)
+  :ensure t
+  :config
+  (setq ivy-use-virtual-buffers t
+        ivy-count-format "%d/%d "))
 (use-package counsel
 	      :ensure t)
 (use-package swiper
-	      :ensure t)
+  :ensure t)
+(use-package ivy-avy
+  :ensure t)
+(use-package avy
+  :ensure t)
 (require 'ivy)
 (require 'counsel)
 (require 'swiper)
 (ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 (setq search-default-mode #'char-fold-to-regexp)
 
