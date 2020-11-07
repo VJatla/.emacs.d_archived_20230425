@@ -16,7 +16,7 @@
 
 ;; Global keybindingso
 (define-key key-translation-map (kbd "ESC") #'modalka-mode) ;; ESC to exit modalka
-(define-key key-translation-map (kbd "<f8>") #'modalka-mode) ;; F8 to exit modalka
+(define-key key-translation-map (kbd "<f10>") #'modalka-mode) ;; F8 to exit modalka
 
 ;; Ivy, swiper and counsel
 ;; (global-set-key "\C-s" 'swiper)

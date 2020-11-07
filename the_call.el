@@ -88,3 +88,6 @@
 ;; Doc:
 ;;     (load FILE &optional NOERROR NOMESSAGE NOSUFFIX MUST-SUFFIX)
 (load "packages")
+
+;; Load org-settings
+(load "org-settings")
