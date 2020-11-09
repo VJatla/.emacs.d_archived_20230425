@@ -3,7 +3,6 @@
 
 (custom-theme-set-faces
  'raven
- '(default ((t (:family "Fira Code" :foundry "CTDB" :width normal :height 150 :weight normal :slant normal :underline nil :overline nil :extend nil :strike-through nil :box nil :inverse-video nil :foreground "#8898a9" :background "#192129" :stipple nil :inherit nil))))
  '(cursor ((((background light)) (:background "black")) (((background dark)) (:background "white"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
@@ -21,7 +20,7 @@
  '(font-lock-constant-face ((t (:foreground "#a6a1ea"))))
  '(font-lock-doc-face ((t (:foreground "grey50"))))
  '(font-lock-function-name-face ((t (:weight bold :foreground "#729fcf"))))
- '(font-lock-keyword-face ((t (:weight bold :foreground "#c4dde8"))))
+ '(font-lock-keyword-face ((t (:foreground "#8898a9" :weight bold))))
  '(font-lock-negation-char-face ((t (:weight normal :foreground "#e9b96e"))))
  '(font-lock-preprocessor-face ((t (:inherit (font-lock-builtin-face)))))
  '(font-lock-regexp-grouping-backslash ((t (:inherit (bold)))))
@@ -46,6 +45,7 @@
  '(lazy-highlight ((t (:weight bold :foreground "#192129" :background "#729fcf"))))
  '(match ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
  '(next-error ((t (:inherit (region)))))
- '(query-replace ((t (:inherit (isearch))))))
+ '(query-replace ((t (:inherit (isearch)))))
+ '(default ((t (:family "Fira Code" :foundry "CTDB" :width normal :height 150 :weight normal :slant normal :underline nil :overline nil :extend nil :strike-through nil :box nil :inverse-video nil :foreground "#8898a9" :background "#192129" :stipple nil :inherit nil)))))
 
 (provide-theme 'raven)
