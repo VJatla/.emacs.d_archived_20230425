@@ -48,7 +48,7 @@
 (define-key modalka-mode-map (kbd "#") #'goto-line)
 (define-key modalka-mode-map (kbd "SPC f") #'ivy-switch-buffer)
 (define-key modalka-mode-map (kbd "f") #'newline)
-(define-key modalka-mode-map (kbd "SPC c") #'save-buffers-kill-terminal)
+(define-key modalka-mode-map (kbd "SPC c c") #'save-buffers-kill-terminal)
 
 
 ;; Window management
