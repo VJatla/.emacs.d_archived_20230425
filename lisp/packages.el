@@ -126,7 +126,7 @@
 (setq
  conda-env-home-directory "/home/vj/anaconda3"
  conda-env-subdirectory "envs")
-(conda-env-activate "torch160")
+(conda-env-activate "torch170")
 
 
 ;; For now I am using elpy, should change
