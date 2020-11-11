@@ -57,7 +57,7 @@
 (define-key modalka-mode-map (kbd "SPC w |") #'split-window-horizontally)
 (define-key modalka-mode-map (kbd "SPC w -") #'split-window-vertically)
 (define-key modalka-mode-map (kbd "SPC w d") #'delete-window)
-(define-key modalka-mode-map (kbd "SPC h") #'window-jump-left)
+(define-key modalka-mode-map (kbd "SPC j") #'window-jump-left)
 (define-key modalka-mode-map (kbd "SPC l") #'window-jump-right)
 (define-key modalka-mode-map (kbd "SPC w k") #'window-jump-up)
 (define-key modalka-mode-map (kbd "SPC w j") #'window-jump-down)
