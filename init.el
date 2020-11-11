@@ -44,7 +44,7 @@
   (cond
    ((string-equal system-name "precision7920")
     (load-theme 'zenburn)
-    (set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 130)
+    (set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 150)
     ))
   (cond
    ((string-equal system-name "bazul")
