@@ -59,8 +59,8 @@
 (define-key modalka-mode-map (kbd "SPC w d") #'delete-window)
 (define-key modalka-mode-map (kbd "SPC j") #'window-jump-left)
 (define-key modalka-mode-map (kbd "SPC l") #'window-jump-right)
-(define-key modalka-mode-map (kbd "SPC w k") #'window-jump-up)
-(define-key modalka-mode-map (kbd "SPC w j") #'window-jump-down)
+(define-key modalka-mode-map (kbd "SPC w i") #'window-jump-up)
+(define-key modalka-mode-map (kbd "SPC w k") #'window-jump-down)
 
 ;; Copy paste management
 (define-key modalka-mode-map (kbd "c") #'kill-ring-save);; M-w

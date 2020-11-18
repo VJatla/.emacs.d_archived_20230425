@@ -7,7 +7,7 @@
  '(custom-safe-themes
    '("b3796d54750f628de2f389738584a8463bb504026b9d9e52812a07e9525767d7" "f2c35f8562f6a1e5b3f4c543d5ff8f24100fae1da29aeb1864bbc17758f52b70" "37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "b721b84f75419ba5a4176f3dbb23264439bc62c1115bc1e05dc536679ccb9f3c" default))
  '(package-selected-packages
-   '(ox-reveal ivy-avy magit swiper-helm git-gutter helm-projectile helm counsel-projectile treemacs-projectile sublimity company impatient-mode simple-httpd markdown-mode nord-theme ivy lsp-mode xah-fly-keys window-jump which-key use-package treemacs spacegray-theme simpleclip projectile org-bullets modalka evil elpy counsel conda)))
+   '(treemacs-magit ox-reveal ivy-avy magit swiper-helm git-gutter helm-projectile helm counsel-projectile treemacs-projectile sublimity company impatient-mode simple-httpd markdown-mode nord-theme ivy lsp-mode xah-fly-keys window-jump which-key use-package treemacs spacegray-theme simpleclip projectile org-bullets modalka evil elpy counsel conda)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
