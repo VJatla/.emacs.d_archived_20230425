@@ -5,4 +5,5 @@
 !the_call.el
 !lisp/
 !*.gitignore
+!org-html-themes
 *.el~
