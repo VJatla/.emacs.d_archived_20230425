@@ -7,13 +7,9 @@
 	     (define-key modalka-mode-map (kbd "SPC c r") #'org-clock-report);; Clock update
 	     )
 
-(use-package ox-reveal
-  :ensure t
-  :config
-  )
-(require 'ox-reveal)
-
 ;; hooking up org-bullet mode
 (require 'org-bullets)
 (add-hook 'org-mode-hook
-	  (lambda () (org-bullets-mode 1)))
+	  (lambda () (org-bullets-mode 1)
+	    (local-set-key (kbd "SPC e") 'my-org-publish-buffer)))
+
