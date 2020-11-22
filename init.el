@@ -51,8 +51,7 @@
    (load-theme 'nord)
    (set-face-attribute 'default nil :family "Victor Mono" :height 150)))
   (cond
-   ((string-equal system-name "raven")
-   (load-theme 'raven t)
+   ((string-equal system-name "chickadee")
    (set-face-attribute 'default nil :family "Fira Code" :height 150)
    ))
     (add-to-list 'exec-path "/home/vj/Software/node-v14.15.0-linux-x64/")
