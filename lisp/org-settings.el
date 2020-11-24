@@ -11,5 +11,4 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook
 	  (lambda () (org-bullets-mode 1)
-	    (local-set-key (kbd "SPC e") 'my-org-publish-buffer)))
-
+	    (define-key modalka-mode-map (kbd "SPC e h") #'org-html-export-to-html)))
