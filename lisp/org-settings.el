@@ -12,3 +12,15 @@
 (add-hook 'org-mode-hook
 	  (lambda () (org-bullets-mode 1)
 	    (define-key modalka-mode-map (kbd "SPC e h") #'org-html-export-to-html)))
+
+(setq org-todo-keywords
+      '((sequence "TODO" "DOING" "WAITING" "DONE" "CANCELLED")))
+
+(setq org-todo-keyword-faces
+      '(
+	("TODO" . "Red")
+	("WAITING" . "Orange")
+	("DOING" . "Yellow")
+	("DONE" . "Green")
+	("CANCELLED" . "Gray")
+	))
