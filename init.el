@@ -57,7 +57,7 @@
     (set-face-attribute 'default nil :family "Fira Code" :height 130)
     (use-package material-theme
       :ensure t)
-    (load-theme 'material)
+    (load-theme 'xps)
    ))
     (add-to-list 'exec-path "/home/vj/Software/node-v14.15.0-linux-x64/")
     (add-to-list 'exec-path "/home/vj/Software/node-v14.15.0-linux-x64/bin/")))
