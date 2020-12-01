@@ -1,4 +1,5 @@
 /*
+*.el~
 !init.el
 !xps-theme.el
 !spacegray-easy-theme.el
@@ -6,4 +7,4 @@
 !lisp/
 !*.gitignore
 !org-html-themes
-*.el~
+!ditaa/
