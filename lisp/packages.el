@@ -129,18 +129,6 @@
 ;;(conda-env-activate "torch170")
 
 
-;; For now I am using elpy, should change
-;; to anaconda-mode when I have a chance
-(use-package elpy
-	     :ensure t)
-(add-hook 'elpy-mode-hook
-	  (lambda ()
-            (add-hook 'before-save-hook
-                      'elpy-format-code nil t)))
-(require 'elpy)
-(elpy-enable) 
-
-
 ;; (use-package xah-fly-keys
 ;;   :ensure t)
 ;; (xah-fly-keys-set-layout "qwerty") ; required

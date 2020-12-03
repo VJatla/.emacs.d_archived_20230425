@@ -2,9 +2,9 @@
   (interactive)
   (switch-to-buffer nil))
 
-(defun load-elpy-keys ()
-  (define-key modalka-mode-map (kbd "SPC d") #'elpy-goto-definition)
-  )
+;; (defun load-elpy-keys ()
+;;   (define-key modalka-mode-map (kbd "SPC d") #'elpy-goto-definition)
+;;   )
 
 
 ;; Selection functions
@@ -110,9 +110,6 @@
 (define-key modalka-mode-map (kbd "p") #'pop-to-mark-command);; C-s
 (define-key modalka-mode-map (kbd "m l") #'xah-select-line);; C-s
 (define-key modalka-mode-map (kbd "m G") #'select-till-buffer-end);; C-sh
-
-;; Activiating major mode based keybindings
-(add-hook 'elpy-mode-hook 'load-elpy-keys)
 
 ;; Bookmarks
 (define-key modalka-mode-map (kbd "SPC b s") #'bookmark-set);; C-x r m
