@@ -22,7 +22,7 @@
 	("haq-pg"
 	 :base-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/reports/draft/org/"
 	 :base-extension "org"
-	 :publishing-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/reports/draft/public_html/"
+	 :publishing-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/software/HAQ/docs/"
 	 :recursive t
 	 :publishing-function org-html-publish-to-html
 	 :html-postamble "
@@ -36,8 +36,8 @@
 ")
 	("haq-static"
 	 :base-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/reports/draft/org/"
-	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-	 :publishing-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/reports/draft/public_html/"
+	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|html"
+	 :publishing-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/software/HAQ/docs/"
 	 :recursive t
 	 :publishing-function org-publish-attachment
 	 )
