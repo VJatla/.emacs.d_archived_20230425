@@ -74,7 +74,11 @@
 (setq whitespace-style '(face lines-tail))
 (global-whitespace-mode t)
 
-;; Recent file mode
+;; Autopair
+(electric-pair-mode 1)
+
+
+;; Recent file mode: recent files are stored in buffer navigation
 (recentf-mode 1)
 
 

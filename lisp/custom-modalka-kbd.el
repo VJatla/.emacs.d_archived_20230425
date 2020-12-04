@@ -117,3 +117,7 @@
 
 ;; Repeat last command
 (define-key modalka-mode-map (kbd ",") #'repeat);; C-x r m
+
+
+;; quick calc
+(define-key modalka-mode-map (kbd "q") #'quick-calc);; C-x r m

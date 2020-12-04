@@ -1,5 +1,9 @@
 ;; Publish haq project shortcut
 (load "haq")
+(defun org-publish-haq ()
+  (interactive)
+  (org-publish "haq" t)
+  )
 
 ;; org-agenda files
 (setq org-agenda-files (quote ("/home/vj/Dropbox/org/tasks.org")))
@@ -11,7 +15,7 @@
 	     (define-key modalka-mode-map (kbd "SPC c o") #'org-clock-out);; Clock out
 	     (define-key modalka-mode-map (kbd "SPC c t") #'org-evaluate-time-range);; Clock update
 	     (define-key modalka-mode-map (kbd "SPC c r") #'org-clock-report);; Clock update
-	     (define-key modalka-mode-map (kbd "SPC e p") #'org-publish)
+	     (define-key modalka-mode-map (kbd "SPC e p") #'org-publish-haq)
 	     )
 
 ;; hooking up org-bullet mode
