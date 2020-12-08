@@ -3,6 +3,7 @@
 ;; set package.el repositories
 (setq package-archives
       '(
+	("gnu" . "https://elpa.gnu.org/packages/")
 	("melpa" . "https://melpa.org/packages/")
 	)
       )
@@ -83,11 +84,6 @@
 (require 'helm)
 (helm-mode -1)
 
-;; Company auto-completion
-(use-package company
-    :ensure t)
-(add-hook 'after-init-hook 'global-company-mode)
-
 ;; Projectile to help with projects
 (use-package projectile
   :ensure t)
@@ -116,46 +112,5 @@
 ;; Markdown
 (load "markdown-settings")
 
-;; Python
-;; conda
-(use-package conda
-	      :ensure t)
-(require 'conda)
-(custom-set-variables
- '(conda-anaconda-home "/home/vj/anaconda3"))
-(setq
- conda-env-home-directory "/home/vj/anaconda3"
- conda-env-subdirectory "envs")
-;;(conda-env-activate "torch170")
-
-
-;; (use-package xah-fly-keys
-;;   :ensure t)
-;; (xah-fly-keys-set-layout "qwerty") ; required
-;; (xah-fly-keys 1)
-;; (with-eval-after-load 'xah-fly-keys
-;;   ;; Command mode keybindings:
-;;   (define-key xah-fly-command-map (kbd "SPC s") #'save-buffer)
-;;   (define-key xah-fly-command-map (kbd "SPC ;") #'exchange-point-and-mark)
-
-;;   ;; Insert mode keybindings:
-;;   ;; (define-key xah-fly-insert-map (kbd "KEY") #'DEFINITION)
-;;   )
-
-;; Modal editing for text and code
-(use-package modalka
-   :ensure t)
-(require 'modalka)
-(load "custom-modalka-kbd")
-(modalka-global-mode 1)
-(setq-default cursor-type '(bar . 3))     ;; Shape of cursor in different modes
-(setq modalka-cursor-type 'box)
-;; To get the modalka working I will be using
-;; functions from other modal editing tools
-(use-package evil
-  :ensure t)
-(require 'evil)
-
-(use-package xah-fly-keys
-  :ensure t)
-(require 'xah-fly-keys)
+;; Python-settings
+(load "python-settings")

@@ -87,6 +87,9 @@
 ;;     (add-to-list LIST-VAR ELEMENT &optional APPEND COMPARE-FN)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+;; Modal editing settings
+(load "custom-modalka-kbd")
+
 
 ;; Loading package managing script `./lisp/packages`
 ;; Doc:
@@ -95,3 +98,6 @@
 
 ;; Load org-settings
 (load "org-settings")
+
+;; Turn on debug
+;; (setq debug-on-error t)

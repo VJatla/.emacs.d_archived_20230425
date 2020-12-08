@@ -14,6 +14,24 @@
   (end-of-buffer))
 
 
+
+;; Modal editing - The core is modalka. I am using some functions from
+;; xah-fly-keys and also evil
+(use-package modalka
+   :ensure t)
+(require 'modalka)
+(modalka-global-mode 1)
+(setq-default cursor-type '(bar . 3))     ;; Shape of cursor in different modes
+(setq modalka-cursor-type 'box)
+;; To get the modalka working I will be using
+;; functions from other modal editing tools
+(use-package evil
+  :ensure t)
+(require 'evil)
+(use-package xah-fly-keys
+  :ensure t)
+(require 'xah-fly-keys)
+
 ;; Global keybindingso
 (define-key key-translation-map (kbd "ESC") #'modalka-mode) ;; ESC to exit modalka
 (define-key key-translation-map (kbd "<f10>") #'modalka-mode) ;; F8 to exit modalka
