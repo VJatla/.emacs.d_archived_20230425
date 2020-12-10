@@ -99,6 +99,8 @@
 (use-package treemacs
 	      :ensure t)
 (require 'treemacs)
+(setq treemacs-git-mode 'deferred)
+
 
 ;; Projectile + treemacs
 (use-package treemacs-projectile

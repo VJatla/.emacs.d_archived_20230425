@@ -81,12 +81,13 @@
 
 ;; Copy paste management
 (define-key modalka-mode-map (kbd "c") #'kill-ring-save);; M-w
-(define-key modalka-mode-map (kbd "SPC c") #'simpleclip-copy)
+(define-key modalka-mode-map (kbd "C") #'simpleclip-copy)
 (define-key modalka-mode-map (kbd "x") #'kill-region);; C-w
-(define-key modalka-mode-map (kbd "SPC x") #'simpleclip-cut)
+(define-key modalka-mode-map (kbd "X") #'simpleclip-cut)
 (define-key modalka-mode-map (kbd "v") #'yank);; C-y
-(define-key modalka-mode-map (kbd "V") #'yank-pop);; C-y
-(define-key modalka-mode-map (kbd "SPC v") #'simpleclip-paste)
+(define-key modalka-mode-map (kbd "V") #'simpleclip-paste)
+(define-key modalka-mode-map (kbd "SPC v") #'yank-pop);; C-y
+
 
 ;; Git project operations (using counsel for now)
 (define-key modalka-mode-map (kbd "SPC g g") #'magit-status) ;; find files in project
@@ -136,6 +137,6 @@
 ;; Repeat last command
 (define-key modalka-mode-map (kbd ",") #'repeat);; C-x r m
 
-
-;; quick calc
-(define-key modalka-mode-map (kbd "q") #'quick-calc);; C-x r m
+;; miscellaneous
+(define-key modalka-mode-map (kbd "SPC q") #'quick-calc)    ;; quick calc
+(define-key modalka-mode-map (kbd "`") #'org-agenda)    ;; quick calc
