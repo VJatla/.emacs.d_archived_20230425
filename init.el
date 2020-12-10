@@ -39,7 +39,7 @@
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(package-selected-packages
-   '(flatui-dark-theme flatui-theme jedi soothe-theme spacemacs-theme atom-one-dark-theme figlet material-theme org-html-themes ox-twbs treemacs-magit ox-reveal ivy-avy magit swiper-helm git-gutter helm-projectile helm counsel-projectile treemacs-projectile sublimity company impatient-mode simple-httpd markdown-mode nord-theme ivy lsp-mode xah-fly-keys window-jump which-key use-package treemacs spacegray-theme simpleclip projectile org-bullets modalka evil elpy counsel conda))
+   '(company-anaconda anaconda-mode jedi-eldoc company-quickhelp pos-tip flatui-dark-theme flatui-theme jedi soothe-theme spacemacs-theme atom-one-dark-theme figlet material-theme org-html-themes ox-twbs treemacs-magit ox-reveal ivy-avy magit swiper-helm git-gutter helm-projectile helm counsel-projectile treemacs-projectile sublimity company impatient-mode simple-httpd markdown-mode nord-theme ivy lsp-mode xah-fly-keys window-jump which-key use-package treemacs spacegray-theme simpleclip projectile org-bullets modalka evil elpy counsel conda))
  '(pdf-view-midnight-colors '("#655370" . "#fbf8ef"))
  '(powerline-color1 "#1E1E1E")
  '(powerline-color2 "#111111")

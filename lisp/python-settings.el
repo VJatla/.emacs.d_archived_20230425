@@ -1,19 +1,28 @@
-;; Packages
-(use-package jedi
-  :ensure t)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-
-
-;; Settings
+;; Basic settings
 (setq python-indent-guess-indent-offset nil)
 
+;; jedi
+(use-package jedi
+  :ensure t)
 
-;; Key bindings
-;; SPC m d = Go to python definition using jedi
+;; company-jedi
+(use-package company-jedi
+  :ensure t)
+(defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi)
+  (jedi-mode))
 
-(define-key modalka-mode-map (kbd "SPC m d") #'jedi:goto-definition)
+(add-hook 'python-mode-hook 'my/python-mode-hook)
 
 
+;; Using anaconda mode
+;; (use-package anaconda-mode
+;;   :ensure t)
+;; (add-hook 'python-mode-hook 'anaconda-mode)
+;; (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 
-
+;; ;; company-anaconda
+;; (use-package company-anaconda
+;;   :ensure t)
+;; (eval-after-load "company"
+;;  '(add-to-list 'company-backends 'company-anaconda))

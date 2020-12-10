@@ -109,6 +109,15 @@
 	      :ensure t)
 (require 'window-jump)
 
+;; Autocompletion using company-mode
+;; Installing company mode
+(use-package company
+  :ensure t
+  :config
+  (add-hook 'after-init-hook 'global-company-mode)
+  (setq company-idle-delay 0)  ;; Disable the delay
+  (company-tng-configure-default))  ;; Enable tab style completion
+
 ;; Markdown
 (load "markdown-settings")
 
