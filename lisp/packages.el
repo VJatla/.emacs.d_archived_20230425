@@ -118,6 +118,10 @@
   (setq company-idle-delay 0)  ;; Disable the delay
   (company-tng-configure-default))  ;; Enable tab style completion
 
+;; Yasnippet
+(use-package yasnippet
+  :ensure t)
+
 ;; Markdown
 (load "markdown-settings")
 

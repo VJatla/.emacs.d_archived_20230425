@@ -81,6 +81,10 @@
 ;; Recent file mode: recent files are stored in buffer navigation
 (recentf-mode 1)
 
+;; Set kill ring to have more than one yanked/copied text
+(setq save-interprogram-paste-before-kill t)
+
+
 
 ;; Adding lisp directory to load path to load personal configurations
 ;; Doc:
@@ -98,6 +102,7 @@
 
 ;; Load org-settings
 (load "org-settings")
+
 
 ;; Turn on debug
 ;; (setq debug-on-error t)

@@ -65,7 +65,6 @@
 (define-key modalka-mode-map (kbd "SPC a") #'eval-buffer) ;; Inspired from Xah-fly keys
 (define-key modalka-mode-map (kbd "#") #'goto-line)
 (define-key modalka-mode-map (kbd "SPC f") #'ivy-switch-buffer)
-(define-key modalka-mode-map (kbd "f") #'newline)
 (define-key modalka-mode-map (kbd "SPC c c") #'save-buffers-kill-terminal)
 
 
@@ -82,11 +81,12 @@
 
 ;; Copy paste management
 (define-key modalka-mode-map (kbd "c") #'kill-ring-save);; M-w
-(define-key modalka-mode-map (kbd "C") #'simpleclip-copy)
+(define-key modalka-mode-map (kbd "SPC c") #'simpleclip-copy)
 (define-key modalka-mode-map (kbd "x") #'kill-region);; C-w
-(define-key modalka-mode-map (kbd "X") #'simpleclip-cut)
+(define-key modalka-mode-map (kbd "SPC x") #'simpleclip-cut)
 (define-key modalka-mode-map (kbd "v") #'yank);; C-y
-(define-key modalka-mode-map (kbd "V") #'simpleclip-paste)
+(define-key modalka-mode-map (kbd "V") #'yank-pop);; C-y
+(define-key modalka-mode-map (kbd "SPC v") #'simpleclip-paste)
 
 ;; Git project operations (using counsel for now)
 (define-key modalka-mode-map (kbd "SPC g g") #'magit-status) ;; find files in project
