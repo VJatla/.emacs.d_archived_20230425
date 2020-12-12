@@ -1,3 +1,6 @@
+;; Look and feel of org
+(setq org-toggle-link-display nil)
+
 ;; Publish haq project shortcut
 (load "haq")
 (defun org-publish-haq-all ()
@@ -8,6 +11,8 @@
   (interactive)
   (org-publish "haq")
   )
+
+
 
 ;; org-agenda files
 (cond
@@ -32,7 +37,7 @@
 	     (define-key modalka-mode-map (kbd "SPC c o") #'org-clock-out);; Clock out
 	     (define-key modalka-mode-map (kbd "SPC c t") #'org-evaluate-time-range);; Clock update
 	     (define-key modalka-mode-map (kbd "SPC c r") #'org-clock-report);; Clock update
-	     (define-key modalka-mode-map (kbd "SPC e P") #'org-publish-haq-all)
+	     (define-key modalka-mode-map (kbd "SPC <f5>") #'org-publish-haq-all)
 	     (define-key modalka-mode-map (kbd "<f5>") #'org-publish-haq)
 	     )
 
