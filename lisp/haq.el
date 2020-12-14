@@ -64,7 +64,7 @@
 <p>Exported: %T</p>
 <p>
 <a blank='_target' href='https://github.com/VJatla/HAQ'>HAQ-GitHub</a>
-<img width='30px' src='imgs/Octocat.png'/>
+<img width='30px' src='https://vjatla.github.io/HAQ/imgs/Octocat.png'/>
 </p>
 ")
 	("haq-static"

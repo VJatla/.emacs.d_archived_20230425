@@ -117,8 +117,8 @@
   :ensure t
   :config
   (add-hook 'after-init-hook 'global-company-mode)
-  (setq company-idle-delay 0)  ;; Disable the delay
-  (company-tng-configure-default))  ;; Enable tab style completion
+  (setq company-idle-delay 0))  ;; Disable the delay
+;;  (company-tng-configure-default))  ;; Enable tab style completion
 
 ;; Yasnippet
 (use-package yasnippet
