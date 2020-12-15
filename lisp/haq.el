@@ -22,7 +22,7 @@
   (setq org-publish-project-alist
       '(
 	("haq-pg"
-	 :base-directory "C:/Users/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/reports/draft/org/"
+	 :base-directory "C:/Users/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/org/"
 	 :publishing-directory "C:/Users/vj/Dropbox/Marios_Shared/HAQ-AOLME/software/HAQ/docs/"
 	 :base-extension "org"
 	 :recursive t
@@ -37,7 +37,7 @@
 </p>
 ")
 	("haq-static"
-	 :base-directory "C:/Users/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/reports/draft/org/"
+	 :base-directory "C:/Users/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/org/"
 	 :publishing-directory "C:/Users/vj/Dropbox/Marios_Shared/HAQ-AOLME/software/HAQ/docs/"
 	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|html"
 	 :recursive t
@@ -53,7 +53,7 @@
   (setq org-publish-project-alist
       '(
 	("haq-pg"
-	 :base-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/reports/draft/org/"
+	 :base-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/org/"
 	 :publishing-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/software/HAQ/docs/"
 	 :base-extension "org"
 	 :recursive t
@@ -68,7 +68,7 @@
 </p>
 ")
 	("haq-static"
-	 :base-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/reports/draft/org/"
+	 :base-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/documentation/org/"
 	 :publishing-directory "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/software/HAQ/docs/"
 	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|html"
 	 :recursive t
