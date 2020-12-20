@@ -1,21 +1,3 @@
-(require 'package) ;; Emacs builtin
-
-;; set package.el repositories
-(setq package-archives
-      '(
-	("gnu" . "https://elpa.gnu.org/packages/")
-	("melpa" . "https://melpa.org/packages/")
-	)
-      )
-
-;; Initialize built-in package management
-(package-initialize)
-
-;; Install use-package if not installed yet
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
 ;; Themes
 (use-package spacegray-theme
   :ensure t)
