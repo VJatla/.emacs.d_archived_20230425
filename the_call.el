@@ -92,7 +92,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; Modal editing settings
-(load "custom-modalka-kbd")
+;; (load "custom-modalka-kbd")
+;; (load "custom-ryo-kbd")
 
 
 ;; Loading package managing script `./lisp/packages`

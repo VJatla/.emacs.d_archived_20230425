@@ -1,14 +1,12 @@
 ;; Themes
 (use-package spacegray-theme
   :ensure t)
-
 (use-package nord-theme
   :ensure t)
 (use-package zenburn-theme
   :ensure t)
 (use-package planet-theme
   :ensure t)
-
 
 ;; Simple clip
 (use-package simpleclip
@@ -105,6 +103,35 @@
 ;; Yasnippet
 (use-package yasnippet
   :ensure t)
+
+;; Expand region package
+(use-package expand-region
+  :ensure t)
+  
+;; Modal editing
+;; --- modalka --- ;;
+(use-package modalka
+  :ensure t)
+
+(load "custom-modalka-kbd")
+
+;; --- ryo --- ;;
+;;(use-package ryo-modal
+;;	:ensure t
+;;  :commands ryo-modal-mode)
+;;(load "custom-ryo-kbd")
+
+;; --- xah-fly-keys ---
+;;(use-package xah-fly-keys
+;;  :ensure t)
+;;(xah-fly-keys-set-layout "qwerty") ; required
+;;(xah-fly-keys 1)
+
+;; --- boon --- ;;
+;;(use-package boon
+;;  :ensure t)
+;;(require 'boon-qwerty)
+;;(boon-mode)
 
 ;; Markdown
 (load "markdown-settings")

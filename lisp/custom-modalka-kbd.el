@@ -2,11 +2,6 @@
   (interactive)
   (switch-to-buffer nil))
 
-;; (defun load-elpy-keys ()
-;;   (define-key modalka-mode-map (kbd "SPC d") #'elpy-goto-definition)
-;;   )
-
-
 ;; Selection functions
 (defun select-till-buffer-end ()
   (interactive)
@@ -15,22 +10,14 @@
 
 
 
-;; Modal editing - The core is modalka. I am using some functions from
-;; xah-fly-keys and also evil
-(use-package modalka
-   :ensure t)
+
+;; Initializing modalka
 (require 'modalka)
-(modalka-global-mode 1)
+(add-hook 'text-mode-hook #'modalka-mode)
+(add-hook 'prog-mode-hook #'modalka-mode)
 (setq-default cursor-type '(bar . 3))     ;; Shape of cursor in different modes
 (setq modalka-cursor-type 'box)
-;; To get the modalka working I will be using
-;; functions from other modal editing tools
-(use-package evil
-  :ensure t)
-(require 'evil)
-(use-package xah-fly-keys
-  :ensure t)
-(require 'xah-fly-keys)
+
 
 ;; Global keybindingso
 (define-key key-translation-map (kbd "ESC") #'modalka-mode) ;; ESC to exit modalka
@@ -55,28 +42,48 @@
 ;; (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
 
-;; File and buffer operations
-(define-key modalka-mode-map (kbd "SPC s") #'save-buffer)
-(define-key modalka-mode-map (kbd "SPC o") #'counsel-find-file)
-(define-key modalka-mode-map (kbd "SPC r") #'recentf-open-files)
-(define-key modalka-mode-map (kbd "SPC k") #'kill-buffer)
-(define-key modalka-mode-map (kbd "a") #'counsel-M-x) ;; Inspired from Xah-fly keys
-(define-key modalka-mode-map (kbd "SPC a") #'eval-buffer) ;; Inspired from Xah-fly keys
-(define-key modalka-mode-map (kbd "#") #'goto-line)
-(define-key modalka-mode-map (kbd "SPC f") #'ivy-switch-buffer)
-(define-key modalka-mode-map (kbd "SPC c c") #'save-buffers-kill-terminal)
-
-
-;; Window management
+;; Window key bindings
 (define-key modalka-mode-map (kbd "SPC w o") #'other-window)
 (define-key modalka-mode-map (kbd "SPC w 1") #'delete-other-windows)
 (define-key modalka-mode-map (kbd "SPC w |") #'split-window-horizontally)
 (define-key modalka-mode-map (kbd "SPC w -") #'split-window-vertically)
 (define-key modalka-mode-map (kbd "SPC w d") #'delete-window)
-(define-key modalka-mode-map (kbd "SPC j") #'window-jump-left)
-(define-key modalka-mode-map (kbd "SPC l") #'window-jump-right)
+(define-key modalka-mode-map (kbd "SPC w j") #'window-jump-left)
+(define-key modalka-mode-map (kbd "SPC w l") #'window-jump-right)
 (define-key modalka-mode-map (kbd "SPC w i") #'window-jump-up)
 (define-key modalka-mode-map (kbd "SPC w k") #'window-jump-down)
+(define-key modalka-mode-map (kbd "SPC w <left>") 'shrink-window-horizontally)
+(define-key modalka-mode-map (kbd "SPC w <right>") 'enlarge-window-horizontally)
+(define-key modalka-mode-map (kbd "SPC w <down>") 'shrink-window)
+(define-key modalka-mode-map (kbd "SPC w <up>") 'enlarge-window)
+
+
+;; Movement key bindings
+(define-key modalka-mode-map (kbd "i") #'previous-line)
+(define-key modalka-mode-map (kbd "k") #'next-line)
+(define-key modalka-mode-map (kbd "l") #'forward-char)
+(define-key modalka-mode-map (kbd "j") #'backward-char)
+(define-key modalka-mode-map (kbd "w") #'forward-word)
+(define-key modalka-mode-map (kbd "b") #'backward-word)
+(define-key modalka-mode-map (kbd "e") #'move-end-of-line)
+(define-key modalka-mode-map (kbd "0") #'move-beginning-of-line)
+(define-key modalka-mode-map (kbd "g g") #'beginning-of-buffer)
+(define-key modalka-mode-map (kbd "G") #'end-of-buffer)
+
+
+
+
+
+;; File and buffer operations
+(define-key modalka-mode-map (kbd "SPC s") #'save-buffer)
+(define-key modalka-mode-map (kbd "SPC o") #'counsel-find-file)
+(define-key modalka-mode-map (kbd "SPC r") #'recentf-open-files)
+(define-key modalka-mode-map (kbd "SPC k") #'kill-buffer)
+(define-key modalka-mode-map (kbd "SPC a") #'helm-M-x) 
+(define-key modalka-mode-map (kbd "#") #'goto-line)
+(define-key modalka-mode-map (kbd "SPC f") #'ivy-switch-buffer)
+(define-key modalka-mode-map (kbd "SPC c c") #'save-buffers-kill-terminal)
+
 
 ;; Copy paste management
 (define-key modalka-mode-map (kbd "c") #'kill-ring-save);; M-w
@@ -85,7 +92,6 @@
 (define-key modalka-mode-map (kbd "X") #'simpleclip-cut)
 (define-key modalka-mode-map (kbd "v") #'yank);; C-y
 (define-key modalka-mode-map (kbd "V") #'simpleclip-paste)
-(define-key modalka-mode-map (kbd "SPC v") #'yank-pop);; C-y
 
 
 ;; Git project operations (using counsel for now)
@@ -99,17 +105,7 @@
 
 
 
-;; Code navigation
-(define-key modalka-mode-map (kbd "i") #'previous-line) ;; C-p
-(define-key modalka-mode-map (kbd "k") #'next-line) ;; C-n
-(define-key modalka-mode-map (kbd "l") #'forward-char) ;; C-f
-(define-key modalka-mode-map (kbd "j") #'backward-char) ;; C-b
-(define-key modalka-mode-map (kbd "w") #'forward-word) ;; C-b
-(define-key modalka-mode-map (kbd "b") #'backward-word) ;; C-b
-(define-key modalka-mode-map (kbd "e") #'move-end-of-line) ;; C-e
-(define-key modalka-mode-map (kbd "0") #'move-beginning-of-line) ;; C-a
-(define-key modalka-mode-map (kbd "g g") #'beginning-of-buffer) ;; M-<
-(define-key modalka-mode-map (kbd "G") #'end-of-buffer) ;; M->
+
 (define-key modalka-mode-map (kbd "s") #'swiper);; C-s
 
 
@@ -117,7 +113,7 @@
 (define-key modalka-mode-map (kbd "r") #'query-replace);; C-s
 (define-key modalka-mode-map (kbd "SPC SPC") #'modalka-mode) ;;
 (define-key modalka-mode-map (kbd "d w") #'kill-word);; M-d
-(define-key modalka-mode-map (kbd "d b") #'evil-delete-backward-word);; M-d
+(define-key modalka-mode-map (kbd "d b") #'delete-backward-word);; M-d
 (define-key modalka-mode-map (kbd "d l") #'kill-whole-line);; kill till end of the line
 (define-key modalka-mode-map (kbd "d e") #'kill-line);; kill till end of the line
 (define-key modalka-mode-map (kbd ";") #'comment-dwim);; kill till end of the line
@@ -131,8 +127,8 @@
 (define-key modalka-mode-map (kbd "m r") #'rectangle-mark-mode);; C-sh
 
 ;; Bookmarks
-(define-key modalka-mode-map (kbd "SPC b s") #'bookmark-set);; C-x r m
-(define-key modalka-mode-map (kbd "SPC b j") #'bookmark-jump);; C-x r b
+(define-key modalka-mode-map (kbd "SPC * s") #'bookmark-set);; C-x r m
+(define-key modalka-mode-map (kbd "SPC * j") #'bookmark-jump);; C-x r b
 
 ;; Repeat last command
 (define-key modalka-mode-map (kbd ",") #'repeat);; C-x r m
