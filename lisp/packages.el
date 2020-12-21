@@ -77,7 +77,12 @@
 
 ;; Treemacs: A very nice sidebar having projects
 (use-package treemacs
-	      :ensure t)
+	      :ensure t
+        :bind(
+          :map treemacs-mode-map
+          ("i" . treemacs-previous-line)
+          ("k" . treemacs-next-line)
+          ("SPC l" . window-jump-right)))
 (require 'treemacs)
 (setq treemacs-git-mode 'deferred)
 

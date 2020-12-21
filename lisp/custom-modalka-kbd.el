@@ -8,8 +8,20 @@
   (xah-select-block)
   (end-of-buffer))
 
-
-
+;; Use f5 to run based on major mode
+(add-hook 'python-mode-hook
+	(lambda () 
+	  (local-set-key (kbd "<f5>") #'python-shell-send-buffer)	  
+	)
+)
+(add-hook 'emacs-lisp-mode-hook
+	(lambda () 
+		(local-set-key (kbd "<f5>") #'eval-buffer)
+	)
+)
+(add-hook 'org-mode-hook
+	(lambda ()
+		(local-set-key (kbd "<f5>") #'haq)))
 
 ;; Initializing modalka
 (require 'modalka)
@@ -19,8 +31,9 @@
 (setq modalka-cursor-type 'box)
 
 
-;; Global keybindingso
-(define-key key-translation-map (kbd "ESC") #'modalka-mode) ;; ESC to exit modalka
+;; Global keybindings
+(define-key key-translation-map (kbd "ESC") #'modalka-mode)
+
 
 ;; Ivy, swiper and counsel
 ;; (global-set-key "\C-s" 'swiper)
@@ -48,8 +61,8 @@
 (define-key modalka-mode-map (kbd "SPC w |") #'split-window-horizontally)
 (define-key modalka-mode-map (kbd "SPC w -") #'split-window-vertically)
 (define-key modalka-mode-map (kbd "SPC w d") #'delete-window)
-(define-key modalka-mode-map (kbd "SPC w j") #'window-jump-left)
-(define-key modalka-mode-map (kbd "SPC w l") #'window-jump-right)
+(define-key modalka-mode-map (kbd "SPC j") #'window-jump-left) ;; <--- I use these often
+(define-key modalka-mode-map (kbd "SPC l") #'window-jump-right);; <--- Use these often
 (define-key modalka-mode-map (kbd "SPC w i") #'window-jump-up)
 (define-key modalka-mode-map (kbd "SPC w k") #'window-jump-down)
 (define-key modalka-mode-map (kbd "SPC w <left>") 'shrink-window-horizontally)
