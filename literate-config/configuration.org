@@ -1,0 +1,161 @@
+Adding repositories and install ~use-package~ if not
+palready installed.
+#+BEGIN_SRC emacs-lisp
+;; Information  
+(setq user-mail-address "venkatesh.jatla@gmail.com")
+
+;; Package repositories 
+(setq package-archives
+      '(
+	("gnu" . "https://elpa.gnu.org/packages/")
+	("melpa" . "https://melpa.org/packages/")
+	)
+      )
+
+;; Activating use-package (Installing if not found)
+(require 'package)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; Whick-key
+(use-package which-key
+  :ensure t)
+(which-key-mode)
+#+END_SRC
+* Base settings
+  These settings does not require external packages.
+  + Inhibiting not so useful GUI elements
+    #+begin_src emacs-lisp
+    (setq inhibit-startup-screen t)
+    (tool-bar-mode -1)
+    (menu-bar-mode -1)
+    (scroll-bar-mode -1)
+    #+end_src
+  + Use visual bell instead of audio.
+    #+begin_src emacs-lisp
+    (setq visible-bell 1)    
+    #+end_src
+  + Font
+    #+BEGIN_SRC emacs-lisp
+    (set-face-attribute 'default nil :family "Consolas" :height 130)
+    #+END_SRC
+* Look and feel
+** Feel
+   + Smooth scrolling using sublimity
+     #+begin_src emacs-lisp
+     (use-package smooth-scrolling
+     :ensure t
+     :config
+     (require 'smooth-scrolling)
+     (smooth-scrolling-mode 1))
+     #+end_src
+   + Better garbage collection
+     #+begin_src emacs-lisp
+     (use-package gcmh
+     :ensure t
+     :config
+     (gcmh-mode 1))
+     #+end_src
+** Look
++ Theme - Starting with solarized
+  #+BEGIN_SRC emacs-lisp
+  
+  #+END_SRC
++ Startup screen
+  #+BEGIN_SRC emacs-lisp
+  (use-package dashboard
+  :ensure t
+  :config
+ (dashboard-setup-startup-hook)
+ (setq dashboard-set-heading-icons t)
+ (setq dashboard-set-file-icons t)
+ (setq dashboard-items '(
+ (agenda . 5)
+ (projects . 5)
+ (recents  . 5)
+ (bookmarks . 5)
+ (registers . 5))))
+  #+END_SRC
++ All the icons
+  #+begin_src emacs-lisp
+  (use-package all-the-icons
+  :ensure t)
+  #+end_src
+* Productivity tools
+** Completion framework
+   + Code completion
+     #+begin_src emacs-lisp
+     (use-package company
+     :ensure t
+     :config
+     (add-hook 'after-init-hook 'global-company-mode))
+     #+end_src
+   + Minibuffer completion
+     #+begin_src emacs-lisp
+     (use-package flx
+     :ensure t
+     :defer t)
+     (use-package flx-ido
+     :ensure t
+     :defer t
+     :config 
+     (ido-mode 1)
+     (ido-everywhere 1)
+     (flx-ido-mode 1)
+     (setq ido-enable-flex-matching t)
+     (setq ido-use-faces nil)
+     (setq ido-use-virtual-buffers t))
+     (use-package smex
+     :ensure t
+     :config
+     (smex-initialize))
+     #+end_src
+** Project management
+   + Projectile
+     #+begin_src emacs-lisp
+     (use-package projectile
+     :ensure t
+     :config
+     (projectile-mode +1)
+     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+     #+end_src
+   + Treemacs
+     #+begin_src emacs-lisp
+     (use-package treemacs
+     :ensure t
+     :defer t
+     )
+     #+end_src
+   
+** Version control
+   + magit
+     #+begin_src emacs-lisp
+     (use-package magit
+     :ensure t)
+     #+end_src
+   + git-gutter-fringe
+     #+begin_src emacs-lisp
+     (use-package git-gutter
+     :ensure t
+     :config
+     (add-hook 'prog-mode-hook 'git-gutter-mode)
+     (add-hook 'text-mode-hook 'git-gutter-mode))
+     #+end_src
+** Dired
+   #+begin_src emacs-lisp
+   (use-package direx
+   :ensure t)
+   #+end_src
+   
+** Coding stats
+   + Waka time
+     #+begin_src emacs-lisp
+     (use-package wakatime-mode
+     :ensure t
+     :config
+     (global-wakatime-mode)
+     )
+     (custom-set-variables '(wakatime-api-key "948f1aa9-1e61-46dc-8e1f-eed41c05f2fa"))
+     #+end_src
+     

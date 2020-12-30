@@ -8,3 +8,4 @@
 !*.gitignore
 !org-html-themes
 !ditaa/
+!literate-config/

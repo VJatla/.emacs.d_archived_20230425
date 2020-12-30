@@ -1,0 +1,12 @@
+* Packages
++ *keyfreq*
+  #+begin_src emacs-lisp
+  (use-package keyfreq
+  :ensure t
+  :config
+  (keyfreq-mode 1)
+  (setq keyfreq-exclude-commands '(self-insert-command org-cycle)))
+  #+end_src
+* Movement keys
+  #+begin_src emacs-lisp
+  #+end_src
