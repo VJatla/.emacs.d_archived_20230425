@@ -5,6 +5,7 @@
   :ensure t
   :config
   (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1)
   (setq keyfreq-exclude-commands '(self-insert-command org-cycle)))
   #+end_src
 * Movement keys

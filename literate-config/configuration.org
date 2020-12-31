@@ -38,11 +38,17 @@ palready installed.
     #+end_src
   + Font
     #+BEGIN_SRC emacs-lisp
-    (set-face-attribute 'default nil :family "Consolas" :height 130)
+    (set-frame-font "Fira Code Retina 15" nil t)
+    (use-package fira-code-mode
+    :ensure t
+    :custom (fira-code-mode-disabled-ligatures '("[]" "#{" "#(" "#_" "#_(" "x"))
+    :config
+    (add-hook 'prog-mode-hook 'fira-code-mode)
+    (add-hook 'text-mode-hook 'fira-code-mode))
     #+END_SRC
 * Look and feel
 ** Feel
-   + Smooth scrolling using sublimity
+   + Smooth scrolling
      #+begin_src emacs-lisp
      (use-package smooth-scrolling
      :ensure t
@@ -58,30 +64,34 @@ palready installed.
      (gcmh-mode 1))
      #+end_src
 ** Look
-+ Theme - Starting with solarized
-  #+BEGIN_SRC emacs-lisp
-  
-  #+END_SRC
-+ Startup screen
-  #+BEGIN_SRC emacs-lisp
-  (use-package dashboard
-  :ensure t
-  :config
- (dashboard-setup-startup-hook)
- (setq dashboard-set-heading-icons t)
- (setq dashboard-set-file-icons t)
- (setq dashboard-items '(
- (agenda . 5)
- (projects . 5)
- (recents  . 5)
- (bookmarks . 5)
- (registers . 5))))
-  #+END_SRC
-+ All the icons
-  #+begin_src emacs-lisp
-  (use-package all-the-icons
-  :ensure t)
-  #+end_src
+   + Theme - Starting with solarized
+     #+BEGIN_SRC emacs-lisp
+     (use-package solarized-theme
+     :ensure t
+     :config
+     (load-theme 'orchid t))
+     #+END_SRC
+   + Startup screen
+     #+BEGIN_SRC emacs-lisp
+     (use-package dashboard
+     :ensure t
+     :config
+    (dashboard-setup-startup-hook)
+    (setq dashboard-set-heading-icons t)
+    (setq dashboard-set-file-icons t)
+    (setq dashboard-items '(
+    (agenda . 5)
+    (projects . 5)
+    (recents  . 5)
+    (bookmarks . 5)
+    (registers . 5))))
+     #+END_SRC
+   + All the icons
+     #+begin_src emacs-lisp
+     (use-package all-the-icons
+     :ensure t)
+     #+end_src
+     
 * Productivity tools
 ** Completion framework
    + Code completion
@@ -158,4 +168,3 @@ palready installed.
      )
      (custom-set-variables '(wakatime-api-key "948f1aa9-1e61-46dc-8e1f-eed41c05f2fa"))
      #+end_src
-     
