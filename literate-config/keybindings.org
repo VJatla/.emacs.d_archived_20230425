@@ -56,16 +56,18 @@
   #+end_src
 * Editing keys
   #+begin_src emacs-lisp
-  (modalka-define-kbd "d" "DEL")
-  (modalka-define-kbd "e" "RET")
-  (define-key modalka-mode-map (kbd "s") 'insert-space)
-  (define-key modalka-mode-map (kbd "/") 'swiper)
-  (define-key modalka-mode-map (kbd "SPC f") 'counsel-find-file)
-  (modalka-define-kbd "v" "C-y") ;; paste
-  (modalka-define-kbd "c" "M-w") ;; copy
-  (modalka-define-kbd "x" "C-w") ;; cut
-  (modalka-define-kbd "-" "C-_") ;; redo/undo
-  (modalka-define-kbd "r" "M-%") ;; rename
+    (modalka-define-kbd "d" "DEL")
+    (modalka-define-kbd "e" "RET")
+    (define-key modalka-mode-map (kbd "s") 'insert-space)
+    (define-key modalka-mode-map (kbd "/") 'swiper)
+    (define-key modalka-mode-map (kbd "SPC f") 'counsel-find-file)
+    (modalka-define-kbd "v" "C-y") ;; paste
+    (modalka-define-kbd "c" "M-w") ;; copy
+    (define-key modalka-mode-map (kbd "SPC v") 'counsel-yank-pop)
+    (modalka-define-kbd "c" "M-w") ;; copy
+    (modalka-define-kbd "x" "C-w") ;; cut
+    (modalka-define-kbd "-" "C-_") ;; redo/undo
+    (modalka-define-kbd "r" "M-%") ;; rename
   #+end_src
 * commands
   #+begin_src emacs-lisp
@@ -83,6 +85,6 @@
   #+end_src
 * Major mode specific
 #+begin_src emacs-lisp
-  (define-key modalka-mode-map (kbd ".") 'anaconda-mode-find-definitions) 
+  (define-key modalka-mode-map (kbd ".") 'anaconda-mode-find-definitions)
   (define-key modalka-mode-map (kbd "?") 'anaconda-mode-show-doc)
 #+end_src

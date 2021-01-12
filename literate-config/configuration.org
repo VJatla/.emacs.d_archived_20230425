@@ -1,7 +1,7 @@
 Adding repositories and install ~use-package~ if not
 palready installed.
 #+BEGIN_SRC emacs-lisp
-;; Information  
+;; Information
 (setq user-mail-address "venkatesh.jatla@gmail.com")
 
 ;; Whick-key
@@ -21,7 +21,7 @@ palready installed.
     #+end_src
   + Use visual bell instead of audio.
     #+begin_src emacs-lisp
-    (setq visible-bell 1)    
+    (setq visible-bell 1)
     #+end_src
   + Keep temporary files in one directory
     #+begin_src emacs-lisp
@@ -55,14 +55,15 @@ Delete trailing whitespaces on save.
 ** Look
    + Theme - Starting with solarized
      #+BEGIN_SRC emacs-lisp
-     (use-package solarized-theme
-     :ensure t
-     :config
-     ;;(load-theme 'solarized-dark t)
-        )
-    (use-package gruvbox-theme
-    :ensure t)
-    
+       (use-package solarized-theme
+	 :ensure t
+	 :config
+	 ;;(load-theme 'solarized-dark t)
+	 )
+       (use-package gruvbox-theme
+	 :ensure t)
+       (use-package color-theme-sanityinc-tomorrow
+	 :ensure t)
      #+END_SRC
    + Startup screen
      #+BEGIN_SRC emacs-lisp
@@ -84,7 +85,7 @@ Delete trailing whitespaces on save.
      (use-package all-the-icons
      :ensure t)
      #+end_src
-     
+
 * Language packages
 #+begin_src emacs-lisp
 (use-package markdown-mode
@@ -154,7 +155,7 @@ Delete trailing whitespaces on save.
      ("i" . treemacs-previous-line)
      ("k" . treemacs-next-line)))
      #+end_src
-   
+
 ** Version control
    + magit
      #+begin_src emacs-lisp
@@ -174,7 +175,7 @@ Delete trailing whitespaces on save.
    (use-package direx
    :ensure t)
    #+end_src
-   
+
 ** Coding stats
    + Waka time
      #+begin_src emacs-lisp
@@ -199,4 +200,3 @@ Delete trailing whitespaces on save.
    :ensure t
    :ensure t)
    #+end_src
-
