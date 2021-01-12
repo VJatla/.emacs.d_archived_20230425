@@ -1,0 +1,23 @@
+* Company anaconda
+#+begin_src emacs-lisp
+(use-package anaconda-mode
+:ensure t
+:config
+(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+)
+
+(use-package company-anaconda
+:ensure t)
+
+(eval-after-load "company"
+ '(add-to-list 'company-backends '(company-anaconda :with company-capf)))
+
+
+(defun my-annotation-function (candidate)
+  (let ((description (get-text-property 0 'description candidate)))
+    (when description
+      (concat "<" (substring description 0 1) ">"))))
+
+(setq company-anaconda-annotation-function 'my-annotation-function)
+#+end_src

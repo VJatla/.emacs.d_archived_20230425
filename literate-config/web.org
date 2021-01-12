@@ -1,0 +1,6 @@
+* Cold fusion
+#+begin_src emacs-lisp
+(use-package cfml-mode
+:ensure t
+:defer t)
+#+end_src
