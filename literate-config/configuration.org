@@ -93,11 +93,6 @@ Delete trailing whitespaces on save.
 :ensure t)
 #+end_src
 * Productivity tools
-** PDF-TOOLS
-Setup PDF-TOOLS.
-#+begin_src emacs-lisp
-(pdf-tools-install :no-query)
-#+end_src
 ** Completion framework
    + Code completion
      #+begin_src emacs-lisp

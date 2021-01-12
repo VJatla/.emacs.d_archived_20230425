@@ -1,4 +1,4 @@
-;; Package repositories
+;;; Package repositories
 (setq package-archives
       '(
 	("gnu" . "https://elpa.gnu.org/packages/")
@@ -23,32 +23,18 @@
 
 ;; Load literate configuration file
 (cond
+  ;; Windows settings
  ((string-equal system-type "windows-nt")
-
   ;; The following path is necessary to get following working,
   ;; 1. wakatime
-  ;; 2. anaconda-mode
+  ;; 2. anaconda-mode -- Python
   (setenv "PATH" (concat (getenv "PATH") "C:/Users/vj/scoop/apps/python/current/Scripts"))
   (setq exec-path (append exec-path '("C:/Users/vj/scoop/apps/python/current/Scripts")))
 
-  ;; Windows settings go here
-  (org-babel-load-file "literate-config/configuration.org")
-  (org-babel-load-file "literate-config/keybindings.org")
-  (org-babel-load-file "literate-config/python.org")
-  (org-babel-load-file "literate-config/web.org")
-
-
+  (set-frame-font "JetBrains Mono Regular 13" nil t)
   )
-
-
- ;; Linux configuration
+ ;; Linux settings
  ((string-equal system-type "gnu/linux")
-  ;; Literate config files to load
-  (org-babel-load-file "~/Dropbox/.emacs.d/literate-config/configuration.org")
-  (org-babel-load-file "~/Dropbox/.emacs.d/literate-config/keybindings.org")
-  (org-babel-load-file "~/Dropbox/.emacs.d/literate-config/python.org")
-  (org-babel-load-file "~/Dropbox/.emacs.d/literate-config/web.org")
-
   ;; The following path is necessary to get following working,
   ;; 1. wakatime
   ;; 2. anaconda-mode
@@ -57,8 +43,14 @@
   )
  )
 
-;; Setting font
-(set-frame-font "JetBrains Mono Regular 13" nil t)
+  ;; Loading literate config files
+  (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
+  (org-babel-load-file "~/.emacs.d/literate-config/keybindings.org")
+  (org-babel-load-file "~/.emacs.d/literate-config/python.org")
+  (org-babel-load-file "~/.emacs.d/literate-config/web.org")
+
+
+
 
 ;; Setting theme
 (custom-set-variables
