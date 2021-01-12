@@ -1,58 +1,58 @@
 * Packages
-+ *keyfreq*
-  #+begin_src emacs-lisp
-  (use-package keyfreq
-  :ensure t
-  :config
-  (keyfreq-mode 1)
-  (keyfreq-autosave-mode 1)
-  (setq keyfreq-exclude-commands '(self-insert-command org-cycle)))
+  + *keyfreq*
+    #+begin_src emacs-lisp
+      (use-package keyfreq
+	:ensure t
+	:config
+	(keyfreq-mode 1)
+	(keyfreq-autosave-mode 1)
+	(setq keyfreq-exclude-commands '(self-insert-command org-cycle)))
 
-  (use-package key-chord
-  :ensure t
-  :config
-  (setq key-chord-two-keys-delay 0.1)
-  (key-chord-mode 1))
+      (use-package key-chord
+	:ensure t
+	:config
+	(setq key-chord-two-keys-delay 0.1)
+	(key-chord-mode 1))
 
-  (use-package modalka
-  :ensure t
-  :config
-  (setq-default cursor-type '(bar . 3))
-  (setq modalka-cursor-type 'box)
-  (add-hook 'text-mode-hook #'modalka-mode)
-  (add-hook 'prog-mode-hook #'modalka-mode)
-  (add-to-list 'modalka-excluded-modes 'magit-status-mode))
+      (use-package modalka
+	:ensure t
+	:config
+	(setq-default cursor-type '(bar . 3))
+	(setq modalka-cursor-type 'box)
+	(add-hook 'text-mode-hook #'modalka-mode)
+	(add-hook 'prog-mode-hook #'modalka-mode)
+	(add-to-list 'modalka-excluded-modes 'magit-status-mode))
 
-  (use-package xah-fly-keys
-  :ensure t)
+      (use-package xah-fly-keys
+	:ensure t)
 
-  #+end_src
+    #+end_src
 * Functions
   #+begin_src emacs-lisp
-  (defun insert-space ()
-  (interactive)
-  (insert " "))
+    (defun insert-space ()
+      (interactive)
+      (insert " "))
   #+end_src
 * Enter and exit modal editing mode
   #+begin_src emacs-lisp
-   (key-chord-define-global "99" 'modalka-mode)
-   (define-key modalka-mode-map (kbd "g") 'god-execute-with-current-bindings)
-   (define-key modalka-mode-map (kbd "SPC SPC") 'modalka-mode)
-   (global-set-key (kbd "<f8>") 'modalka-mode)
+    (key-chord-define-global "99" 'modalka-mode)
+    (define-key modalka-mode-map (kbd "g") 'god-execute-with-current-bindings)
+    (define-key modalka-mode-map (kbd "SPC SPC") 'modalka-mode)
+    (global-set-key (kbd "<f8>") 'modalka-mode)
   #+end_src
 * Movement keys
   #+begin_src emacs-lisp
-  (define-key modalka-mode-map (kbd "i") 'previous-line)
-  (define-key modalka-mode-map (kbd "k") 'next-line)
-  (define-key modalka-mode-map (kbd "l") 'forward-char)
-  (define-key modalka-mode-map (kbd "j") 'backward-char)
-  (define-key modalka-mode-map (kbd ";") 'move-end-of-line)
-  (define-key modalka-mode-map (kbd "h") 'move-beginning-of-line)
-  (define-key modalka-mode-map (kbd "o") 'forward-word)
-  (define-key modalka-mode-map (kbd "u") 'backward-word)
-  (define-key modalka-mode-map (kbd "w") 'other-window)
-  (define-key modalka-mode-map (kbd "SPC l") 'next-buffer)
-  (define-key modalka-mode-map (kbd "SPC j") 'previous-buffer)
+    (define-key modalka-mode-map (kbd "i") 'previous-line)
+    (define-key modalka-mode-map (kbd "k") 'next-line)
+    (define-key modalka-mode-map (kbd "l") 'forward-char)
+    (define-key modalka-mode-map (kbd "j") 'backward-char)
+    (define-key modalka-mode-map (kbd ";") 'move-end-of-line)
+    (define-key modalka-mode-map (kbd "h") 'move-beginning-of-line)
+    (define-key modalka-mode-map (kbd "o") 'forward-word)
+    (define-key modalka-mode-map (kbd "u") 'backward-word)
+    (define-key modalka-mode-map (kbd "w") 'other-window)
+    (define-key modalka-mode-map (kbd "SPC l") 'next-buffer)
+    (define-key modalka-mode-map (kbd "SPC j") 'previous-buffer)
   #+end_src
 * Editing keys
   #+begin_src emacs-lisp
@@ -71,20 +71,33 @@
   #+end_src
 * commands
   #+begin_src emacs-lisp
-  (define-key modalka-mode-map (kbd "f") 'xah-next-user-buffer)
-  (define-key modalka-mode-map (kbd "SPC k") 'kill-buffer)
-  (define-key modalka-mode-map (kbd "SPC s") 'save-buffer)
-  (define-key modalka-mode-map (kbd "SPC a") 'counsel-M-x)
-  (define-key modalka-mode-map (kbd "SPC c") 'comment-line)
-  (define-key modalka-mode-map (kbd "m") 'set-mark-command)
-  (define-key modalka-mode-map (kbd "SPC h") 'highlight-symbol)
-  (define-key modalka-mode-map (kbd "n") 'highlight-symbol-next)
-  (define-key modalka-mode-map (kbd "N") 'highlight-symbol-prev)
-  (define-key modalka-mode-map (kbd "0") 'delete-window)
-  (define-key modalka-mode-map (kbd "1") 'delete-other-windows)
+    (define-key modalka-mode-map (kbd "f") 'xah-next-user-buffer)
+    (define-key modalka-mode-map (kbd "SPC k") 'kill-buffer)
+    (define-key modalka-mode-map (kbd "SPC s") 'save-buffer)
+    (define-key modalka-mode-map (kbd "SPC a") 'counsel-M-x)
+    (define-key modalka-mode-map (kbd "SPC c") 'comment-line)
+    (define-key modalka-mode-map (kbd "m") 'set-mark-command)
+    (define-key modalka-mode-map (kbd "SPC h") 'highlight-symbol)
+    (define-key modalka-mode-map (kbd "n") 'highlight-symbol-next)
+    (define-key modalka-mode-map (kbd "N") 'highlight-symbol-prev)
+    (define-key modalka-mode-map (kbd "0") 'delete-window)
+    (define-key modalka-mode-map (kbd "1") 'delete-other-windows)
   #+end_src
 * Major mode specific
-#+begin_src emacs-lisp
-  (define-key modalka-mode-map (kbd ".") 'anaconda-mode-find-definitions)
-  (define-key modalka-mode-map (kbd "?") 'anaconda-mode-show-doc)
-#+end_src
+  #+begin_src emacs-lisp
+    (use-package treemacs
+      :bind(:map treemacs-mode-map
+		 ("w" . other-window)
+		 ("i" . treemacs-previous-line)
+		 ("k" . treemacs-next-line)))
+    (defun mode-based-kbd ()
+      (cond
+       ((string-equal major-mode "python-mode")
+	(define-key modalka-mode-map (kbd ".") 'anaconda-mode-find-definitions)
+	(define-key modalka-mode-map (kbd "SPC d") 'anaconda-mode-show-doc)
+	);; python-mode
+       );; cond
+
+      )
+    (add-hook 'after-change-major-mode-hook 'mode-based-kbd)
+  #+end_src

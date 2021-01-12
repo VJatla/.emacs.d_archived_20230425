@@ -1,23 +1,33 @@
-* Company anaconda
-#+begin_src emacs-lisp
-(use-package anaconda-mode
-:ensure t
-:config
-(add-hook 'python-mode-hook 'anaconda-mode)
-(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
-)
+* anaconda-mode
+  #+begin_src emacs-lisp
+    (use-package anaconda-mode
+      :ensure t
+      :config
+      (add-hook 'python-mode-hook 'anaconda-mode)
+      (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+      )
+  #+end_src
+* company-anaconda
+  #+begin_src emacs-lisp
+    ;; Loading company anaconda
+    (use-package company-anaconda
+      :ensure t)
+    (eval-after-load "company"
+      '(add-to-list 'company-backends '(company-anaconda :with company-capf)))
 
-(use-package company-anaconda
-:ensure t)
-
-(eval-after-load "company"
- '(add-to-list 'company-backends '(company-anaconda :with company-capf)))
-
-
-(defun my-annotation-function (candidate)
-  (let ((description (get-text-property 0 'description candidate)))
-    (when description
-      (concat "<" (substring description 0 1) ">"))))
-
-(setq company-anaconda-annotation-function 'my-annotation-function)
-#+end_src
+    ;; Using popups instead of minibuffer to show syntax errors
+    (defun my-annotation-function (candidate)
+      (let ((description (get-text-property 0 'description candidate)))
+	(when description
+	  (concat "<" (substring description 0 1) ">"))))
+    (setq company-anaconda-annotation-function 'my-annotation-function)
+  #+end_src
+* flycheck
+  #+begin_src emacs-lisp
+    (add-hook 'python-mode-hook 'flycheck-mode)
+  #+end_src
+* autopep8
+  #+begin_src emacs-lisp
+    (use-package py-autopep8
+      :ensure t)
+  #+end_src
