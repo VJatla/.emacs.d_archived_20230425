@@ -1,3 +1,7 @@
+;;; Custom set variables to different file
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 ;;; Package repositories
 (setq package-archives
       '(
@@ -74,24 +78,3 @@
   (load-theme 'sanityinc-tomorrow-eighties t)
   );; xps-win
  ) ;; cond
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#3c3836" "#fb4933" "#b8bb26" "#fabd2f" "#83a598" "#d3869b" "#8ec07c" "#ebdbb2"])
- '(custom-safe-themes
-   '("83e0376b5df8d6a3fbdfffb9fb0e8cf41a11799d9471293a810deb7586c131e6" default))
- '(package-selected-packages
-   '(neotree py-autopep8 xah-fly-keys which-key wakatime-mode use-package treemacs solarized-theme smooth-scrolling smex projectile org modalka markdown-mode+ magit keyfreq key-chord highlight-symbol gruvbox-theme git-gutter gcmh flycheck-pos-tip flycheck-popup-tip direx dashboard counsel company-anaconda color-theme-sanityinc-tomorrow cfml-mode all-the-icons))
- '(pdf-view-midnight-colors '("#fdf4c1" . "#32302f"))
- '(wakatime-api-key "948f1aa9-1e61-46dc-8e1f-eed41c05f2fa")
- '(wakatime-cli-path "/home/vj/.local/bin/wakatime")
- '(wakatime-python-bin nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
