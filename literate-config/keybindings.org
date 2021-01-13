@@ -76,6 +76,7 @@
     (define-key modalka-mode-map (kbd "SPC s") 'save-buffer)
     (define-key modalka-mode-map (kbd "SPC a") 'counsel-M-x)
     (define-key modalka-mode-map (kbd "SPC c") 'comment-line)
+    (define-key modalka-mode-map (kbd "SPC o") 'org-agenda)
     (define-key modalka-mode-map (kbd "m") 'set-mark-command)
     (define-key modalka-mode-map (kbd "SPC h") 'highlight-symbol)
     (define-key modalka-mode-map (kbd "n") 'highlight-symbol-next)
