@@ -34,6 +34,10 @@ palready installed.
       (setq auto-save-file-name-transforms
 	    `((".*" ,temporary-file-directory t)))
     #+end_src
+  + Load files when they are changed on disk
+    #+begin_src emacs-lisp
+      (global-auto-revert-mode t)
+    #+end_src
 ** Whitespace
    Delete trailing whitespaces on save.
    #+begin_src emacs-lisp
