@@ -46,8 +46,8 @@
     (define-key modalka-mode-map (kbd "k") 'next-line)
     (define-key modalka-mode-map (kbd "l") 'forward-char)
     (define-key modalka-mode-map (kbd "j") 'backward-char)
-    (define-key modalka-mode-map (kbd ";") 'move-end-of-line)
-    (define-key modalka-mode-map (kbd "h") 'move-beginning-of-line)
+    (define-key modalka-mode-map (kbd "e") 'move-end-of-line)
+    (define-key modalka-mode-map (kbd "s")'move-beginning-of-line)
     (define-key modalka-mode-map (kbd "o") 'forward-word)
     (define-key modalka-mode-map (kbd "u") 'backward-word)
     (define-key modalka-mode-map (kbd "w") 'other-window)
@@ -57,8 +57,6 @@
 * Editing keys
   #+begin_src emacs-lisp
     (modalka-define-kbd "d" "DEL")
-    (modalka-define-kbd "e" "RET")
-    (define-key modalka-mode-map (kbd "s") 'insert-space)
     (define-key modalka-mode-map (kbd "/") 'swiper)
     (define-key modalka-mode-map (kbd "SPC f") 'counsel-find-file)
     (modalka-define-kbd "v" "C-y") ;; paste
