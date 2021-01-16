@@ -66,7 +66,7 @@
 (cond
  ((string-equal (system-name) "ember")
   (load-theme 'gruvbox-dark-soft t)
-  (set-frame-font "Fantasque Sans Mono 16" nil t)
+  (set-frame-font "Fantasque Sans Mono 19" nil t)
   (add-to-list 'default-frame-alist '(height . 140))
   (add-to-list 'default-frame-alist '(width . 100))
   );; ember
