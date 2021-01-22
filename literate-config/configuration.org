@@ -1,5 +1,5 @@
 Adding repositories and install ~use-package~ if not
-palready installed.
+already installed.
 #+BEGIN_SRC emacs-lisp
   ;; Information
   (setq user-mail-address "venkatesh.jatla@gmail.com")
@@ -75,17 +75,19 @@ palready installed.
      #+END_SRC
    + Startup screen
      #+BEGIN_SRC emacs-lisp
-       (use-package dashboard
-	 :ensure t
-	 :config
-	 (dashboard-setup-startup-hook)
-	 (setq dashboard-set-heading-icons t)
-	 (setq dashboard-set-file-icons t)
-	 (setq dashboard-items '(
-				 (projects . 5)
-				 (recents  . 5)
-				 (bookmarks . 5)
-				 (registers . 5))))
+	    (use-package dashboard
+	      :ensure t
+	      :config
+	      (dashboard-setup-startup-hook)
+	      (setq dashboard-set-heading-icons t)
+	      (setq dashboard-set-file-icons t)
+	      (setq dashboard-items '(
+				      (projects . 5)
+				      (recents  . 5)
+				      (bookmarks . 5)
+				      (registers . 5)))
+	      (define-key dashboard-mode-map (kbd "w") 'other-window)
+	      )
      #+END_SRC
    + All the icons
      #+begin_src emacs-lisp
