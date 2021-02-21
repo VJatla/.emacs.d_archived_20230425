@@ -41,6 +41,7 @@
   ;; The following path is necessary to get following working,
   ;; 1. wakatime
   ;; 2. anaconda-mode -- Python
+  (setq org-agenda-files '("C:/Users/vj/Dropbox/org/tasks"))
   (setenv "PATH" (concat (getenv "PATH") "C:/Users/vj/scoop/apps/python/current/Scripts"))
   (setq exec-path (append exec-path '("C:/Users/vj/scoop/apps/python/current/Scripts")))
 
@@ -51,6 +52,7 @@
   ;; The following path is necessary to get following working,
   ;; 1. wakatime
   ;; 2. anaconda-mode
+  (setq org-agenda-files '("~/Dropbox/org/tasks"))
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/.local/bin"))
   (setq exec-path (append exec-path '("/home/vj/.local/bin")))
   )
@@ -77,6 +79,7 @@
   );; azul-win
 
  ((string-equal (system-name) "XPS-WIN")
-  (load-theme 'sanityinc-tomorrow-eighties t)
+  (load-theme 'sanityinc-tomorrow-day t)
+  (set-frame-font "JetBrains Mono Regular 13" nil t)
   );; xps-win
  ) ;; cond

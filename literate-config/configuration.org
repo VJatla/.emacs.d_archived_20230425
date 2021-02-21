@@ -12,10 +12,6 @@ already installed.
 #+END_SRC
 * Base settings
   These settings does not require external packages.
-  + Adding directories to org-agenda
-    #+begin_src emacs-lisp
-      (setq org-agenda-files '("~/Dropbox/org/tasks"))
-    #+end_src
   + Inhibiting not so useful GUI elements
     #+begin_src emacs-lisp
       (setq inhibit-startup-screen t)
