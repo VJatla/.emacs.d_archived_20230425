@@ -66,6 +66,8 @@
 
 ;; Theme and fonts based on syste name
 (cond
+
+
  ((string-equal (system-name) "ember")
   (load-theme 'gruvbox-dark-soft t)
   (set-frame-font "Fantasque Sans Mono 19" nil t)
@@ -73,21 +75,22 @@
   (add-to-list 'default-frame-alist '(width . 100))
   );; ember
 
+
  ((string-equal (system-name) "AZUL-WIN")
   (set-frame-font "JetBrains Mono Regular 13" nil t)
   (load-theme 'sanityinc-tomorrow-day t)
   );; azul-win
 
+
  ((string-equal (system-name) "XPS-WIN")
-    ((string-equal system-type "windows-nt")
       (load-theme 'sanityinc-tomorrow-day t)
       (set-frame-font "JetBrains Mono Regular 13" nil t)
-    )
     );; XPS-WIN - Native
 
-  ((string-equal (system-name) "xps-win")
+
+ ((string-equal (system-name) "xps-win")
    (load-theme 'sanityinc-tomorrow-eighties t)
    (set-frame-font "Fira Code Retina 13" nil t)
-  );; xps-win (WSL)
+   );; xps-win (WSL)
 
-  ) ;; cond
+) ;; cond
