@@ -79,7 +79,21 @@
   );; azul-win
 
  ((string-equal (system-name) "XPS-WIN")
-  (load-theme 'sanityinc-tomorrow-day t)
-  (set-frame-font "JetBrains Mono Regular 13" nil t)
+  
+  (cond
+    ((string-equal system-type "gnu/linux")
+      (load-theme 'sanityinc-tomorrow-eighties t)
+    )
+
+    ((string-equal system-type "windows-nt")
+      (load-theme 'sanityinc-tomorrow-day t)
+      (set-frame-font "JetBrains Mono Regular 13" nil t)
+    )
+  )
+
+  
+  
+
+
   );; xps-win
  ) ;; cond
