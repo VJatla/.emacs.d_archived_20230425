@@ -1,4 +1,4 @@
-;;; Custom set variables to different file
+ ;;; Custom set variables to different file
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
@@ -79,21 +79,15 @@
   );; azul-win
 
  ((string-equal (system-name) "XPS-WIN")
-  
-  (cond
-    ((string-equal system-type "gnu/linux")
-      (load-theme 'sanityinc-tomorrow-eighties t)
-    )
-
     ((string-equal system-type "windows-nt")
       (load-theme 'sanityinc-tomorrow-day t)
       (set-frame-font "JetBrains Mono Regular 13" nil t)
     )
-  )
+    );; XPS-WIN - Native
 
-  
-  
+  ((string-equal (system-name) "xps-win")
+   (load-theme 'sanityinc-tomorrow-eighties t)
+   (set-frame-font "Fira Code Retina 13" nil t)
+  );; xps-win (WSL)
 
-
-  );; xps-win
- ) ;; cond
+  ) ;; cond
