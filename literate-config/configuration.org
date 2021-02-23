@@ -98,6 +98,11 @@ already installed.
       :ensure t)
   #+end_src
 * Productivity tools
+** org
+   + Org agenda
+     #+begin_src emacs-lisp
+       (setq org-agenda-include-diary t)
+     #+end_src
 ** Completion framework
    + Code completion
      #+begin_src emacs-lisp

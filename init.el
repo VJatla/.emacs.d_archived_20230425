@@ -35,6 +35,7 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; Load literate configuration file
+ (setq org-agenda-include-diary t)
 (cond
  ;; Windows settings
  ((string-equal system-type "windows-nt")
@@ -42,6 +43,7 @@
   ;; 1. wakatime
   ;; 2. anaconda-mode -- Python
   (setq org-agenda-files '("C:/Users/vj/Dropbox/org/tasks"))
+  (setq diary-file "C:/Users/vj/Dropbox/org/diary-file")
   (setenv "PATH" (concat (getenv "PATH") "C:/Users/vj/scoop/apps/python/current/Scripts"))
   (setq exec-path (append exec-path '("C:/Users/vj/scoop/apps/python/current/Scripts")))
 
@@ -53,6 +55,7 @@
   ;; 1. wakatime
   ;; 2. anaconda-mode
   (setq org-agenda-files '("~/Dropbox/org/tasks"))
+  (setq diary-file "~/Dropbox/org/diary-file")
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/.local/bin"))
   (setq exec-path (append exec-path '("/home/vj/.local/bin")))
   )
