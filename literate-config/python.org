@@ -1,3 +1,14 @@
+* conda
+    #+begin_src emacs-lisp
+	   (use-package conda
+	     :ensure t
+	     :config
+	     (custom-set-variables
+	      '(conda-anaconda-home "/home/vj/anaconda3"))
+	     (setq
+	      conda-env-home-directory (expand-file-name "~/anaconda3/") ;; as in previous example; not required
+	      conda-env-subdirectory "envs"))
+    #+end_src
 * anaconda-mode
   #+begin_src emacs-lisp
     (use-package anaconda-mode

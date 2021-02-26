@@ -58,13 +58,15 @@
   (setq diary-file "~/Dropbox/org/diary-file")
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/.local/bin"))
   (setq exec-path (append exec-path '("/home/vj/.local/bin")))
+  (setenv "PATH" (concat (getenv "PATH") ":/home/vj/anaconda3/bin"))
+  (setq exec-path (append exec-path '("/home/vj/anaconda3/bin")))
   )
  )
 
 ;; Loading literate config files
+(org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
 (org-babel-load-file "~/.emacs.d/literate-config/keybindings.org")
-(org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
 
 ;; Theme and fonts based on syste name
@@ -77,6 +79,14 @@
   (add-to-list 'default-frame-alist '(height . 140))
   (add-to-list 'default-frame-alist '(width . 100))
   );; ember
+
+
+  ((string-equal (system-name) "gojira")
+  (load-theme 'zenburn t)
+  (set-frame-font "Fantasque Sans Mono 13" nil t)
+  (add-to-list 'default-frame-alist '(height . 50))
+  (add-to-list 'default-frame-alist '(width . 100))
+  );; gojira-nx
 
 
  ((string-equal (system-name) "AZUL-WIN")
