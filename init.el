@@ -81,12 +81,24 @@
   );; ember
 
 
-  ((string-equal (system-name) "gojira")
-  (load-theme 'zenburn t)
+ ((string-equal (system-name) "gojira")
+  (use-package monokai-theme
+    :ensure t)
+  (load-theme 'monokai t)
   (set-frame-font "Fantasque Sans Mono 13" nil t)
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 100))
   );; gojira-nx
+
+
+  ((string-equal (system-name) "precision7920")
+   (use-package zenburn-theme
+     :ensure t)
+   (load-theme 'zenburn t)
+  (set-frame-font "DejaVu Sans Mono 11" nil t)
+  (add-to-list 'default-frame-alist '(height . 50))
+  (add-to-list 'default-frame-alist '(width . 100))
+  );; Precision7920 or RTX3
 
 
  ((string-equal (system-name) "AZUL-WIN")
