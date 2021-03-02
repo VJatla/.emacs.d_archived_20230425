@@ -82,9 +82,7 @@
 
 
  ((string-equal (system-name) "gojira")
-  (use-package monokai-theme
-    :ensure t)
-  (load-theme 'monokai t)
+   (load-theme 'zenburn t)
   (set-frame-font "Fantasque Sans Mono 13" nil t)
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 100))
@@ -92,9 +90,7 @@
 
 
   ((string-equal (system-name) "precision7920")
-   (use-package zenburn-theme
-     :ensure t)
-   (load-theme 'zenburn t)
+   (load-theme 'gruvbox-dark-soft t)
   (set-frame-font "DejaVu Sans Mono 11" nil t)
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 100))
