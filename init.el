@@ -104,13 +104,14 @@
 
 
  ((string-equal (system-name) "XPS-WIN")
-      (load-theme 'sanityinc-tomorrow-day t)
-      (set-frame-font "JetBrains Mono Regular 13" nil t)
-    );; XPS-WIN - Native
+  (load-theme 'spacemacs-light t)
+  (set-frame-font "JetBrains Mono Regular 13" nil t)
+  );; XPS-WIN - Native
+
 
 
  ((string-equal (system-name) "xps-win")
-   (load-theme 'sanityinc-tomorrow-eighties t)
+  (load-theme 'spacemacs-dark t)
    (set-frame-font "Fira Code Retina 13" nil t)
    );; xps-win (WSL)
 
