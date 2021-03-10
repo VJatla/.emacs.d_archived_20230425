@@ -101,6 +101,7 @@ already installed.
 ** org
    + Org agenda
      #+begin_src emacs-lisp
+       (setq org-todo-keywords '((sequence "TODO(t)" "IN-PROGRESS(p)" "WAITING(w)" "|" "DONE(d)")))
        (setq org-agenda-include-diary t)
      #+end_src
 ** Completion framework
