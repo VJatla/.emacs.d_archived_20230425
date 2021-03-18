@@ -64,9 +64,9 @@
  )
 
 ;; Loading literate config files
-(org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
 (org-babel-load-file "~/.emacs.d/literate-config/keybindings.org")
+(org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
 
 ;; Theme and fonts based on syste name
