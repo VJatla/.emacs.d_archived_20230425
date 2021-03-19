@@ -52,7 +52,7 @@
     (define-key modalka-mode-map (kbd "s")'move-beginning-of-line)
     (define-key modalka-mode-map (kbd "o") 'forward-word)
     (define-key modalka-mode-map (kbd "u") 'backward-word)
-    (define-key modalka-mode-map (kbd "w") 'other-window)
+    (define-key modalka-mode-map (kbd "w") 'ace-window)
     (define-key modalka-mode-map (kbd "SPC l") 'next-buffer)
     (define-key modalka-mode-map (kbd "SPC j") 'previous-buffer)
   #+end_src
@@ -72,6 +72,7 @@
 * commands
   #+begin_src emacs-lisp
     (define-key modalka-mode-map (kbd "f") 'xah-next-user-buffer)
+    (define-key modalka-mode-map (kbd "SPC b") 'ace-jump-buffer)
     (define-key modalka-mode-map (kbd "SPC k") 'kill-buffer)
     (define-key modalka-mode-map (kbd "SPC s") 'save-buffer)
     (define-key modalka-mode-map (kbd "SPC a") 'counsel-M-x)
@@ -90,7 +91,7 @@
     ;; Treemacs
     (use-package treemacs
 	  :bind(:map treemacs-mode-map
-		     ("w" . other-window)
+		     ("w" . ace-window)
 		     ("i" . treemacs-previous-line)
 		     ("k" . treemacs-next-line)))
 	(defun mode-based-kbd ()
