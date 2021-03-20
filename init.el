@@ -78,6 +78,8 @@
   (set-frame-font "Fantasque Sans Mono 14" nil t)
   (add-to-list 'default-frame-alist '(height . 140))
   (add-to-list 'default-frame-alist '(width . 100))
+  (setq org-agenda-files '("/home/vj/data/Dropbox/org/tasks"))
+  (setq diary-file "/home/vj/data/Dropbox/org/diary-file")
   );; ember
 
 
