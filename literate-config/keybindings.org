@@ -52,13 +52,14 @@
     (define-key modalka-mode-map (kbd "s")'move-beginning-of-line)
     (define-key modalka-mode-map (kbd "o") 'forward-word)
     (define-key modalka-mode-map (kbd "u") 'backward-word)
-    (define-key modalka-mode-map (kbd "w") 'ace-window)
+    (define-key modalka-mode-map (kbd "w") 'other-window)
     (define-key modalka-mode-map (kbd "SPC l") 'next-buffer)
     (define-key modalka-mode-map (kbd "SPC j") 'previous-buffer)
   #+end_src
 * Editing keys
   #+begin_src emacs-lisp
     (modalka-define-kbd "d" "DEL")
+    (modalka-define-kbd "n" "RET")
     (define-key modalka-mode-map (kbd "/") 'swiper)
     (define-key modalka-mode-map (kbd "SPC f") 'counsel-find-file)
     (modalka-define-kbd "v" "C-y") ;; paste
@@ -80,8 +81,8 @@
     (define-key modalka-mode-map (kbd "SPC o") 'org-agenda)
     (define-key modalka-mode-map (kbd "m") 'set-mark-command)
     (define-key modalka-mode-map (kbd "SPC h") 'highlight-symbol)
-    (define-key modalka-mode-map (kbd "n") 'highlight-symbol-next)
-    (define-key modalka-mode-map (kbd "N") 'highlight-symbol-prev)
+    (define-key modalka-mode-map (kbd "h") 'highlight-symbol-next)
+    (define-key modalka-mode-map (kbd "H") 'highlight-symbol-prev)
     (define-key modalka-mode-map (kbd "0") 'delete-window)
     (define-key modalka-mode-map (kbd "1") 'delete-other-windows)
     (define-key modalka-mode-map (kbd "3") 'split-window-right)

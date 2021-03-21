@@ -57,13 +57,14 @@ already installed.
 	 (gcmh-mode 1))
      #+end_src
 ** Look
-   + Theme - Starting with solarized
+   + 80 column line
+     #+BEGIN_SRC emacs-lisp
+       (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+     #+END_SRC
+   + Themes
      #+BEGIN_SRC emacs-lisp
        (use-package solarized-theme
-	 :ensure t
-	 :config
-	 ;;(load-theme 'solarized-dark t)
-	 )
+	 :ensure t)
        (use-package gruvbox-theme
 	 :ensure t)
        (use-package color-theme-sanityinc-tomorrow
