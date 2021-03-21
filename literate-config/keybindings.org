@@ -32,6 +32,9 @@
     (defun insert-space ()
       (interactive)
       (insert " "))
+    (defun insert-four-spaces ()
+      (interactive)
+      (insert "    "))
   #+end_src
 * Enter and exit modal editing mode
   #+begin_src emacs-lisp
@@ -60,6 +63,7 @@
   #+begin_src emacs-lisp
     (modalka-define-kbd "d" "DEL")
     (modalka-define-kbd "n" "RET")
+    (define-key modalka-mode-map (kbd "4") 'insert-four-spaces)
     (define-key modalka-mode-map (kbd "/") 'swiper)
     (define-key modalka-mode-map (kbd "SPC f") 'counsel-find-file)
     (modalka-define-kbd "v" "C-y") ;; paste
