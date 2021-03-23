@@ -104,11 +104,16 @@
 
 	   ;; python-mode
 	   ((string-equal major-mode "python-mode")
+	;; Useful functions
+	    (defun insert-python-breakpoint ()
+      (interactive)
+      (insert "import pdb; pdb.set_trace()"))
 	    (define-key modalka-mode-map (kbd ".") 'anaconda-mode-find-definitions)
 	    (define-key modalka-mode-map (kbd "SPC d") 'anaconda-mode-show-doc)
+	    (define-key modalka-mode-map (kbd "SPC b") 'insert-python-breakpoint)
 	    )
 
-       	   ;; dash-board
+	   ;; dash-board
 	   ((string-equal major-mode "dashboard-mode")
 	    (define-key modalka-mode-map (kbd "r") 'dashboard-jump-to-recent-files)
 	    (define-key modalka-mode-map (kbd "p") 'dashboard-jump-to-projects)

@@ -57,10 +57,6 @@ already installed.
 	 (gcmh-mode 1))
      #+end_src
 ** Look
-   + 80 column line
-     #+BEGIN_SRC emacs-lisp
-       (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
-     #+END_SRC
    + Themes
      #+BEGIN_SRC emacs-lisp
        (use-package solarized-theme
