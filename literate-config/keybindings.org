@@ -2,29 +2,30 @@
 * Packages
   + *keyfreq*
     #+begin_src emacs-lisp
-	  (use-package keyfreq
-	    :ensure t
-	    :config
-	    (keyfreq-mode 1)
-	    (keyfreq-autosave-mode 1)
-	    (setq keyfreq-exclude-commands '(self-insert-command org-cycle)))
+		      (use-package keyfreq
+			:ensure t
+			:config
+			(keyfreq-mode 1)
+			(keyfreq-autosave-mode 1)
+			(setq keyfreq-exclude-commands '(self-insert-command org-cycle)))
 
-	  (use-package key-chord
-	    :ensure t
-	    :config
-	    (setq key-chord-two-keys-delay 0.1)
-	    (key-chord-mode 1))
+		      (use-package key-chord
+			:ensure t
+			:config
+			(setq key-chord-two-keys-delay 0.1)
+			(key-chord-mode 1))
 
-	  (use-package modalka
-	    :ensure t
-	    :config
-	    (setq-default cursor-type '(bar . 3))
-	    (setq modalka-cursor-type 'box)
-(modalka-global-mode 1)
-	    (add-to-list 'modalka-excluded-modes '(magit-status-mode treemacs-mode)))
+		      (use-package modalka
+			:ensure t
+			:config
+			(setq-default cursor-type '(bar . 3))
+			(setq modalka-cursor-type 'box)
+	    (modalka-global-mode 1)
+      (add-to-list 'modalka-excluded-modes 'magit-status-mode)
+(add-to-list 'modalka-excluded-modes 'treemacs-mode))
 
-	  (use-package xah-fly-keys
-	    :ensure t)
+		      (use-package xah-fly-keys
+			:ensure t)
 
     #+end_src
 * Functions
