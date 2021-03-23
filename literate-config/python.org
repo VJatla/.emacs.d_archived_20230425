@@ -13,9 +13,6 @@
   #+begin_src emacs-lisp
     (use-package anaconda-mode
       :ensure t
-      :config
-      (add-hook 'python-mode-hook 'anaconda-mode)
-      (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
       )
   #+end_src
 * company-anaconda
@@ -33,12 +30,11 @@
 	  (concat "<" (substring description 0 1) ">"))))
     (setq company-anaconda-annotation-function 'my-annotation-function)
   #+end_src
-* flycheck
+* Python mode hooks
   #+begin_src emacs-lisp
-    (add-hook 'python-mode-hook 'flycheck-mode)
-  #+end_src
-* autopep8
-  #+begin_src emacs-lisp
-    (use-package py-autopep8
-      :ensure t)
+    (add-hook 'python-mode-hook 'company-mode)
+	(add-hook 'python-mode-hook 'anaconda-mode)             ;; anaconda
+	(add-hook 'python-mode-hook 'anaconda-eldoc-mode)       ;; anaconda-eldoc-mode
+(eval-after-load "company"
+ '(add-to-list 'company-backends 'company-anaconda))
   #+end_src

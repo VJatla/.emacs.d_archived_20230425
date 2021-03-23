@@ -116,9 +116,7 @@ already installed.
    + Code completion
      #+begin_src emacs-lisp
        (use-package company
-	 :ensure t
-	 :config
-	 (add-hook 'after-init-hook 'global-company-mode))
+	 :ensure t)
      #+end_src
    + Minibuffer completion
      #+begin_src emacs-lisp

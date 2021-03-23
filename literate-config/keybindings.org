@@ -1,30 +1,30 @@
+
 * Packages
   + *keyfreq*
     #+begin_src emacs-lisp
-      (use-package keyfreq
-	:ensure t
-	:config
-	(keyfreq-mode 1)
-	(keyfreq-autosave-mode 1)
-	(setq keyfreq-exclude-commands '(self-insert-command org-cycle)))
+	  (use-package keyfreq
+	    :ensure t
+	    :config
+	    (keyfreq-mode 1)
+	    (keyfreq-autosave-mode 1)
+	    (setq keyfreq-exclude-commands '(self-insert-command org-cycle)))
 
-      (use-package key-chord
-	:ensure t
-	:config
-	(setq key-chord-two-keys-delay 0.1)
-	(key-chord-mode 1))
+	  (use-package key-chord
+	    :ensure t
+	    :config
+	    (setq key-chord-two-keys-delay 0.1)
+	    (key-chord-mode 1))
 
-      (use-package modalka
-	:ensure t
-	:config
-	(setq-default cursor-type '(bar . 3))
-	(setq modalka-cursor-type 'box)
-	(add-hook 'text-mode-hook #'modalka-mode)
-	(add-hook 'prog-mode-hook #'modalka-mode)
-	(add-to-list 'modalka-excluded-modes 'magit-status-mode))
+	  (use-package modalka
+	    :ensure t
+	    :config
+	    (setq-default cursor-type '(bar . 3))
+	    (setq modalka-cursor-type 'box)
+(modalka-global-mode 1)
+	    (add-to-list 'modalka-excluded-modes '(magit-status-mode treemacs-mode)))
 
-      (use-package xah-fly-keys
-	:ensure t)
+	  (use-package xah-fly-keys
+	    :ensure t)
 
     #+end_src
 * Functions
@@ -76,12 +76,11 @@
   #+end_src
 * commands
   #+begin_src emacs-lisp
-    (define-key modalka-mode-map (kbd "f") 'xah-next-user-buffer)
-    (define-key modalka-mode-map (kbd "SPC b") 'ace-jump-buffer)
+    (define-key modalka-mode-map (kbd "f") 'ace-jump-buffer)
     (define-key modalka-mode-map (kbd "SPC k") 'kill-buffer)
     (define-key modalka-mode-map (kbd "SPC s") 'save-buffer)
     (define-key modalka-mode-map (kbd "SPC a") 'counsel-M-x)
-    (define-key modalka-mode-map (kbd "SPC c") 'comment-line)
+    (define-key modalka-mode-map (kbd ";") 'comment-line)
     (define-key modalka-mode-map (kbd "SPC o") 'org-agenda)
     (define-key modalka-mode-map (kbd "m") 'set-mark-command)
     (define-key modalka-mode-map (kbd "SPC h") 'highlight-symbol)
@@ -106,6 +105,12 @@
 	   ((string-equal major-mode "python-mode")
 	    (define-key modalka-mode-map (kbd ".") 'anaconda-mode-find-definitions)
 	    (define-key modalka-mode-map (kbd "SPC d") 'anaconda-mode-show-doc)
+	    )
+
+       	   ;; dash-board
+	   ((string-equal major-mode "dashboard-mode")
+	    (define-key modalka-mode-map (kbd "r") 'dashboard-jump-to-recent-files)
+	    (define-key modalka-mode-map (kbd "p") 'dashboard-jump-to-projects)
 	    )
 
 
