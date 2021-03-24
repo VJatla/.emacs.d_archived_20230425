@@ -32,9 +32,9 @@
   #+end_src
 * Python mode hooks
   #+begin_src emacs-lisp
-    (add-hook 'python-mode-hook 'company-mode)
-	(add-hook 'python-mode-hook 'anaconda-mode)             ;; anaconda
-	(add-hook 'python-mode-hook 'anaconda-eldoc-mode)       ;; anaconda-eldoc-mode
-(eval-after-load "company"
- '(add-to-list 'company-backends 'company-anaconda))
+	(add-hook 'python-mode-hook 'company-mode)
+	    (add-hook 'python-mode-hook 'anaconda-mode)             ;; anaconda
+	    (add-hook 'python-mode-hook 'anaconda-eldoc-mode)       ;; anaconda-eldoc-mode
+    (eval-after-load "company"
+     '(add-to-list 'company-backends 'company-anaconda))
   #+end_src
