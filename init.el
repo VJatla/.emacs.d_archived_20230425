@@ -69,7 +69,7 @@
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
 
-;; Theme and fonts based on syste name
+;; Theme and fonts based on system name
 (cond
 
 
@@ -85,7 +85,7 @@
 
  ((string-equal (system-name) "gojira")
    (load-theme 'zenburn t)
-  (set-frame-font "Fantasque Sans Mono 15" nil t)
+  (set-frame-font "Fantasque Sans Mono 16" nil t)
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 100))
   (setq org-agenda-files '("/mnt/data_ext4/Dropbox/org/tasks"))

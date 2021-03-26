@@ -92,6 +92,10 @@
     (define-key modalka-mode-map (kbd "1") 'delete-other-windows)
     (define-key modalka-mode-map (kbd "3") 'split-window-right)
   #+end_src
+* Projectile keys
+  #+begin_src emacs-lisp
+    (define-key modalka-mode-map (kbd "SPC p s") 'projectile-switch-project)
+  #+end_src
 * Major mode specific
   #+begin_src emacs-lisp
     ;; Treemacs
@@ -99,7 +103,8 @@
       :bind(:map treemacs-mode-map
 		 ("w" . ace-window)
 		 ("i" . treemacs-previous-line)
-		 ("k" . treemacs-next-line)))
+		 ("k" . treemacs-next-line)
+		 ("n" . treemacs-RET-action)))
 	(defun mode-based-kbd ()
 	  (define-key modalka-mode-map (kbd "SPC m") 'nil)
 	  (cond
