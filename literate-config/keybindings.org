@@ -29,12 +29,37 @@
     #+end_src
 * Functions
   #+begin_src emacs-lisp
-    (defun insert-space ()
-      (interactive)
-      (insert " "))
-    (defun insert-four-spaces ()
-      (interactive)
-      (insert "    "))
+	(defun insert-space ()
+	  (interactive)
+	  (insert " "))
+	(defun insert-four-spaces ()
+	  (interactive)
+	  (insert "    "))
+    (defun kill-current-line-and-copy (&optional n)
+      (interactive "p")
+      (save-excursion
+	(beginning-of-line)
+	(let ((kill-whole-line t))
+	  (kill-line n))))
+  #+end_src
+* Major mode specific
+  #+begin_src emacs-lisp
+      (defun mj-go-to-def ()
+	(interactive)
+	(cond
+
+	 ;; python-mode
+	 ((string-equal major-mode "python-mode")
+	  (anaconda-mode-find-definitions))
+
+
+	 ((string-equal major-mode "python-mode")
+	  (anaconda-mode-find-definitions))
+
+	 );; end of cond
+	);; end of defun
+
+    (define-key modalka-mode-map (kbd "m d") 'mj-go-to-def)
   #+end_src
 * Enter and exit modal editing mode
   #+begin_src emacs-lisp
@@ -61,7 +86,8 @@
   #+end_src
 * Editing keys
   #+begin_src emacs-lisp
-    (modalka-define-kbd "d" "DEL")
+    (modalka-define-kbd "b" "DEL")
+    (define-key modalka-mode-map (kbd "d l") 'kill-current-line-and-copy)
     (modalka-define-kbd "n" "RET")
     (define-key modalka-mode-map (kbd "SPC TAB") 'iedit-mode)
     (define-key modalka-mode-map (kbd "4") 'insert-four-spaces)
@@ -84,7 +110,7 @@
     (define-key modalka-mode-map (kbd "SPC a") 'counsel-M-x)
     (define-key modalka-mode-map (kbd ";") 'comment-line)
     (define-key modalka-mode-map (kbd "SPC o") 'org-agenda)
-    (define-key modalka-mode-map (kbd "m") 'set-mark-command)
+    (define-key modalka-mode-map (kbd ",") 'set-mark-command)
     (define-key modalka-mode-map (kbd "SPC h") 'highlight-symbol)
     (define-key modalka-mode-map (kbd "h") 'highlight-symbol-next)
     (define-key modalka-mode-map (kbd "H") 'highlight-symbol-prev)
@@ -105,22 +131,22 @@
 		 ("i" . treemacs-previous-line)
 		 ("k" . treemacs-next-line)
 		 ("n" . treemacs-RET-action)))
-	(defun mode-based-kbd ()
-	  (cond
+	;; (defun mode-based-kbd ()
+	;;   (cond
 
-	   ;; python-mode
-	   ((string-equal major-mode "python-mode")
-	    ;; Useful functions
-	    (defun insert-python-breakpoint ()
-	      (interactive)
-	      (insert "import pdb; pdb.set_trace()"))
-	    (define-key modalka-mode-map (kbd "SPC m d") 'anaconda-mode-find-definitions)
-	    (define-key modalka-mode-map (kbd "SPC m i") 'anaconda-mode-show-doc)
-	    (define-key modalka-mode-map (kbd "SPC m b") 'insert-python-breakpoint)
-	    (define-key modalka-mode-map (kbd "SPC m f") 'py-autopep8)
-	    (define-key modalka-mode-map (kbd "SPC m c") 'flycheck-mode)
-	    )
-	   );; End of cond
-	  )
-	(add-hook 'after-change-major-mode-hook 'mode-based-kbd)
+	;;    ;; python-mode
+	;;    ((string-equal major-mode "python-mode")
+	;; 	;; Useful functions
+	;; 	(defun insert-python-breakpoint ()
+	;; 	  (interactive)
+	;; 	  (insert "import pdb; pdb.set_trace()"))
+	;; 	(define-key modalka-mode-map (kbd "m d") 'anaconda-mode-find-definitions)
+	;; 	(define-key modalka-mode-map (kbd "m i") 'anaconda-mode-show-doc)
+	;; 	(define-key modalka-mode-map (kbd "m b") 'insert-python-breakpoint)
+	;; 	(define-key modalka-mode-map (kbd "m f") 'py-autopep8)
+	;; 	(define-key modalka-mode-map (kbd "m c") 'flycheck-mode)
+	;; 	)
+	;;    );; End of cond
+	;;   )
+	;; (add-hook 'after-change-major-mode-hook 'mode-based-kbd)
   #+end_src

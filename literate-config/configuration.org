@@ -38,6 +38,7 @@ already installed.
    Delete trailing whitespaces on save.
    #+begin_src emacs-lisp
      (add-hook 'before-save-hook 'delete-trailing-whitespace)
+     (setq show-trailing-whitespace t)
    #+end_src
 * Look and feel
 ** Feel
