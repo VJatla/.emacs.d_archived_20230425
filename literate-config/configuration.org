@@ -109,7 +109,7 @@ already installed.
 ** org
    + Org agenda
      #+begin_src emacs-lisp
-			  (setq org-todo-keywords '((sequence "TODO(t)" "IN-PROGRESS(p)" "WAITING(w)"  "|" "CANCELLED(c)" "DONE(d)")))
+			  (setq org-todo-keywords '((sequence "TODO(t)" "|" "IN-PROGRESS(p)" "WAITING(w)"  "|" "CANCELLED(c)" "DONE(d)")))
 			  (setq org-agenda-include-diary t)
 		   (use-package org-agenda-property
 	      :ensure t)

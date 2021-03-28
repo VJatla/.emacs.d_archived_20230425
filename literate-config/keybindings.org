@@ -81,8 +81,8 @@
     (define-key modalka-mode-map (kbd "o") 'forward-word)
     (define-key modalka-mode-map (kbd "u") 'backward-word)
     (define-key modalka-mode-map (kbd "w") 'other-window)
-    (define-key modalka-mode-map (kbd "SPC l") 'next-buffer)
-    (define-key modalka-mode-map (kbd "SPC j") 'previous-buffer)
+    (define-key modalka-mode-map (kbd "M-l") 'next-buffer)
+    (define-key modalka-mode-map (kbd "M-j") 'previous-buffer)
   #+end_src
 * Editing keys
   #+begin_src emacs-lisp
