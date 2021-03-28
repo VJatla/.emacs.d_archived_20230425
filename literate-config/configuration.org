@@ -88,6 +88,10 @@ already installed.
        (use-package all-the-icons
 	 :ensure t)
      #+end_src
+   + Line numbers
+     #+begin_src emacs-lisp
+(global-display-line-numbers-mode)
+     #+end_src
 * Language packages
   #+begin_src emacs-lisp
     (use-package markdown-mode
