@@ -38,12 +38,6 @@
 	(defun insert-one-spaces ()
 	  (interactive)
 	  (insert " "))
-    (defun kill-current-line-and-copy (&optional n)
-      (interactive "p")
-      (save-excursion
-	(beginning-of-line)
-	(let ((kill-whole-line t))
-	  (kill-line n))))
   #+end_src
 * Major mode specific
   #+begin_src emacs-lisp
@@ -90,8 +84,7 @@
   #+end_src
 * Editing keys
   #+begin_src emacs-lisp
-	(modalka-define-kbd "m" "DEL")
-	(define-key modalka-mode-map (kbd "d l") 'kill-current-line-and-copy)
+	(modalka-define-kbd "d" "DEL")
 	(modalka-define-kbd "n" "RET")
 	(define-key modalka-mode-map (kbd "SPC TAB") 'iedit-mode)
 	(define-key modalka-mode-map (kbd "4") 'insert-four-spaces)

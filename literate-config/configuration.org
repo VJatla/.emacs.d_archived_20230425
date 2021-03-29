@@ -90,7 +90,8 @@ already installed.
      #+end_src
    + Line numbers
      #+begin_src emacs-lisp
-(global-display-line-numbers-mode)
+(global-display-line-numbers-mode t)
+(setq display-line-numbers "%4d \u2502 ")
      #+end_src
 * Language packages
   #+begin_src emacs-lisp
@@ -183,13 +184,12 @@ already installed.
        (use-package magit
 	 :ensure t)
      #+end_src
-   + git-gutter-fringe
+   + git-gutter
      #+begin_src emacs-lisp
        (use-package git-gutter
 	 :ensure t
 	 :config
-	 (add-hook 'prog-mode-hook 'git-gutter-mode)
-	 (add-hook 'text-mode-hook 'git-gutter-mode))
+	 (global-git-gutter-mode +1))
      #+end_src
 ** Dired
    #+begin_src emacs-lisp
@@ -226,5 +226,3 @@ already installed.
      (use-package ace-window
   :ensure t)
    #+end_src
-
-   #+RESULTS:
