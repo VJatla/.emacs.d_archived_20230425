@@ -101,6 +101,11 @@ already installed.
       :ensure t)
   #+end_src
 * Productivity tools
+** Paranthesis
+   #+begin_src emacs-lisp
+	(use-package smartparens
+	  :ensure t)
+   #+end_src
 ** buffer
    #+begin_src emacs-lisp
 	(use-package ace-jump-buffer
@@ -127,21 +132,23 @@ already installed.
      #+end_src
    + Minibuffer completion
      #+begin_src emacs-lisp
-       (use-package smex
-	 :ensure t
-	 :config
-	 (smex-initialize))
-       (use-package ivy
-	 :ensure t
-	 :config
-	 (ivy-mode 1)
-	 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
-	 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-	 (global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
-	 (global-set-key (kbd "<f1> l") 'counsel-find-library)
-	 (global-set-key "\C-s" 'swiper)
-	 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-	 )
+		   (use-package smex
+		     :ensure t
+		     :config
+		     (smex-initialize))
+		   (use-package ivy
+		     :ensure t
+		     :config
+		     (ivy-mode 1)
+		     (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+		     (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+		     (global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
+		     (global-set-key (kbd "<f1> l") 'counsel-find-library)
+		     (global-set-key "\C-s" 'swiper)
+		     (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+		     )
+	    (use-package counsel-projectile
+	      :ensure t)
      #+end_src
 ** Syntax checking framework
    #+begin_src emacs-lisp

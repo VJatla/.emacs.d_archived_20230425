@@ -29,15 +29,28 @@
     #+end_src
 * Functions
   #+begin_src emacs-lisp
-	(defun insert-space ()
-	  (interactive)
-	  (insert " "))
-	(defun insert-four-spaces ()
-	  (interactive)
-	  (insert "    "))
-	(defun insert-one-spaces ()
-	  (interactive)
-	  (insert " "))
+	  (defun insert-four-spaces ()
+	    (interactive)
+	    (insert "    "))
+	  (defun insert-one-spaces ()
+	    (interactive)
+	    (insert " "))
+
+      (defun vj-change-enclosing ()
+	(interactive)
+	(sp-change-enclosing)
+	(modalka-mode -1))
+
+      (defun git-add-current-buffer ()
+	"call 'git add [current-buffer]'"
+	(interactive)
+	(let* ((buffile (buffer-file-name))
+	       (output (shell-command-to-string
+			(concat "git add " (buffer-file-name)))))
+	  (message (if (not (string= output ""))
+		       output
+		     (concat "Added " buffile)))))
+
   #+end_src
 * Major mode specific
   #+begin_src emacs-lisp
@@ -61,7 +74,7 @@
 * Enter and exit modal editing mode
   #+begin_src emacs-lisp
 	(key-chord-define-global "99" 'modalka-mode)
-	(define-key modalka-mode-map (kbd "g") 'god-execute-with-current-bindings)
+	(define-key modalka-mode-map (kbd "G") 'god-execute-with-current-bindings)
     (define-key modalka-mode-map (kbd "9") 'modalka-mode)
 	(global-set-key (kbd "<f8>") 'modalka-mode)
   #+end_src
@@ -90,7 +103,9 @@
 	(define-key modalka-mode-map (kbd "4") 'insert-four-spaces)
     (define-key modalka-mode-map (kbd "f") 'insert-one-spaces)
 	(define-key modalka-mode-map (kbd "/") 'swiper)
-	(define-key modalka-mode-map (kbd "SPC f") 'counsel-find-file)
+	(define-key modalka-mode-map (kbd "SPC f") 'counsel-projectile-find-file)
+	(define-key modalka-mode-map (kbd "SPC F") 'counsel-find-file)
+	(define-key modalka-mode-map (kbd "SPC c") 'vj-change-enclosing)
 	(modalka-define-kbd "v" "C-y") ;; paste
 	(modalka-define-kbd "c" "M-w") ;; copy
 	(define-key modalka-mode-map (kbd "SPC v") 'counsel-yank-pop)
@@ -105,6 +120,7 @@
     (define-key modalka-mode-map (kbd "b b") 'ace-jump-buffer)
     (define-key modalka-mode-map (kbd "SPC k") 'kill-buffer)
     (define-key modalka-mode-map (kbd "SPC s") 'save-buffer)
+    (define-key modalka-mode-map (kbd "SPC S") 'save-some-buffers)
     (define-key modalka-mode-map (kbd "SPC a") 'counsel-M-x)
     (define-key modalka-mode-map (kbd ";") 'comment-line)
     (define-key modalka-mode-map (kbd "SPC o") 'org-agenda)
@@ -115,6 +131,8 @@
     (define-key modalka-mode-map (kbd "0") 'delete-window)
     (define-key modalka-mode-map (kbd "1") 'delete-other-windows)
     (define-key modalka-mode-map (kbd "3") 'split-window-right)
+    (define-key modalka-mode-map (kbd "SPC g a") 'git-add-current-buffer)
+    (define-key modalka-mode-map (kbd "SPC g g") 'magit-status)
   #+end_src
 * Projectile keys
   #+begin_src emacs-lisp
