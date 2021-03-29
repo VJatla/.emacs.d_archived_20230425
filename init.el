@@ -108,8 +108,8 @@
 
 
  ((string-equal (system-name) "XPS-WIN")
-  (load-theme 'spacemacs-light t)
-  (set-frame-font "JetBrains Mono Regular 11" nil t)
+  (load-theme 'sanityinc-tomorrow-day t)
+  (set-frame-font "JetBrains Mono Regular 12" nil t)
   );; XPS-WIN - Native
 
 
