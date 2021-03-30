@@ -66,6 +66,14 @@ already installed.
 	 :ensure t)
        (use-package color-theme-sanityinc-tomorrow
 	 :ensure t)
+       (use-package moe-theme
+	 :ensure t)
+       (use-package monokai-pro-theme
+	 :ensure t)
+       (use-package sublime-themes
+	 :ensure t)
+       (use-package jazz-theme
+	 :ensure t)
      #+END_SRC
    + Startup screen
      #+BEGIN_SRC emacs-lisp

@@ -93,8 +93,8 @@
   );; gojira-nx
 
 
-  ((string-equal (system-name) "precision7920")
-   (load-theme 'gruvbox-dark-soft t)
+ ((string-equal (system-name) "precision7920")
+   (load-theme 'jazz t)
   (set-frame-font "DejaVu Sans Mono 11" nil t)
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 100))
