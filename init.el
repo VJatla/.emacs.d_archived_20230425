@@ -94,7 +94,7 @@
 
 
  ((string-equal (system-name) "precision7920")
-   (load-theme 'jazz t)
+  (load-theme 'solarized-dark t)
   (set-frame-font "DejaVu Sans Mono 11" nil t)
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 100))
