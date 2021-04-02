@@ -60,21 +60,25 @@ already installed.
 ** Look
    + Themes
      #+BEGIN_SRC emacs-lisp
-       (use-package solarized-theme
-	 :ensure t)
-       (use-package gruvbox-theme
-	 :ensure t)
-       (use-package color-theme-sanityinc-tomorrow
-	 :ensure t)
-       (use-package moe-theme
-	 :ensure t)
-       (use-package monokai-pro-theme
-	 :ensure t)
-       (use-package sublime-themes
-	 :ensure t)
-       (use-package jazz-theme
-	 :ensure t)
-       (use-package material-theme
+	      (use-package solarized-theme
+		:ensure t)
+	      (use-package gruvbox-theme
+		:ensure t)
+	      (use-package color-theme-sanityinc-tomorrow
+		:ensure t)
+	      (use-package moe-theme
+		:ensure t)
+	      (use-package monokai-pro-theme
+		:ensure t)
+	      (use-package sublime-themes
+		:ensure t)
+	      (use-package jazz-theme
+		:ensure t)
+	      (use-package material-theme
+		:ensure t)
+	      (use-package kaolin-themes
+		:ensure t)
+       (use-package apropospriate-theme
 	 :ensure t)
      #+END_SRC
    + Startup screen

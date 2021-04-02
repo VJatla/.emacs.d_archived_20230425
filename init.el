@@ -2,6 +2,13 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+;; Disable themes
+(defun disable-all-themes ()
+  "disable all active themes."
+  (dolist (i custom-enabled-themes)
+    (disable-theme i)))
+(disable-all-themes)
+
 ;;; Package repositories
 (setq package-archives
       '(
@@ -107,7 +114,8 @@
   );; azul-win
 
  ((string-equal (system-name) "xps")
-  (load-theme 'material t)
+  (disable-all-themes)
+  (load-theme 'apropospriate-dark t)
   (add-to-list 'default-frame-alist
                '(font . "Source Code Pro-14"))
   );; xps
