@@ -106,6 +106,12 @@
   (load-theme 'sanityinc-tomorrow-day t)
   );; azul-win
 
+ ((string-equal (system-name) "xps")
+  (load-theme 'material t)
+  (add-to-list 'default-frame-alist
+               '(font . "Source Code Pro-14"))
+  );; xps
+
 
  ((string-equal (system-name) "XPS-WIN")
   (load-theme 'sanityinc-tomorrow-day t)
