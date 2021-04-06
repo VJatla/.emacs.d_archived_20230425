@@ -37,7 +37,6 @@ already installed.
 ** Whitespace
    Delete trailing whitespaces on save.
    #+begin_src emacs-lisp
-     (add-hook 'before-save-hook 'delete-trailing-whitespace)
      (setq show-trailing-whitespace t)
    #+end_src
 * Look and feel
@@ -107,12 +106,15 @@ already installed.
 (global-display-line-numbers-mode t)
 (setq display-line-numbers "%4d \u2502 ")
      #+end_src
-* Language packages
+* markdown
   #+begin_src emacs-lisp
-    (use-package markdown-mode
-      :ensure t)
-    (use-package markdown-mode+
-      :ensure t)
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
   #+end_src
 * Productivity tools
 ** Paranthesis

@@ -92,11 +92,10 @@
 
  ((string-equal (system-name) "gojira")
    (load-theme 'zenburn t)
-  (set-frame-font "Fantasque Sans Mono 16" nil t)
-  (add-to-list 'default-frame-alist '(height . 50))
-  (add-to-list 'default-frame-alist '(width . 100))
   (setq org-agenda-files '("/mnt/data_ext4/Dropbox/org/tasks"))
   (setq diary-file "/mnt/data_ext4/Dropbox/org/diary-file")
+  (add-to-list 'default-frame-alist
+               '(font . "Input Mono-11"))
   );; gojira-nx
 
 
