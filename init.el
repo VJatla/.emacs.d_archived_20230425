@@ -1,4 +1,5 @@
  ;;; Custom set variables to different file
+(setq package-check-signature nil)
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
@@ -120,18 +121,11 @@
   );; xps
 
 
- ((string-equal (system-name) "XPS-WIN")
-  (load-theme 'sanityinc-tomorrow-day t)
-    (add-to-list 'default-frame-alist
-             '(font . "JetBrains Mono Regular-12"))
-  );; XPS-WIN - Native
-
-
 
  ((string-equal (system-name) "xps-win")
   (load-theme 'sanityinc-tomorrow-eighties t)
   (add-to-list 'default-frame-alist
-             '(font . "Fira Code Retina-14"))
+             '(font . "Fira Code Retina-12"))
    );; xps-win (WSL)
 
 ) ;; cond
