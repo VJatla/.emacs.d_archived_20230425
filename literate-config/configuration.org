@@ -61,6 +61,8 @@ already installed.
      #+BEGIN_SRC emacs-lisp
 	      (use-package solarized-theme
 		:ensure t)
+	      (use-package dracula-theme
+		:ensure t)
 	      (use-package gruvbox-theme
 		:ensure t)
 	      (use-package color-theme-sanityinc-tomorrow

@@ -14,7 +14,7 @@
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(package-selected-packages
-   '(markdown-mode apropospriate-theme kaolin-themes material-theme org zenburn-theme xah-fly-keys which-key wakatime-mode use-package treemacs sublime-themes solarized-theme smooth-scrolling smex smartparens py-autopep8 org-agenda-property monokai-pro-theme moe-theme modalka magit keyfreq key-chord jazz-theme iedit highlight-symbol gruvbox-theme git-gutter gcmh flycheck-pos-tip flycheck-popup-tip direx dashboard csv-mode counsel-projectile conda company-anaconda color-theme-sanityinc-tomorrow cfml-mode all-the-icons ace-jump-buffer))
+   '(anaconda-mode flycheck ivy company markdown-mode apropospriate-theme kaolin-themes material-theme org zenburn-theme xah-fly-keys which-key wakatime-mode use-package treemacs sublime-themes solarized-theme smooth-scrolling smex smartparens py-autopep8 org-agenda-property monokai-pro-theme moe-theme modalka magit keyfreq key-chord jazz-theme iedit highlight-symbol gruvbox-theme git-gutter gcmh flycheck-pos-tip flycheck-popup-tip direx dashboard csv-mode counsel-projectile conda company-anaconda color-theme-sanityinc-tomorrow cfml-mode all-the-icons ace-jump-buffer))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
