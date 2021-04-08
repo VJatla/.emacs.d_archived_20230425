@@ -93,7 +93,7 @@
 
  ((string-equal (system-name) "gojira")
    (load-theme 'dracula t)
-  (setq org-agenda-files '("/mnt/data_ext4/Dropbox/org/tasks"))
+  (setq org-agenda-files '("/home/vj/data/Dropbox/org/tasks"))
   (setq diary-file "/mnt/data_ext4/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
                '(font . "Fantasque Sans Mono-13"))
