@@ -107,22 +107,12 @@
   (add-to-list 'default-frame-alist '(width . 100))
   );; Precision7920 or RTX3
 
-
- ((string-equal (system-name) "AZUL-WIN")
-  (set-frame-font "JetBrains Mono Regular 13" nil t)
-  (load-theme 'sanityinc-tomorrow-day t)
-  );; azul-win
-
- ((string-equal (system-name) "xps")
-  (disable-all-themes)
-  (load-theme 'apropospriate-dark t)
-  (add-to-list 'default-frame-alist
-               '(font . "Source Code Pro-14"))
-  );; xps
-
-
-
  ((string-equal (system-name) "xps-win")
+  (load-theme 'sanityinc-tomorrow-eighties t)
+  (add-to-list 'default-frame-alist
+             '(font . "Fira Code Retina-12"))
+  );; xps-win (WSL)
+  ((string-equal (system-name) "XPS-WIN")
   (load-theme 'sanityinc-tomorrow-eighties t)
   (add-to-list 'default-frame-alist
              '(font . "Fira Code Retina-12"))

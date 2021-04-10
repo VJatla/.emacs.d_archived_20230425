@@ -4,4 +4,5 @@
 !*.gitignore
 !ditaa/
 !literate-config/
+!reveal.js/
 !README.md
