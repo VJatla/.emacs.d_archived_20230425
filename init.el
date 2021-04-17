@@ -1,4 +1,4 @@
- ;;; Custom set variables to different file
+;;; Custom set variables to different file
 (setq package-check-signature nil)
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
@@ -54,9 +54,23 @@
   (setq diary-file "C:/Users/vj/Dropbox/org/diary-file")
   (setenv "PATH" (concat (getenv "PATH") "C:/Users/vj/scoop/apps/python/current/Scripts"))
   (setq exec-path (append exec-path '("C:/Users/vj/scoop/apps/python/current/Scripts")))
-
-
   )
+
+ ;; Darwin
+ ((string-equal system-type "darwin")
+
+  (setq org-agenda-files '("/Users/vj/Dropbox/org/tasks"))
+  (setq diary-file "/Users/vj/Dropbox/org/diary-file")
+  (custom-set-variables '(wakatime-cli-path "/opt/anaconda3/bin/wakatime"))
+  
+  (add-to-list 'default-frame-alist
+               '(font . "Menlo-13"))
+  (use-package color-theme-sanityinc-tomorrow
+    :ensure t)
+  (load-theme 'sanityinc-tomorrow-day t)
+  
+  )
+ 
  ;; Linux settings
  ((string-equal system-type "gnu/linux")
   ;; The following path is necessary to get following working,
