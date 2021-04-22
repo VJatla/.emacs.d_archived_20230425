@@ -118,7 +118,7 @@
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "13"))
+               '(font . "JetBrains Mono Medium-14"))
   );; gojira-linux
 
 
