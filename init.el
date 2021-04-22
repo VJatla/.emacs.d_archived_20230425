@@ -113,9 +113,17 @@
                '(font . "Fantasque Sans Mono-13"))
   );; gojira-linux
 
+  ((string-equal (system-name) "xps")
+   (load-theme 'solarized-dark t)
+  (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
+  (setq diary-file "/home/vj/Dropbox/org/diary-file")
+  (add-to-list 'default-frame-alist
+               '(font . "13"))
+  );; gojira-linux
+
 
  ((string-equal (system-name) "precision7920")
-  (load-theme 'solarized-dark t)
+  (load-theme 'tsdh-dark t)
   (set-frame-font "DejaVu Sans Mono 11" nil t)
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 100))
