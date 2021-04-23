@@ -90,6 +90,7 @@
 (org-babel-load-file "~/.emacs.d/literate-config/keybindings.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
+(org-babel-load-file "~/.emacs.d/literate-config/latex.org")
 
 ;; Theme and fonts based on system name
 (cond
@@ -118,7 +119,7 @@
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "JetBrains Mono Medium-14"))
+               '(font . "JetBrains Mono Medium-13"))
   );; gojira-linux
 
 

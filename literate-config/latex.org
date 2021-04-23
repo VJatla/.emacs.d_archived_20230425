@@ -1,0 +1,6 @@
+* AUCTEX
+  #+begin_src emacs-lisp
+    (setq TeX-auto-save t)
+    (setq TeX-parse-self t)
+    (setq-default TeX-master nil)
+  #+end_src
