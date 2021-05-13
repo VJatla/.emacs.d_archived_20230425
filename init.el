@@ -76,7 +76,6 @@
   ;; The following path is necessary to get following working,
   ;; 1. wakatime
   ;; 2. anaconda-mode
-  (setq org-agenda-files '("~/Dropbox/org/tasks"))
   (setq diary-file "~/Dropbox/org/diary-file")
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/.local/bin"))
   (setq exec-path (append exec-path '("/home/vj/.local/bin")))
@@ -108,7 +107,7 @@
 
  ((string-equal (system-name) "gojira")
    (load-theme 'dracula t)
-  (setq org-agenda-files '("/home/vj/data/Dropbox/org/tasks"))
+   (setq org-agenda-files (directory-files-recursively "/home/vj/data/Dropbox/org/tasks/" "\\.org$"))
   (setq diary-file "/mnt/data_ext4/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
                '(font . "Fantasque Sans Mono-13"))
