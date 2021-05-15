@@ -110,7 +110,7 @@
     (modalka-define-kbd "\\" "C-M-\\")
      (modalka-define-kbd "d" "DEL")
      (modalka-define-kbd "n" "RET")
-     (define-key modalka-mode-map (kbd "SPC TAB") 'iedit-mode)
+     (define-key modalka-mode-map (kbd "SPC 9") 'iedit-mode)
      (define-key modalka-mode-map (kbd "4") 'insert-four-spaces)
      (define-key modalka-mode-map (kbd "f") 'insert-one-spaces)
      (define-key modalka-mode-map (kbd "/") 'swiper)
