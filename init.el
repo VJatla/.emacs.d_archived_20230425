@@ -50,10 +50,14 @@
   ;; The following path is necessary to get following working,
   ;; 1. wakatime
   ;; 2. anaconda-mode -- Python
+  (setq wakatime-python-bin '("C:/msys64/mingw64/bin/python.exe"))
+  (setq wakatime-cli-path '("C:/msys64/mingw64/bin/wakatime.exe"))
+  
   (setq org-agenda-files '("C:/Users/vj/Dropbox/org/tasks"))
   (setq diary-file "C:/Users/vj/Dropbox/org/diary-file")
-  (setenv "PATH" (concat (getenv "PATH") "C:/Users/vj/scoop/apps/python/current/Scripts"))
-  (setq exec-path (append exec-path '("C:/Users/vj/scoop/apps/python/current/Scripts")))
+  
+  (setenv "PATH" (concat (getenv "PATH") "C:/msys64/mingw64/bin/"))
+  (setq exec-path (append exec-path '("C:/msys64/mingw64/bin/")))
   )
 
  ;; Darwin
@@ -93,21 +97,9 @@
 
 ;; Theme and fonts based on system name
 (cond
-
-
- ((string-equal (system-name) "ember")
-  (load-theme 'gruvbox-dark-soft t)
-  (set-frame-font "Fantasque Sans Mono 14" nil t)
-  (add-to-list 'default-frame-alist '(height . 140))
-  (add-to-list 'default-frame-alist '(width . 100))
-  (setq org-agenda-files '("/home/vj/data/Dropbox/org/tasks"))
-  (setq diary-file "/home/vj/data/Dropbox/org/diary-file")
-  );; ember
-
-
  ((string-equal (system-name) "gojira")
    (load-theme 'dracula t)
-   (setq org-agenda-files (directory-files-recursively "/home/vj/data/Dropbox/org/tasks/" "\\.org$"))
+   (setq org-agenda-files (directory-files-recursively "/home/vj/data/Dropbox/org/tasks/" "/\.org$"))
   (setq diary-file "/mnt/data_ext4/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
                '(font . "Fantasque Sans Mono-13"))
@@ -132,12 +124,22 @@
  ((string-equal (system-name) "xps-win")
   (load-theme 'sanityinc-tomorrow-eighties t)
   (add-to-list 'default-frame-alist
-             '(font . "Fira Code Retina-12"))
+             '(font . "Consolas-15"))
   );; xps-win (WSL)
+ 
   ((string-equal (system-name) "XPS-WIN")
   (load-theme 'sanityinc-tomorrow-eighties t)
   (add-to-list 'default-frame-alist
-             '(font . "Fira Code Retina-12"))
-   );; xps-win (WSL)
+             '(font . "Consolas-15"))
+  );; xps-win (WSL)
 
+  ((string-equal (system-name) "EMBER")
+   (load-theme 'gruvbox-dark-soft t)
+   (add-to-list 'default-frame-alist
+		'(font . "Consolas-11"))
+   (setq wakatime-python-bin '("C:/msys64/mingw64/bin/python.exe"))
+   (setq wakatime-cli-path '("C:/msys64/mingw64/bin/wakatime.exe"))
+   );; EMBER - Windows
+
+  
 ) ;; cond
