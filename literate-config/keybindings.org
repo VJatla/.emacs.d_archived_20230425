@@ -21,6 +21,8 @@
 	(setq modalka-cursor-type 'box)
 	(modalka-global-mode 1)
 	(add-to-list 'modalka-excluded-modes 'magit-status-mode)
+	(add-to-list 'modalka-excluded-modes 'package-menu-mode)
+    	(add-to-list 'modalka-excluded-modes 'dashboard-mode)
 	(add-to-list 'modalka-excluded-modes 'treemacs-mode))
 
       (use-package xah-fly-keys
@@ -119,11 +121,10 @@
      (define-key modalka-mode-map (kbd "SPC c") 'vj-change-enclosing)
      (modalka-define-kbd "v" "C-y") ;; paste
      (modalka-define-kbd "c" "M-w") ;; copy
-     (define-key modalka-mode-map (kbd "SPC v") 'counsel-yank-pop)
-     (modalka-define-kbd "c" "M-w") ;; copy
      (modalka-define-kbd "x" "C-w") ;; cut
+     (define-key modalka-mode-map (kbd "SPC v") 'counsel-yank-pop)
      (modalka-define-kbd "-" "C-_") ;; redo/undo
-     (modalka-define-kbd "r" "M-%") ;; rename
+     (modalka-define-kbd "r" "M-%") ;; replace
   #+end_src
 * commands
   #+begin_src emacs-lisp
