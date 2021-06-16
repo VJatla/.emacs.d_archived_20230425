@@ -135,6 +135,13 @@ already installed.
        :ensure t)
    #+end_src
 ** org
+   + Make org mode look good
+     #+begin_src emacs-lisp
+       (use-package org-beautify-theme
+	 :ensure t)
+       (use-package org-bullets
+	 :ensure t)
+     #+end_src
    + Org agenda
      #+begin_src emacs-lisp
        (setq org-todo-keywords '((sequence "TODO(t)" "|" "IN-PROGRESS(p)" "WAITING(w)"  "|" "CANCELLED(c)" "DONE(d)")))
@@ -150,6 +157,17 @@ already installed.
        (require 'ox-reveal)
        (setq Org-Reveal-root "file://~/.emacs.d/reveal.js")
        (setq Org-Reveal-title-slide nil)
+     #+end_src
+   + Calfw
+     #+begin_src emacs-lisp
+       (use-package calfw
+	 :ensure t
+	 :config
+	 (require 'calfw))
+(use-package calfw-org
+	 :ensure t
+	 :config
+	 (require 'calfw-org))
      #+end_src
 ** Completion framework
    + Code completion

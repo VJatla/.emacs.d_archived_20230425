@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
+ '(beacon-color "#F8BBD0")
  '(company-quickhelp-color-background "#4F4F4F")
  '(company-quickhelp-color-foreground "#DCDCCC")
  '(compilation-message-face 'default)
@@ -14,9 +15,15 @@
  '(cua-overwrite-cursor-color "#F0DFAF")
  '(cua-read-only-cursor-color "#7F9F7F")
  '(custom-safe-themes
-   '("e266d44fa3b75406394b979a3addc9b7f202348099cfde69e74ee6432f781336" "d14f3df28603e9517eb8fb7518b662d653b25b26e83bd8e129acea042b774298" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
+   '("9685cefcb4efd32520b899a34925c476e7920725c8d1f660e7336f37d6d95764" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "c3e6b52caa77cb09c049d3c973798bc64b5c43cc437d449eacf35b3e776bf85c" "70f5a47eb08fe7a4ccb88e2550d377ce085fedce81cf30c56e3077f95a2909f2" "5a0eee1070a4fc64268f008a4c7abfda32d912118e080e18c3c865ef864d1bea" "fc6697788f00629cd01f4d2cc23f1994d08edb3535e4c0facef6b7247b41f5c7" "2b9abbc1bb6460aa0eb9d039a27adf2e545f73021c69c22cc3c52988a386452f" "fa96a61e4eca5f339ad7f1f3442cb5a83696f6a45d9fe2a7bf3b75fc6912bb91" "e266d44fa3b75406394b979a3addc9b7f202348099cfde69e74ee6432f781336" "d14f3df28603e9517eb8fb7518b662d653b25b26e83bd8e129acea042b774298" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" default))
+ '(diff-hl-show-hunk-posframe-internal-border-color "#ffffffffffff")
+ '(evil-emacs-state-cursor '("#D50000" hbar))
+ '(evil-insert-state-cursor '("#D50000" bar))
+ '(evil-normal-state-cursor '("#F57F17" box))
+ '(evil-visual-state-cursor '("#66BB6A" box))
  '(fci-rule-color "#383838")
  '(highlight-changes-colors '("#DC8CC3" "#bbb0cb"))
+ '(highlight-indent-guides-auto-enabled nil)
  '(highlight-symbol-colors
    '("#681063eb5999" "#54db645164d1" "#6098535f5323" "#5c2959a95fa1" "#4edf55f24ea4" "#64de597a525e" "#530160d26158"))
  '(highlight-symbol-foreground-color "#FFFFEF")
@@ -40,12 +47,13 @@
  '(org-agenda-files
    '("/home/vj/data/Dropbox/org/tasks/EMED/EMED.org" "/home/vj/data/Dropbox/org/tasks/Home/Home.org" "/home/vj/data/Dropbox/org/tasks/Research/HARP.org" "/home/vj/data/Dropbox/org/tasks/Research/MedVids.org" "/home/vj/data/Dropbox/org/tasks/Vj/Study.org" "/home/vj/data/Dropbox/org/tasks/.#Meetings.org" "/home/vj/data/Dropbox/org/tasks/Meetings.org"))
  '(package-selected-packages
-   '(multi-web-mode ox-reveal dracula-theme ivy-avy god-mode markdown-toc anaconda-mode flycheck ivy company markdown-mode apropospriate-theme kaolin-themes material-theme org zenburn-theme xah-fly-keys which-key wakatime-mode use-package treemacs sublime-themes solarized-theme smooth-scrolling smex smartparens py-autopep8 org-agenda-property monokai-pro-theme moe-theme modalka magit keyfreq key-chord jazz-theme iedit highlight-symbol gruvbox-theme git-gutter gcmh flycheck-pos-tip flycheck-popup-tip direx dashboard csv-mode counsel-projectile conda company-anaconda color-theme-sanityinc-tomorrow cfml-mode all-the-icons ace-jump-buffer))
+   '(org-bullets org-beautify-theme calfw-org calfw tango-2-theme tango-plus-theme tangotango-theme multi-web-mode ox-reveal dracula-theme ivy-avy god-mode markdown-toc anaconda-mode flycheck ivy company markdown-mode apropospriate-theme kaolin-themes material-theme org zenburn-theme xah-fly-keys which-key wakatime-mode use-package treemacs sublime-themes solarized-theme smooth-scrolling smex smartparens py-autopep8 org-agenda-property monokai-pro-theme moe-theme modalka magit keyfreq key-chord jazz-theme iedit highlight-symbol gruvbox-theme git-gutter gcmh flycheck-pos-tip flycheck-popup-tip direx dashboard csv-mode counsel-projectile conda company-anaconda color-theme-sanityinc-tomorrow cfml-mode all-the-icons ace-jump-buffer))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(pos-tip-background-color "#4F4F4F")
  '(pos-tip-foreground-color "#FFFFEF")
  '(safe-local-variable-values '((TeX-master . t)))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#7F9F7F" "#4F4F4F" 0.2))
+ '(tabbar-background-color "#ffffffffffff")
  '(term-default-bg-color "#3F3F3F")
  '(term-default-fg-color "#DCDCCC")
  '(vc-annotate-background "#2B2B2B")

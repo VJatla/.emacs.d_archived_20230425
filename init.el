@@ -106,7 +106,7 @@
   );; gojira-linux
 
   ((string-equal (system-name) "xps")
-   (load-theme 'solarized-dark t)
+   (load-theme 'apropospriate-dark t)
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
@@ -142,4 +142,6 @@
    );; EMBER - Windows
 
   
-) ;; cond
+  ) ;; cond
+
+(load-theme 'org-beautify t)
