@@ -141,7 +141,15 @@
    (setq wakatime-cli-path '("C:/msys64/mingw64/bin/wakatime.exe"))
    );; EMBER - Windows
 
-  
-  ) ;; cond
+  ((string-equal (upcase (system-name)) "SAPHIRA")
+   (load-theme 'spacemacs-dark t)
+   (add-to-list 'default-frame-alist
+		'(font . "JetBrains Mono Medium-13"))
+   (setq wakatime-python-bin '("C:\msys64\mingw64\bin\python.exe"))
+   (setq wakatime-cli-path '("C:\msys64\mingw64\bin\wakatime.exe"))
+   );; SAPHIRA - Windows
 
+
+
+  ) ;; cond
 (load-theme 'org-beautify t)
