@@ -142,9 +142,9 @@
    );; EMBER - Windows
 
   ((string-equal (upcase (system-name)) "SAPHIRA")
-   (load-theme 'spacemacs-dark t)
+   (load-theme 'nord t)
    (add-to-list 'default-frame-alist
-		'(font . "JetBrains Mono Medium-13"))
+		'(font . "JetBrains Mono Medium-12"))
    (setq wakatime-python-bin '("C:\msys64\mingw64\bin\python.exe"))
    (setq wakatime-cli-path '("C:\msys64\mingw64\bin\wakatime.exe"))
    );; SAPHIRA - Windows
