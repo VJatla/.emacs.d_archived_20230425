@@ -98,11 +98,11 @@
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "gojira")
-   (load-theme 'dracula t)
+   (load-theme 'moe-dark t)
    (setq org-agenda-files (directory-files-recursively "/home/vj/data/Dropbox/org/tasks/" "/\.org$"))
   (setq diary-file "/mnt/data_ext4/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "Fantasque Sans Mono-13"))
+               '(font . "Fantasque Sans Mono-15"))
   );; gojira-linux
 
   ((string-equal (system-name) "xps")
@@ -152,4 +152,3 @@
 
 
   ) ;; cond
-(load-theme 'org-beautify t)
