@@ -120,17 +120,11 @@
   (add-to-list 'default-frame-alist '(height . 50))
   (add-to-list 'default-frame-alist '(width . 100))
   );; Precision7920 or RTX3
-
- ((string-equal (system-name) "xps-win")
-  (load-theme 'sanityinc-tomorrow-eighties t)
-  (add-to-list 'default-frame-alist
-             '(font . "Consolas-15"))
-  );; xps-win (WSL)
  
   ((string-equal (system-name) "XPS-WIN")
   (load-theme 'sanityinc-tomorrow-eighties t)
-  (add-to-list 'default-frame-alist
-             '(font . "Consolas-15"))
+     (add-to-list 'default-frame-alist
+		'(font . "JetBrains Mono Medium-12"))
   );; xps-win (WSL)
 
   ((string-equal (system-name) "EMBER")
