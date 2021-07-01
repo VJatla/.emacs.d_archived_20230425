@@ -125,7 +125,13 @@
   (load-theme 'sanityinc-tomorrow-eighties t)
      (add-to-list 'default-frame-alist
 		'(font . "JetBrains Mono Medium-12"))
-  );; xps-win (WSL)
+     );; xps-win (WSL)
+
+    ((string-equal (system-name) "ember")
+   (load-theme 'gruvbox-dark-soft t)
+   (add-to-list 'default-frame-alist
+		'(font . "DejavuSansMono-13"))
+   );; EMBER - Linux
 
   ((string-equal (system-name) "EMBER")
    (load-theme 'gruvbox-dark-soft t)
