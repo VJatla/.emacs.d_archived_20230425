@@ -1,5 +1,10 @@
 * Cold fusion
   #+begin_src emacs-lisp
+    (use-package php-mode
+      :ensure t)
+  #+end_src
+* Cold fusion
+  #+begin_src emacs-lisp
     (use-package cfml-mode
       :ensure t
       :defer t)

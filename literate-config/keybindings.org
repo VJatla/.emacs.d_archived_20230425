@@ -103,25 +103,42 @@
     (define-key modalka-mode-map (kbd "#") 'goto-line)
     (define-key modalka-mode-map (kbd "SPC j") 'avy-goto-line)
   #+end_src
+* Deleting keys
+  #+begin_src emacs-lisp
+    ;; Key bindings overview
+    ;; d e    : Delete till end of the line from cursor
+    ;; d s    : Delete till the beginning of the line from cursor
+    ;; d d    : Replacement for DEL
+    ;; ,      : Delete backward char
+    ;; <      : Delete forward char
+    ;; d o    : Delete symbol forward
+    ;; d u    : Delete symbol backward
+    (modalka-define-kbd "d e" "C-k")
+    (modalka-define-kbd "," "DEL")
+    (define-key modalka-mode-map (kbd "<") 'delete-forward-char)
+    (define-key modalka-mode-map (kbd "d s") '(lambda () (interactive) (kill-line 0)))
+    (define-key modalka-mode-map (kbd "d o") 'sp-delete-symbol)
+    (define-key modalka-mode-map (kbd "d u") 'sp-backward-delete-symbol)
+    
+  #+end_src
 * Editing keys
   #+begin_src emacs-lisp
-     (modalka-define-kbd "q" "M-q")
+    (modalka-define-kbd "q" "M-q")
     (modalka-define-kbd "\\" "C-M-\\")
-     (modalka-define-kbd "d" "DEL")
-     (modalka-define-kbd "n" "RET")
-     (define-key modalka-mode-map (kbd "SPC r") 'iedit-mode)
-     (define-key modalka-mode-map (kbd "4") 'insert-four-spaces)
-     (define-key modalka-mode-map (kbd "f") 'insert-one-spaces)
-     (define-key modalka-mode-map (kbd "/") 'swiper)
-     (define-key modalka-mode-map (kbd "SPC f") 'counsel-find-file)
-     (define-key modalka-mode-map (kbd "p f") 'counsel-projectile-find-file)
-     (define-key modalka-mode-map (kbd "SPC c") 'vj-change-enclosing)
-     (modalka-define-kbd "v" "C-y") ;; paste
-     (modalka-define-kbd "c" "M-w") ;; copy
-     (modalka-define-kbd "x" "C-w") ;; cut
-     (define-key modalka-mode-map (kbd "SPC v") 'counsel-yank-pop)
-     (modalka-define-kbd "-" "C-_") ;; redo/undo
-     (modalka-define-kbd "r" "M-%") ;; replace
+    (modalka-define-kbd "n" "RET")
+    (define-key modalka-mode-map (kbd "SPC r") 'iedit-mode)
+    (define-key modalka-mode-map (kbd "4") 'insert-four-spaces)
+    (define-key modalka-mode-map (kbd "f") 'insert-one-spaces)
+    (define-key modalka-mode-map (kbd "/") 'swiper)
+    (define-key modalka-mode-map (kbd "SPC f") 'counsel-find-file)
+    (define-key modalka-mode-map (kbd "p f") 'counsel-projectile-find-file)
+    (define-key modalka-mode-map (kbd "SPC c") 'vj-change-enclosing)
+    (modalka-define-kbd "v" "C-y") ;; paste
+    (modalka-define-kbd "c" "M-w") ;; copy
+    (modalka-define-kbd "x" "C-w") ;; cut
+    (define-key modalka-mode-map (kbd "SPC v") 'counsel-yank-pop)
+    (modalka-define-kbd "-" "C-_") ;; redo/undo
+    (modalka-define-kbd "r" "M-%") ;; replace
   #+end_src
 * commands
   #+begin_src emacs-lisp
