@@ -103,7 +103,7 @@
    (setq org-agenda-files (directory-files-recursively "/home/vj/data/Dropbox/org/tasks/" "/\.org$"))
   (setq diary-file "/mnt/data_ext4/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "Fantasque Sans Mono-15"))
+               '(font . "Fantasque Sans Mono-13"))
   );; gojira-linux
 
   ((string-equal (system-name) "xps")
