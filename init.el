@@ -99,11 +99,11 @@
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "gojira")
-   (load-theme 'moe-dark t)
+  (load-theme 'spacemacs-dark t)
    (setq org-agenda-files (directory-files-recursively "/home/vj/data/Dropbox/org/tasks/" "/\.org$"))
   (setq diary-file "/mnt/data_ext4/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "Fantasque Sans Mono-13"))
+               '(font . "Fantasque Sans Mono-16"))
   );; gojira-linux
 
   ((string-equal (system-name) "xps")
@@ -149,7 +149,4 @@
    (setq wakatime-python-bin '("C:\msys64\mingw64\bin\python.exe"))
    (setq wakatime-cli-path '("C:\msys64\mingw64\bin\wakatime.exe"))
    );; SAPHIRA - Windows
-
-
-
   ) ;; cond
