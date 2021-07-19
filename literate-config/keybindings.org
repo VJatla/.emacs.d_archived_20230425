@@ -53,30 +53,42 @@
   #+end_src
 * Major mode specific
   #+begin_src emacs-lisp
+    (defun mj-breakpoint ()
+      (interactive)
+      (cond
+    
+       ;; python-mode
+       ((string-equal major-mode "python-mode")
+	(interactive)
+	(insert "pdb.set_trace()")
+    
+       );; end of cond
+      );; end of defun
     (defun mj-go-to-def ()
       (interactive)
       (cond
-
+    
        ;; python-mode
        ((string-equal major-mode "python-mode")
 	(anaconda-mode-find-definitions))
-
+    
        );; end of cond
       );; end of defun
     (defun mj-run ()
       (interactive)
       (cond
-
+    
        ;; latex
        ((string-equal major-mode "latex-mode")
 	(save-buffer)
 	(tex-compile))
-
+    
        );; end of cond
       );; end of defun
-
+    
     (define-key modalka-mode-map (kbd "SPC m d") 'mj-go-to-def)
-    (define-key modalka-mode-map (kbd "SPC SPC") 'mj-run)
+    (define-key modalka-mode-map (kbd "SPC m r") 'mj-run)
+    (define-key modalka-mode-map (kbd "SPC m b") 'mj-breakpoint)
   #+end_src
 * Enter and exit modal editing mode
   #+begin_src emacs-lisp
