@@ -123,6 +123,7 @@ already installed.
    #+begin_src emacs-lisp
      (use-package smartparens
        :ensure t)
+(show-paren-mode t)
    #+end_src
 ** buffer
    #+begin_src emacs-lisp
@@ -137,10 +138,9 @@ already installed.
 ** org
    + Make org mode look good
      #+begin_src emacs-lisp
-       (use-package org-beautify-theme
-	 :ensure t)
        (use-package org-bullets
-	 :ensure t)
+	 :config
+	 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
      #+end_src
    + Org agenda
      #+begin_src emacs-lisp
@@ -278,4 +278,10 @@ already installed.
    #+begin_src emacs-lisp
      (use-package ace-window
        :ensure t)
+   #+end_src
+** Recent files
+   #+begin_src emacs-lisp
+     (recentf-mode 1)
+     (setq recentf-max-menu-items 25)
+     (setq recentf-max-saved-items 25)
    #+end_src
