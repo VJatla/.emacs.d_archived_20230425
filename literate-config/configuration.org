@@ -110,6 +110,8 @@ already installed.
      #+end_src
 * markdown
   #+begin_src emacs-lisp
+    (use-package markdown-toc
+      :ensure t)
     (use-package markdown-mode
       :ensure t
       :commands (markdown-mode gfm-mode)
