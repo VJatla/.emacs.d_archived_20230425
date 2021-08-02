@@ -140,9 +140,10 @@ already installed.
 ** org
    + Make org mode look good
      #+begin_src emacs-lisp
-       (use-package org-bullets
-	 :config
-	 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+	    (use-package org-bullets
+	      :ensure t
+	      :config
+	      (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
      #+end_src
    + Org agenda
      #+begin_src emacs-lisp
