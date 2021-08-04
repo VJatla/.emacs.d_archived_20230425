@@ -168,28 +168,29 @@
   #+end_src
 * commands
   #+begin_src emacs-lisp
-    (define-key modalka-mode-map (kbd "SPC |") 'display-fill-column-indicator-mode)
-    (define-key modalka-mode-map (kbd "b b") 'ace-jump-buffer)
-    (define-key modalka-mode-map (kbd "SPC k") 'kill-buffer)
-    (define-key modalka-mode-map (kbd "SPC K") 'kill-other-buffers)
-    (define-key modalka-mode-map (kbd "SPC s") 'save-buffer)
-    (define-key modalka-mode-map (kbd "SPC S") 'save-some-buffers)
-    (define-key modalka-mode-map (kbd "SPC x") 'counsel-M-x)
-    (define-key modalka-mode-map (kbd ";") 'comment-line)
-    (define-key modalka-mode-map (kbd "SPC a") 'org-agenda)
-    (define-key modalka-mode-map (kbd "m") 'set-mark-command)
-    (define-key modalka-mode-map (kbd "SPC h") 'highlight-symbol)
-    (define-key modalka-mode-map (kbd "h") 'highlight-symbol-next)
-    (define-key modalka-mode-map (kbd "H") 'highlight-symbol-prev)
-    (define-key modalka-mode-map (kbd "0") 'delete-window)
-    (define-key modalka-mode-map (kbd "1") 'delete-other-windows)
-    (define-key modalka-mode-map (kbd "3") 'split-window-right)
-    (define-key modalka-mode-map (kbd "SPC g a") 'git-add-current-buffer)
-    (define-key modalka-mode-map (kbd "SPC g g") 'magit-status)
+       (define-key modalka-mode-map (kbd "SPC |") 'display-fill-column-indicator-mode)
+       (define-key modalka-mode-map (kbd "b b") 'ace-jump-buffer)
+       (define-key modalka-mode-map (kbd "SPC k") 'kill-buffer)
+       (define-key modalka-mode-map (kbd "SPC K") 'kill-other-buffers)
+       (define-key modalka-mode-map (kbd "SPC s") 'save-buffer)
+       (define-key modalka-mode-map (kbd "SPC S") 'save-some-buffers)
+       (define-key modalka-mode-map (kbd "SPC x") 'counsel-M-x)
+       (define-key modalka-mode-map (kbd ";") 'comment-line)
+       (define-key modalka-mode-map (kbd "SPC a") 'org-agenda)
+       (define-key modalka-mode-map (kbd "m") 'set-mark-command)
+       (define-key modalka-mode-map (kbd "SPC h") 'highlight-symbol)
+       (define-key modalka-mode-map (kbd "h") 'highlight-symbol-next)
+       (define-key modalka-mode-map (kbd "H") 'highlight-symbol-prev)
+       (define-key modalka-mode-map (kbd "0") 'delete-window)
+       (define-key modalka-mode-map (kbd "1") 'delete-other-windows)
+       (define-key modalka-mode-map (kbd "3") 'split-window-right)
+       (define-key modalka-mode-map (kbd "SPC g a") 'git-add-current-buffer)
+       (define-key modalka-mode-map (kbd "SPC g g") 'magit-status)
   #+end_src
 * Project related
   #+begin_src emacs-lisp
-    (define-key modalka-mode-map (kbd "SPC p s") 'projectile-switch-project)
+    (define-key modalka-mode-map (kbd "SPC p p") 'projectile-switch-project)
+    (define-key modalka-mode-map (kbd "SPC p t") 'treemacs)
   #+end_src
 * Major mode rebindings usin use-package
   #+begin_src emacs-lisp

@@ -99,7 +99,7 @@
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "gojira")
-  (load-theme 'spacemacs-dark t)
+  (load-theme 'doom-one t)
    (setq org-agenda-files (directory-files-recursively "/home/vj/data/Dropbox/org/tasks/" "/\.org$"))
   (setq diary-file "/mnt/data_ext4/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
