@@ -81,6 +81,7 @@
   ;; 1. wakatime
   ;; 2. anaconda-mode
   (setq diary-file "~/Dropbox/org/diary-file")
+  (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/.local/bin"))
   (setq exec-path (append exec-path '("/home/vj/.local/bin")))
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/anaconda3/bin"))
@@ -100,8 +101,6 @@
 (cond
  ((string-equal (system-name) "gojira")
   (load-theme 'doom-one t)
-   (setq org-agenda-files (directory-files-recursively "/home/vj/data/Dropbox/org/tasks/" "/\.org$"))
-  (setq diary-file "/mnt/data_ext4/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
                '(font . "Fantasque Sans Mono-16"))
   );; gojira-linux
