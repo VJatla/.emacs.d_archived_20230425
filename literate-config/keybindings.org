@@ -74,7 +74,7 @@
        ;; python-mode
        ((string-equal major-mode "python-mode")
 	(interactive)
-	(insert "pdb.set_trace()"))
+	(insert "impor pdb; pdb.set_trace()"))
     
        );; end of cond
       );; end of defun
