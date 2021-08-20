@@ -1,0 +1,4 @@
+* Features to add
+** TODO Company mode for web-mode
+** TODO Make U in modalka to go back a sexp
+** TODO Make O in modalka to go forward a sexp 
