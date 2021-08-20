@@ -1,6 +1,0 @@
-* Autocomplete using company
-  #+begin_src emacs-lisp
-    (add-hook 'lisp-mode-hook 'company-mode)
-    (eval-after-load "company"
-    '(add-to-list 'company-backends 'company-elisp))
-  #+end_src
