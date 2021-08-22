@@ -35,9 +35,11 @@
    #+end_src
 * Switching modes
   #+begin_src emacs-lisp
-    (key-chord-define-global "99" 'ryo-modal-mode) 
+    (key-chord-define-global "99" 'ryo-modal-mode)
+    (ryo-modal-keys
+     ("9" ryo-modal-mode))
   #+end_src
-* Ryo keybindings
+* keybindings
 ** Buffer movements
    #+begin_src emacs-lisp
      (ryo-modal-keys
@@ -78,7 +80,7 @@
 ** Buffers
    #+begin_src emacs-lisp
      (ryo-modal-key
-      "b" '(("j" ace-jump-buffer)
+      "SPC b" '(("j" ace-jump-buffer)
 	    ("s" save-buffer)
 	    ("k" kill-buffer)
 	    ("S" save-some-buffers)
