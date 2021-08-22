@@ -1,0 +1,86 @@
+(defun insert-enter ()
+(interactive)
+(insert "\n"))
+
+(use-package multistate
+  :ensure t
+:hook
+;; enable selection is Visual state
+(multistate-visual-state-enter . (lambda () (set-mark (point))))
+(multistate-visual-state-exit .  deactivate-mark)
+;; enable overwrite-mode in Replace state
+(multistate-replace-state-enter . overwrite-mode)
+(multistate-replace-state-exit .  (lambda () (overwrite-mode 0)))
+:init
+;; Emacs state
+(multistate-define-state 'emacs :lighter "E")
+;; Insert state
+(multistate-define-state
+ 'insert
+ :lighter "I"
+ :cursor 'bar
+ :parent 'multistate-emacs-state-map)
+;; Normal state
+(multistate-define-state
+ 'normal
+ :default t
+ :lighter "N"
+ :cursor 'hollow
+ :parent 'multistate-suppress-map)
+;; Replace state
+(multistate-define-state
+ 'replace
+ :lighter "R"
+ :cursor 'hbar)
+;; Visual state
+(multistate-define-state
+ 'visual
+ :lighter "V"
+ :cursor 'hollow
+ :parent 'multistate-normal-state-map)
+;; Enable multistate-mode globally
+(multistate-global-mode 1)
+:bind
+(:map multistate-emacs-state-map
+      ("C-z" . multistate-normal-state))
+(:map multistate-insert-state-map)
+
+(:map multistate-normal-state-map
+      ;; Switching to different states from normal mode
+      ("SPC e" . multistate-emacs-state)
+      ("9" . multistate-insert-state)
+      ("SPC r" . multistate-replace-state)
+      ("SPC v" . multistate-visual-state)
+
+      ;; Movement
+      ("j" . backward-char)
+      ("k" . next-line)
+      ("i" . previous-line)
+      ("l" . forward-char)
+      ("s" . move-beginning-of-line)
+      ("e" . move-end-of-line)
+      ("u" . backward-word)
+      ("o" . forward-word)
+      ("I" . beginning-of-buffer)
+      ("K" . end-of-buffer)
+
+      ;; Editing
+      ("-" . undo)
+      ("n" . insert-enter)
+
+
+      ;; Search/Replace
+      ("/" . search-forward)
+      ("?" . search-backward)
+      ("r" . query-replace)
+      ("x" . delete-char)
+      ("X" . backward-delete-char))
+ (:map multistate-replace-state-map
+      ("`" . multistate-normal-state)))
+
+(use-package key-chord
+	 :ensure t
+	 :config
+	 (setq key-chord-two-keys-delay 0.1)
+	 (key-chord-mode 1))
+(key-chord-define-global "99" 'multistate-normal-state)

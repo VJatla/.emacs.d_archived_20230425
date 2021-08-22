@@ -229,11 +229,7 @@ already installed.
      #+begin_src emacs-lisp
        (use-package treemacs
 	 :ensure t
-	 :defer t
-	 :bind(:map treemacs-mode-map
-		    ("w" . other-window)
-		    ("i" . treemacs-previous-line)
-		    ("k" . treemacs-next-line)))
+	 :defer t)
      #+end_src
 
 ** Version control

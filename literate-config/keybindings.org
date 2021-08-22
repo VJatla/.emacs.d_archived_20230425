@@ -1,0 +1,96 @@
+* Packages
+  In additon to the packages installed here, the commands also depend
+  on the following packages, smartparens, ...
+  #+begin_src emacs-lisp
+    ;; Ryo
+    (use-package ryo-modal
+      :ensure t
+      :commands ryo-modal-mode
+      )
+    (setq ryo-modal-cursor-type 'box)
+    (setq ryo-modal-cursor-color "Sky Blue")
+    (setq-default cursor-type 'bar)
+    (set-cursor-color "Sky Blue") 
+    
+    
+    ;; Key-chord
+    (use-package key-chord
+      :ensure t
+      :config
+      (setq key-chord-two-keys-delay 0.1)
+      (key-chord-mode 1))
+    
+    #+end_src
+* Functions
+** Buffer editing
+   #+begin_src emacs-lisp
+     (defun insert-space ()
+       (interactive)
+       (insert " "))
+     (defun insert-4-space ()
+       (interactive)
+       (insert "    "))
+   #+end_src
+* Switching modes
+  #+begin_src emacs-lisp
+    (key-chord-define-global "99" 'ryo-modal-mode) 
+  #+end_src
+* Ryo keybindings
+** Buffer movements
+   #+begin_src emacs-lisp
+     (ryo-modal-keys
+      ("i" previous-line)
+      ("k" next-line)
+      ("j" backward-char)
+      ("l" forward-char)
+      ("u" sp-backward-symbol)
+      ("o" sp-forward-symbol)
+     
+      ("s" beginning-of-line)
+      ("e" end-of-line)
+     
+      ("I" beginning-of-buffer)
+      ("K" end-of-buffer))
+   #+end_src
+** Buffer editing
+   #+begin_src emacs-lisp
+     (ryo-modal-keys
+      ("f" insert-space)
+      ("4" insert-4-space)
+      ("n" newline))
+   #+end_src
+** Windows
+   #+begin_src emacs-lisp
+     (ryo-modal-key
+      "w" '(("j" windmove-left)
+	    ("l" windmove-right)
+	    ("i" windmove-up)
+	    ("k" windmove-down)
+	    ("q" delete-window)
+	    ("v" split-window-vertically)
+	    ("h" split-window-horizontally)
+	    ))
+   #+end_src
+** Buffers
+   #+begin_src emacs-lisp
+     (ryo-modal-key
+      "b" '(("j" ace-jump-buffer)
+	    ("s" save-buffer)
+	    ("S" save-some-buffers)
+	    ))
+   #+end_src
+** Tools
+   #+begin_src emacs-lisp
+     (ryo-modal-key
+      "SPC" '(("t" treemacs)
+	      ("g" magit-status)
+	      ))
+	   #+end_src
+* Treemacs
+  #+begin_src emacs-lisp
+    (use-package treemacs
+      :bind(:map treemacs-mode-map
+		 ("w" . other-window)
+		 ("i" . treemacs-previous-line)
+		 ("k" . treemacs-next-line)))
+  #+end_src
