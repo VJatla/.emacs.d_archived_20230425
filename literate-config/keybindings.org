@@ -22,6 +22,10 @@
       (setq key-chord-two-keys-delay 0.1)
       (key-chord-mode 1))
     
+    ;; xah-fly keys
+    (use-package xah-fly-keys
+      :ensure t)
+    
     #+end_src
 * Functions
 ** Buffer editing
@@ -80,7 +84,8 @@
 ** Buffers
    #+begin_src emacs-lisp
      (ryo-modal-key
-      "SPC b" '(("j" ace-jump-buffer)
+      "b" '(("j" ace-jump-buffer)
+	    ("b" xah-previous-user-buffer)
 	    ("s" save-buffer)
 	    ("k" kill-buffer)
 	    ("S" save-some-buffers)
@@ -91,6 +96,7 @@
      (ryo-modal-key
       "SPC" '(("t" treemacs)
 	      ("g" magit-status)
+	      ("q" save-buffers-kill-terminal)
 	      ))
 	   #+end_src
 * Treemacs
@@ -98,6 +104,7 @@
     (use-package treemacs
       :bind(:map treemacs-mode-map
 		 ("w" . other-window)
+		 ("n" . treemacs-RET-action)
 		 ("i" . treemacs-previous-line)
 		 ("k" . treemacs-next-line)))
   #+end_src
