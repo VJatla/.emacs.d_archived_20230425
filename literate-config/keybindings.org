@@ -10,7 +10,9 @@
     (setq ryo-modal-cursor-type 'box)
     (setq ryo-modal-cursor-color "Sky Blue")
     (setq-default cursor-type 'bar)
-    (set-cursor-color "Sky Blue") 
+    (set-cursor-color "Sky Blue")
+    (add-hook 'text-mode-hook 'ryo-modal-mode)
+    (add-hook 'prog-mode-hook 'ryo-modal-mode)
     
     
     ;; Key-chord
@@ -55,6 +57,7 @@
 ** Buffer editing
    #+begin_src emacs-lisp
      (ryo-modal-keys
+      ("-" undo)
       ("f" insert-space)
       ("4" insert-4-space)
       ("n" newline))
@@ -66,7 +69,8 @@
 	    ("l" windmove-right)
 	    ("i" windmove-up)
 	    ("k" windmove-down)
-	    ("q" delete-window)
+	    ("d" delete-window)
+	    ("D" delete-other-windows)
 	    ("v" split-window-vertically)
 	    ("h" split-window-horizontally)
 	    ))
@@ -76,8 +80,9 @@
      (ryo-modal-key
       "b" '(("j" ace-jump-buffer)
 	    ("s" save-buffer)
+	    ("k" kill-buffer)
 	    ("S" save-some-buffers)
-	    ))
+	    ("o" counsel-find-file)))
    #+end_src
 ** Tools
    #+begin_src emacs-lisp

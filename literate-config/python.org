@@ -1,22 +1,23 @@
 * conda
     #+begin_src emacs-lisp
-    (cond
- ;; Windows settings
- ((string-equal system-type "windows-nt")
-  )
- ;; Linux settings
- ((string-equal system-type "gnu/linux")
-       (use-package conda
-       :ensure t
-       :config
-       (custom-set-variables
-        '(conda-anaconda-home "/home/vj/anaconda3"))
-       (setq
-        conda-env-home-directory (expand-file-name "~/anaconda3/") ;; as in previous example; not required
-        conda-env-subdirectory "envs"))
-  )
- )
-
+	 (cond
+      ;; Windows settings
+      ((string-equal system-type "windows-nt")
+       )
+      ;; Linux settings
+      ((string-equal system-type "gnu/linux")
+	    (use-package conda
+	    :ensure t
+	    :config
+	    (custom-set-variables
+	     '(conda-anaconda-home "/home/vj/anaconda3"))
+	    (setq
+	     conda-env-home-directory (expand-file-name "~/anaconda3/") ;; as in previous example; not required
+	     conda-env-subdirectory "envs"))
+	    (conda-env-activate "haq")
+       )
+      )
+      
     #+end_src
 * anaconda-mode
   #+begin_src emacs-lisp
@@ -46,4 +47,10 @@
 	    (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
     (eval-after-load "company"
      '(add-to-list 'company-backends 'company-anaconda))
+  #+end_src
+* Keybindings
+  #+begin_src emacs-lisp
+    (ryo-modal-major-mode-keys
+     'python-mode
+     ("m d" anaconda-mode-find-definitions))
   #+end_src
