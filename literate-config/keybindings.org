@@ -22,20 +22,48 @@
       (setq key-chord-two-keys-delay 0.1)
       (key-chord-mode 1))
     
-    ;; xah-fly keys
+    ;; xah fly keys
     (use-package xah-fly-keys
-      :ensure t)
+      :ensure t
+      :commands (xah-next-user-buffer xah-previous-user-buffer)
+      :config
+      (xah-fly-keys-set-layout "qwerty") ; required
+      )
     
-    #+end_src
+  #+end_src
 * Functions
-** Buffer editing
+** Buffer
    #+begin_src emacs-lisp
      (defun insert-space ()
        (interactive)
        (insert " "))
+     
      (defun insert-4-space ()
        (interactive)
        (insert "    "))
+     
+     ;; query-replace current symbol
+     (defun replace-symbol (replace-str)
+       (interactive "sDo query-replace current word with: ")
+       (sp-forward-symbol)
+       (let ((end (point)))
+	 (sp-backward-symbol)
+	 (kill-ring-save (point) end)
+	 (query-replace (current-kill 0) replace-str) ))
+     
+     ;; Find markded region using swiper
+     (defun swiper-region ()
+       "Use current region if active for swiper search"
+       (interactive)
+       (if (use-region-p)
+	   (swiper (format "%s" (buffer-substring (region-beginning) (region-end))))
+	 (swiper)))
+   #+end_src
+** Reload init file
+   #+begin_src emacs-lisp
+     (defun reload-init ()
+       (interactive)
+       (load-file "~/.emacs.d/init.el"))
    #+end_src
 * Switching modes
   #+begin_src emacs-lisp
@@ -66,8 +94,26 @@
       ("-" undo)
       ("f" insert-space)
       ("4" insert-4-space)
-      ("n" newline))
+      ("n" newline)
+      ("x" "C-w")
+      ("c" "M-w")
+      ("v" "C-y")
+      ("d" delete-backward-char))
    #+end_src
+** Buffer selection
+   #+begin_src emacs-lisp
+     (ryo-modal-keys
+      ("mm" set-mark-command))
+   #+end_src
+** Buffer search/replace
+   #+begin_src emacs-lisp
+     (ryo-modal-keys
+      ("rr" query-replace)
+      ("rs" replace-symbol))
+     (ryo-modal-keys
+      ("/" swiper-region)
+      ("*" swiper-isearch-thing-at-point)) 
+     #+end_src
 ** Windows
    #+begin_src emacs-lisp
      (ryo-modal-key
@@ -84,12 +130,17 @@
 ** Buffers
    #+begin_src emacs-lisp
      (ryo-modal-key
-      "b" '(("j" ace-jump-buffer)
-	    ("b" xah-previous-user-buffer)
+      "b" '(("b" ace-jump-buffer)
 	    ("s" save-buffer)
 	    ("k" kill-buffer)
 	    ("S" save-some-buffers)
-	    ("o" counsel-find-file)))
+	    ("o" counsel-find-file)
+	    ("m" counsel-bookmark)
+	    ))
+     (ryo-modal-keys
+      ("M-j" xah-previous-user-buffer)
+      ("M-l" xah-next-user-buffer)
+      )
    #+end_src
 ** Tools
    #+begin_src emacs-lisp
@@ -97,6 +148,7 @@
       "SPC" '(("t" treemacs)
 	      ("g" magit-status)
 	      ("q" save-buffers-kill-terminal)
+	      ("9" reload-init)
 	      ))
 	   #+end_src
 * Treemacs

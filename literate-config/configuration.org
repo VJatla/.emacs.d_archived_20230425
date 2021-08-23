@@ -98,6 +98,7 @@ already installed.
 				 (bookmarks . 5)
 				 (registers . 5)))
 	 (define-key dashboard-mode-map (kbd "w") 'other-window)
+	 (setq dashboard-footer-messages '("Videkananda: The will is not free. It is a phenomenon bound by cause and effect but there is something behind the will which is free."))
 	 )
      #+END_SRC
    + All the icons
@@ -110,6 +111,25 @@ already installed.
        (global-display-line-numbers-mode t)
        (setq display-line-numbers "%4d \u2502 ")
      #+end_src
+   + Window title to to major mode + buffer name
+     #+begin_src emacs-lisp
+       (setq-default frame-title-format
+		     '(:eval
+		       (format "%s@%s: %s %s"
+			       (or (file-remote-p default-directory 'user)
+				   user-real-login-name)
+			       (or (file-remote-p default-directory 'host)
+				   system-name)
+			       (buffer-name)
+			       (cond
+				(buffer-file-truename
+				 (concat "(" buffer-file-truename ")"))
+				(dired-directory
+				 (concat "{" dired-directory "}"))
+				(t
+				 "[no file]")))))
+     #+end_src
+
 * markdown
   #+begin_src emacs-lisp
     (use-package markdown-toc
@@ -184,24 +204,26 @@ already installed.
      #+end_src
    + Minibuffer completion
      #+begin_src emacs-lisp
-	    (use-package smex
-	      :ensure t
-	      :config
-	      (smex-initialize))
-	    (use-package ivy
-	      :ensure t
-	      :config
-	      (ivy-mode 1)
-	      (global-set-key (kbd "<f1> f") 'counsel-describe-function)
-	      (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-	      (global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
-	      (global-set-key (kbd "<f1> l") 'counsel-find-library)
-	      (global-set-key "\C-s" 'swiper)
-	      (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-	      )
-
-	    (use-package counsel-projectile
-	      :ensure t)
+       (use-package smex
+	 :ensure t
+	 :config
+	 (smex-initialize))
+       (use-package ivy-avy
+	 :ensure t)
+       (use-package ivy
+	 :ensure t
+	 :config
+	 (ivy-mode 1)
+	 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+	 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+	 (global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
+	 (global-set-key (kbd "<f1> l") 'counsel-find-library)
+	 (global-set-key "\C-s" 'swiper)
+	 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+	 )
+       
+       (use-package counsel-projectile
+	 :ensure t)
      #+end_src
 ** Syntax checking framework
    #+begin_src emacs-lisp
