@@ -113,22 +113,11 @@ already installed.
      #+end_src
    + Window title to to major mode + buffer name
      #+begin_src emacs-lisp
-       (setq-default frame-title-format
-		     '(:eval
-		       (format "%s@%s: %s %s"
-			       (or (file-remote-p default-directory 'user)
-				   user-real-login-name)
-			       (or (file-remote-p default-directory 'host)
-				   system-name)
-			       (buffer-name)
-			       (cond
-				(buffer-file-truename
-				 (concat "(" buffer-file-truename ")"))
-				(dired-directory
-				 (concat "{" dired-directory "}"))
-				(t
-				 "[no file]")))))
+       (setq-default frame-title-format '("%b [%m]"))
      #+end_src
+
+     #+RESULTS:
+     | %b [%m] |
 
 * markdown
   #+begin_src emacs-lisp

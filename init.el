@@ -93,6 +93,7 @@
 (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
 (org-babel-load-file "~/.emacs.d/literate-config/keybindings.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
+(org-babel-load-file "~/.emacs.d/literate-config/json.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
 (org-babel-load-file "~/.emacs.d/literate-config/latex.org")
 (org-babel-load-file "~/.emacs.d/literate-config/elisp.org")
