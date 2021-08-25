@@ -59,32 +59,32 @@ already installed.
 ** Look
    + Themes
      #+BEGIN_SRC emacs-lisp
-       (use-package solarized-theme
-	 :ensure t)
-       (use-package doom-themes
-	 :ensure t)
-       (use-package dracula-theme
-	 :ensure t)
-       (use-package gruvbox-theme
-	 :ensure t)
-       (use-package color-theme-sanityinc-tomorrow
-	 :ensure t)
-       (use-package moe-theme
-	 :ensure t)
-       (use-package monokai-pro-theme
-	 :ensure t)
-       (use-package sublime-themes
-	 :ensure t)
-       (use-package jazz-theme
-	 :ensure t)
-       (use-package material-theme
-	 :ensure t)
-       (use-package kaolin-themes
-	 :ensure t)
-       (use-package apropospriate-theme
-	 :ensure t)
-       (use-package zenburn-theme
-	 :ensure t)
+		     (use-package solarized-theme
+		       :ensure t)
+		     (use-package doom-themes
+		       :ensure t)
+		     (use-package dracula-theme
+		       :ensure t)
+		     (use-package gruvbox-theme
+		       :ensure t)
+		     (use-package color-theme-sanityinc-tomorrow
+		       :ensure t)
+		     (use-package moe-theme
+		       :ensure t)
+		     (use-package monokai-pro-theme
+		       :ensure t)
+		     (use-package sublime-themes
+		       :ensure t)
+		     (use-package jazz-theme
+		       :ensure t)
+		     (use-package material-theme
+		       :ensure t)
+		     (use-package kaolin-themes
+		       :ensure t)
+		     (use-package apropospriate-theme
+		       :ensure t)
+		     (use-package zenburn-theme
+		       :ensure t)
      #+END_SRC
    + Startup screen
      #+BEGIN_SRC emacs-lisp
@@ -117,9 +117,15 @@ already installed.
      #+begin_src emacs-lisp
        (setq-default frame-title-format '("%b [%m]"))
      #+end_src
-
-     #+RESULTS:
-     | %b [%m] |
+*** fci-mode
+    #+begin_src emacs-lisp
+      (use-package fill-column-indicator
+	:ensure t
+	:config
+	(setq fci-rule-use-dashes t)
+	(setq fci-rule-width 1))
+      '(fci-rule-color "salmon")
+    #+end_src
 
 * markdown
   #+begin_src emacs-lisp

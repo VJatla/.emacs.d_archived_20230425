@@ -28,6 +28,7 @@
       :ensure t
       :config)
     
+    
   #+end_src
 
 * Functions
@@ -76,10 +77,9 @@
    #+end_src
 * Switching modes
   #+begin_src emacs-lisp
-	(key-chord-define-global "99" 'ryo-modal-mode)
+	(key-chord-define-global "88" 'ryo-modal-mode)
 	(ryo-modal-keys
-	 ("9" ryo-modal-mode)
-	 ("g" "C-g"))
+	 ("8" ryo-modal-mode))
   #+end_src
 * keybindings
 ** Buffer movements
@@ -114,9 +114,9 @@
 ** Copy/paste
       #+begin_src emacs-lisp
      (ryo-modal-keys
-      ("x" "C-w")
-      ("c" "M-w")
-      ("v" "C-y"))
+      ("x" kill-region)
+      ("c" kill-ring-save)
+      ("v" yank))
       #+end_src
 ** Buffer selection
    #+begin_src emacs-lisp
@@ -154,7 +154,8 @@
 	    ("i" windmove-up)
 	    ("k" windmove-down)
 	    ("d" delete-window)
-	    ("D" delete-other-windows)
+
+("D" delete-other-windows)
 	    ("v" split-window-vertically)
 	    ("h" split-window-horizontally)
 	    ))
@@ -180,7 +181,8 @@
       "SPC" '(("t" treemacs)
 	      ("g" magit-status)
 	      ("q" save-buffers-kill-terminal)
-	      ("9" reload-init)
+	      ("8" reload-init)
+	      ("|" fci-mode)
 	      ))
    #+end_src
 * Treemacs
