@@ -7,6 +7,7 @@
       :ensure t
       :commands ryo-modal-mode
       )
+    (push '((nil . "ryo:.*:") . (nil . "")) which-key-replacement-alist)
     (setq ryo-modal-cursor-type 'box)
     (setq ryo-modal-cursor-color "Sky Blue")
     (setq-default cursor-type 'bar)
@@ -114,11 +115,13 @@
       #+begin_src emacs-lisp
      (ryo-modal-keys
       ("x" "C-w")
-      ("y" "M-w")
+      ("c" "M-w")
       ("v" "C-y"))
       #+end_src
 ** Buffer selection
    #+begin_src emacs-lisp
+     (ryo-modal-key "m (" 'er/mark-inside-pairs  :name "mark-inside-pairs")
+     (ryo-modal-key "m q" 'er/mark-inside-quotes  :name "mark-inside-quote")
      (ryo-modal-key "m L" 'set-mark-command :then '(forward-paragraph) :name "mark-paragraph")
      (ryo-modal-key "m J" 'set-mark-command :then '(backward-paragraph) :name "mark-paragraph")
      (ryo-modal-key "m B" 'beginning-of-buffer :then '(set-mark-command end-of-buffer) :name "mark-whole-buffer")
