@@ -3,7 +3,7 @@ already installed.
 #+BEGIN_SRC emacs-lisp
   ;; Information
   (setq user-mail-address "venkatesh.jatla@gmail.com")
-
+  
   ;; Whick-key
   (use-package which-key
     :ensure t
@@ -83,6 +83,8 @@ already installed.
 	 :ensure t)
        (use-package apropospriate-theme
 	 :ensure t)
+       (use-package zenburn-theme
+	 :ensure t)
      #+END_SRC
    + Startup screen
      #+BEGIN_SRC emacs-lisp
@@ -136,7 +138,7 @@ already installed.
    #+begin_src emacs-lisp
      (use-package smartparens
        :ensure t)
-(show-paren-mode t)
+     (show-paren-mode t)
    #+end_src
 ** buffer
    #+begin_src emacs-lisp
@@ -151,10 +153,10 @@ already installed.
 ** org
    + Make org mode look good
      #+begin_src emacs-lisp
-	    (use-package org-bullets
-	      :ensure t
-	      :config
-	      (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+       (use-package org-bullets
+	 :ensure t
+	 :config
+	 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
      #+end_src
    + Org agenda
      #+begin_src emacs-lisp
@@ -178,7 +180,7 @@ already installed.
 	 :ensure t
 	 :config
 	 (require 'calfw))
-(use-package calfw-org
+       (use-package calfw-org
 	 :ensure t
 	 :config
 	 (require 'calfw-org))
@@ -267,17 +269,19 @@ already installed.
 ** Coding stats
    + Waka time
      #+begin_src emacs-lisp
-	   (use-package wakatime-mode
-	     :ensure t
-	     :config
-	     (global-wakatime-mode)
-	     )
-	   (custom-set-variables '(wakatime-api-key "948f1aa9-1e61-46dc-8e1f-eed41c05f2fa"))
+       (use-package wakatime-mode
+	 :ensure t
+	 :config
+	 (global-wakatime-mode)
+	 )
+       (custom-set-variables '(wakatime-api-key "948f1aa9-1e61-46dc-8e1f-eed41c05f2fa"))
      #+end_src
 ** Highlight symbol
    #+begin_src emacs-lisp
      (use-package highlight-symbol
-       :ensure t)
+       :ensure t
+       )
+     (add-hook 'prog-mode-hook 'highlight-symbol-mode)
    #+end_src
 ** Search/Find
    #+begin_src emacs-lisp

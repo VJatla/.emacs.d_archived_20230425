@@ -107,7 +107,7 @@
   );; gojira-linux
 
   ((string-equal (upcase (system-name)) "XPS")
-   (load-theme 'apropospriate-dark t)
+   (load-theme 'zenburn t)
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist

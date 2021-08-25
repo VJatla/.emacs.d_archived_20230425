@@ -55,10 +55,10 @@
   #+end_src
 * Keybindings
   #+begin_src emacs-lisp
-    (ryo-modal-major-mode-keys
-     'python-mode
-     ("SPC SPC d" anaconda-mode-find-definitions)
-     ("SPC SPC c" flycheck-mode)
-     ("SPC SPC f" py-autopep8-buffer)
-     ("SPC SPC ?" anaconda-mode-show-doc))
+	(ryo-modal-major-mode-keys
+	 'python-mode
+	 ("SPC SPC d" anaconda-mode-find-definitions)
+	 ("SPC SPC c" flycheck-mode)
+	 ("SPC SPC f" py-autopep8-buffer)
+	 ("SPC SPC ?" anaconda-mode-show-doc))
   #+end_src
