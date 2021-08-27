@@ -50,8 +50,8 @@
   ;; The following path is necessary to get following working,
   ;; 1. wakatime
   ;; 2. anaconda-mode -- Python
-  (setq wakatime-python-bin '("C:/msys64/mingw64/bin/python.exe"))
-  (setq wakatime-cli-path '("C:/msys64/mingw64/bin/wakatime.exe"))
+;;  (setq wakatime-python-bin '("C:/msys64/mingw64/bin/python.exe"))
+;;  (setq wakatime-cli-path '("C:/ProgramData/Anaconda3/Scripts/wakatime.exe"))
   
   (setq org-agenda-files '("C:/Users/vj/Dropbox/org/tasks"))
   (setq diary-file "C:/Users/vj/Dropbox/org/diary-file")
@@ -133,20 +133,4 @@
    (add-to-list 'default-frame-alist
 		'(font . "DejavuSansMono-13"))
    );; EMBER - Linux
-
-  ((string-equal (system-name) "EMBER")
-   (load-theme 'gruvbox-dark-soft t)
-   (add-to-list 'default-frame-alist
-		'(font . "Consolas-11"))
-   (setq wakatime-python-bin '("C:/msys64/mingw64/bin/python.exe"))
-   (setq wakatime-cli-path '("C:/msys64/mingw64/bin/wakatime.exe"))
-   );; EMBER - Windows
-
-  ((string-equal (upcase (system-name)) "SAPHIRA")
-   (load-theme 'nord t)
-   (add-to-list 'default-frame-alist
-		'(font . "JetBrains Mono Medium-12"))
-   (setq wakatime-python-bin '("C:\msys64\mingw64\bin\python.exe"))
-   (setq wakatime-cli-path '("C:\msys64\mingw64\bin\wakatime.exe"))
-   );; SAPHIRA - Windows
   ) ;; cond
