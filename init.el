@@ -107,11 +107,11 @@
   );; gojira-linux
 
   ((string-equal (upcase (system-name)) "GOJIRAX")
-   (load-theme 'solarized-dark t)
+   (load-theme 'sanityinc-tomorrow-eighties t)
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "LiberationMono-14.5"))
+               '(font . "LiberationMono-12"))
   );; gojira-linux
 
   ((string-equal (upcase (system-name)) "XPS")

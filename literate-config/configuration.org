@@ -59,32 +59,8 @@ already installed.
 ** Look
    + Themes
      #+BEGIN_SRC emacs-lisp
-		     (use-package solarized-theme
-		       :ensure t)
-		     (use-package doom-themes
-		       :ensure t)
-		     (use-package dracula-theme
-		       :ensure t)
-		     (use-package gruvbox-theme
-		       :ensure t)
-		     (use-package color-theme-sanityinc-tomorrow
-		       :ensure t)
-		     (use-package moe-theme
-		       :ensure t)
-		     (use-package monokai-pro-theme
-		       :ensure t)
-		     (use-package sublime-themes
-		       :ensure t)
-		     (use-package jazz-theme
-		       :ensure t)
-		     (use-package material-theme
-		       :ensure t)
-		     (use-package kaolin-themes
-		       :ensure t)
-		     (use-package apropospriate-theme
-		       :ensure t)
-		     (use-package zenburn-theme
-		       :ensure t)
+       (use-package zenburn-theme
+	 :ensure t)
      #+END_SRC
    + Startup screen
      #+BEGIN_SRC emacs-lisp
@@ -140,6 +116,15 @@ already installed.
       :init (setq markdown-command "multimarkdown"))
   #+end_src
 * Productivity tools
+** Terminal
+   #+begin_src emacs-lisp
+     (defun open-terminal-in-workdir ()
+  (interactive)
+  (call-process-shell-command
+   (concat "konsole --workdir " default-directory) nil 0))
+
+(global-set-key (kbd "C-c t") 'open-terminal-in-workdir)
+   #+end_src
 ** Paranthesis
    #+begin_src emacs-lisp
      (use-package smartparens
