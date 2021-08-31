@@ -123,7 +123,7 @@
   );; gojira-linux
 
 
- ((string&-equal (system-name) "precision7920")
+ ((string-equal (system-name) "precision7920")
   (load-theme 'tsdh-dark t)
   (set-frame-font "DejaVu Sans Mono 11" nil t)
   (add-to-list 'default-frame-alist '(height . 50))
@@ -131,6 +131,12 @@
   );; Precision7920 or RTX3
  
   ((string-equal (system-name) "XPS-WIN")
+  (load-theme 'sanityinc-tomorrow-eighties t)
+     (add-to-list 'default-frame-alist
+		'(font . "JetBrains Mono Medium-12"))
+     );; xps-win (WSL)
+
+    ((string-equal (system-name) "NIMBUS")
   (load-theme 'sanityinc-tomorrow-eighties t)
      (add-to-list 'default-frame-alist
 		'(font . "JetBrains Mono Medium-12"))
