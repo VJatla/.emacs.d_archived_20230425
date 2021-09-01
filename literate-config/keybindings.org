@@ -165,7 +165,7 @@
      (ryo-modal-key
       "b" '(("b" ace-jump-buffer)
 	    ("s" save-buffer)
-	    ("k" kill-buffer)
+	    ("k" kill-this-buffer)
 	    ("S" save-some-buffers)
 	    ("o" counsel-find-file)
 	    ("m" counsel-bookmark)
@@ -193,4 +193,13 @@
 		 ("n" . treemacs-RET-action)
 		 ("i" . treemacs-previous-line)
 		 ("k" . treemacs-next-line)))
+  #+end_src
+* Dashboard
+  #+begin_src emacs-lisp
+    (use-package dashboard
+      :bind(:map dashboard-mode-map
+		 ("w" . other-window)
+		 ("n" . dashboard-return)
+		 ("i" . dashboard-previous-line)
+		 ("k" . dashboard-next-line)))
   #+end_src
