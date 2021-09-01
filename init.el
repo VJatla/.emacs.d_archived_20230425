@@ -80,7 +80,7 @@
   ;; The following path is necessary to get following working,
   ;; 1. wakatime
   ;; 2. anaconda-mode
-  (setq diary-file "~/Dropbox/org/diary-file")
+  (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/.local/bin"))
   (setq exec-path (append exec-path '("/home/vj/.local/bin")))

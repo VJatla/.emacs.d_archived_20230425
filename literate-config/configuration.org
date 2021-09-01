@@ -64,20 +64,20 @@ already installed.
      #+END_SRC
    + Startup screen
      #+BEGIN_SRC emacs-lisp
-	      (use-package dashboard
-		:ensure t
-		:config
-		(dashboard-setup-startup-hook)
-		(setq dashboard-set-heading-icons t)
-		(setq dashboard-set-file-icons t)
-		(setq dashboard-items '(
-					(projects . 5)
-					(recents  . 5)
-					(bookmarks . 5)
-					(registers . 5)))
-		(define-key dashboard-mode-map (kbd "w") 'other-window)
-		(setq dashboard-footer-messages '("कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि।।"))
-		)
+       (use-package dashboard
+	 :ensure t
+	 :config
+	 (dashboard-setup-startup-hook)
+	 (setq dashboard-set-heading-icons t)
+	 (setq dashboard-set-file-icons t)
+	 (setq dashboard-items '(
+				 (projects . 5)
+				 (recents  . 5)
+				 (bookmarks . 5)
+				 (registers . 5)))
+	 (define-key dashboard-mode-map (kbd "w") 'other-window)
+	 (setq dashboard-footer-messages '("कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि।।"))
+	 )
      #+END_SRC
    + All the icons
      #+begin_src emacs-lisp
@@ -119,11 +119,11 @@ already installed.
 ** Terminal
    #+begin_src emacs-lisp
      (defun open-terminal-in-workdir ()
-  (interactive)
-  (call-process-shell-command
-   (concat "konsole --workdir " default-directory) nil 0))
-
-(global-set-key (kbd "C-c t") 'open-terminal-in-workdir)
+       (interactive)
+       (call-process-shell-command
+	(concat "konsole --workdir " default-directory) nil 0))
+     
+     (global-set-key (kbd "C-c t") 'open-terminal-in-workdir)
    #+end_src
 ** Paranthesis
    #+begin_src emacs-lisp
@@ -142,45 +142,39 @@ already installed.
        :ensure t)
    #+end_src
 ** org
-   + Make org mode look good
-     #+begin_src emacs-lisp
-       (use-package org-bullets
-	 :ensure t
-	 :config
-	 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-     #+end_src
-   + Org agenda
-     #+begin_src emacs-lisp
-       (setq org-todo-keywords '((sequence "TODO(t)" "IN-PROGRESS(p)" "WAITING(w)"  "|" "CANCELLED(c)" "DONE(d)" "ARCHIVED(a)")))
-       (setq org-agenda-include-diary t)
-       (use-package org-agenda-property
-	 :ensure t)
-       (setq org-todo-keyword-faces
-	     '(("IN-PROGRESS" . "magenta")
-	       ("WAITING" . "yellow")
-	       ("CANCELLED" . "gray")
-	       ("ARCHIVED" .  "gray")))
-     #+end_src
-   + Presentation
-     #+begin_src emacs-lisp
-       (use-package ox-reveal
-	 :ensure t)
-       ;; Reveal.js + Org mode
-       (require 'ox-reveal)
-       (setq Org-Reveal-root "file://~/.emacs.d/reveal.js")
-       (setq Org-Reveal-title-slide nil)
-     #+end_src
-   + Calfw
-     #+begin_src emacs-lisp
-       (use-package calfw
-	 :ensure t
-	 :config
-	 (require 'calfw))
-       (use-package calfw-org
-	 :ensure t
-	 :config
-	 (require 'calfw-org))
-     #+end_src
+*** Make org mode look good
+       #+begin_src emacs-lisp
+	 (use-package org-bullets
+	   :ensure t
+	   :config
+	   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+       #+end_src
+*** Org agenda
+	 #+begin_src emacs-lisp
+	   (setq org-todo-keywords '((sequence "TODO(t)" "IN-PROGRESS(p)" "WAITING(w)"  "|" "CANCELLED(c)" "DONE(d)" "ARCHIVED(a)")))
+	   (setq org-agenda-include-diary nil)
+	   (setq org-agenda-span 'month)
+	   (use-package org-agenda-property
+	     :ensure t)
+	   (setq org-todo-keyword-faces
+		 '(("IN-PROGRESS" . "cyan")
+		   ("WAITING" . "yellow")
+		   ("CANCELLED" . "gray")
+		   ("ARCHIVED" .  "gray")))
+	 #+end_src
+*** Presentation
+	   #+begin_src emacs-lisp
+	     (use-package ox-reveal
+	       :ensure t)
+	     ;; Reveal.js + Org mode
+	     (require 'ox-reveal)
+	     (setq Org-Reveal-root "file://~/.emacs.d/reveal.js")
+	     (setq Org-Reveal-title-slide nil)
+	   #+end_src
+*** Org time format
+    #+begin_src emacs-lisp
+      (setq format-time-string "%b %d, %Y")
+    #+end_src
 ** Completion framework
    + Code completion
      #+begin_src emacs-lisp
