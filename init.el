@@ -97,6 +97,7 @@
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
 (org-babel-load-file "~/.emacs.d/literate-config/latex.org")
 (org-babel-load-file "~/.emacs.d/literate-config/elisp.org")
+(org-babel-load-file "~/.emacs.d/literate-config/org.org")
 
 ;; Theme and fonts based on system name
 (cond

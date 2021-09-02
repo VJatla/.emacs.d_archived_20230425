@@ -141,40 +141,6 @@ already installed.
      (use-package iedit
        :ensure t)
    #+end_src
-** org
-*** Make org mode look good
-       #+begin_src emacs-lisp
-	 (use-package org-bullets
-	   :ensure t
-	   :config
-	   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-       #+end_src
-*** Org agenda
-	 #+begin_src emacs-lisp
-	   (setq org-todo-keywords '((sequence "TODO(t)" "IN-PROGRESS(p)" "WAITING(w)"  "|" "CANCELLED(c)" "DONE(d)" "ARCHIVED(a)")))
-	   (setq org-agenda-include-diary nil)
-	   (setq org-agenda-span 'month)
-	   (use-package org-agenda-property
-	     :ensure t)
-	   (setq org-todo-keyword-faces
-		 '(("IN-PROGRESS" . "cyan")
-		   ("WAITING" . "yellow")
-		   ("CANCELLED" . "gray")
-		   ("ARCHIVED" .  "gray")))
-	 #+end_src
-*** Presentation
-	   #+begin_src emacs-lisp
-	     (use-package ox-reveal
-	       :ensure t)
-	     ;; Reveal.js + Org mode
-	     (require 'ox-reveal)
-	     (setq Org-Reveal-root "file://~/.emacs.d/reveal.js")
-	     (setq Org-Reveal-title-slide nil)
-	   #+end_src
-*** Org time format
-    #+begin_src emacs-lisp
-      (setq format-time-string "%b %d, %Y")
-    #+end_src
 ** Completion framework
    + Code completion
      #+begin_src emacs-lisp
