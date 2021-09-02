@@ -32,16 +32,20 @@
 	 (setq org-agenda-span 14)
 	 (use-package org-agenda-property
 	   :ensure t)
-	 (set-face-attribute 'org-headline-done nil :strike-through t)
 	 (setq org-todo-keyword-faces
 	       ;; Inspired from Gruvbox dark theme
 	       '(("TODO" . (:foreground "#CC241D" :background "#282828" :weight bold :box t))
 		 ("EVENT" . (:foreground "#DDDDDD" :background "#282828" :weight bold :box t))
 		 ("IN-PROGRESS" . (:foreground "#98971A" :background "#282828" :weight bold :box t))
 		 ("WAITING" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
-		 ("CANCELLED" . (:foreground "#A89984" :background "#282828" :weight bold  :box t))
-		 ("ARCHIVED" .  (:foreground "#A89984" :background "#282828" :weight bold  :box t))
-		 ("DONE" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t))))
+		 ("CANCELLED" . (:foreground "#A89984" :background "#282828" :weight bold  :box t :strike-through t))
+		 ("ARCHIVED" .  (:foreground "#A89984" :background "#282828" :weight bold  :box t :strike-through t))
+		 ("DONE" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))))
+	 (setq org-fontify-done-headline t)
+	 (custom-set-faces
+	  '(org-headline-done 
+	    ((((class color) (min-colors 16) (background dark)) 
+	      (:strike-through t)))))
        #+end_src
 * Presentation
 	 #+begin_src emacs-lisp
