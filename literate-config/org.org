@@ -2,7 +2,6 @@
 #+begin_src emacs-lisp
   (ryo-modal-major-mode-keys
    'org-mode
-   ("SPC a" org-agenda)
    ("SPC SPC" org-ctrl-c-ctrl-c)
    ("SPC c i" org-clock-in)
    ("SPC c o" org-clock-out))
