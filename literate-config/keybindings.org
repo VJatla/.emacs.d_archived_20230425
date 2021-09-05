@@ -83,11 +83,15 @@
    #+end_src
 * Switching modes
   #+begin_src emacs-lisp
-	(key-chord-define-global "88" 'ryo-modal-mode)
-	(key-chord-define-global "99" 'ryo-modal-mode)
-	(ryo-modal-keys
-	 ("8" ryo-modal-mode)
-	 ("9" ryo-modal-mode))
+    (defun ryo-exit-save ()
+      (interactive)
+      (ryo-modal-mode)
+      (save-buffer))
+    (key-chord-define-global "88" 'ryo-exit-save)
+    (key-chord-define-global "99" 'ryo-exit-save)
+    (ryo-modal-keys
+     ("8" ryo-modal-mode)
+     ("9" ryo-modal-mode))
   #+end_src
 * keybindings
 ** Buffer movements
@@ -121,10 +125,10 @@
    #+end_src
 ** Copy/paste
       #+begin_src emacs-lisp
-     (ryo-modal-keys
-      ("x" kill-region)
-      ("y" kill-ring-save)
-      ("v" yank))
+	(ryo-modal-keys
+	 ("x" kill-region)
+	 ("y" kill-ring-save))
+	(ryo-modal-key "v" 'yank :then '(save-buffer) :name "paste-and-save")
       #+end_src
 ** Buffer selection
    #+begin_src emacs-lisp

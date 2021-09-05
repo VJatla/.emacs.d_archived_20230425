@@ -259,3 +259,13 @@ already installed.
      (setq recentf-max-menu-items 25)
      (setq recentf-max-saved-items 25)
    #+end_src
+** Yasnippet
+   #+begin_src emacs-lisp
+     (use-package yasnippet
+       :ensure t)
+     (require 'yasnippet)
+     (yas-global-mode 1)
+     (use-package yasnippet-snippets
+       :ensure t)
+   #+end_src
+   
