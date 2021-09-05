@@ -145,6 +145,7 @@
 ** Change buffer commands
    #+begin_src emacs-lisp
      (ryo-modal-key "c o" 'set-mark-command :then '(forward-word kill-region ryo-modal-mode) :name "change word forward")
+     (ryo-modal-key "c s" 'er/mark-symbol-with-prefix :then '(kill-region ryo-modal-mode) :name "change symbol")
      (ryo-modal-key "c u" 'set-mark-command :then '(backward-word kill-region ryo-modal-mode) :name "change word backward")
      (ryo-modal-key "c q" 'er/mark-inside-quotes :then '(kill-region ryo-modal-mode) :name "change in quotes")
      (ryo-modal-key "c (" 'er/mark-inside-pairs  :then '(kill-region ryo-modal-mode) :name "change in parenthesis")
@@ -152,6 +153,7 @@
 ** Delete buffer commands
    #+begin_src emacs-lisp
      (ryo-modal-key "d o" 'set-mark-command :then '(forward-word kill-region) :name "change word forward")
+     (ryo-modal-key "d s" 'er/mark-symbol-with-prefix :then '(kill-region) :name "change symbol")
      (ryo-modal-key "d u" 'set-mark-command :then '(backward-word kill-region) :name "change word backward")
      (ryo-modal-key "d q" 'er/mark-inside-quotes :then '(kill-region) :name "change in quotes")
      (ryo-modal-key "d (" 'er/mark-inside-pairs  :then '(kill-region) :name "change in parenthesis")
@@ -225,6 +227,7 @@
   #+begin_src emacs-lisp
     (use-package dashboard
       :bind(:map dashboard-mode-map
+		 ("t" . treemacs)
 		 ("w" . other-window)
 		 ("n" . dashboard-return)
 		 ("i" . dashboard-previous-line)

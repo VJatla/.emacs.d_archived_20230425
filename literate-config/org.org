@@ -25,6 +25,8 @@
      #+end_src
 * Agenda
        #+begin_src emacs-lisp
+	 (setq org-agenda-clockreport-parameter-plist
+	       (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80)))
 	 (setq org-agenda-tags-column 77)
 	 (setq org-todo-keywords '((sequence "TODO(t)" "EVENT(e)" "IN-PROGRESS(p)" "WAITING(w)"  "|" "CANCELLED(c)" "DONE(d)" "ARCHIVED(a)")))
 	 (setq org-agenda-include-diary nil)

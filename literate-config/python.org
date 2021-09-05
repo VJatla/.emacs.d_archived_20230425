@@ -1,3 +1,9 @@
+* Functions
+  #+begin_src emacs-lisp
+    (defun insert-pdb ()
+      (interactive)
+    (insert "import pdb; pdb.set_trace()"))
+  #+end_src
 * conda
     #+begin_src emacs-lisp
 	 (cond
@@ -50,15 +56,17 @@
     (add-hook 'python-mode-hook 'company-mode)
     (add-hook 'python-mode-hook 'anaconda-mode)
     (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+    (add-hook 'python-mode-hook 'flyspell-prog-mode)
     (eval-after-load "company"
       '(add-to-list 'company-backends 'company-anaconda))
   #+end_src
 * Keybindings
   #+begin_src emacs-lisp
-	(ryo-modal-major-mode-keys
-	 'python-mode
-	 ("SPC SPC d" anaconda-mode-find-definitions)
-	 ("SPC SPC c" flycheck-mode)
-	 ("SPC SPC f" py-autopep8-buffer)
-	 ("SPC SPC ?" anaconda-mode-show-doc))
+    (ryo-modal-major-mode-keys
+     'python-mode
+     ("SPC SPC d" anaconda-mode-find-definitions)
+     ("SPC SPC b" insert-pdb)
+     ("SPC SPC c" flycheck-mode)
+     ("SPC SPC f" py-autopep8-buffer)
+     ("SPC SPC ?" anaconda-mode-show-doc))
   #+end_src
