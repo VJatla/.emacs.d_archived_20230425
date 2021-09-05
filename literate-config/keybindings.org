@@ -34,40 +34,46 @@
 * Functions
 ** Buffer
    #+begin_src emacs-lisp
-     (defun insert-space ()
-       (interactive)
-       (insert " "))
+      (defun insert-space ()
+	(interactive)
+	(insert " "))
      
-     (defun insert-4-space ()
-       (interactive)
-       (insert "    "))
+      (defun insert-4-space ()
+	(interactive)
+	(insert "    "))
      
      
-     ;; query-replace current symbol
-     (defun replace-symbol (replace-str)
-       (interactive "sDo query-replace current word with: ")
-       (sp-forward-symbol)
-       (let ((end (point)))
-	 (sp-backward-symbol)
-	 (kill-ring-save (point) end)
-	 (query-replace (current-kill 0) replace-str) ))
+      ;; query-replace current symbol
+      (defun replace-symbol (replace-str)
+	(interactive "sDo query-replace current word with: ")
+	(sp-forward-symbol)
+	(let ((end (point)))
+	  (sp-backward-symbol)
+	  (kill-ring-save (point) end)
+	  (query-replace (current-kill 0) replace-str) ))
      
-     ;; Find markded region using swiper
-     (defun swiper-region ()
-       "Use current region if active for swiper search"
-       (interactive)
-       (if (use-region-p)
-	   (swiper (format "%s" (buffer-substring (region-beginning) (region-end))))
-	 (swiper)))
+      ;; Find markded region using swiper
+      (defun swiper-region ()
+	"Use current region if active for swiper search"
+	(interactive)
+	(if (use-region-p)
+	    (swiper (format "%s" (buffer-substring (region-beginning) (region-end))))
+	  (swiper)))
      
-     ;; Replace word under cursor
-     (defun replace-cur-word (replace-str)
-       (interactive "sDo query-replace current word with: ")
-       (forward-word)
-       (let ((end (point)))
-	 (backward-word)
-	 (kill-ring-save (point) end)
-	 (query-replace (current-kill 0) replace-str) ))
+      ;; Replace word under cursor
+      (defun replace-cur-word (replace-str)
+	(interactive "sDo query-replace current word with: ")
+	(forward-word)
+	(let ((end (point)))
+	  (backward-word)
+	  (kill-ring-save (point) end)
+	  (query-replace (current-kill 0) replace-str) ))
+     
+      ;; Kill all other buffers
+     (defun kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
    #+end_src
 ** Reload init file
    #+begin_src emacs-lisp
@@ -111,13 +117,13 @@
       ("f" insert-space)
       ("4" insert-4-space)
       ("n" newline)
-      ("d" delete-backward-char))
+      ("," delete-backward-char))
    #+end_src
 ** Copy/paste
       #+begin_src emacs-lisp
      (ryo-modal-keys
       ("x" kill-region)
-      ("c" kill-ring-save)
+      ("y" kill-ring-save)
       ("v" yank))
       #+end_src
 ** Buffer selection
@@ -136,6 +142,21 @@
      (ryo-modal-key "m s" 'set-mark-command :then '(beginning-of-line) :name "mark-line")
      (ryo-modal-key "m e" 'set-mark-command :then '(end-of-line) :name "mark-line")
    #+end_src
+** Change buffer commands
+   #+begin_src emacs-lisp
+     (ryo-modal-key "c o" 'set-mark-command :then '(forward-word kill-region ryo-modal-mode) :name "change word forward")
+     (ryo-modal-key "c u" 'set-mark-command :then '(backward-word kill-region ryo-modal-mode) :name "change word backward")
+     (ryo-modal-key "c q" 'er/mark-inside-quotes :then '(kill-region ryo-modal-mode) :name "change in quotes")
+     (ryo-modal-key "c (" 'er/mark-inside-pairs  :then '(kill-region ryo-modal-mode) :name "change in parenthesis")
+   #+end_src
+** Delete buffer commands
+   #+begin_src emacs-lisp
+     (ryo-modal-key "d o" 'set-mark-command :then '(forward-word kill-region) :name "change word forward")
+     (ryo-modal-key "d u" 'set-mark-command :then '(backward-word kill-region) :name "change word backward")
+     (ryo-modal-key "d q" 'er/mark-inside-quotes :then '(kill-region) :name "change in quotes")
+     (ryo-modal-key "d (" 'er/mark-inside-pairs  :then '(kill-region) :name "change in parenthesis")
+   #+end_src
+   
 ** Buffer search/replace
    #+begin_src emacs-lisp
      (ryo-modal-keys
@@ -168,6 +189,7 @@
       "b" '(("b" ace-jump-buffer)
 	    ("s" save-buffer)
 	    ("k" kill-this-buffer)
+	    ("K" kill-other-buffers)
 	    ("S" save-some-buffers)
 	    ("o" counsel-find-file)
 	    ("m" counsel-bookmark)
@@ -195,7 +217,9 @@
 		 ("w" . other-window)
 		 ("n" . treemacs-RET-action)
 		 ("i" . treemacs-previous-line)
-		 ("k" . treemacs-next-line)))
+		 ("I" . beginning-of-buffer)
+		 ("k" . treemacs-next-line)
+		 ("K" . end-of-buffer)))
   #+end_src
 * Dashboard
   #+begin_src emacs-lisp
