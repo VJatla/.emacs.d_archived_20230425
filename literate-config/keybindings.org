@@ -231,6 +231,7 @@
   #+begin_src emacs-lisp
     (use-package dashboard
       :bind(:map dashboard-mode-map
+		 ("a" . org-agenda)
 		 ("t" . treemacs)
 		 ("w" . other-window)
 		 ("n" . dashboard-return)
