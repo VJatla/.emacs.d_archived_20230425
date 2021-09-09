@@ -108,11 +108,11 @@
   );; gojira-linux
 
   ((string-equal (upcase (system-name)) "GOJIRAX")
-   (load-theme 'monokai-pro-classic t)
+   (load-theme 'solarized-dark t)
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "mononoki-13"))
+               '(font . "FiraCode-14.5"))
   );; gojira-linux
 
   ((string-equal (upcase (system-name)) "XPS")

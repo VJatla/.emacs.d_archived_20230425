@@ -231,10 +231,19 @@
   #+begin_src emacs-lisp
     (use-package dashboard
       :bind(:map dashboard-mode-map
+		 ("M-j" . previous-buffer)
+		 ("M-l" . next-buffer)
 		 ("a" . org-agenda)
 		 ("t" . treemacs)
 		 ("w" . other-window)
 		 ("n" . dashboard-return)
 		 ("i" . dashboard-previous-line)
 		 ("k" . dashboard-next-line)))
+  #+end_src
+* org-agenda-mode
+  #+begin_src emacs-lisp
+	(add-hook 'org-agenda-mode-hook
+		  (lambda ()
+		    (local-set-key (kbd "M-j") 'previous-buffer)
+		    (local-set-key (kbd "M-l") 'next-buffer)))
   #+end_src
