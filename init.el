@@ -107,8 +107,8 @@
                '(font . "Fantasque Sans Mono-16"))
   );; gojira-linux
 
-  ((string-equal (upcase (system-name)) "GOJIRAX")
-   (load-theme 'solarized-dark t)
+  ((string-equal (upcase (system-name)) "USHAS")
+   (load-theme 'nord t)
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist

@@ -26,9 +26,7 @@
     ;; expand region (for selections)
     (use-package expand-region
       :ensure t
-      :config)
-    
-    
+      :config)    
   #+end_src
 
 * Functions
@@ -247,3 +245,4 @@
 		    (local-set-key (kbd "M-j") 'previous-buffer)
 		    (local-set-key (kbd "M-l") 'next-buffer)))
   #+end_src
+  

@@ -8,20 +8,26 @@
 #+end_src
 *  Looks
      #+begin_src emacs-lisp
-	(use-package org-bullets
-	  :ensure t
-	  :config
-	  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+       (use-package org-bullets
+	 :ensure t
+	 :config
+	 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
        
        ;; Display previous level headings for a task
-	(setq org-agenda-prefix-format '((agenda . " %i %-12:c%?-12t% s")
-	  (timeline . "  % s")
-	  (todo .
-		" %i %-12:c %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
-	  (tags .
-		" %i %-12:c %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
-	  (search . " %i %-12:c"))
-       )
+       (setq org-agenda-prefix-format '((agenda . " %i %-12:c%?-12t% s")
+					(timeline . "  % s")
+					(todo .
+					      " %i %-12:c %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
+					(tags .
+					      " %i %-12:c %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
+					(search . " %i %-12:c"))
+	     )
+       ;; Mixed pitch mode
+       (use-package mixed-pitch
+	 :ensure t
+	 :hook
+	 ;; If you want it in all text modes:
+	 (text-mode . mixed-pitch-mode))
      #+end_src
 * Agenda
        #+begin_src emacs-lisp
