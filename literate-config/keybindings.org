@@ -85,8 +85,8 @@
       (interactive)
       (ryo-modal-mode)
       (save-buffer))
-    (key-chord-define-global "88" 'ryo-exit-save)
-    (key-chord-define-global "99" 'ryo-exit-save)
+    (key-chord-define-global "88" 'ryo-modal-mode)
+    (key-chord-define-global "99" 'ryo-modal-mode)
     (ryo-modal-keys
      ("8" ryo-modal-mode)
      ("9" ryo-modal-mode))
