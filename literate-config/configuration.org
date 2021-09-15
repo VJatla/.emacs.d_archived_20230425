@@ -57,10 +57,10 @@ already installed.
 	 (gcmh-mode 1))
      #+end_src
 ** Look
-   + Themes
-     #+BEGIN_SRC emacs-lisp
-       (use-package zenburn-theme
-	 :ensure t)
+       + Themes
+	 ,#+BEGIN_SRC emacs-lisp
+	   (use-package zenburn-theme
+	     :ensure t)
      #+END_SRC
    + Startup screen
      #+BEGIN_SRC emacs-lisp

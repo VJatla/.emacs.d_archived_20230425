@@ -22,12 +22,6 @@
 					      " %i %-12:c %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
 					(search . " %i %-12:c"))
 	     )
-       ;; Mixed pitch mode
-       (use-package mixed-pitch
-	 :ensure t
-	 :hook
-	 ;; If you want it in all text modes:
-	 (text-mode . mixed-pitch-mode))
      #+end_src
 * Agenda
        #+begin_src emacs-lisp
@@ -36,7 +30,7 @@
 	 (setq org-agenda-tags-column 77)
 	 (setq org-todo-keywords '((sequence "TODO(t)" "EVENT(e)" "IN-PROGRESS(p)" "PAUSED/WAITING(w)"  "|" "CANCELLED(c)" "DONE(d)" "ARCHIVED(a)")))
 	 (setq org-agenda-include-diary nil)
-	 (setq org-agenda-span 14)
+	 (setq org-agenda-span 1)
 	 (use-package org-agenda-property
 	   :ensure t)
 	 (setq org-todo-keyword-faces

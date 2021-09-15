@@ -115,6 +115,7 @@
 ** Buffer editing
    #+begin_src emacs-lisp
      (ryo-modal-keys
+      (";" comment-or-uncomment-region)
       ("-" undo)
       ("f" insert-space)
       ("4" insert-4-space)

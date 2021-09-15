@@ -112,8 +112,18 @@
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "FiraCode-14.5"))
-  );; gojira-linux
+               '(font . "VictorMono-14"))
+
+  ;; Copied from custom.el
+  (custom-set-faces
+ '(default ((t (:background nil))))
+ '(org-block ((t (:extend t :background "#232831" :foreground "#D8DEE9"))))
+ '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:strike-through t))))
+ '(font-lock-doc-face ((t (:foreground "#616e88" :slant italic))))
+ )
+
+  
+  );; Ushas settings
 
   ((string-equal (upcase (system-name)) "XPS")
    (load-theme 'zenburn t)
