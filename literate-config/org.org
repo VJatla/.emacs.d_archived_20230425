@@ -28,7 +28,7 @@
 	 (setq org-agenda-clockreport-parameter-plist
 	       (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80)))
 	 (setq org-agenda-tags-column 77)
-	 (setq org-todo-keywords '((sequence "TODO(t)" "EVENT(e)" "IN-PROGRESS(p)" "PAUSED/WAITING(w)"  "|" "CANCELLED(c)" "DONE(d)" "ARCHIVED(a)")))
+	 (setq org-todo-keywords '((sequence "TODO(t)" "IN-PROGRESS(p)" "PAUSED/WAITING(w)" "EVENT(e)" "ROUTINE(r)" "|" "CANCELLED(c)" "DONE(d)" "ARCHIVED(a)")))
 	 (setq org-agenda-include-diary nil)
 	 (setq org-agenda-span 1)
 	 (use-package org-agenda-property
@@ -37,6 +37,7 @@
 	       ;; Inspired from Gruvbox dark theme
 	       '(("TODO" . (:foreground "#CC241D" :background "#282828" :weight bold :box t))
 		 ("EVENT" . (:foreground "#DDDDDD" :background "#282828" :weight bold :box t))
+		 ("ROUTINE" . (:foreground "#AAAAAA" :background "#282828" :weight bold :box t))
 		 ("IN-PROGRESS" . (:foreground "#98971A" :background "#282828" :weight bold :box t))
 		 ("PAUSED/WAITING" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
 		 ("CANCELLED" . (:foreground "#A89984" :background "#282828" :weight bold  :box t :strike-through t))
