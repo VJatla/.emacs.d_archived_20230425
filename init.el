@@ -125,13 +125,13 @@
   
   );; Ushas settings
 
-  ((string-equal (upcase (system-name)) "XPS")
-   (load-theme 'zenburn t)
+  ((string-equal (upcase (system-name)) "SUSE")
+   (load-theme 'spacemacs-dark t)
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
                '(font . "LiberationMono-14.5"))
-  );; gojira-linux
+  );; Suse
 
 
  ((string-equal (system-name) "precision7920")
