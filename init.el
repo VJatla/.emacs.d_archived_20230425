@@ -145,13 +145,22 @@
   (load-theme 'sanityinc-tomorrow-eighties t)
      (add-to-list 'default-frame-alist
 		'(font . "JetBrains Mono Medium-12"))
-     );; xps-win (WSL)
+     );; xps-win
 
     ((string-equal (system-name) "NIMBUS")
   (load-theme 'sanityinc-tomorrow-eighties t)
      (add-to-list 'default-frame-alist
 		'(font . "JetBrains Mono Medium-12"))
      );; xps-win (WSL)
+
+
+    ((string-equal (system-name) "DESKTOP-F1KB8BQ")
+     (use-package flatland-theme
+       :ensure t)
+  (load-theme 'flatland t)
+     (add-to-list 'default-frame-alist
+		'(font . "Consolas-14.5"))
+     );; EMED latitude 7420 laptop
 
     ((string-equal (system-name) "ember")
    (load-theme 'gruvbox-dark-soft t)
