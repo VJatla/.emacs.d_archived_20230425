@@ -1,4 +1,12 @@
-* Features to add
-** TODO Company mode for web-mode
-** TODO Make U in modalka to go back a sexp
-** TODO Make O in modalka to go forward a sexp 
+* TRAMP in windows
+To get tramp/Treemacs remote file access working in windows we need to
+1. Add a local directory to treemacs projects before attempting to do
+   remote connection.
+2. Install putty via scoop
+3. Install gow via scoop (<-- Is this necessary?)
+4. Save putty sessions.
+5. Connect to putty session by using,
+   #+begin_src sh
+     C://plink:emsaconed:/home/emsaconed/public_html/emsaconed.unm.edu
+   #+end_src
+   and hit enter. You will be asked for password

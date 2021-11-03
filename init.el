@@ -154,12 +154,12 @@
      );; xps-win (WSL)
 
 
-    ((string-equal (system-name) "DESKTOP-F1KB8BQ")
+    ((string-equal (system-name) "EM0456E55E16C2")
      (use-package flatland-theme
        :ensure t)
   (load-theme 'flatland t)
      (add-to-list 'default-frame-alist
-		'(font . "Consolas-14.5"))
+		'(font . "Consolas-12"))
      );; EMED latitude 7420 laptop
 
     ((string-equal (system-name) "ember")
@@ -167,4 +167,11 @@
    (add-to-list 'default-frame-alist
 		'(font . "DejavuSansMono-13"))
    );; EMBER - Linux
-  ) ;; cond
+    ) ;; cond
+
+
+;; Use putty for windows
+(when (eq window-system 'w32)
+  (setq putty-directory "C:/Users/vj/scoop/apps/putty/current")
+  (setq tramp-default-method "plink")
+  (add-to-list 'exec-path putty-directory))
