@@ -201,6 +201,7 @@ already installed.
        (use-package treemacs
 	 :ensure t
 	 :defer t)
+       (setq treemacs-python-executable "/cygdrive/c/Users/vj/anaconda3/python")
      #+end_src
 
 ** Version control

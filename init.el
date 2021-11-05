@@ -159,7 +159,7 @@
        :ensure t)
   (load-theme 'flatland t)
      (add-to-list 'default-frame-alist
-		'(font . "Consolas-12"))
+		'(font . "DejavuSansMono-16"))
      );; EMED latitude 7420 laptop
 
     ((string-equal (system-name) "ember")
@@ -170,7 +170,7 @@
     ) ;; cond
 
 
-;; Use putty for windows
+;; Use putty for windows <-- Cygwin doesn not need this
 (when (eq window-system 'w32)
   (setq putty-directory "C:/Users/vj/scoop/apps/putty/current")
   (setq tramp-default-method "plink")
