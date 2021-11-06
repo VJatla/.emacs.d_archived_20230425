@@ -155,19 +155,21 @@
 
 
     ((string-equal (system-name) "EM0456E55E16C2")
-     (use-package flatland-theme
+     (use-package monokai-pro-theme
        :ensure t)
-  (load-theme 'flatland t)
+  (load-theme 'monokai-pro t)
      (add-to-list 'default-frame-alist
-		'(font . "DejavuSansMono-16"))
+		  '(font . "FiraCode-14.5"))
+
+     (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
      );; EMED latitude 7420 laptop
 
     ((string-equal (system-name) "ember")
    (load-theme 'gruvbox-dark-soft t)
    (add-to-list 'default-frame-alist
-		'(font . "DejavuSansMono-13"))
+		'(font . "FiraCodeMono-16"))
    );; EMBER - Linux
-    ) ;; cond
+		    ) ;; cond
 
 
 ;; Use putty for windows <-- Cygwin doesn not need this
