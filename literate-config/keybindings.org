@@ -207,12 +207,12 @@
 ** Tools
    #+begin_src emacs-lisp
      (ryo-modal-key
-      "SPC" '(("t" treemacs)
-	      ("g" magit-status)
-	      ("q" save-buffers-kill-terminal)
-	      ("8" reload-init)
-	      ("|" fci-mode)
-	      ("a" org-agenda)
+      "SPC SPC" '(("t" treemacs)
+		  ("g" magit-status)
+		  ("q" save-buffers-kill-terminal)
+		  ("8" reload-init)
+		  ("|" fci-mode)
+		  ("a" org-agenda)
 	      ))
    #+end_src
 * Treemacs

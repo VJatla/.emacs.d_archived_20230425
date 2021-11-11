@@ -3,6 +3,9 @@
   (ryo-modal-major-mode-keys
    'org-mode
    ("SPC SPC" org-ctrl-c-ctrl-c)
+   ("n" org-return)
+   ("M-n" org-meta-return)
+   ("SPC s" org-todo)
    ("SPC c i" org-clock-in)
    ("SPC c o" org-clock-out))
 #+end_src
