@@ -155,6 +155,8 @@
      (load-theme 'sanityinc-tomorrow-eighties t)
      (add-to-list 'default-frame-alist
 		  '(font . "FiraCode Nerd Font Mono-24"))
+     (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
+     
      );; xps-win (WSL)
 
 
