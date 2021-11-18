@@ -165,15 +165,15 @@
        :ensure t)
   (load-theme 'monokai-pro t)
      (add-to-list 'default-frame-alist
-		  '(font . "FiraCode-14.5"))
+		  '(font . "JetBrains Mono Regular Nerd Font Complete Mono Windows Compatible-11"))
 
-     (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
+     (custom-set-variables '(wakatime-cli-path "c:/Users/vj/anaconda3/Scripts/wakatime"))
      );; EMED latitude 7420 laptop
 
     ((string-equal (system-name) "ember")
    (load-theme 'gruvbox-dark-soft t)
    (add-to-list 'default-frame-alist
-		'(font . "FiraCodeMono-16"))
+		'(font . "FiraCodeMono-12"))
    );; EMBER - Linux
 		    ) ;; cond
 
