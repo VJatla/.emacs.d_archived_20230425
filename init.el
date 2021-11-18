@@ -99,6 +99,8 @@
 (org-babel-load-file "~/.emacs.d/literate-config/elisp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/org.org")
 
+
+
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "gojira")
@@ -147,10 +149,14 @@
 		'(font . "JetBrains Mono Medium-12"))
      );; xps-win
 
-    ((string-equal (system-name) "NIMBUS")
-  (load-theme 'sanityinc-tomorrow-eighties t)
+  ((string-equal (upcase (system-name)) "NIMBUS")
+   (use-package color-theme-sanityinc-tomorrow
+     :ensure t)
+     (load-theme 'sanityinc-tomorrow-eighties t)
      (add-to-list 'default-frame-alist
-		'(font . "JetBrains Mono Medium-12"))
+		  '(font . "FiraCode Nerd Font Mono-24"))
+     (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
+     
      );; xps-win (WSL)
 
 
