@@ -135,6 +135,16 @@
                '(font . "LiberationMono-14.5"))
   );; Suse
 
+  ((string-equal (upcase (system-name)) "YANTRAM")
+   (use-package leuven-theme
+     :ensure t)
+   (load-theme 'leuven t)
+  (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
+  (setq diary-file "/home/vj/Dropbox/org/diary-file")
+  (add-to-list 'default-frame-alist
+               '(font . "JetBrainsMono Nerd Font-14.5"))
+  );; YANTRA
+
 
  ((string-equal (system-name) "precision7920")
   (load-theme 'tsdh-dark t)
