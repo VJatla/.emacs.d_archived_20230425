@@ -170,6 +170,18 @@
      );; xps-win (WSL)
 
 
+  
+    ((string-equal (upcase (system-name)) "XPS")
+   (use-package zenburn-theme
+     :ensure t)
+     (load-theme 'zenburn t)
+     (add-to-list 'default-frame-alist
+		  '(font . " JetBrainsMono Nerd Font Mono-14.5"))
+     (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
+     
+     );; XPS
+
+
     ((string-equal (system-name) "EM0456E55E16C2")
      (use-package monokai-pro-theme
        :ensure t)
