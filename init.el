@@ -179,9 +179,9 @@
        :config
        (global-fira-code-mode t))
      (add-to-list 'default-frame-alist
-		  '(font . "FiraCode Nerd Font-14"))
-     
-     (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
+		  '(font . "Fira Code Retina-12"))
+
+     (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
      
      );; XPS
 
