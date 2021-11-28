@@ -20,7 +20,6 @@
 	    (setq
 	     conda-env-home-directory (expand-file-name "~/anaconda3/") ;; as in previous example; not required
 	     conda-env-subdirectory "envs"))
-	    (conda-env-activate "haq")
        )
       )
           #+end_src

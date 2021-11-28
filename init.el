@@ -170,7 +170,7 @@
      );; xps-win (WSL)
 
 
-    ((string-equal (upcase (system-name)) "XPS")
+    ((string-equal (upcase (system-name)) "BARNACLE")
    (use-package zenburn-theme
      :ensure t)
      (load-theme 'zenburn t)
@@ -179,10 +179,8 @@
        :config
        (global-fira-code-mode t))
      (add-to-list 'default-frame-alist
-		  '(font . "Fira Code Retina-12"))
-
+		  '(font . "Fira Code Retina-14"))
      (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
-     
      );; XPS
 
 
@@ -199,7 +197,7 @@
     ((string-equal (system-name) "ember")
    (load-theme 'gruvbox-dark-soft t)
    (add-to-list 'default-frame-alist
-		'(font . "FiraCodeMono-12"))
+		'(font . "FiraCodeMono-14"))
    );; EMBER - Linux
 		    ) ;; cond
 
