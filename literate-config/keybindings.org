@@ -199,6 +199,12 @@
 	    ("o" counsel-find-file)
 	    ("m" counsel-bookmark)
 	    ))
+     (ryo-modal-key
+      "b o" '(
+	      ("o" counsel-find-file)
+	      ("r" counsel-recentf)
+	      ))
+
      (ryo-modal-keys
       ("M-j" previous-buffer)
       ("M-l" next-buffer)
