@@ -145,13 +145,14 @@
      (ryo-modal-key "m s" 'set-mark-command :then '(beginning-of-line) :name "mark-line")
      (ryo-modal-key "m e" 'set-mark-command :then '(end-of-line) :name "mark-line")
    #+end_src
-** Change buffer commands
+** Change commands
    #+begin_src emacs-lisp
      (ryo-modal-key "c o" 'set-mark-command :then '(forward-word kill-region ryo-modal-mode) :name "change word forward")
      (ryo-modal-key "c s" 'er/mark-symbol-with-prefix :then '(kill-region ryo-modal-mode) :name "change symbol")
      (ryo-modal-key "c u" 'set-mark-command :then '(backward-word kill-region ryo-modal-mode) :name "change word backward")
      (ryo-modal-key "c q" 'er/mark-inside-quotes :then '(kill-region ryo-modal-mode) :name "change in quotes")
      (ryo-modal-key "c (" 'er/mark-inside-pairs  :then '(kill-region ryo-modal-mode) :name "change in parenthesis")
+     (ryo-modal-key "c p" 'counsel-projectile-switch-project :name "Switch project")
    #+end_src
 ** Delete buffer commands
    #+begin_src emacs-lisp
@@ -188,7 +189,7 @@
 	    ("h" split-window-horizontally)
 	    ))
    #+end_src
-** On buffer operations
+** Buffer oepen, close, change, etc
    #+begin_src emacs-lisp
      (ryo-modal-key
       "b" '(("b" ace-jump-buffer)
@@ -199,9 +200,10 @@
 	    ))
      (ryo-modal-key
       "b o" '(
+	     ("f" counsel-fzf)
 	      ("o" counsel-find-file)
 	      ("r" counsel-recentf)
-	    ("m" counsel-bookmark)
+	      ("m" counsel-bookmark)
 	      ))
 
      (ryo-modal-keys
@@ -225,6 +227,7 @@
     (use-package treemacs
       :bind(:map treemacs-mode-map
 		 ("w" . other-window)
+		 ("SPC SPC t" . treemacs)
 		 ("n" . treemacs-RET-action)
 		 ("i" . treemacs-previous-line)
 		 ("I" . beginning-of-buffer)
@@ -238,7 +241,7 @@
 		 ("M-j" . previous-buffer)
 		 ("M-l" . next-buffer)
 		 ("a" . org-agenda)
-		 ("t" . treemacs)
+		 ("SPC SPC t" . treemacs)
 		 ("w" . other-window)
 		 ("n" . dashboard-return)
 		 ("i" . dashboard-previous-line)
