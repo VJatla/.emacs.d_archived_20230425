@@ -104,27 +104,15 @@
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "jolly")
-  (add-to-list 'default-frame-alist
-               '(font . "JetBrainsMono Nerd Font-14"))
-  );; gojira-linux
-
-  ((string-equal (upcase (system-name)) "USHAS")
-   (load-theme 'nord t)
+   (load-theme 'base16-tomorrow t)
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "VictorMono-14"))
+               '(font . "JetBrainsMono Nerd Font-13"))
+  );; Jolly
 
-  ;; Copied from custom.el
-  (custom-set-faces
- '(default ((t (:background nil))))
- '(org-block ((t (:extend t :background "#232831" :foreground "#D8DEE9"))))
- '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:strike-through t))))
- '(font-lock-doc-face ((t (:foreground "#616e88" :slant italic))))
- )
 
-  
-  );; Ushas settings
+
 
   ((string-equal (upcase (system-name)) "SUSE")
    (load-theme 'spacemacs-dark t)
@@ -146,7 +134,7 @@
 
 
  ((string-equal (system-name) "black-pearl")
-  (load-theme 'spacemacs-dark t)
+  (load-theme 'base16-tomorrow-night t)
        (add-to-list 'default-frame-alist
 		    '(font . "mononoki-14.5"))
             (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
