@@ -103,10 +103,9 @@
 
 ;; Theme and fonts based on system name
 (cond
- ((string-equal (system-name) "gojira")
-  (load-theme 'doom-one t)
+ ((string-equal (system-name) "jolly")
   (add-to-list 'default-frame-alist
-               '(font . "Fantasque Sans Mono-16"))
+               '(font . "JetBrainsMono Nerd Font-14"))
   );; gojira-linux
 
   ((string-equal (upcase (system-name)) "USHAS")

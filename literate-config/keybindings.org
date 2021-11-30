@@ -196,13 +196,12 @@
 	    ("k" kill-this-buffer)
 	    ("K" kill-other-buffers)
 	    ("S" save-some-buffers)
-	    ("o" counsel-find-file)
-	    ("m" counsel-bookmark)
 	    ))
      (ryo-modal-key
       "b o" '(
 	      ("o" counsel-find-file)
 	      ("r" counsel-recentf)
+	    ("m" counsel-bookmark)
 	      ))
 
      (ryo-modal-keys
