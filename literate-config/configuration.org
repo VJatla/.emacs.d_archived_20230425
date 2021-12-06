@@ -116,6 +116,11 @@ already installed.
       :init (setq markdown-command "multimarkdown"))
   #+end_src
 * Productivity tools
+** vterm
+#+begin_src emacs-lisp
+  (use-package vterm
+    :ensure t)
+#+end_src
 ** Terminal
    #+begin_src emacs-lisp
      (defun open-terminal-in-workdir ()

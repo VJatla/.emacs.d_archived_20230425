@@ -103,8 +103,10 @@
 
 ;; Theme and fonts based on system name
 (cond
- ((string-equal (system-name) "jolly")
-   (load-theme 'base16-tomorrow t)
+ ((string-equal (system-name) "gojira")
+  (use-package zenburn-theme
+    :ensure t)
+   (load-theme 'zenburn t)
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist

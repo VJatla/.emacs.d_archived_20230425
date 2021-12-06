@@ -28,7 +28,7 @@
      :bind
      ("C-c n d" . deft))
 #+end_src
-*  Looks
+* Looks
      #+begin_src emacs-lisp
        (use-package org-bullets
 	 :ensure t
@@ -71,6 +71,14 @@
 	    ((((class color) (min-colors 16) (background dark)) 
 	      (:strike-through t)))))
        #+end_src
+** Agenda timeline
+#+begin_src emacs-lisp
+  (use-package org-timeline
+  :ensure t
+  :config
+  (add-hook 'org-agenda-finalize-hook 'org-timeline-insert-timeline :append)
+  )
+#+end_src
 * Presentation
 	 #+begin_src emacs-lisp
 	   (use-package ox-reveal
