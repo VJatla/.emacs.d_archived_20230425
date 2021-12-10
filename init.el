@@ -184,11 +184,17 @@
      );; EMED latitude 7420 laptop
 
     ((string-equal (system-name) "ember")
-   (load-theme 'gruvbox-dark-soft t)
-   (add-to-list 'default-frame-alist
-		'(font . "FiraCodeMono-14"))
-   );; EMBER - Linux
-		    ) ;; cond
+     (use-package gruvbox-theme
+       :ensure t)
+     (load-theme 'gruvbox-dark-soft t)
+     (use-package fira-code-mode
+       :ensure t
+       :config
+       (global-fira-code-mode t))
+     (add-to-list 'default-frame-alist
+		  '(font . "Fira Mono-11"))
+     );; EMBER - Linux
+    ) 
 
 
 ;; Use putty for windows <-- Cygwin doesn not need this
