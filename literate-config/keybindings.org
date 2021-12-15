@@ -145,6 +145,11 @@
      (ryo-modal-key "m s" 'set-mark-command :then '(beginning-of-line) :name "mark-line")
      (ryo-modal-key "m e" 'set-mark-command :then '(end-of-line) :name "mark-line")
    #+end_src
+** Rectangle mode
+#+begin_src emacs-lisp
+  (ryo-modal-key "R m" 'rectangle-mark-mode  :name "rectangle-mark-mode")
+  (ryo-modal-key "R i" 'rectangle-mark-mode  :name "iedit-rectangle-mode")
+#+end_src
 ** Change commands
    #+begin_src emacs-lisp
      (ryo-modal-key "c o" 'set-mark-command :then '(forward-word kill-region ryo-modal-mode) :name "change word forward")

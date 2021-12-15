@@ -103,14 +103,14 @@
 
 ;; Theme and fonts based on system name
 (cond
- ((string-equal (system-name) "gojira")
-  (use-package zenburn-theme
+ ((string-equal (system-name) "aurora")
+  (use-package nord-theme
     :ensure t)
-   (load-theme 'zenburn t)
+   (load-theme 'nord t)
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "JetBrainsMono Nerd Font-13"))
+               '(font . "JetBrains Mono-13"))
   );; Jolly
 
 
