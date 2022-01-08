@@ -91,14 +91,13 @@
 
 ;; Loading literate config files
 (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
-(org-babel-load-file "~/.emacs.d/literate-config/keybindings.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/json.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
 (org-babel-load-file "~/.emacs.d/literate-config/latex.org")
 (org-babel-load-file "~/.emacs.d/literate-config/elisp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/org.org")
-
+(org-babel-load-file "~/.emacs.d/literate-config/keybindings.org")
 
 
 ;; Theme and fonts based on system name
@@ -110,7 +109,7 @@
   (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
-               '(font . "JetBrains Mono-13"))
+               '(font . "JetBrains Mono-12"))
   );; Jolly
 
 
@@ -159,16 +158,13 @@
      );; xps-win (WSL)
 
 
-    ((string-equal (upcase (system-name)) "BARNACLE")
+    ((string-equal (upcase (system-name)) "SAIL")
    (use-package zenburn-theme
      :ensure t)
-     (load-theme 'zenburn t)
-     (use-package fira-code-mode
-       :ensure t
-       :config
-       (global-fira-code-mode t))
-     (add-to-list 'default-frame-alist
-		  '(font . "Fira Code Retina-14"))
+   (load-theme 'zenburn t)
+        (add-to-list 'default-frame-alist
+		  '(font . "JetBrains Mono-14"))
+
      (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
      );; XPS
 

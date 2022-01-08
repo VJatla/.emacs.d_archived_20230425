@@ -93,6 +93,10 @@ already installed.
      #+begin_src emacs-lisp
        (setq-default frame-title-format '("%b [%m]"))
      #+end_src
+   + Trun off wrap lines
+     #+begin_src emacs-lisp
+       (setq-default truncate-lines 1)
+     #+end_src
 *** fci-mode
     #+begin_src emacs-lisp
       (use-package fill-column-indicator
