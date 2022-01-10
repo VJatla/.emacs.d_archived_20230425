@@ -209,6 +209,7 @@
 	      ("o" counsel-find-file)
 	      ("r" counsel-recentf)
 	      ("m" counsel-bookmark)
+	      ("p" counsel-projectile-find-file)
 	      ))
 
      (ryo-modal-keys
