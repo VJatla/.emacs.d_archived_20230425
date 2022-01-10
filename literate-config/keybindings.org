@@ -102,8 +102,8 @@
       ("u" backward-word)
       ("o" forward-word)
      
-      ("s" beginning-of-line)
-      ("e" end-of-line)
+      ("<SPC> j" beginning-of-line)
+      ("<SPC> l" end-of-line)
      
       ("L" forward-paragraph)
       ("J" backward-paragraph)

@@ -91,13 +91,13 @@
 
 ;; Loading literate config files
 (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
+(org-babel-load-file "~/.emacs.d/literate-config/keybindings.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/json.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
 (org-babel-load-file "~/.emacs.d/literate-config/latex.org")
 (org-babel-load-file "~/.emacs.d/literate-config/elisp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/org.org")
-(org-babel-load-file "~/.emacs.d/literate-config/keybindings.org")
 
 
 ;; Theme and fonts based on system name
@@ -165,7 +165,7 @@
         (add-to-list 'default-frame-alist
 		  '(font . "JetBrains Mono-14"))
 
-     (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
+     (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
      );; XPS
 
 
