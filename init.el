@@ -91,7 +91,7 @@
 
 ;; Loading literate config files
 (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
-(org-babel-load-file "~/.emacs.d/literate-config/keybindings.org")
+(org-babel-load-file "~/.emacs.d/literate-config/keybindings/keybindings.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/json.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
@@ -163,7 +163,7 @@
      :ensure t)
    (load-theme 'zenburn t)
         (add-to-list 'default-frame-alist
-		  '(font . "JetBrains Mono-14"))
+		  '(font . "JetBrains Mono-14.5"))
 
      (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
      );; XPS

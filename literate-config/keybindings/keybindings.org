@@ -102,8 +102,8 @@
       ("u" backward-word)
       ("o" forward-word)
      
-      ("<SPC> j" beginning-of-line)
-      ("<SPC> l" end-of-line)
+      ("SPC j" beginning-of-line)
+      ("SPC l" end-of-line)
      
       ("L" forward-paragraph)
       ("J" backward-paragraph)
@@ -128,22 +128,26 @@
 	 ("x" kill-region)
 	 ("y" kill-ring-save))
 	(ryo-modal-key "v" 'yank :then '(save-buffer) :name "paste-and-save")
+	(ryo-modal-key "SPC y" 'beginning-of-line :then '(set-mark-command end-of-line kill-ring-save)  :name "copy-whole-line")
       #+end_src
 ** Buffer selection
    #+begin_src emacs-lisp
+     (ryo-modal-key "m m" 'beginning-of-line :then '(set-mark-command end-of-line)  :name "mark-whole-line")
      (ryo-modal-key "m (" 'er/mark-inside-pairs  :name "mark-inside-pairs")
      (ryo-modal-key "m q" 'er/mark-inside-quotes  :name "mark-inside-quote")
      (ryo-modal-key "m L" 'set-mark-command :then '(forward-paragraph) :name "mark-paragraph")
      (ryo-modal-key "m J" 'set-mark-command :then '(backward-paragraph) :name "mark-paragraph")
      (ryo-modal-key "m B" 'beginning-of-buffer :then '(set-mark-command end-of-buffer) :name "mark-whole-buffer")
      (ryo-modal-key "m j" 'set-mark-command :then '(backward-char) :name "mark-char-backward")
+     (ryo-modal-key "m k" 'set-mark-command :then '(next-line) :name "mark-char-backward")
+     (ryo-modal-key "m i" 'set-mark-command :then '(previous-line) :name "mark-char-backward")
      (ryo-modal-key "m l" 'set-mark-command :then '(forward-char) :name "mark-char-forward")
      (ryo-modal-key "m o" 'set-mark-command :then '(forward-word) :name "mark-word")
      (ryo-modal-key "m u" 'set-mark-command :then '(backward-word) :name "mark-word-backward")
      (ryo-modal-key "m K" 'set-mark-command :then '(end-of-buffer) :name "mark-till-buffer-end")
      (ryo-modal-key "m I" 'set-mark-command :then '(beginning-of-buffer)  :name "mark-till-buffer-end")
-     (ryo-modal-key "m s" 'set-mark-command :then '(beginning-of-line) :name "mark-line")
-     (ryo-modal-key "m e" 'set-mark-command :then '(end-of-line) :name "mark-line")
+     (ryo-modal-key "m SPC j" 'set-mark-command :then '(beginning-of-line) :name "mark-line")
+     (ryo-modal-key "m SPC l" 'set-mark-command :then '(end-of-line) :name "mark-line")
    #+end_src
 ** Rectangle mode
 #+begin_src emacs-lisp
@@ -161,13 +165,14 @@
    #+end_src
 ** Delete buffer commands
    #+begin_src emacs-lisp
-     (ryo-modal-key "d o" 'set-mark-command :then '(forward-word kill-region) :name "change word forward")
-     (ryo-modal-key "d s" 'er/mark-symbol-with-prefix :then '(kill-region) :name "change symbol")
-     (ryo-modal-key "d u" 'set-mark-command :then '(backward-word kill-region) :name "change word backward")
-     (ryo-modal-key "d q" 'er/mark-inside-quotes :then '(kill-region) :name "change in quotes")
+     (ryo-modal-key "d SPC l" 'kill-line :name "Delete till end")
+     (ryo-modal-key "d d" 'kill-whole-line :name "Delete whole line")
+     (ryo-modal-key "d o" 'set-mark-command :then '(forward-word kill-region) :name "delete word forward")
+     (ryo-modal-key "d s" 'er/mark-symbol-with-prefix :then '(kill-region) :name "delete symbol")
+     (ryo-modal-key "d u" 'set-mark-command :then '(backward-word kill-region) :name "delete word backward")
+     (ryo-modal-key "d q" 'er/mark-inside-quotes :then '(kill-region) :name "delete in quotes")
      (ryo-modal-key "d (" 'er/mark-inside-pairs  :then '(kill-region) :name "change in parenthesis")
    #+end_src
-   
 ** Buffer search/replace
    #+begin_src emacs-lisp
      (ryo-modal-keys
@@ -260,4 +265,14 @@
 		    (local-set-key (kbd "M-j") 'previous-buffer)
 		    (local-set-key (kbd "M-l") 'next-buffer)))
   #+end_src
-  
+* Markdown
+The following are markdown keybindings.
+| Mode   | Keybinding | Function                   |
+|--------+------------+----------------------------|
+| Normal | SPC c t    | Markdown table of contents |
+|        |            |                            |
+#+begin_src emacs-lisp
+      (ryo-modal-major-mode-keys
+     'markdown-mode
+     ("SPC c t" markdown-toc-generate-or-refresh-toc))
+     #+end_src
