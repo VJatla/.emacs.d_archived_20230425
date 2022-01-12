@@ -110,7 +110,8 @@
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
                '(font . "LiberationMono-12"))
-  );; Jolly
+  (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
+  );; MX@aurora
 
 
 
