@@ -14,103 +14,107 @@
     (set-cursor-color "Sky Blue")
     (add-hook 'text-mode-hook 'ryo-modal-mode)
     (add-hook 'prog-mode-hook 'ryo-modal-mode)
-    
-    
+
+
     ;; Key-chord
     (use-package key-chord
       :ensure t
       :config
       (setq key-chord-two-keys-delay 0.1)
       (key-chord-mode 1))
-    
+
     ;; expand region (for selections)
     (use-package expand-region
       :ensure t
       :config)    
-  #+end_src
+    #+end_src
 
 * Functions
 ** Buffer
-   #+begin_src emacs-lisp
-      (defun insert-space ()
-	(interactive)
-	(insert " "))
-     
-      (defun insert-4-space ()
-	(interactive)
-	(insert "    "))
-     
-     
-      ;; query-replace current symbol
-      (defun replace-symbol (replace-str)
-	(interactive "sDo query-replace current word with: ")
-	(sp-forward-symbol)
-	(let ((end (point)))
-	  (sp-backward-symbol)
-	  (kill-ring-save (point) end)
-	  (query-replace (current-kill 0) replace-str) ))
-     
-      ;; Find markded region using swiper
-      (defun swiper-region ()
-	"Use current region if active for swiper search"
-	(interactive)
-	(if (use-region-p)
-	    (swiper (format "%s" (buffer-substring (region-beginning) (region-end))))
-	  (swiper)))
-     
-      ;; Replace word under cursor
-      (defun replace-cur-word (replace-str)
-	(interactive "sDo query-replace current word with: ")
-	(forward-word)
-	(let ((end (point)))
-	  (backward-word)
-	  (kill-ring-save (point) end)
-	  (query-replace (current-kill 0) replace-str) ))
-     
-      ;; Kill all other buffers
-     (defun kill-other-buffers ()
-  "Kill all other buffers."
-  (interactive)
-  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
-   #+end_src
+#+begin_src emacs-lisp
+  (defun insert-space ()
+    (interactive)
+    (insert " "))
+
+  (defun insert-4-space ()
+    (interactive)
+    (insert "    "))
+
+
+  ;; query-replace current symbol
+  (defun replace-symbol (replace-str)
+    (interactive "sDo query-replace current word with: ")
+    (sp-forward-symbol)
+    (let ((end (point)))
+      (sp-backward-symbol)
+      (kill-ring-save (point) end)
+      (query-replace (current-kill 0) replace-str) ))
+
+  ;; Find markded region using swiper
+  (defun swiper-region ()
+    "Use current region if active for swiper search"
+    (interactive)
+    (if (use-region-p)
+	(swiper (format "%s" (buffer-substring (region-beginning) (region-end))))
+      (swiper)))
+
+  ;; Replace word under cursor
+  (defun replace-cur-word (replace-str)
+    (interactive "sDo query-replace current word with: ")
+    (forward-word)
+    (let ((end (point)))
+      (backward-word)
+      (kill-ring-save (point) end)
+      (query-replace (current-kill 0) replace-str) ))
+
+  ;; Kill all other buffers
+  (defun kill-other-buffers ()
+    "Kill all other buffers."
+    (interactive)
+    (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+#+end_src
 ** Reload init file
-   #+begin_src emacs-lisp
-     (defun reload-init ()
-       (interactive)
-       (load-file "~/.emacs.d/init.el"))
-   #+end_src
+#+begin_src emacs-lisp
+  (defun reload-init ()
+    (interactive)
+    (load-file "~/.emacs.d/init.el"))
+#+end_src
 * Switching modes
-  #+begin_src emacs-lisp
-    (defun ryo-exit-save ()
-      (interactive)
-      (ryo-modal-mode)
-      (save-buffer))
-    (key-chord-define-global "88" 'ryo-modal-mode)
-    (key-chord-define-global "99" 'ryo-modal-mode)
-    (ryo-modal-keys
-     ("8" ryo-modal-mode)
-     ("9" ryo-modal-mode))
-  #+end_src
+#+begin_src emacs-lisp
+  (defun ryo-exit-save ()
+    (interactive)
+    (ryo-modal-mode)
+    (save-buffer))
+  (key-chord-define-global "88" 'ryo-modal-mode)
+  (key-chord-define-global "99" 'ryo-modal-mode)
+  (ryo-modal-keys
+   ("8" ryo-modal-mode)
+   ("9" ryo-modal-mode))
+#+end_src
 * keybindings
 ** Buffer movements
-   #+begin_src emacs-lisp
-     (ryo-modal-keys
-      ("i" previous-line)
-      ("k" next-line)
-      ("j" backward-char)
-      ("l" forward-char)
-      ("u" backward-word)
-      ("o" forward-word)
-     
-      ("SPC j" beginning-of-line)
-      ("SPC l" end-of-line)
-     
-      ("L" forward-paragraph)
-      ("J" backward-paragraph)
-     
-     
-      ("I" beginning-of-buffer)
-      ("K" end-of-buffer))
+#+begin_src emacs-lisp
+  (ryo-modal-keys
+   ("i" previous-line)
+   ("k" next-line)
+   ("j" backward-char)
+   ("l" forward-char)
+   ("u" backward-word)
+   ("o" forward-word)
+
+   ("SPC j" beginning-of-line)
+   ("SPC l" end-of-line)
+
+   ("L" forward-paragraph)
+   ("J" backward-paragraph)
+
+
+   ("I" beginning-of-buffer)
+   ("K" end-of-buffer)
+
+   ("SPC n" goto-line)
+
+   )
    #+end_src
 ** Buffer editing
    #+begin_src emacs-lisp
@@ -232,6 +236,7 @@
 		  ("|" fci-mode)
 		  ("a" org-agenda)
 	      ))
+     (ryo-modal-key "SPC v" 'vterm-toggle  "vterm-toggle")
    #+end_src
 * Treemacs
   #+begin_src emacs-lisp
