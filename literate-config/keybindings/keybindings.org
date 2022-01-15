@@ -102,8 +102,8 @@
    ("u" backward-word)
    ("o" forward-word)
 
-   ("SPC j" beginning-of-line)
-   ("SPC l" end-of-line)
+   ("h" beginning-of-line)
+   (";" end-of-line)
 
    ("L" forward-paragraph)
    ("J" backward-paragraph)
@@ -119,7 +119,7 @@
 ** Buffer editing
    #+begin_src emacs-lisp
      (ryo-modal-keys
-      (";" comment-or-uncomment-region)
+      ("SPC c" comment-or-uncomment-region)
       ("-" undo)
       ("f" insert-space)
       ("4" insert-4-space)
@@ -150,8 +150,8 @@
      (ryo-modal-key "m u" 'set-mark-command :then '(backward-word) :name "mark-word-backward")
      (ryo-modal-key "m K" 'set-mark-command :then '(end-of-buffer) :name "mark-till-buffer-end")
      (ryo-modal-key "m I" 'set-mark-command :then '(beginning-of-buffer)  :name "mark-till-buffer-end")
-     (ryo-modal-key "m SPC j" 'set-mark-command :then '(beginning-of-line) :name "mark-line")
-     (ryo-modal-key "m SPC l" 'set-mark-command :then '(end-of-line) :name "mark-line")
+     (ryo-modal-key "m h" 'set-mark-command :then '(beginning-of-line) :name "mark-line")
+     (ryo-modal-key "m ;" 'set-mark-command :then '(end-of-line) :name "mark-line")
    #+end_src
 ** Rectangle mode
 #+begin_src emacs-lisp
