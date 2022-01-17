@@ -191,17 +191,19 @@
    #+end_src
 ** Windows
    #+begin_src emacs-lisp
-     (ryo-modal-key
-      "w" '(("j" windmove-left)
-	    ("l" windmove-right)
-	    ("i" windmove-up)
-	    ("k" windmove-down)
-	    ("d" delete-window)
+	  (ryo-modal-key
+	   "w" '(("j" windmove-left)
+		 ("h" windmove-left)
+		 ("l" windmove-right)
+		 (";" windmove-right)
+		 ("i" windmove-up)
+		 ("k" windmove-down)
+		 ("d" delete-window)
 
-("D" delete-other-windows)
-	    ("v" split-window-vertically)
-	    ("h" split-window-horizontally)
-	    ))
+     ("D" delete-other-windows)
+		 ("s v" split-window-vertically)
+		 ("s h" split-window-horizontally)
+		 ))
    #+end_src
 ** Buffer oepen, close, change, etc
    #+begin_src emacs-lisp

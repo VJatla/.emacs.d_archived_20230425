@@ -8,7 +8,7 @@
   "disable all active themes."
   (dolist (i custom-enabled-themes)
     (disable-theme i)))
-(disable-all-themes)
+ (disable-all-themes)
 
 ;;; Package repositories
 (setq package-archives
@@ -153,9 +153,9 @@
      :ensure t)
      (load-theme 'sanityinc-tomorrow-eighties t)
      (add-to-list 'default-frame-alist
-		  '(font . "FiraCode Nerd Font Mono-24"))
-     (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
-     
+		  '(font . "JetBrains Mono-14"))
+     (setq treemacs-python-executable "/home/vj/anaconda3/bin/python")
+     (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
      );; xps-win (WSL)
 
 
