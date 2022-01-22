@@ -244,8 +244,9 @@
   #+begin_src emacs-lisp
     (use-package treemacs
       :bind(:map treemacs-mode-map
-		 ("w" . other-window)
+		 ("w l" . other-window)
 		 ("SPC SPC t" . treemacs)
+		 ("SPC SPC a" . org-agenda)
 		 ("n" . treemacs-RET-action)
 		 ("i" . treemacs-previous-line)
 		 ("I" . beginning-of-buffer)
@@ -260,6 +261,7 @@
 		 ("M-l" . next-buffer)
 		 ("a" . org-agenda)
 		 ("SPC SPC t" . treemacs)
+		 ("SPC SPC a" . org-agenda)
 		 ("w" . other-window)
 		 ("n" . dashboard-return)
 		 ("i" . dashboard-previous-line)

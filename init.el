@@ -18,6 +18,22 @@
 	)
       )
 
+;; Org-agenda files
+(defun org-get-agenda-files-recursively (dir)
+  "Get org agenda files from root DIR."
+  (directory-files-recursively dir "\.org$"))
+
+(defun org-set-agenda-files-recursively (dir)
+  "Set org-agenda files from root DIR."
+  (setq org-agenda-files 
+    (org-get-agenda-files-recursively dir)))
+
+(defun org-add-agenda-files-recursively (dir)
+  "Add org-agenda files from root DIR."
+  (nconc org-agenda-files 
+	 (org-get-agenda-files-recursively dir)))
+
+
 ;; Shutdown emacs server function
 ;; define function to shutdown emacs server instance
 (defun server-shutdown ()
@@ -81,7 +97,7 @@
   ;; 1. wakatime
   ;; 2. anaconda-mode
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
-  (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
+  (setq org-agenda-files '("/home/vj/Dropbox/org/projects/active/"))
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/.local/bin"))
   (setq exec-path (append exec-path '("/home/vj/.local/bin")))
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/anaconda3/bin"))
@@ -105,12 +121,24 @@
  ((string-equal (system-name) "aurora")
   (use-package nord-theme
     :ensure t)
+  (use-package monokai-pro-theme
+    :ensure t)
    (load-theme 'nord t)
-  (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
+   (setq org-agenda-files '("/home/vj/Dropbox/org/projects/active/"))
+   (setq org-agenda-files '("/home/vj/Dropbox/org/today.org"))
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   (add-to-list 'default-frame-alist
                '(font . "LiberationMono-12"))
+
+  (setq org-agenda-files nil) ; zero out for testing
+  
+  (org-set-agenda-files-recursively "/home/vj/Dropbox/org/") ; test set
+
+  ;; (org-add-agenda-files-recursively "~/Dropbox") ; test add 
+  
   (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
+
+  
   );; MX@aurora
 
 
