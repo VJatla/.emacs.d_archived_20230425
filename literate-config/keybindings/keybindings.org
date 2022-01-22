@@ -244,7 +244,7 @@
   #+begin_src emacs-lisp
     (use-package treemacs
       :bind(:map treemacs-mode-map
-		 ("w l" . other-window)
+		 ("w" . other-window)
 		 ("SPC SPC t" . treemacs)
 		 ("SPC SPC a" . org-agenda)
 		 ("n" . treemacs-RET-action)
