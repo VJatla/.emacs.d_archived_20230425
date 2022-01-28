@@ -253,6 +253,12 @@
 		 ("k" . treemacs-next-line)
 		 ("K" . end-of-buffer)))
   #+end_src
+  #+begin_src emacs-lisp
+    (ryo-modal-major-mode-keys
+     'treemacs-mode
+     ("n" treemacs-RET-action)
+     )
+  #+end_src
 * Dashboard
   #+begin_src emacs-lisp
     (use-package dashboard

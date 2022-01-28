@@ -124,19 +124,18 @@
   (use-package monokai-pro-theme
     :ensure t)
    (load-theme 'nord t)
-   (setq org-agenda-files '("/home/vj/Dropbox/org/projects/active/"))
-   (setq org-agenda-files '("/home/vj/Dropbox/org/today.org"))
-  (setq diary-file "/home/vj/Dropbox/org/diary-file")
+
   (add-to-list 'default-frame-alist
                '(font . "LiberationMono-12"))
 
-  (setq org-agenda-files nil) ; zero out for testing
-  
-  (org-set-agenda-files-recursively "/home/vj/Dropbox/org/") ; test set
 
-  ;; (org-add-agenda-files-recursively "~/Dropbox") ; test add 
   
+  (setq org-agenda-files nil) ; zero out for testing
+  (org-set-agenda-files-recursively "/home/vj/Dropbox/org/") ; test set
+  (setq diary-file "/home/vj/Dropbox/org/diary-file")
+
   (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
+
 
   
   );; MX@aurora
