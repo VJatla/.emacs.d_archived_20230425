@@ -119,14 +119,12 @@
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "aurora")
-  (use-package nord-theme
+  (use-package zenburn-theme
     :ensure t)
-  (use-package monokai-pro-theme
-    :ensure t)
-   (load-theme 'nord t)
+   (load-theme 'zenburn t)
 
   (add-to-list 'default-frame-alist
-               '(font . "LiberationMono-12"))
+               '(font . "JetBrains Mono-14"))
 
 
   
@@ -134,7 +132,7 @@
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/") ; test set
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
 
-  (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
+  (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
 
 
   
