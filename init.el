@@ -119,23 +119,22 @@
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "aurora")
-  (use-package zenburn-theme
+  (use-package apropospriate-theme
     :ensure t)
-   (load-theme 'zenburn t)
+
+    (load-theme 'apropospriate-dark t)
 
   (add-to-list 'default-frame-alist
-               '(font . "JetBrains Mono-14"))
-
-
+               '(font . "Fira Code Retina-12.5"))
   
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/") ; test set
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
 
+  ;; Python environment
+  (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
+
   (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
-
-
-  
   );; MX@aurora
 
 

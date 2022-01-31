@@ -87,6 +87,7 @@
     (save-buffer))
   (key-chord-define-global "88" 'ryo-modal-mode)
   (key-chord-define-global "99" 'ryo-modal-mode)
+  (key-chord-define-global "33" 'vterm-toggle)
   (ryo-modal-keys
    ("8" ryo-modal-mode)
    ("9" ryo-modal-mode))
@@ -191,19 +192,19 @@
    #+end_src
 ** Windows
    #+begin_src emacs-lisp
-	  (ryo-modal-key
-	   "w" '(("j" windmove-left)
-		 ("h" windmove-left)
-		 ("l" windmove-right)
-		 (";" windmove-right)
-		 ("i" windmove-up)
-		 ("k" windmove-down)
-		 ("d" delete-window)
+     (ryo-modal-key
+      "w" '(("j" windmove-left)
+	    ("h" windmove-left)
+	    ("l" windmove-right)
+	    (";" windmove-right)
+	    ("i" windmove-up)
+	    ("k" windmove-down)
+	    ("d" delete-window)
 
-     ("D" delete-other-windows)
-		 ("s v" split-window-vertically)
-		 ("s h" split-window-horizontally)
-		 ))
+	    ("D" delete-other-windows)
+	    ("s v" split-window-vertically)
+	    ("s h" split-window-horizontally)
+	    ))
    #+end_src
 ** Buffer oepen, close, change, etc
    #+begin_src emacs-lisp
@@ -225,8 +226,7 @@
 
      (ryo-modal-keys
       ("M-j" previous-buffer)
-      ("M-l" next-buffer)
-      )
+      ("M-l" next-buffer))
    #+end_src
 ** Tools
    #+begin_src emacs-lisp
@@ -238,7 +238,6 @@
 		  ("|" fci-mode)
 		  ("a" org-agenda)
 	      ))
-     (ryo-modal-key "SPC v" 'vterm-toggle  "vterm-toggle")
    #+end_src
 * Treemacs
   #+begin_src emacs-lisp
