@@ -1,4 +1,4 @@
-* Looks
+*  Looks
      #+begin_src emacs-lisp
        (use-package org-bullets
 	 :ensure t
@@ -20,21 +20,26 @@
 	 (setq org-agenda-clockreport-parameter-plist
 	       (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80)))
 	 (setq org-agenda-tags-column 77)
-	 (setq org-todo-keywords '((sequence "TODO(t!)" "IN-PROGRESS(p)" "PAUSED/WAITING(w)" "EVENT(e)" "|" "CANCELLED(c!)" "DONE(d!)" "ARCHIVED(a!)")))
+	 (setq org-todo-keywords '((sequence "TODO(t)" "DOING(o)" "PAUSED(p)" "WAITING(w)" "FEEDBACK(f)" "|" "DONE(d)" "CANCELLED(c)" "ARCHIVED(a)")))
 	 (setq org-agenda-include-diary nil)
 	 (setq org-agenda-span 1)
 	 (use-package org-agenda-property
 	   :ensure t)
+
 	 (setq org-todo-keyword-faces
 	       ;; Inspired from Gruvbox dark theme
-	       '(("TODO" . (:foreground "#CC241D" :background "#282828" :weight bold :box t))
-		 ("EVENT" . (:foreground "#DDDDDD" :background "#282828" :weight bold :box t))
-		 ("ROUTINE" . (:foreground "#AAAAAA" :background "#282828" :weight bold :box t))
-		 ("IN-PROGRESS" . (:foreground "#98971A" :background "#282828" :weight bold :box t))
-		 ("PAUSED/WAITING" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
-		 ("CANCELLED" . (:foreground "#A89984" :background "#282828" :weight bold  :box t :strike-through t))
-		 ("ARCHIVED" .  (:foreground "#A89984" :background "#282828" :weight bold  :box t :strike-through t))
-		 ("DONE" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))))
+	       '(
+		 ("TODO" . (:foreground "#CC241D" :background "#282828" :weight bold :box t))
+		 ("DOING" . (:foreground "#ff5733" :background "#282828" :weight bold :box t))
+		 ("PAUSED" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
+		 ("WAITING" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
+		 ("FEEDBACK" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
+		 ("DONE" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))
+		 ("CANCELLED" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))
+		 ("ARCHIVED" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))
+		 ))
+
+
 	 (setq org-fontify-done-headline t)
 	 (custom-set-faces
 	  '(org-headline-done 
@@ -62,7 +67,6 @@
   #+begin_src emacs-lisp
     (setq format-time-string "%b %d, %Y")
   #+end_src
-
 * Keybindings
 #+begin_src emacs-lisp
   (ryo-modal-major-mode-keys

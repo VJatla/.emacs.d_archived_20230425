@@ -45,12 +45,12 @@
 
 ;; Activating use-package (Installing if not found)
 (require 'package)
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(unless (package-installed-p 'org)
-  (package-refresh-contents)
-  (package-install 'org))
+;; (unless (package-installed-p 'use-package)
+;;   (package-refresh-contents)
+;;   (package-install 'use-package))
+;; (unless (package-installed-p 'org)
+;;   (package-refresh-contents)
+;;   (package-install 'org))
 
 ;; All backup files are in one directory
 (setq backup-directory-alist
@@ -119,13 +119,13 @@
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "aurora")
-  (use-package apropospriate-theme
+  (use-package solarized-theme
     :ensure t)
 
-    (load-theme 'apropospriate-dark t)
-
+    (load-theme 'solarized-dark t)
+    
   (add-to-list 'default-frame-alist
-               '(font . "Fira Code Retina-12.5"))
+                '(font . "Victor Mono-16"))
   
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/") ; test set

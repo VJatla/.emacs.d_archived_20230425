@@ -148,10 +148,10 @@ Delete trailing whitespaces on save.
 ** Completion framework
 + Code completion
   #+begin_src emacs-lisp
-    (use-package company
-      :ensure t
-      :config
-      (add-hook 'after-init-hook 'global-company-mode))
+      (use-package company
+	:ensure t
+	:config
+	(add-hook 'after-init-hook 'global-company-mode))
   #+end_src
 + Minibuffer completion
   #+begin_src emacs-lisp
@@ -281,7 +281,7 @@ Delete trailing whitespaces on save.
 		 ;;(direction . bottom)
 		 ;;(dedicated . t) ;dedicated is supported in emacs27
 		 (reusable-frames . visible)
-		 (window-height . 0.1)))
+		 (window-height . 0.2)))
   (global-set-key (kbd "<f9>") #'vterm-toggle)
 
    #+end_src
