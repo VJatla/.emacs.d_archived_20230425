@@ -45,12 +45,12 @@
 
 ;; Activating use-package (Installing if not found)
 (require 'package)
-;; (unless (package-installed-p 'use-package)
-;;   (package-refresh-contents)
-;;   (package-install 'use-package))
-;; (unless (package-installed-p 'org)
-;;   (package-refresh-contents)
-;;   (package-install 'org))
+ (unless (package-installed-p 'use-package)
+   (package-refresh-contents)
+   (package-install 'use-package))
+ (unless (package-installed-p 'org)
+   (package-refresh-contents)
+   (package-install 'org))
 
 ;; All backup files are in one directory
 (setq backup-directory-alist
