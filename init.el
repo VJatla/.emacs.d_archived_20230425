@@ -8,7 +8,7 @@
   "disable all active themes."
   (dolist (i custom-enabled-themes)
     (disable-theme i)))
- (disable-all-themes)
+(disable-all-themes)
 
 ;;; Package repositories
 (setq package-archives
@@ -26,7 +26,7 @@
 (defun org-set-agenda-files-recursively (dir)
   "Set org-agenda files from root DIR."
   (setq org-agenda-files 
-    (org-get-agenda-files-recursively dir)))
+	(org-get-agenda-files-recursively dir)))
 
 (defun org-add-agenda-files-recursively (dir)
   "Add org-agenda files from root DIR."
@@ -45,12 +45,12 @@
 
 ;; Activating use-package (Installing if not found)
 (require 'package)
- (unless (package-installed-p 'use-package)
-   (package-refresh-contents)
-   (package-install 'use-package))
- (unless (package-installed-p 'org)
-   (package-refresh-contents)
-   (package-install 'org))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(unless (package-installed-p 'org)
+  (package-refresh-contents)
+  (package-install 'org))
 
 ;; All backup files are in one directory
 (setq backup-directory-alist
@@ -59,15 +59,15 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; Load literate configuration file
- (setq org-agenda-include-diary t)
+(setq org-agenda-include-diary t)
 (cond
  ;; Windows settings
  ((string-equal system-type "windows-nt")
   ;; The following path is necessary to get following working,
   ;; 1. wakatime
   ;; 2. anaconda-mode -- Python
-;;  (setq wakatime-python-bin '("C:/msys64/mingw64/bin/python.exe"))
-;;  (setq wakatime-cli-path '("C:/ProgramData/Anaconda3/Scripts/wakatime.exe"))
+  ;;  (setq wakatime-python-bin '("C:/msys64/mingw64/bin/python.exe"))
+  ;;  (setq wakatime-cli-path '("C:/ProgramData/Anaconda3/Scripts/wakatime.exe"))
   
   (setq org-agenda-files '("C:/Users/vj/Dropbox/org/tasks"))
   (setq diary-file "C:/Users/vj/Dropbox/org/diary-file")
@@ -108,6 +108,7 @@
 ;; Loading literate config files
 (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
 (org-babel-load-file "~/.emacs.d/literate-config/keybindings/keybindings.org")
+(org-babel-load-file "~/.emacs.d/literate-config/lsp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/json.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
@@ -122,10 +123,10 @@
   (use-package solarized-theme
     :ensure t)
 
-    (load-theme 'solarized-dark t)
-    
+  (load-theme 'solarized-dark t)
+  
   (add-to-list 'default-frame-alist
-                '(font . "Victor Mono-16"))
+               '(font . "Victor Mono-16"))
   
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/") ; test set
@@ -139,13 +140,23 @@
 
 
  ((string-equal (system-name) "P7920")
+
+  ;; Theme
   (use-package nord-theme
     :ensure t)
   (load-theme 'nord t)
-       (add-to-list 'default-frame-alist
-		    '(font . "JetBrains Mono-15"))
-            (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
-  );; Black pearl
+
+  ;; Font
+  (add-to-list 'default-frame-alist
+	       '(font . "JetBrains Mono-14"))
+
+  ;; Binary file paths
+  (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
+
+  ;; Python HOME environment
+  (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
+  
+  );; 
  
   ((string-equal (system-name) "XPS-WIN")
   (load-theme 'sanityinc-tomorrow-eighties t)

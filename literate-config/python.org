@@ -4,19 +4,43 @@
       (interactive)
     (insert "import pdb; pdb.set_trace()"))
   #+end_src
-* Elpy
-  #+begin_src emacs-lisp
-(use-package elpy
-  :ensure t
-  :init
-  (advice-add 'python-mode :before 'elpy-enable))
-  #+end_src
+  
+* Autoactivate environment haq
+#+begin_src emacs-lisp
+  (require 'pyvenv)
+  (pyvenv-activate "/home/vj/anaconda3/envs/haq/")
+#+end_src
+* LSP-pyright
+#+begin_src emacs-lisp
+  (use-package lsp-pyright
+  :after lsp-mode
+  :custom
+  (lsp-pyright-auto-import-completions nil)
+  (lsp-pyright-typechecking-mode "off"))
+#+end_src
+
+* Enable lsp-dap
+#+begin_src emacs-lisp
+  (use-package dap-python)
+#+end_src
 * Keybindings
   #+begin_src emacs-lisp
     (ryo-modal-major-mode-keys
      'python-mode
      ("SPC b" insert-pdb)
-     ("SPC d" elpy-goto-definition)
-
+     ("SPC d" lsp-find-definition)
      )
   #+end_src
+* DAP debug templates
+#+begin_src emacs-lisp
+  (dap-register-debug-template
+   "HAQ: create_xlsx.py"
+   (list :type "python"
+	 :name "HAQ: create_xlsx.py"
+	 :something "" ;; incorrect property will how raise any error
+	 :args (list "/home/vj/Dropbox/typing-notyping/C1L1P-E/20170302/gTruth-tynty_30fps.csv" "/home/vj/Dropbox/typing-notyping/kid-pseudonym-mapping.csv" "/home/vj/Dropbox/typing-notyping/C1L1P-E/20170302/gt-ty-30fps.xlsx" "typing" "person" "numeric_code") ;; reddit is an input to -d flag, and --use_memory is another flag
+	 :cwd nil
+	 :module nil
+	 :program "/home/vj/Dropbox/Marios_Shared/HAQ-AOLME/software/HAQ/activity-labels/edu-dept/create_xlsx.py"
+	 :request "launch"))
+#+end_src
