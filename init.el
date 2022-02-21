@@ -138,31 +138,12 @@
   );; MX@aurora
 
 
-
-
-  ((string-equal (upcase (system-name)) "SUSE")
-   (load-theme 'spacemacs-dark t)
-  (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
-  (setq diary-file "/home/vj/Dropbox/org/diary-file")
-  (add-to-list 'default-frame-alist
-               '(font . "LiberationMono-14.5"))
-  );; Suse
-
-  ((string-equal (upcase (system-name)) "YANTRAM")
-   (use-package leuven-theme
-     :ensure t)
-   (load-theme 'leuven t)
-  (setq org-agenda-files '("/home/vj/Dropbox/org/tasks"))
-  (setq diary-file "/home/vj/Dropbox/org/diary-file")
-  (add-to-list 'default-frame-alist
-               '(font . "JetBrainsMono Nerd Font-14.5"))
-  );; YANTRA
-
-
- ((string-equal (system-name) "black-pearl")
-  (load-theme 'base16-tomorrow-night t)
+ ((string-equal (system-name) "P7920")
+  (use-package nord-theme
+    :ensure t)
+  (load-theme 'nord t)
        (add-to-list 'default-frame-alist
-		    '(font . "mononoki-14.5"))
+		    '(font . "JetBrains Mono-15"))
             (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
   );; Black pearl
  

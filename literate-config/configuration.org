@@ -294,4 +294,9 @@ Delete trailing whitespaces on save.
      (use-package yasnippet-snippets
        :ensure t)
    #+end_src
-   
+* Mermaid mode
+#+begin_src emacs-lisp
+  (use-package mermaid-mode
+    :ensure t)
+  (add-to-list 'auto-mode-alist '("\\.mmd\\'" . mermaid-mode))
+#+end_src
