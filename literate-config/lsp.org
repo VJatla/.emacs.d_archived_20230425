@@ -31,6 +31,5 @@
 #+begin_src emacs-lisp
   (use-package dap-mode
     :ensure t)
-  (add-hook 'dap-stopped-hook
-          (lambda (arg) (call-interactively #'dap-hydra)))
+  (setq dap-auto-configure-features '(repl expressions))
 #+end_src
