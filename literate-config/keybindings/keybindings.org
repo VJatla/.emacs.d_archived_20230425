@@ -92,7 +92,12 @@
    ("8" ryo-modal-mode)
    ("9" ryo-modal-mode))
 #+end_src
-* keybindings
+* Global Keybindings
+#+begin_src emacs-lisp
+  (global-set-key (kbd "M-i") 'windmove-up)
+  (global-set-key (kbd "M-k") 'windmove-down)
+#+end_src
+* Modalka keybindings
 ** Buffer movements
 #+begin_src emacs-lisp
   (ryo-modal-keys
@@ -258,6 +263,15 @@
      ("n" treemacs-RET-action)
      )
   #+end_src
+* Vterm
+#+begin_src emacs-lisp
+  (use-package vterm
+    :bind(:map vterm-mode-map
+	       ("M-i" . windmove-up)
+	       ("M-k" . windmove-down)
+	       ))
+#+end_src
+
 * Dashboard
   #+begin_src emacs-lisp
     (use-package dashboard
