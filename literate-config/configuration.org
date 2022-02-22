@@ -106,6 +106,14 @@ Delete trailing whitespaces on save.
     (setq fci-rule-width 1))
   '(fci-rule-color "white")
 #+end_src
+*** Audo-dim other buffers
+#+begin_src emacs-lisp
+  (use-package auto-dim-other-buffers
+    :ensure t)
+  (add-hook 'after-init-hook (lambda ()
+  (when (fboundp 'auto-dim-other-buffers-mode)
+    (auto-dim-other-buffers-mode t))))
+#+end_src
 
 * markdown
 #+begin_src emacs-lisp
