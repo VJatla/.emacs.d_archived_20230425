@@ -122,19 +122,14 @@
  ((string-equal (system-name) "aurora")
   (use-package solarized-theme
     :ensure t)
-
   (load-theme 'solarized-dark t)
-  
   (add-to-list 'default-frame-alist
-               '(font . "Victor Mono-16"))
-  
+               '(font . "Victor Mono-14"))
   (setq org-agenda-files nil) ; zero out for testing
-  (org-set-agenda-files-recursively "/home/vj/Dropbox/org/") ; test set
+  (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
-
   ;; Python environment
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
-
   (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
   );; MX@aurora
 

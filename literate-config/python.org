@@ -4,7 +4,6 @@
       (interactive)
     (insert "import pdb; pdb.set_trace()"))
   #+end_src
-  
 * Autoactivate environment haq
 #+begin_src emacs-lisp
   (require 'pyvenv)
