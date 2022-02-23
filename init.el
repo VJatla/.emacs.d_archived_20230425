@@ -119,18 +119,18 @@
 
 ;; Theme and fonts based on system name
 (cond
- ((string-equal (system-name) "aurora")
-  (use-package solarized-theme
+ ((string-equal (system-name) "aurora.example.org")
+  (use-package zenburn-theme
     :ensure t)
-  (load-theme 'solarized-dark t)
+  (load-theme 'zenburn t)
   (add-to-list 'default-frame-alist
-               '(font . "Victor Mono-14"))
+               '(font . "Victor Mono-16"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   ;; Python environment
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
-  (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
+  (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
   );; MX@aurora
 
 

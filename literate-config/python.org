@@ -6,6 +6,8 @@
   #+end_src
 * Autoactivate environment haq
 #+begin_src emacs-lisp
+  (use-package pyvenv
+    :ensure t)
   (require 'pyvenv)
   (pyvenv-activate "/home/vj/anaconda3/envs/haq/")
 #+end_src
