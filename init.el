@@ -108,8 +108,6 @@
 ;; Loading literate config files
 (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
 (org-babel-load-file "~/.emacs.d/literate-config/keybindings/keybindings.org")
-(org-babel-load-file "~/.emacs.d/literate-config/lsp.org")
-(org-babel-load-file "~/.emacs.d/literate-config/python.org")
 (org-babel-load-file "~/.emacs.d/literate-config/json.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
 (org-babel-load-file "~/.emacs.d/literate-config/latex.org")
