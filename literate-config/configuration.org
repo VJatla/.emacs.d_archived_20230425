@@ -106,13 +106,12 @@ Delete trailing whitespaces on save.
     (setq fci-rule-width 1))
   '(fci-rule-color "white")
 #+end_src
-*** Audo-dim other buffers
+*** Golden ratio mode (Active window resize)
 #+begin_src emacs-lisp
-  (use-package auto-dim-other-buffers
+  (use-package golden-ratio
     :ensure t)
-  (add-hook 'after-init-hook (lambda ()
-  (when (fboundp 'auto-dim-other-buffers-mode)
-    (auto-dim-other-buffers-mode t))))
+  (require 'golden-ratio)
+  (golden-ratio-mode 1)
 #+end_src
 
 * markdown
@@ -156,10 +155,10 @@ Delete trailing whitespaces on save.
 ** Completion framework
 + Code completion
   #+begin_src emacs-lisp
-      (use-package company
-	:ensure t
-	:config
-	(add-hook 'after-init-hook 'global-company-mode))
+    (use-package company
+      :ensure t
+      :config
+      (add-hook 'after-init-hook 'global-company-mode))
   #+end_src
 + Minibuffer completion
   #+begin_src emacs-lisp

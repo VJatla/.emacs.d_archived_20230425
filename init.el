@@ -114,15 +114,21 @@
 (org-babel-load-file "~/.emacs.d/literate-config/elisp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/org.org")
 
+(org-babel-load-file "~/.emacs.d/literate-config/cpp.org")
+
+;; Language servers (Eglot)
+(org-babel-load-file "~/.emacs.d/literate-config/eglot.org")
+(org-babel-load-file "~/.emacs.d/literate-config/python.org")
+
 
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "aurora.example.org")
-  (use-package zenburn-theme
+  (use-package color-theme-sanityinc-tomorrow
     :ensure t)
-  (load-theme 'zenburn t)
+  (load-theme 'sanityinc-tomorrow-eighties t)
   (add-to-list 'default-frame-alist
-               '(font . "Victor Mono-16"))
+               '(font . "Liberation Mono-16"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
