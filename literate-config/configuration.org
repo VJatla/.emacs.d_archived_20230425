@@ -56,6 +56,12 @@ Delete trailing whitespaces on save.
       :config
       (gcmh-mode 1))
   #+end_src
+*** Golden ratio
+#+begin_src emacs-lisp
+  (use-package golden-ratio
+    :ensure t)
+#+end_src
+
 ** Look
 + Themes
   ,#+BEGIN_SRC emacs-lisp

@@ -242,7 +242,8 @@
 		  ("8" reload-init)
 		  ("|" fci-mode)
 		  ("a" org-agenda)
-	      ))
+		  ("G" golden-ratio-mode)
+		  ))
    #+end_src
 * Treemacs
   #+begin_src emacs-lisp

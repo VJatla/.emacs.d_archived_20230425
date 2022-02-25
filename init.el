@@ -168,6 +168,7 @@
      (load-theme 'sanityinc-tomorrow-eighties t)
      (add-to-list 'default-frame-alist
 		  '(font . "JetBrains Mono-14"))
+     (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
      (setq treemacs-python-executable "/home/vj/anaconda3/bin/python")
      (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
      );; xps-win (WSL)

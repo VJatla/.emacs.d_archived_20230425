@@ -27,12 +27,14 @@
 * Configuration
 ** Disabling not useful features in lsp-mode
 #+begin_src emacs-lisp
-
   ;; Disable mouse hover but keep cursor hover doc
-  (setq lsp-ui-doc-show-with-mouse nil)
-
+    (setq lsp-ui-doc-show-with-mouse nil)
   ;; Disable header line
   (setq lsp-headerline-breadcrumb-enable nil)
-
+#+end_src
+** DAP mode
+#+begin_src emacs-lisp
+  ;; Enabling only some features
+  (setq dap-auto-configure-features '(repl expressions))
 #+end_src
 * Keybindings

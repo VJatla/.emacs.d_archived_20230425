@@ -9,6 +9,11 @@
   (use-package pyvenv
     :ensure t)
 #+end_src
+** lsp-pyright
+#+begin_src emacs-lisp
+  (use-package lsp-pyright
+    :ensure t)
+#+end_src
 * Configuraion
 ** Anaconda mode
 #+begin_src emacs-lisp
@@ -46,6 +51,7 @@
 #+end_src
 * Keybindings
 #+begin_src emacs-lisp
+  (require 'dap-ui)
   (ryo-modal-major-mode-keys
    'python-mode
 
@@ -68,6 +74,13 @@
    ("SPC d b" dap-debug-last)
    ("SPC d h" dap-hydra)
    ("SPC d q" dap-disconnect)
+
+   ("SPC d u e" dap-ui-expressions-add)
+   ("SPC d u E" dap-ui-expressions-remove)
+
+   ("SPC d u w" dap-ui-show-many-windows)
+   ("SPC d u W" dap-ui-hide-many-windows)
+
    ("C-n" dap-next)
    ("C-i" dap-step-in)
    ("C-o" dap-step-out)
