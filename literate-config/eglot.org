@@ -1,7 +1,0 @@
-* Packages
-** Eglot
-#+begin_src emacs-lisp
-  (use-package eglot
-    :ensure t)
-  (require 'eglot)
-#+end_src

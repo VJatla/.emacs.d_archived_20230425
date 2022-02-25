@@ -106,13 +106,6 @@ Delete trailing whitespaces on save.
     (setq fci-rule-width 1))
   '(fci-rule-color "white")
 #+end_src
-*** Golden ratio mode (Active window resize)
-#+begin_src emacs-lisp
-  (use-package golden-ratio
-    :ensure t)
-  (require 'golden-ratio)
-  (golden-ratio-mode 1)
-#+end_src
 
 * markdown
 #+begin_src emacs-lisp

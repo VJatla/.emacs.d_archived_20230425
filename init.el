@@ -114,10 +114,9 @@
 (org-babel-load-file "~/.emacs.d/literate-config/elisp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/org.org")
 
-(org-babel-load-file "~/.emacs.d/literate-config/cpp.org")
+(org-babel-load-file "~/.emacs.d/literate-config/lsp.org")
 
-;; Language servers (Eglot)
-(org-babel-load-file "~/.emacs.d/literate-config/eglot.org")
+(org-babel-load-file "~/.emacs.d/literate-config/cpp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
 
 

@@ -4,21 +4,72 @@
   (use-package anaconda-mode
     :ensure t)
 #+end_src
-** Conda
+** pyvenv
 #+begin_src emacs-lisp
-  (use-package conda
+  (use-package pyvenv
     :ensure t)
 #+end_src
 * Configuraion
 ** Anaconda mode
 #+begin_src emacs-lisp
-  (add-hook 'python-mode-hook 'anaconda-mode)
-  (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 #+end_src
-** Conda
+** pyvenv
 #+begin_src emacs-lisp
+  (setq pyvenv-workon "/home/vj/anaconda3/envs")
+#+end_src
+* My functions
+** Set breakpoint
+#+begin_src emacs-lisp
+  (defun set-breakpoint ()
+    (interactive)
+    (insert "import pdb; pdb.set_trace()"))
+#+end_src
+** Switch to lsp mode
+#+begin_src emacs-lisp
+  (defun switch-to-lsp ()
+    ;; Disables anaconda mode and enables lsp-mode
+    (interactive)
 
-  (setq 
-   conda-env-home-directory (expand-file-name "~/anaconda3/") ;; as in previous example; not required
-   conda-env-subdirectory "envs")
+    (remove-hook 'python-mode-hook 'anaconda-mode)
+    (remove-hook 'python-mode-hook 'anaconda-eldoc-mode)
+    (anaconda-mode 0)
+
+    (require 'lsp-pyright)
+    (lsp)
+    (add-hook 'python-mode-hook 'lsp)
+
+    (require 'dap-python)
+    (setq dap-python-debugger 'debugpy)
+    )
+#+end_src
+* Keybindings
+#+begin_src emacs-lisp
+  (ryo-modal-major-mode-keys
+   'python-mode
+
+   ;; Select environment
+   ("SPC e" pyvenv-workon)
+
+   ;; Anaconda mode
+   ("SPC f f" anaconda-mode-find-definitions)
+   ("SPC f d" anaconda-mode-show-doc)
+
+   ("SPC b" set-breakpoint)
+
+   ;; LSP mode
+   ("SPC l l" switch-to-lsp)
+   ("SPC l f" lsp-find-definition)
+   ("SPC l r" lsp-workspace-restart)
+   ("SPC l s" lsp-workspace-shutdown)
+
+   ("SPC d t" dap-breakpoint-toggle)
+   ("SPC d b" dap-debug-last)
+   ("SPC d h" dap-hydra)
+   ("SPC d q" dap-disconnect)
+   ("C-n" dap-next)
+   ("C-i" dap-step-in)
+   ("C-o" dap-step-out)
+   )
 #+end_src
