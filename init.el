@@ -125,7 +125,7 @@
  ((string-equal (system-name) "aurora")
   (load-theme 'spacemacs-dark t)
   (add-to-list 'default-frame-alist
-               '(font . "Liberation Mono-14"))
+               '(font . "Liberation Mono-12"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")

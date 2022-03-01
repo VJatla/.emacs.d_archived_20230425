@@ -116,3 +116,8 @@ The first time you run irony we need to install irony server, =M-x irony-install
 #+begin_src emacs-lisp
   (cmake-ide-setup)
 #+end_src
+** GDB
+#+begin_src emacs-lisp
+  (add-hook 'kill-buffer-hook 'comint-write-input-ring)
+  (setq gdb-restore-window-configuration-after-quit t)
+#+end_src
