@@ -9,11 +9,6 @@
   (use-package pyvenv
     :ensure t)
 #+end_src
-** lsp-pyright
-#+begin_src emacs-lisp
-  (use-package lsp-pyright
-    :ensure t)
-#+end_src
 * Configuraion
 ** Anaconda mode
 #+begin_src emacs-lisp
@@ -31,24 +26,6 @@
     (interactive)
     (insert "import pdb; pdb.set_trace()"))
 #+end_src
-** Switch to lsp mode
-#+begin_src emacs-lisp
-  (defun switch-to-lsp ()
-    ;; Disables anaconda mode and enables lsp-mode
-    (interactive)
-
-    (remove-hook 'python-mode-hook 'anaconda-mode)
-    (remove-hook 'python-mode-hook 'anaconda-eldoc-mode)
-    (anaconda-mode 0)
-
-    (require 'lsp-pyright)
-    (lsp)
-    (add-hook 'python-mode-hook 'lsp)
-
-    (require 'dap-python)
-    (setq dap-python-debugger 'debugpy)
-    )
-#+end_src
 * Keybindings
 #+begin_src emacs-lisp
   (require 'dap-ui)
@@ -63,26 +40,5 @@
    ("SPC f d" anaconda-mode-show-doc)
 
    ("SPC b" set-breakpoint)
-
-   ;; LSP mode
-   ("SPC l l" switch-to-lsp)
-   ("SPC l f" lsp-find-definition)
-   ("SPC l r" lsp-workspace-restart)
-   ("SPC l s" lsp-workspace-shutdown)
-
-   ("SPC d t" dap-breakpoint-toggle)
-   ("SPC d b" dap-debug-last)
-   ("SPC d h" dap-hydra)
-   ("SPC d q" dap-disconnect)
-
-   ("SPC d u e" dap-ui-expressions-add)
-   ("SPC d u E" dap-ui-expressions-remove)
-
-   ("SPC d u w" dap-ui-show-many-windows)
-   ("SPC d u W" dap-ui-hide-many-windows)
-
-   ("C-n" dap-next)
-   ("C-i" dap-step-in)
-   ("C-o" dap-step-out)
    )
 #+end_src
