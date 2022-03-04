@@ -121,7 +121,7 @@
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "aurora")
-  (load-theme 'spacemacs-dark t)
+  (load-theme 'zenburn t)
   (add-to-list 'default-frame-alist
                '(font . "Liberation Mono-12"))
   (setq org-agenda-files nil) ; zero out for testing

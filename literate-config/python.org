@@ -9,6 +9,14 @@
   (use-package pyvenv
     :ensure t)
 #+end_src
+** Company-anaconda
+#+begin_src emacs-lisp
+  (use-package company-anaconda
+    :ensure t)
+  (eval-after-load "company"
+ '(add-to-list 'company-backends 'company-anaconda))
+#+end_src
+
 * Configuraion
 ** Anaconda mode
 #+begin_src emacs-lisp
@@ -36,8 +44,10 @@
    ("SPC e" pyvenv-workon)
 
    ;; Anaconda mode
-   ("SPC f f" anaconda-mode-find-definitions)
-   ("SPC f d" anaconda-mode-show-doc)
+   ("SPC f" anaconda-mode-find-definitions)
+   ("SPC d" anaconda-mode-show-doc)
+   ("SPC r" anaconda-mode-find-references)
+   ("SPC c" anaconda-mode-complete)
 
    ("SPC b" set-breakpoint)
    )

@@ -85,7 +85,6 @@
     (interactive)
     (ryo-modal-mode)
     (save-buffer))
-  (key-chord-define-global "88" 'ryo-modal-mode)
   (key-chord-define-global "99" 'ryo-modal-mode)
   (key-chord-define-global "33" 'vterm-toggle)
   (ryo-modal-keys
@@ -190,7 +189,7 @@
       ("rw" replace-cur-word)
       ("rs" replace-symbol))
      (ryo-modal-keys
-      ("/" swiper-region)
+      ("s" swiper-region)
       ("@" highlight-symbol-at-point)
       ("2" highlight-symbol-next)
       ("*" swiper-isearch-thing-at-point)) 
