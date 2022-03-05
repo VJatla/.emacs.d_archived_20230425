@@ -16,34 +16,7 @@
   (eval-after-load "company"
  '(add-to-list 'company-backends 'company-anaconda))
 #+end_src
-
-* Configuraion
-** Anaconda mode
-#+begin_src emacs-lisp
-(add-hook 'python-mode-hook 'anaconda-mode)
-(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
-#+end_src
-** pyvenv
-#+begin_src emacs-lisp
-  (setq pyvenv-workon "/home/vj/anaconda3/envs")
-#+end_src
-* My functions
-** Set breakpoint
-#+begin_src emacs-lisp
-  (defun set-breakpoint ()
-    (interactive)
-    (insert "import pdb; pdb.set_trace()"))
-#+end_src
-* Keybindings
-#+begin_src emacs-lisp
-  (require 'dap-ui)
-  (ryo-modal-major-mode-keys
-   'python-mode
-
-   ;; Select environment
-   ("SPC e" pyvenv-workon)
-
-   ;; Anaconda mode
+** Blacken
    ("SPC f" anaconda-mode-find-definitions)
    ("SPC d" anaconda-mode-show-doc)
    ("SPC r" anaconda-mode-find-references)
