@@ -136,9 +136,7 @@
  ((string-equal (system-name) "P7920")
 
   ;; Theme
-  (use-package nord-theme
-    :ensure t)
-  (load-theme 'nord t)
+  (load-theme 'spacemacs-dark t)
 
   ;; Font
   (add-to-list 'default-frame-alist
