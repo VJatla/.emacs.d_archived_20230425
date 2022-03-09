@@ -95,6 +95,7 @@
 #+begin_src emacs-lisp
   (global-set-key (kbd "M-i") 'windmove-up)
   (global-set-key (kbd "M-k") 'windmove-down)
+  (global-set-key (kbd "M-x") 'counsel-M-x)
 #+end_src
 * Modalka keybindings
 ** Buffer movements

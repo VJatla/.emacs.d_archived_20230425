@@ -2,7 +2,10 @@
 ** Anaconda
 #+begin_src emacs-lisp
   (use-package anaconda-mode
-    :ensure t)
+    :ensure t
+    :config
+    (add-hook 'python-mode-hook 'anaconda-mode)
+    (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
 #+end_src
 ** pyvenv
 #+begin_src emacs-lisp
@@ -24,10 +27,6 @@
 
 * Configuration
 ** Anaconda
-#+begin_src
-  (add-hook 'python-mode-hook 'anaconda-mode)
-  (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
-#+end_src
 ** Company anaconda
 #+begin_src emacs-lisp
   (eval-after-load "company"
@@ -36,16 +35,19 @@
 ** pyvenv
 #+begin_src emacs-lisp
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs")
-  (pyvenv-mode 1)
 #+end_src
 * Keybindings
 ** pyenv
 #+begin_src emacs-lisp
-  (ryo-modal-key "SPC e" 'pyvenv-workon  :name "vj-pyevn-change-environment")
+    (ryo-modal-major-mode-keys
+   'python-mode
+   ("SPC e" pyvenv-workon)
+   )
 #+end_src
 ** anaconda-mode
 #+begin_src emacs-lisp
-  (ryo-modal-key "SPC a f" 'pyvenv-workon  :name "anaconda-mode-find-definitions")
-  (ryo-modal-key "SPC a d" 'pyvenv-workon  :name "anaconda-mode-show-doc")
-  (ryo-modal-key "SPC a c" 'pyvenv-workon  :name "anaconda-mode-complete")
+  (ryo-modal-major-mode-keys
+   'python-mode
+   ("SPC a f" anaconda-mode-find-definitions)
+   )
 #+end_src

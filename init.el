@@ -157,27 +157,15 @@
      );; xps-win
 
   ((string-equal (upcase (system-name)) "NIMBUS")
-   (use-package color-theme-sanityinc-tomorrow
+      (use-package monokai-pro-theme
      :ensure t)
-     (load-theme 'sanityinc-tomorrow-eighties t)
+   (load-theme 'monokai-pro t)
      (add-to-list 'default-frame-alist
-		  '(font . "JetBrains Mono-14"))
+		  '(font . "JetBrains Mono-12"))
      (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
      (setq treemacs-python-executable "/home/vj/anaconda3/bin/python")
      (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
-     );; xps-win (WSL)
-
-
-    ((string-equal (upcase (system-name)) "SAIL")
-   (use-package zenburn-theme
-     :ensure t)
-   (load-theme 'zenburn t)
-        (add-to-list 'default-frame-alist
-		  '(font . "JetBrains Mono-14.5"))
-
-     (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
-     );; XPS
-
+     );; NIMBUS
 
     ((string-equal (system-name) "EM0456E55E16C2")
      (use-package monokai-pro-theme
