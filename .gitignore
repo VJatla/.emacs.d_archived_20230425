@@ -4,6 +4,7 @@
 !*.gitignore
 !ditaa/
 !literate-config/
+!md-roam/
 !reveal.js/
 !README.org
 !backup/

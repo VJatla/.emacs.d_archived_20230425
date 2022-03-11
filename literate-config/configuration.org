@@ -151,6 +151,13 @@ Delete trailing whitespaces on save.
   (use-package iedit
     :ensure t)
 #+end_src
+** Beacon
+This blinks the line where ther cursor is located after jumping.
+#+begin_src emacs-lisp
+  (use-package beacon
+    :ensure t)
+  (beacon-mode 1)
+#+end_src
 ** Completion framework
 + Code completion
   #+begin_src emacs-lisp
