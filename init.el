@@ -13,7 +13,6 @@
 ;;; Package repositories
 (setq package-archives
       '(
-	("gnu" . "https://elpa.gnu.org/packages/")
 	("melpa" . "https://melpa.org/packages/")
 	)
       )
@@ -71,7 +70,6 @@
   
   (setq org-agenda-files '("C:/Users/vj/Dropbox/org/tasks"))
   (setq diary-file "C:/Users/vj/Dropbox/org/diary-file")
-  
   (setenv "PATH" (concat (getenv "PATH") "C:/msys64/mingw64/bin/"))
   (setq exec-path (append exec-path '("C:/msys64/mingw64/bin/")))
   )
@@ -121,7 +119,10 @@
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "aurora")
-  (load-theme 'zenburn t)
+  (use-package dracula-theme
+    :ensure t)
+  
+  (load-theme 'dracula t)
   (add-to-list 'default-frame-alist
                '(font . "Liberation Mono-12"))
   (setq org-agenda-files nil) ; zero out for testing

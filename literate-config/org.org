@@ -74,7 +74,7 @@
 #+begin_src emacs-lisp
   (setq org-roam-v2-ack t)
   (require 'org-roam)
-  (setq org-roam-directory (file-truename "/home/vj/Dropbox/org_kg"))
+  (setq org-roam-directory (file-truename "/home/vj/Dropbox/kuw_garden"))
   (setq org-roam-file-extensions '("org" "md")) ; enable Org-roam for a markdown extension
   (add-to-list 'load-path "/home/vj/.emacs.d/md-roam") ; installation as above
   (require 'md-roam)
