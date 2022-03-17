@@ -36,18 +36,24 @@
 #+begin_src emacs-lisp
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs")
 #+end_src
-* Keybindings
-** pyenv
+* Functions
 #+begin_src emacs-lisp
-    (ryo-modal-major-mode-keys
-   'python-mode
-   ("SPC e" pyvenv-workon)
-   )
+    (defun vj-insert-breakpoint ()
+    (interactive)
+    (insert "import pdb; pdb.set_trace()"))
 #+end_src
-** anaconda-mode
+* Keybindings
 #+begin_src emacs-lisp
-  (ryo-modal-major-mode-keys
-   'python-mode
-   ("SPC a f" anaconda-mode-find-definitions)
-   )
+   (ryo-modal-major-mode-keys
+  'python-mode
+  ("SPC e" pyvenv-workon)
+
+  ("SPC b" vj-insert-breakpoint)
+
+  ("SPC f" flycheck-mode)
+
+  ("SPC <" delete-trailing-whitespace)
+
+  ("SPC a f" anaconda-mode-find-definitions)
+  )
 #+end_src

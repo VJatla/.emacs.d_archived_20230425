@@ -137,11 +137,11 @@
  ((string-equal (system-name) "P7920")
 
   ;; Theme
-  (load-theme 'spacemacs-dark t)
+  (load-theme 'vj-spacemacs-dark t)
 
-  ;; Font
+  ;; Font 
   (add-to-list 'default-frame-alist
-	       '(font . "JetBrains Mono-16"))
+	       '(font . "DejaVu Sans Mono-18"))
 
   ;; Binary file paths
   (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
