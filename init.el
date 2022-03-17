@@ -141,7 +141,7 @@
 
   ;; Font
   (add-to-list 'default-frame-alist
-	       '(font . "JetBrains Mono-14"))
+	       '(font . "JetBrains Mono-16"))
 
   ;; Binary file paths
   (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
