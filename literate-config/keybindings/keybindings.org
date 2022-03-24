@@ -236,7 +236,7 @@
 ** Tools
 #+begin_src emacs-lisp
   (ryo-modal-key
-   "SPC t" '(("t" treemacs)
+   "SPC m" '(("t" treemacs)
 	     ("g" magit-status)
 	     ("q" save-buffers-kill-terminal)
 	     ("8" reload-init)
@@ -250,8 +250,8 @@
   (use-package treemacs
     :bind(:map treemacs-mode-map
 	       ("w" . other-window)
-	       ("SPC t t" . treemacs)
-	       ("SPC t a" . org-agenda)
+	       ("SPC m t" . treemacs)
+	       ("SPC m a" . org-agenda)
 	       ("n" . treemacs-RET-action)
 	       ("i" . treemacs-previous-line)
 	       ("I" . beginning-of-buffer)
@@ -280,8 +280,8 @@
 	       ("M-j" . previous-buffer)
 	       ("M-l" . next-buffer)
 	       ("a" . org-agenda)
-	       ("SPC t t" . treemacs)
-	       ("SPC t a" . org-agenda)
+	       ("SPC m t" . treemacs)
+	       ("SPC m a" . org-agenda)
 	       ("w" . other-window)
 	       ("n" . dashboard-return)
 	       ("i" . dashboard-previous-line)
@@ -303,5 +303,5 @@ The following are markdown keybindings.
 #+begin_src emacs-lisp
   (ryo-modal-major-mode-keys
    'markdown-mode
-   ("SPC c t" markdown-toc-generate-or-refresh-toc))
+   ("SPC t" markdown-toc-generate-or-refresh-toc))
      #+end_src
