@@ -47,9 +47,6 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-(unless (package-installed-p 'org)
-  (package-refresh-contents)
-  (package-install 'org))
 
 ;; All backup files are in one directory
 (setq backup-directory-alist
@@ -182,12 +179,8 @@
      (use-package gruvbox-theme
        :ensure t)
      (load-theme 'gruvbox-dark-soft t)
-     (use-package fira-code-mode
-       :ensure t
-       :config
-       (global-fira-code-mode t))
      (add-to-list 'default-frame-alist
-		  '(font . "Fira Mono-11"))
+		  '(font . "Fira Code-12"))
      );; EMBER - Linux
     ) 
 
