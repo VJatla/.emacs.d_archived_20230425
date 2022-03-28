@@ -233,12 +233,6 @@ This blinks the line where ther cursor is located after jumping.
       :config
       (global-git-gutter-mode +1))
   #+end_src
-** Dired
-#+begin_src emacs-lisp
-  (use-package direx
-    :ensure t)
-#+end_src
-
 ** Coding stats
 + Waka time
   #+begin_src emacs-lisp
