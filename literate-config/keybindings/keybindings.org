@@ -118,7 +118,7 @@
    ("I" beginning-of-buffer)
    ("K" end-of-buffer)
 
-   ("SPC n" goto-line)
+   ("n" goto-line)
 
    )
 #+end_src
@@ -129,7 +129,7 @@
    ("-" undo)
    ("f" insert-space)
    ("4" insert-4-space)
-   ("n" newline)
+   ("e" newline)
    ("," delete-backward-char))
 #+end_src
 ** Copy/paste
@@ -252,7 +252,7 @@
 	       ("w" . other-window)
 	       ("SPC m t" . treemacs)
 	       ("SPC m a" . org-agenda)
-	       ("n" . treemacs-RET-action)
+	       ("e" . treemacs-RET-action)
 	       ("i" . treemacs-previous-line)
 	       ("I" . beginning-of-buffer)
 	       ("k" . treemacs-next-line)
@@ -261,7 +261,7 @@
 #+begin_src emacs-lisp
   (ryo-modal-major-mode-keys
    'treemacs-mode
-   ("n" treemacs-RET-action)
+   ("e" treemacs-RET-action)
    )
 #+end_src
 * Vterm
@@ -283,7 +283,7 @@
 	       ("SPC m t" . treemacs)
 	       ("SPC m a" . org-agenda)
 	       ("w" . other-window)
-	       ("n" . dashboard-return)
+	       ("e" . dashboard-return)
 	       ("i" . dashboard-previous-line)
 	       ("k" . dashboard-next-line)))
 #+end_src
