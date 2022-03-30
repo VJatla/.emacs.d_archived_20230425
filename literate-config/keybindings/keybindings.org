@@ -240,7 +240,7 @@
 	     ("g" magit-status)
 	     ("q" save-buffers-kill-terminal)
 	     ("8" reload-init)
-	     ("|" fci-mode)
+	     ("|" display-fill-column-indicator-mode)
 	     ("a" org-agenda)
 	     ("G" golden-ratio-mode)
 	     ))

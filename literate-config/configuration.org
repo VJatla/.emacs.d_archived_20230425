@@ -103,15 +103,6 @@ Delete trailing whitespaces on save.
     #+begin_src emacs-lisp
       (setq-default truncate-lines 1)
     #+end_src
-*** fci-mode
-#+begin_src emacs-lisp
-  (use-package fill-column-indicator
-    :ensure t
-    :config
-    (setq fci-rule-use-dashes t)
-    (setq fci-rule-width 1))
-  '(fci-rule-color "white")
-#+end_src
 
 * markdown
 #+begin_src emacs-lisp
