@@ -116,10 +116,10 @@
 ;; Theme and fonts based on system name
 (cond
  ((string-equal (system-name) "aurora")
-  (use-package nord-theme
+  (use-package zenburn-theme
     :ensure t)
   
-  (load-theme 'nord t)
+  (load-theme 'zenburn t)
   (add-to-list 'default-frame-alist
                '(font . "Victor Mono-14"))
   (setq org-agenda-files nil) ; zero out for testing

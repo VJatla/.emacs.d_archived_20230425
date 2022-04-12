@@ -118,14 +118,17 @@
    ("I" beginning-of-buffer)
    ("K" end-of-buffer)
 
+
    ("n" goto-line)
 
+   ("p" avy-pop-mark)
+
    )
-#+end_src
+   #+end_src
 ** Buffer editing
 #+begin_src emacs-lisp
   (ryo-modal-keys
-   ("SPC c" comment-or-uncomment-region)
+   ("C" comment-or-uncomment-region)
    ("-" undo)
    ("f" insert-space)
    ("4" insert-4-space)
@@ -162,7 +165,7 @@
 ** Rectangle mode
 #+begin_src emacs-lisp
   (ryo-modal-key "R m" 'rectangle-mark-mode  :name "rectangle-mark-mode")
-  (ryo-modal-key "R i" 'rectangle-mark-mode  :name "iedit-rectangle-mode")
+  (ryo-modal-key "R i" 'iedit-rectangle-mode  :name "iedit-rectangle-mode")
 #+end_src
 ** Change commands
 #+begin_src emacs-lisp
@@ -304,4 +307,4 @@ The following are markdown keybindings.
   (ryo-modal-major-mode-keys
    'markdown-mode
    ("SPC t" markdown-toc-generate-or-refresh-toc))
-     #+end_src
+#+end_src
