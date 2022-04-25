@@ -1,36 +1,25 @@
 * Packages
-** Anaconda
+** Elpy
 #+begin_src emacs-lisp
-  (use-package anaconda-mode
-    :ensure t
-    :config
-    (add-hook 'python-mode-hook 'anaconda-mode)
-    (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
+  (use-package elpy
+  :ensure t
+  :init
+  (advice-add 'python-mode :before 'elpy-enable))
 #+end_src
 ** pyvenv
 #+begin_src emacs-lisp
   (use-package pyvenv
     :ensure t)
 #+end_src
-** Company-anaconda
-#+begin_src emacs-lisp
-  (use-package company-anaconda
-    :ensure t)
-  (eval-after-load "company"
- '(add-to-list 'company-backends 'company-anaconda))
-#+end_src
-** Blacken
-#+begin_src emacs-lisp
-  (use-package blacken
-    :ensure t)
-#+end_src
 
 * Configuration
-** Anaconda
-** Company anaconda
+
+** Elpy
 #+begin_src emacs-lisp
-  (eval-after-load "company"
- '(add-to-list 'company-backends 'company-anaconda))
+  (custom-set-variables
+  '(elpy-modules
+  '(elpy-module-company elpy-module-eldoc elpy-module-pyvenv elpy-module-yasnippet elpy-module-sane-defaults))
+  )
 #+end_src
 ** pyvenv
 #+begin_src emacs-lisp
@@ -38,9 +27,15 @@
 #+end_src
 * Functions
 #+begin_src emacs-lisp
-    (defun vj-insert-breakpoint ()
-    (interactive)
-    (insert "import pdb; pdb.set_trace()"))
+  (defun vj-insert-breakpoint ()
+  (interactive)
+  (end-of-line)
+  (insert "\n\n")
+  (insert "import pdb; pdb.set_trace()")
+  (indent-for-tab-command)
+  (end-of-line)
+  (insert "\n")
+  )
 #+end_src
 * Keybindings
 #+begin_src emacs-lisp
@@ -54,6 +49,6 @@
 
   ("SPC <" delete-trailing-whitespace)
 
-  ("SPC a f" anaconda-mode-find-definitions)
+  ("SPC d" elpy-goto-definition)
   )
 #+end_src
