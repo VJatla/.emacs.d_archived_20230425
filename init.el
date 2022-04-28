@@ -14,6 +14,7 @@
 (setq package-archives
       '(
 	("melpa" . "https://melpa.org/packages/")
+	 ("gnu-devel" ."https://elpa.gnu.org/devel/")
 	)
       )
 
@@ -121,7 +122,7 @@
   
   (load-theme 'zenburn t)
   (add-to-list 'default-frame-alist
-               '(font . "Victor Mono-14"))
+               '(font . "Fira Code Retina-12"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")

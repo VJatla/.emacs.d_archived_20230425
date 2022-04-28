@@ -263,43 +263,39 @@ This blinks the line where ther cursor is located after jumping.
 #+end_src
 ** Vterm
 #+begin_src emacs-lisp
-    (use-package vterm
-      :ensure t
-      :bind(:map vterm-mode-map
-		 ("<f9>" . vterm-toggle)))
-    (use-package vterm-toggle
-      :ensure t)
-    :config
-    (setq vterm-toggle-fullscreen-p nil)
-    (add-to-list 'display-buffer-alist
-		 '((lambda(bufname _) (with-current-buffer bufname (equal major-mode 'vterm-mode)))
-		   (display-buffer-reuse-window display-buffer-at-bottom)
-		   ;;(display-buffer-reuse-window display-buffer-in-direction)
-		   ;;display-buffer-in-direction/direction/dedicated is added in emacs27
-		   ;;(direction . bottom)
-		   ;;(dedicated . t) ;dedicated is supported in emacs27
-		   (reusable-frames . visible)
-		   (window-height . 0.2)))
-    (global-set-key (kbd "<f9>") #'vterm-toggle)
+  (use-package vterm
+    :ensure t
+    :bind(:map vterm-mode-map
+	       ("<f9>" . vterm-toggle)))
+  (use-package vterm-toggle
+    :ensure t)
+  :config
+  (setq vterm-toggle-fullscreen-p nil)
+  (add-to-list 'display-buffer-alist
+	       '((lambda(bufname _) (with-current-buffer bufname (equal major-mode 'vterm-mode)))
+		 (display-buffer-reuse-window display-buffer-at-bottom)
+		 ;;(display-buffer-reuse-window display-buffer-in-direction)
+		 ;;display-buffer-in-direction/direction/dedicated is added in emacs27
+		 ;;(direction . bottom)
+		 ;;(dedicated . t) ;dedicated is supported in emacs27
+		 (reusable-frames . visible)
+		 (window-height . 0.2)))
+  (global-set-key (kbd "<f9>") #'vterm-toggle)
 
-   (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-    '(font-lock-comment-face ((t (:slant italic))))
-  '(font-lock-doc-face ((t (:slant italic))))
-  '(font-lock-string-face ((t (:slant italic))))
-  '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:strike-through t))))
-  '(term-color-black ((t (:foreground "#3F3F3F" :background "#2B2B2B"))))
-  '(term-color-blue ((t (:foreground "#7CB8BB" :background "#4C7073"))))
-  '(term-color-cyan ((t (:foreground "#93E0E3" :background "#8CD0D3"))))
-  '(term-color-green ((t (:foreground "#7F9F7F" :background "#9FC59F"))))
-  '(term-color-magenta ((t (:foreground "#DC8CC3" :background "#CC9393"))))
-  '(term-color-red ((t (:foreground "#AC7373" :background "#8C5353"))))
-  '(term-color-white ((t (:foreground "#DCDCCC" :background "#656555"))))
-  '(term-color-yellow ((t (:foreground "#DFAF8F" :background "#9FC59F"))))
-  '(term-default-bg-color ((t (:inherit term-color-black)))))
+  (custom-set-faces
+   '(font-lock-comment-face ((t (:slant italic :family "Dejavu"))))
+   '(font-lock-doc-face ((t (:slant italic :family "Dejavu"))))
+   '(font-lock-string-face ((t (:slant italic))))
+   '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:strike-through t))))
+   '(term-color-black ((t (:foreground "#3F3F3F" :background "#2B2B2B"))))
+   '(term-color-blue ((t (:foreground "#7CB8BB" :background "#4C7073"))))
+   '(term-color-cyan ((t (:foreground "#93E0E3" :background "#8CD0D3"))))
+   '(term-color-green ((t (:foreground "#7F9F7F" :background "#9FC59F"))))
+   '(term-color-magenta ((t (:foreground "#DC8CC3" :background "#CC9393"))))
+   '(term-color-red ((t (:foreground "#AC7373" :background "#8C5353"))))
+   '(term-color-white ((t (:foreground "#DCDCCC" :background "#656555"))))
+   '(term-color-yellow ((t (:foreground "#DFAF8F" :background "#9FC59F"))))
+   '(term-default-bg-color ((t (:inherit term-color-black)))))
 
    #+end_src
 ** Yasnippet
