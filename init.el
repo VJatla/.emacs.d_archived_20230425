@@ -122,7 +122,7 @@
   
   (load-theme 'zenburn t)
   (add-to-list 'default-frame-alist
-               '(font . "Fira Code Retina-12"))
+               '(font . "Fira Code Retina-14"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
