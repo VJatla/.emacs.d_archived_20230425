@@ -132,6 +132,22 @@
   );; MX@aurora
 
 
+  ((string-equal (system-name) "esperanza")
+  (use-package nord-theme
+    :ensure t)
+  
+  (load-theme 'nord t)
+  (add-to-list 'default-frame-alist
+               '(font . "Victor Mono-13"))
+  (setq org-agenda-files nil) ; zero out for testing
+  (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
+  (setq diary-file "/home/vj/Dropbox/org/diary-file")
+  ;; Python environment
+  (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
+  (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
+  );; MX@aurora
+
+
  ((string-equal (system-name) "P7920")
 
   ;; Theme
