@@ -116,7 +116,7 @@
 
 ;; Theme and fonts based on system name
 (cond
- ((string-equal (system-name) "aurora")
+ ((string-equal (system-name) "kili")
   (use-package zenburn-theme
     :ensure t)
   
@@ -132,13 +132,13 @@
   );; MX@aurora
 
 
-  ((string-equal (system-name) "esperanza")
-  (use-package nord-theme
+  ((string-equal (system-name) "aurora")
+  (use-package color-theme-sanityinc-tomorrow
     :ensure t)
   
-  (load-theme 'nord t)
+  (load-theme 'sanityinc-tomorrow-eighties t)
   (add-to-list 'default-frame-alist
-               '(font . "Victor Mono-13"))
+               '(font . "JetBrains Mono-18"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
