@@ -116,7 +116,7 @@
 
 ;; Theme and fonts based on system name
 (cond
- ((string-equal (system-name) "kili")
+ ((string-equal (system-name) "aurora")
   (use-package zenburn-theme
     :ensure t)
   
@@ -132,7 +132,7 @@
   );; MX@aurora
 
 
-  ((string-equal (system-name) "aurora")
+  ((string-equal (system-name) "mrmoose")
   (use-package color-theme-sanityinc-tomorrow
     :ensure t)
   
