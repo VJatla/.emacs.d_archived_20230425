@@ -122,14 +122,14 @@
   
   (load-theme 'zenburn t)
   (add-to-list 'default-frame-alist
-               '(font . "Fira Code Retina-14"))
+               '(font . "Fira Code Retina-13"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   ;; Python environment
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
   (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
-  );; MX@aurora
+  );; aurora
 
 
   ((string-equal (system-name) "mrmoose")
@@ -145,7 +145,7 @@
   ;; Python environment
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
   (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
-  );; MX@aurora
+  );; mrmoose
 
 
  ((string-equal (system-name) "P7920")
