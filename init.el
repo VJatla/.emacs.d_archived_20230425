@@ -151,16 +151,18 @@
  ((string-equal (system-name) "P7920")
 
   ;; Theme
-  (load-theme 'vj-spacemacs-dark t)
+  (load-theme 'solarized-dark t)
 
   ;; Font 
   (add-to-list 'default-frame-alist
-	       '(font . "DejaVu Sans Mono-18"))
+	       '(font . "DejaVu Sans Mono-14"))
 
   ;; Binary file paths
   (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
 
   ;; Python HOME environment
+  (setq python-python-command "/home/vj/anaconda3/envs/haq/bin/python")
+  (setq elpy-rpc-virtualenv-path "/home/vj/anaconda3/envs/haq/")
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
   
   );; 
