@@ -29,12 +29,8 @@
 #+begin_src emacs-lisp
   (defun vj-insert-breakpoint ()
   (interactive)
-  (end-of-line)
-  (insert "\n\n")
   (insert "import pdb; pdb.set_trace()")
   (indent-for-tab-command)
-  (end-of-line)
-  (insert "\n")
   )
 #+end_src
 * Keybindings
