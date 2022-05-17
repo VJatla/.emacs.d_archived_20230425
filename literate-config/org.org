@@ -15,6 +15,10 @@
 					(search . " %i %-12:c"))
 	     )
      #+end_src
+** org-todo
+#+begin_src emacs-lisp
+  (setq org-startup-folded 'show2levels)
+#+end_src
 * Agenda
        #+begin_src emacs-lisp
 	 (setq org-agenda-clockreport-parameter-plist
