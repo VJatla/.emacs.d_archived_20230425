@@ -155,7 +155,7 @@
 
   ;; Font 
   (add-to-list 'default-frame-alist
-	       '(font . "DejaVu Sans Mono-14"))
+	       '(font . "Victor Mono-14"))
 
   ;; Binary file paths
   (custom-set-variables '(wakatime-cli-path "/home/vj/.local/bin/wakatime"))
