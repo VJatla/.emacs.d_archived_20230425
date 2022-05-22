@@ -175,10 +175,10 @@
 		'(font . "JetBrains Mono Medium-12"))
      );; xps-win
 
-  ((string-equal (upcase (system-name)) "NIMBUS")
-      (use-package zenburn-theme
+  ((string-equal (upcase (system-name)) "PEBBLE")
+     (use-package leuven-theme
      :ensure t)
-   (load-theme 'zenburn t)
+   (load-theme 'leuven t)
      (add-to-list 'default-frame-alist
 		  '(font . "JetBrains Mono-14"))
      (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
