@@ -132,13 +132,15 @@
   );; aurora
 
 
-  ((string-equal (system-name) "mrmoose")
+  ((string-equal (system-name) "drekkar")
   (use-package color-theme-sanityinc-tomorrow
     :ensure t)
+    (use-package nord-theme
+    :ensure t)
   
-  (load-theme 'sanityinc-tomorrow-eighties t)
+  (load-theme 'nord t)
   (add-to-list 'default-frame-alist
-               '(font . "JetBrains Mono-18"))
+               '(font . "Victor Mono-14"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")

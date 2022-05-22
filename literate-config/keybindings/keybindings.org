@@ -85,7 +85,7 @@
     (interactive)
     (ryo-modal-mode)
     (save-buffer))
-  (key-chord-define-global "ee" 'ryo-modal-mode)
+  (key-chord-define-global "33" 'ryo-modal-mode)
   (key-chord-define-global "00" 'vterm-toggle)
   (ryo-modal-keys
    ("e" ryo-modal-mode))
