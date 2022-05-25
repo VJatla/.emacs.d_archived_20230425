@@ -85,7 +85,7 @@
     (interactive)
     (ryo-modal-mode)
     (save-buffer))
-  (key-chord-define-global "33" 'ryo-modal-mode)
+  (global-set-key (kbd "C-e") 'ryo-modal-mode)
   (key-chord-define-global "00" 'vterm-toggle)
   (ryo-modal-keys
    ("e" ryo-modal-mode))
@@ -129,7 +129,6 @@
   (ryo-modal-keys
    ("C" comment-or-uncomment-region)
    ("8" undo)
-   ("f" insert-space)
    ("4" insert-4-space)
    ("," delete-backward-char))
 #+end_src
