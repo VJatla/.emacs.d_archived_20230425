@@ -1,11 +1,6 @@
 # Installation instructions
-## Windows (Cygwin)
-In windows by trail and error I found that emacs installed via
-Cygwin has the least problems (if you do not have access to 
-WSL, Windows Subsystem for Linux)
-1. Install Cygwin follwing instructions at
-    https://x.cygwin.com/docs/ug/setup.html#setup-cygwin-x-installing
-2. While installing select emacs-X11.
-3. Start `XWin Server`
-4. From the system tray, x application menu, we can launch Emacs.
-5. The tramp works with SSH at this stage. No need to use plinkx.
+## Windows
+In 2022 it is better to use emas-29 compiled with pgtk,
+=./configure --with-pgtk=. Interestingly the HDPI setting
+should be set to 150% zoom in 4K high dpi screen for it to
+work smoothly.

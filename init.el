@@ -176,11 +176,9 @@
      );; xps-win
 
   ((string-equal (upcase (system-name)) "PEBBLE")
-     (use-package leuven-theme
-     :ensure t)
-   (load-theme 'leuven t)
+   (load-theme 'spacemacs-light t)
      (add-to-list 'default-frame-alist
-		  '(font . "JetBrains Mono-14"))
+		  '(font . "JetBrains Mono-20"))
      (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
      (setq treemacs-python-executable "/home/vj/anaconda3/bin/python")
      (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
