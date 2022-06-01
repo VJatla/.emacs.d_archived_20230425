@@ -66,7 +66,7 @@
   ;;  (setq wakatime-python-bin '("C:/msys64/mingw64/bin/python.exe"))
   ;;  (setq wakatime-cli-path '("C:/ProgramData/Anaconda3/Scripts/wakatime.exe"))
   
-  (setq org-agenda-files '("C:/Users/vj/Dropbox/org/tasks"))
+  (setq org-agenda-files '("C:/Users/vj/Dropbox/org/tasks/active"))
   (setq diary-file "C:/Users/vj/Dropbox/org/diary-file")
   (setenv "PATH" (concat (getenv "PATH") "C:/msys64/mingw64/bin/"))
   (setq exec-path (append exec-path '("C:/msys64/mingw64/bin/")))
@@ -75,7 +75,7 @@
  ;; Darwin
  ((string-equal system-type "darwin")
 
-  (setq org-agenda-files '("/Users/vj/Dropbox/org/tasks"))
+  (setq org-agenda-files '("/Users/vj/Dropbox/org/tasks/active"))
   (setq diary-file "/Users/vj/Dropbox/org/diary-file")
   (custom-set-variables '(wakatime-cli-path "/opt/anaconda3/bin/wakatime"))
   
@@ -93,7 +93,7 @@
   ;; 1. wakatime
   ;; 2. anaconda-mode
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
-  (setq org-agenda-files '("/home/vj/Dropbox/org/projects/active/"))
+  (setq org-agenda-files '("/home/vj/Dropbox/org/tasks/active"))
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/.local/bin"))
   (setq exec-path (append exec-path '("/home/vj/.local/bin")))
   (setenv "PATH" (concat (getenv "PATH") ":/home/vj/anaconda3/bin"))
@@ -142,7 +142,7 @@
   (add-to-list 'default-frame-alist
                '(font . "Victor Mono-18"))
   (setq org-agenda-files nil) ; zero out for testing
-  (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
+  (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   ;; Python environment
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
@@ -176,13 +176,18 @@
      );; xps-win
 
   ((string-equal (upcase (system-name)) "PEBBLE")
-   (load-theme 'spacemacs-light t)
+   
+   (load-theme 'gruvbox-dark-soft t)
      (add-to-list 'default-frame-alist
-		  '(font . "JetBrains Mono-20"))
+		  '(font . "JetBrains Mono-14"))
+     
      (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
      (setq treemacs-python-executable "/home/vj/anaconda3/bin/python")
+     (setq elpy-rpc-virtualenv-path "/home/vj/anaconda3/envs/haq/")
      (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
      );; NIMBUS
+
+  
 
     ((string-equal (system-name) "EM0456E55E16C2")
      (use-package monokai-pro-theme
