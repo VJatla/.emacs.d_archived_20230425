@@ -176,16 +176,29 @@
      );; xps-win
 
   ((string-equal (upcase (system-name)) "PEBBLE")
-   
+   (use-package gruvbox-theme
+       :ensure t)
    (load-theme 'gruvbox-dark-soft t)
      (add-to-list 'default-frame-alist
-		  '(font . "JetBrains Mono-14"))
-     
+	       '(font . "Jetbrains Mono-14"))
      (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
      (setq treemacs-python-executable "/home/vj/anaconda3/bin/python")
      (setq elpy-rpc-virtualenv-path "/home/vj/anaconda3/envs/haq/")
      (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
-     );; NIMBUS
+     );; PEBBLE
+
+  ((string-equal (upcase (system-name)) "PEBBLE-WIN")
+   (use-package monokai-pro-theme
+     :ensure t)
+   (load-theme 'monokai-pro t)
+   (add-to-list 'default-frame-alist
+		     '(font . "Jetbrains Mono-14"))
+     (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
+     (setq treemacs-python-executable "/home/vj/anaconda3/bin/python")
+     (setq elpy-rpc-virtualenv-path "/home/vj/anaconda3/envs/haq/")
+     (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
+     );; PEBBLE-wsl2
+
 
   
 

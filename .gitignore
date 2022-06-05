@@ -8,3 +8,5 @@
 !reveal.js/
 !README.org
 !backup/
+!emacs-configs.sublime-project
+!emacs-configs.sublime-workspace
