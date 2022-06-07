@@ -283,6 +283,8 @@
 #+begin_src emacs-lisp
   (add-hook 'org-agenda-mode-hook
 	    (lambda ()
+	      (local-set-key (kbd "i") 'org-agenda-previous-line)
+	      (local-set-key (kbd "k") 'org-agenda-next-line)
 	      (local-set-key (kbd "M-j") 'previous-buffer)
 	      (local-set-key (kbd "M-l") 'next-buffer)))
 #+end_src
