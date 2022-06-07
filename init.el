@@ -132,15 +132,13 @@
   );; aurora
 
 
-  ((string-equal (system-name) "drekkar")
-  (use-package color-theme-sanityinc-tomorrow
-    :ensure t)
-    (use-package nord-theme
+  ((string-equal (system-name) "kala")
+  (use-package dracula-theme
     :ensure t)
   
-  (load-theme 'nord t)
+  (load-theme 'dracula t)
   (add-to-list 'default-frame-alist
-               '(font . "Victor Mono-18"))
+               '(font . "Victor Mono-14"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
