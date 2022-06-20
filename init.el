@@ -188,7 +188,10 @@
   ((string-equal (upcase (system-name)) "PEBBLE-WIN")
    (use-package monokai-pro-theme
      :ensure t)
-   (load-theme 'monokai-pro t)
+   (use-package leuven-theme
+     :ensure t)
+   (load-theme 'leuven t)
+   (setq org-fontify-whole-heading-line t)
    (add-to-list 'default-frame-alist
 		     '(font . "Jetbrains Mono-14"))
      (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")

@@ -113,6 +113,5 @@
    ("SPC s" org-todo)
    ("SPC c i" org-clock-in)
    ("SPC c o" org-clock-out)
-
    )
 #+end_src
