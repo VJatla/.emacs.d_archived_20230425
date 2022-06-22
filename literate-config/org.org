@@ -34,8 +34,8 @@
 	       ;; Inspired from Gruvbox dark theme
 	       '(
 		 ("TODO" . (:foreground "#CC241D" :background "#282828" :weight bold :box t))
-		 ("ACTIVE" . (:foreground "#ff5733" :background "#282828" :weight bold :box t))
-		 ("DOING" . (:foreground "#ff5733" :background "#282828" :weight bold :box t))
+		 ("ACTIVE" . (:foreground "#AED6F1" :background "#282828" :weight bold :box t))
+		 ("DOING" . (:foreground "#AED6F1" :background "#282828" :weight bold :box t))
 		 ("PAUSED" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
 		 ("WAITING" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
 		 ("FEEDBACK" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
