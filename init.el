@@ -133,10 +133,10 @@
 
 
   ((string-equal (upcase (system-name)) "NILGIRI")
-  (use-package zenburn-theme
+  (use-package nord-theme
     :ensure t)
   
-  (load-theme 'zenburn t)
+  (load-theme 'nord t)
   (add-to-list 'default-frame-alist
                '(font . "Victor Mono-14"))
   (setq org-agenda-files nil) ; zero out for testing

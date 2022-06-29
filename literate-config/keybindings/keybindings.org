@@ -219,6 +219,9 @@
 	 ("k" kill-this-buffer)
 	 ("K" kill-other-buffers)
 	 ("S" save-some-buffers)
+	 ("j" previous-buffer)
+	 ("l" next-buffer)
+
 	 ))
   (ryo-modal-key
    "b o" '(
@@ -228,10 +231,6 @@
 	   ("m" counsel-bookmark)
 	   ("p" counsel-projectile-find-file)
 	   ))
-
-  (ryo-modal-keys
-   ("M-j" previous-buffer)
-   ("M-l" next-buffer))
 #+end_src
 ** Tools
 #+begin_src emacs-lisp
