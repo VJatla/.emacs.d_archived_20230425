@@ -86,7 +86,7 @@
     (ryo-modal-mode)
     (save-buffer))
   (global-set-key (kbd "C-e") 'ryo-modal-mode)
-  (key-chord-define-global "00" 'vterm-toggle)
+  (global-set-key (kbd "C-v") 'vterm-toggle)
   (ryo-modal-keys
    ("e" ryo-modal-mode))
 #+end_src
@@ -262,6 +262,7 @@
     :bind(:map vterm-mode-map
 	       ("M-i" . windmove-up)
 	       ("M-k" . windmove-down)
+	       ("C-v" . vterm-toggle)
 	       ))
 #+end_src
 
