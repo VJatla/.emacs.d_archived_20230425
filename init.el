@@ -170,13 +170,13 @@
   ((string-equal (system-name) "XPS-WIN")
   (load-theme 'sanityinc-tomorrow-eighties t)
      (add-to-list 'default-frame-alist
-		'(font . "JetBrains Mono Medium-12"))
+		'(font . "FiraCode-Retina-13"))
      );; xps-win
 
   ((string-equal (upcase (system-name)) "PEBBLE")
-   (use-package gruvbox-theme
-       :ensure t)
-   (load-theme 'gruvbox-dark-soft t)
+   (use-package zenburn-theme
+     :ensure t)
+   (load-theme 'zenburn t)
      (add-to-list 'default-frame-alist
 	       '(font . "Jetbrains Mono-14"))
      (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")

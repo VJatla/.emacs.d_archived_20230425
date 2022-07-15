@@ -213,6 +213,7 @@
 #+end_src
 ** Buffer oepen, close, change, etc
 #+begin_src emacs-lisp
+  (ryo-modal-key "M-b" 'ace-jump-buffer :name "ace-jump-buffer2")
   (ryo-modal-key
    "b" '(("b" ace-jump-buffer)
 	 ("s" save-buffer)
@@ -283,6 +284,8 @@
 #+begin_src emacs-lisp
   (add-hook 'org-agenda-mode-hook
 	    (lambda ()
+	      (local-set-key (kbd "M-b") 'ace-jump-buffer)
+	      (local-set-key (kbd "i") 'org-agenda-previous-line)
 	      (local-set-key (kbd "i") 'org-agenda-previous-line)
 	      (local-set-key (kbd "k") 'org-agenda-next-line)
 	      (local-set-key (kbd "M-j") 'previous-buffer)
