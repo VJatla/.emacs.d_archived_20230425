@@ -8,120 +8,22 @@
 	"buffers":
 	[
 		{
-			"file": "init.el",
+			"file": "literate-config/configuration.org",
 			"settings":
 			{
-				"buffer_size": 7554,
+				"buffer_size": 8818,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			},
 			"undo_stack":
 			[
 				[
-					11,
-					1,
-					"insert",
-					{
-						"characters": "\n\n\n\n\n\n\n"
-					},
-					"FAAAAO4XAAAAAAAA7xcAAAAAAAAAAAAA7xcAAAAAAADxFwAAAAAAAAAAAADxFwAAAAAAAPIXAAAAAAAAAAAAAPIXAAAAAAAA9BcAAAAAAAAAAAAA7xcAAAAAAADvFwAAAAAAAAIAAAAgIPIXAAAAAAAA8xcAAAAAAAAAAAAA8xcAAAAAAAD1FwAAAAAAAAAAAADwFwAAAAAAAPAXAAAAAAAAAgAAACAg8xcAAAAAAAD0FwAAAAAAAAAAAAD0FwAAAAAAAPYXAAAAAAAAAAAAAPEXAAAAAAAA8RcAAAAAAAACAAAAICD0FwAAAAAAAPUXAAAAAAAAAAAAAPUXAAAAAAAA9xcAAAAAAAAAAAAA8hcAAAAAAADyFwAAAAAAAAIAAAAgIPUXAAAAAAAA9hcAAAAAAAAAAAAA9hcAAAAAAAD4FwAAAAAAAAAAAADzFwAAAAAAAPMXAAAAAAAAAgAAACAg9hcAAAAAAAD3FwAAAAAAAAAAAAD3FwAAAAAAAPkXAAAAAAAAAAAAAPQXAAAAAAAA9BcAAAAAAAACAAAAICA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADuFwAAAAAAAO4XAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					14,
-					6,
-					"left_delete",
-					null,
-					"BwAAAOkXAAAAAAAA6RcAAAAAAAABAAAAU/QXAAAAAAAA9BcAAAAAAAACAAAAICDoFwAAAAAAAOgXAAAAAAAAAQAAAFXnFwAAAAAAAOcXAAAAAAAAAQAAAELmFwAAAAAAAOYXAAAAAAAAAQAAAE3lFwAAAAAAAOUXAAAAAAAAAQAAAEnkFwAAAAAAAOQXAAAAAAAAAQAAAE4",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADqFwAAAAAAAOoXAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					15,
-					1,
-					"insert",
-					{
-						"characters": "PEBBLE"
-					},
-					"BgAAAOQXAAAAAAAA5RcAAAAAAAAAAAAA5RcAAAAAAADmFwAAAAAAAAAAAADmFwAAAAAAAOcXAAAAAAAAAAAAAOcXAAAAAAAA6BcAAAAAAAAAAAAA6BcAAAAAAADpFwAAAAAAAAAAAADpFwAAAAAAAOoXAAAAAAAAAAAAAA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADkFwAAAAAAAOQXAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					18,
-					1,
-					"insert",
-					{
-						"characters": "\n\n\n"
-					},
-					"CAAAAFAWAAAAAAAAURYAAAAAAAAAAAAAURYAAAAAAABUFgAAAAAAAAAAAABUFgAAAAAAAFUWAAAAAAAAAAAAAFUWAAAAAAAAWBYAAAAAAAAAAAAAURYAAAAAAABRFgAAAAAAAAMAAAAgICBVFgAAAAAAAFYWAAAAAAAAAAAAAFYWAAAAAAAAWRYAAAAAAAAAAAAAUhYAAAAAAABSFgAAAAAAAAMAAAAgICA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABQFgAAAAAAAFAWAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					21,
-					1,
-					"insert",
-					{
-						"characters": "\n\n\n\n"
-					},
-					"DAAAAMsWAAAAAAAAzBYAAAAAAAAAAAAAzBYAAAAAAADRFgAAAAAAAAAAAABTFgAAAAAAAFMWAAAAAAAAAwAAACAgIM4WAAAAAAAAzxYAAAAAAAAAAAAAzxYAAAAAAADUFgAAAAAAAAAAAADJFgAAAAAAAMkWAAAAAAAABQAAACAgICAgzxYAAAAAAADQFgAAAAAAAAAAAADQFgAAAAAAANUWAAAAAAAAAAAAAMoWAAAAAAAAyhYAAAAAAAAFAAAAICAgICDQFgAAAAAAANEWAAAAAAAAAAAAANEWAAAAAAAA1hYAAAAAAAAAAAAAyxYAAAAAAADLFgAAAAAAAAUAAAAgICAgIA",
-					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADLFgAAAAAAAMsWAAAAAAAAAAAAAAAA8L8"
-				],
-				[
-					15,
 					7,
-					"left_delete",
-					null,
-					"BwAAAFgYAAAAAAAAWBgAAAAAAAABAAAAblcYAAAAAAAAVxgAAAAAAAABAAAAYVYYAAAAAAAAVhgAAAAAAAABAAAAZVUYAAAAAAAAVRgAAAAAAAABAAAAdlQYAAAAAAAAVBgAAAAAAAABAAAAdVMYAAAAAAAAUxgAAAAAAAABAAAAZVIYAAAAAAAAUhgAAAAAAAABAAAAbA",
-					"AQAAAAAAAAABAAAAWRgAAAAAAABZGAAAAAAAAAAAAAAA4HxA"
-				],
-				[
-					16,
 					1,
 					"paste",
 					null,
-					"AQAAAFIYAAAAAAAAXhgAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAUhgAAAAAAABSGAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					21,
-					1,
-					"insert",
-					{
-						"characters": "leu"
-					},
-					"BAAAAH8YAAAAAAAAgBgAAAAAAAAAAAAAgBgAAAAAAACAGAAAAAAAAAcAAABsZXV2ZWFugBgAAAAAAACBGAAAAAAAAAAAAACBGAAAAAAAAIIYAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAfxgAAAAAAACGGAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					22,
-					1,
-					"insert_completion",
-					{
-						"completion": "leuven",
-						"format": "text",
-						"keep_prefix": false,
-						"must_insert": false,
-						"trigger": "leuven"
-					},
-					"AgAAAH8YAAAAAAAAfxgAAAAAAAADAAAAbGV1fxgAAAAAAACFGAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAghgAAAAAAACCGAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					27,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAAIgYAAAAAAAAiRgAAAAAAAAAAAAAiRgAAAAAAACMGAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAiBgAAAAAAACIGAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					28,
-					1,
-					"paste",
-					null,
-					"AQAAAIwYAAAAAAAAsxgAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAjBgAAAAAAACMGAAAAAAAAAAAAAAAAPC/"
+					"AQAAAGUEAAAAAAAAUAYAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAZQQAAAAAAABlBAAAAAAAAAAAAAAA4HFA"
 				]
 			]
 		}
@@ -158,17 +60,19 @@
 	},
 	"expanded_folders":
 	[
-		"/?wsl.localhost/Debian/home/vj/.emacs.d"
+		"/home/vj/.emacs.d",
+		"/home/vj/.emacs.d/literate-config"
 	],
 	"file_history":
 	[
+		"/home/vj/.emacs.d/init.el",
 		"/?wsl.localhost/Debian/home/vj/.emacs.d/.gitignore",
 		"/C/Users/venka/Dropbox/Marios_Shared/HAQ-AOLME/haq-doc/HAQ-doc-final/dataset/table-roi/table-roi.md",
 		"/C/Users/venka/Dropbox/Marios_Shared/HAQ-AOLME/haq-doc/HAQ-doc-final/dataset/index.md"
 	],
 	"find":
 	{
-		"height": 44.0
+		"height": 46.0
 	},
 	"find_in_files":
 	{
@@ -205,30 +109,30 @@
 			[
 				{
 					"buffer": 0,
-					"file": "init.el",
+					"file": "literate-config/configuration.org",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7554,
+						"buffer_size": 8818,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6323,
-								6323
+								1616,
+								1616
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Lisp/Lisp.sublime-syntax",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4005.0,
+						"translation.y": 604.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -240,7 +144,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -277,7 +181,7 @@
 	"project": "emacs-configs.sublime-project",
 	"replace":
 	{
-		"height": 60.8
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
