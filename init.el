@@ -204,33 +204,20 @@
 		'(font . "FiraCode-Retina-13"))
      );; xps-win
 
-  ((string-equal (upcase (system-name)) "PEBBLE")
-   (use-package zenburn-theme
-     :ensure t)
-   (load-theme 'zenburn t)
-     (add-to-list 'default-frame-alist
-	       '(font . "Jetbrains Mono-14"))
-     (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
-     (setq treemacs-python-executable "/home/vj/anaconda3/bin/python")
-     (setq elpy-rpc-virtualenv-path "/home/vj/anaconda3/envs/haq/")
-     (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
-     );; PEBBLE
 
-  ((string-equal (upcase (system-name)) "PEBBLE-WIN")
-   (use-package monokai-pro-theme
-     :ensure t)
-   (use-package leuven-theme
-     :ensure t)
-   (load-theme 'leuven t)
-   (setq org-fontify-whole-heading-line t)
-   (add-to-list 'default-frame-alist
-		     '(font . "Jetbrains Mono-14"))
-     (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
-     (setq treemacs-python-executable "/home/vj/anaconda3/bin/python")
-     (setq elpy-rpc-virtualenv-path "/home/vj/anaconda3/envs/haq/")
-     (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
-     );; PEBBLE-wsl2
-
+  ((string-equal (upcase (system-name)) "IVORY.LOCAL")
+  (use-package leuven-theme
+    :ensure t)
+  
+  (load-theme 'leuven t)
+  (add-to-list 'default-frame-alist
+                '(font . "Victor Mono-16"))
+  (setq org-agenda-files nil) ; zero out for testing
+  (org-set-agenda-files-recursively "/Users/vj/Dropbox/org/tasks/active")
+  (setq diary-file "/Users/vj/Dropbox/org/diary-file")
+  ;; Python environment
+  (setenv "WORKON_HOME" "/Users/vj/opt/anaconda3/envs/")
+  );; mrmoose
 
   
 

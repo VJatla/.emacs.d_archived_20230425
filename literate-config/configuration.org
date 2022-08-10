@@ -241,16 +241,6 @@ This blinks the line where ther cursor is located after jumping.
       :config
       (global-git-gutter-mode +1))
   #+end_src
-** Coding stats
-+ Waka time
-  #+begin_src emacs-lisp
-    (use-package wakatime-mode
-      :ensure t
-      :config
-      (global-wakatime-mode)
-      )
-    (custom-set-variables '(wakatime-api-key "948f1aa9-1e61-46dc-8e1f-eed41c05f2fa"))
-  #+end_src
 ** Highlight symbol
 #+begin_src emacs-lisp
   (use-package highlight-symbol
