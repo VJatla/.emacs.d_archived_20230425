@@ -1,4 +1,5 @@
-;;; Custom set variables to different file
+;;; Custom set variables to different fil
+;;;
 (setq package-check-signature nil)
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
