@@ -218,6 +218,12 @@
   (setq diary-file "/Users/vj/Dropbox/org/diary-file")
   ;; Python environment
   (setenv "WORKON_HOME" "/Users/vj/opt/anaconda3/envs/")
+
+
+  (setq mac-command-modifier 'control)
+  (setq mac-control-modifier 'meta)
+  (setq mac-option-modifier 'meta)
+  
   );; mrmoose
 
   
