@@ -182,7 +182,8 @@
  ((string-equal (system-name) "P7920")
 
   ;; Theme
-  (load-theme 'solarized-dark t)
+  (load-theme 'tsdh-dark t)
+  
 
   ;; Font 
   (add-to-list 'default-frame-alist
