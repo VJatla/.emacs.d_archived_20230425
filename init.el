@@ -207,10 +207,8 @@
 
 
   ((string-equal (upcase (system-name)) "IVORY.LOCAL")
-  (use-package leuven-theme
-    :ensure t)
   
-  (load-theme 'leuven t)
+  (load-theme 'solarized-light t)
   (add-to-list 'default-frame-alist
                 '(font . "Victor Mono-16"))
   (setq org-agenda-files nil) ; zero out for testing
