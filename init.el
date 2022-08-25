@@ -248,6 +248,17 @@
      (add-to-list 'default-frame-alist
 		  '(font . "Fira Code-12"))
      );; EMBER - Linux
+
+
+        ((string-equal (system-name) "onyx")
+     (use-package color-theme-sanityinc-tomorrow
+       :ensure t)
+     (load-theme 'sanityinc-tomorrow-eighties t)
+     (add-to-list 'default-frame-alist
+		  '(font . "VictorMono-14"))
+     );; EMBER - Linux
+
+	
     )
 
 

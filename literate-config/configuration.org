@@ -288,18 +288,23 @@ This blinks the line where ther cursor is located after jumping.
 		 (reusable-frames . visible)
 		 (window-height . 0.2)))
   (global-set-key (kbd "<f9>") #'vterm-toggle)
+  (when (display-graphic-p)
+    (custom-set-faces
+     '(font-lock-comment-face ((t (:slant italic ))))
+     '(font-lock-doc-face ((t (:slant italic))))
+     '(font-lock-string-face ((t (:slant italic))))
+     '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:strike-through t))))
+     '(term-color-black ((t (:foreground "#3F3F3F" :background "#2B2B2B"))))
+     '(term-color-blue ((t (:foreground "#7CB8BB" :background "#4C7073"))))
+     '(term-color-cyan ((t (:foreground "#93E0E3" :background "#8CD0D3"))))
+     '(term-color-green ((t (:foreground "#7F9F7F" :background "#9FC59F"))))
+     '(term-color-magenta ((t (:foreground "#DC8CC3" :background "#CC9393"))))
+     '(term-color-red ((t (:foreground "#AC7373" :background "#8C5353"))))
+     '(term-color-white ((t (:foreground "#DCDCCC" :background "#656555"))))
+     '(term-color-yellow ((t (:foreground "#DFAF8F" :background "#9FC59F"))))
+     '(term-default-bg-color ((t (:inherit term-color-black)))))
+    )
 
-  (custom-set-faces
-   '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:strike-through t))))
-   '(term-color-black ((t (:foreground "#3F3F3F" :background "#2B2B2B"))))
-   '(term-color-blue ((t (:foreground "#7CB8BB" :background "#4C7073"))))
-   '(term-color-cyan ((t (:foreground "#93E0E3" :background "#8CD0D3"))))
-   '(term-color-green ((t (:foreground "#7F9F7F" :background "#9FC59F"))))
-   '(term-color-magenta ((t (:foreground "#DC8CC3" :background "#CC9393"))))
-   '(term-color-red ((t (:foreground "#AC7373" :background "#8C5353"))))
-   '(term-color-white ((t (:foreground "#DCDCCC" :background "#656555"))))
-   '(term-color-yellow ((t (:foreground "#DFAF8F" :background "#9FC59F"))))
-   '(term-default-bg-color ((t (:inherit term-color-black)))))
 
    #+end_src
 ** Yasnippet
