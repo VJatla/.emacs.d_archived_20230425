@@ -182,7 +182,9 @@
  ((string-equal (system-name) "P7920")
 
   ;; Theme
-  (load-theme 'tsdh-dark t)
+  (use-package zenburn-theme
+    :ensure t)
+  (load-theme 'zenburn t)
   
 
   ;; Font 
@@ -196,6 +198,9 @@
   (setq python-python-command "/home/vj/anaconda3/envs/haq/bin/python")
   (setq elpy-rpc-virtualenv-path "/home/vj/anaconda3/envs/haq/")
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
+
+  ;; Global hl line mode
+  (global-hl-line-mode t)
   
   );; 
  
@@ -258,3 +263,7 @@
 (define-key global-map (kbd "C-x C-y") 'wsl-paste-from-clipboard)
 (define-key global-map (kbd "C-x M-w") 'wsl-copy-region-to-clipboard)
 (define-key global-map (kbd "C-x C-w") 'wsl-cut-region-to-clipboard)
+
+  (setq mac-command-modifier 'control)
+  (setq mac-control-modifier 'meta)
+  (setq mac-option-modifier 'meta)

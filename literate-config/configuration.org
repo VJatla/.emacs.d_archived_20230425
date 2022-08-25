@@ -290,9 +290,6 @@ This blinks the line where ther cursor is located after jumping.
   (global-set-key (kbd "<f9>") #'vterm-toggle)
 
   (custom-set-faces
-   '(font-lock-comment-face ((t (:slant italic ))))
-   '(font-lock-doc-face ((t (:slant italic))))
-   '(font-lock-string-face ((t (:slant italic))))
    '(org-headline-done ((((class color) (min-colors 16) (background dark)) (:strike-through t))))
    '(term-color-black ((t (:foreground "#3F3F3F" :background "#2B2B2B"))))
    '(term-color-blue ((t (:foreground "#7CB8BB" :background "#4C7073"))))
