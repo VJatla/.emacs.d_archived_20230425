@@ -260,10 +260,11 @@
 #+begin_src emacs-lisp
   (use-package vterm
     :bind(:map vterm-mode-map
-	       ("M-i" . windmove-up)
-	       ("M-k" . windmove-down)
-	       ("C-t" . vterm-toggle)
-	       ))
+               ("M-i" . windmove-up)
+               ("M-k" . windmove-down)
+               ("C-t" . vterm-toggle)
+               ("C-e" . ryo-modal-mode)
+               ))
 #+end_src
 
 * Dashboard
