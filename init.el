@@ -184,7 +184,7 @@
   ;; Theme
   (use-package zenburn-theme
     :ensure t)
-  (load-theme 'zenburn t)
+  (load-theme 'spacemacs-light t)
   
 
   ;; Font 
@@ -198,10 +198,6 @@
   (setq python-python-command "/home/vj/anaconda3/envs/haq/bin/python")
   (setq elpy-rpc-virtualenv-path "/home/vj/anaconda3/envs/haq/")
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
-
-  ;; Global hl line mode
-  (global-hl-line-mode t)
-  
   );; 
  
   ((string-equal (system-name) "XPS-WIN")
@@ -277,4 +273,4 @@
 
   (setq mac-command-modifier 'control)
   (setq mac-control-modifier 'meta)
-  (setq mac-option-modifier 'meta)
+(setq mac-option-modifier 'meta)

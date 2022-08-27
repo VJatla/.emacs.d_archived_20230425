@@ -81,7 +81,7 @@ Delete trailing whitespaces on save.
 
 ** Look
 + Themes
-  ,#+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp
   (use-package zenburn-theme
   :ensure t)
   #+END_SRC
