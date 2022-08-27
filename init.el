@@ -179,12 +179,14 @@
   );; mrmoose
 
 
- ((string-equal (system-name) "P7920")
+  ((string-equal (system-name) "P7920")
+
+   ;; Themes
+   (use-package nord-theme
+     :ensure t)
 
   ;; Theme
-  (use-package zenburn-theme
-    :ensure t)
-  (load-theme 'spacemacs-light t)
+  (load-theme 'nord t)
   
 
   ;; Font 
