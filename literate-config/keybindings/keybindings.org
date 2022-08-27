@@ -9,9 +9,8 @@
       )
     (push '((nil . "ryo:.*:") . (nil . "")) which-key-replacement-alist)
     (setq ryo-modal-cursor-type 'box)
-    (setq ryo-modal-cursor-color "Sky Blue")
+    (setq ryo-modal-cursor-color "Yellow")
     (setq-default cursor-type 'bar)
-    (set-cursor-color "Sky Blue")
     (add-hook 'text-mode-hook 'ryo-modal-mode)
     (add-hook 'prog-mode-hook 'ryo-modal-mode)
 
@@ -55,7 +54,7 @@
     "Use current region if active for swiper search"
     (interactive)
     (if (use-region-p)
-	(swiper (format "%s" (buffer-substring (region-beginning) (region-end))))
+        (swiper (format "%s" (buffer-substring (region-beginning) (region-end))))
       (swiper)))
 
   ;; Replace word under cursor
@@ -86,7 +85,7 @@
     (ryo-modal-mode)
     (save-buffer))
   (global-set-key (kbd "C-e") 'ryo-modal-mode)
-  (global-set-key (kbd "C-v") 'vterm-toggle)
+  (global-set-key (kbd "C-t") 'vterm-toggle)
   (ryo-modal-keys
    ("e" ryo-modal-mode))
 #+end_src
@@ -263,7 +262,7 @@
     :bind(:map vterm-mode-map
 	       ("M-i" . windmove-up)
 	       ("M-k" . windmove-down)
-	       ("C-v" . vterm-toggle)
+	       ("C-t" . vterm-toggle)
 	       ))
 #+end_src
 
