@@ -11,6 +11,7 @@
     (setq ryo-modal-cursor-type 'box)
     (setq ryo-modal-cursor-color "Yellow")
     (setq-default cursor-type 'bar)
+    (set-cursor-color "#ffffff") 
     (add-hook 'text-mode-hook 'ryo-modal-mode)
     (add-hook 'prog-mode-hook 'ryo-modal-mode)
 

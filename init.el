@@ -249,11 +249,11 @@
 
 
         ((string-equal (system-name) "onyx")
-     (use-package color-theme-sanityinc-tomorrow
+     (use-package zenburn-theme
        :ensure t)
-     (load-theme 'sanityinc-tomorrow-eighties t)
+     (load-theme 'zenburn t)
      (add-to-list 'default-frame-alist
-		  '(font . "VictorMono-14"))
+		  '(font . "JetBrains Mono-12"))
      );; EMBER - Linux
 
 	
