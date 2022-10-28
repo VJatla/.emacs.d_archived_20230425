@@ -274,7 +274,7 @@
     :bind(:map dashboard-mode-map
 	       ("M-j" . previous-buffer)
 	       ("M-l" . next-buffer)
-	       ("a" . org-agenda)
+	       ("A" . org-agenda)
 	       ("SPC m t" . treemacs)
 	       ("SPC m a" . org-agenda)
 	       ("w" . other-window)
