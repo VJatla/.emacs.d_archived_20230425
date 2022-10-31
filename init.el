@@ -169,7 +169,7 @@
   
   (load-theme 'nord t)
   (add-to-list 'default-frame-alist
-               '(font . "Victor Mono-14"))
+               '(font . "Victor Mono-15"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")

@@ -32,6 +32,20 @@
 * Functions
 ** Buffer
 #+begin_src emacs-lisp
+;; Disable themes
+(defun disable-all-themes ()
+  "disable all active themes."
+  (dolist (i custom-enabled-themes)
+    (disable-theme i)))
+
+
+  (defun set-theme ()
+    (interactive)
+(disable-all-themes)
+(customize-themes)
+)
+
+
   (defun insert-space ()
     (interactive)
     (insert " "))
@@ -94,6 +108,8 @@
 #+begin_src emacs-lisp
   (global-set-key (kbd "M-i") 'windmove-up)
   (global-set-key (kbd "M-k") 'windmove-down)
+  (global-set-key (kbd "M-j") 'windmove-left)
+  (global-set-key (kbd "M-l") 'windmove-right)
   (global-set-key (kbd "M-x") 'counsel-M-x)
 #+end_src
 * Modalka keybindings
@@ -222,6 +238,8 @@
 	 ("S" save-some-buffers)
 	 ("j" previous-buffer)
 	 ("l" next-buffer)
+	 ("t" set-theme)
+
 
 	 ))
   (ryo-modal-key
@@ -263,6 +281,8 @@
     :bind(:map vterm-mode-map
                ("M-i" . windmove-up)
                ("M-k" . windmove-down)
+               ("M-j" . windmove-left)
+               ("M-l" . windmove-right)
                ("C-t" . vterm-toggle)
                ("C-e" . ryo-modal-mode)
                ))
@@ -272,8 +292,8 @@
 #+begin_src emacs-lisp
   (use-package dashboard
     :bind(:map dashboard-mode-map
-	       ("M-j" . previous-buffer)
-	       ("M-l" . next-buffer)
+	       ("M-j" . windmove-left)
+	       ("M-l" . windmove-right)
 	       ("A" . org-agenda)
 	       ("SPC m t" . treemacs)
 	       ("SPC m a" . org-agenda)
@@ -289,8 +309,8 @@
 	      (local-set-key (kbd "i") 'org-agenda-previous-line)
 	      (local-set-key (kbd "i") 'org-agenda-previous-line)
 	      (local-set-key (kbd "k") 'org-agenda-next-line)
-	      (local-set-key (kbd "M-j") 'previous-buffer)
-	      (local-set-key (kbd "M-l") 'next-buffer)))
+	      (local-set-key (kbd "M-j") 'windmove-left)
+	      (local-set-key (kbd "M-l") 'windmove-right)))
 #+end_src
 * Markdown
 The following are markdown keybindings.
