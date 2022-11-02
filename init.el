@@ -181,12 +181,8 @@
 
   ((string-equal (system-name) "P7920")
 
-   ;; Themes
-   (use-package nord-theme
-     :ensure t)
-
   ;; Theme
-  (load-theme 'nord t)
+  (load-theme 'tango-dark t)
   
 
   ;; Font 
