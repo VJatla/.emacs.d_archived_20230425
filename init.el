@@ -167,7 +167,7 @@
   (use-package nord-theme
     :ensure t)
   
-  (load-theme 'nord t)
+  (load-theme 'zenburn t)
   (add-to-list 'default-frame-alist
                '(font . "Victor Mono-15"))
   (setq org-agenda-files nil) ; zero out for testing
