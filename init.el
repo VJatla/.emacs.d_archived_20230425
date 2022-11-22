@@ -169,7 +169,7 @@
   
   (load-theme 'zenburn t)
   (add-to-list 'default-frame-alist
-               '(font . "Victor Mono-15"))
+               '(font . "DejavuSans Mono-14"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
@@ -272,3 +272,4 @@
   (setq mac-command-modifier 'control)
   (setq mac-control-modifier 'meta)
 (setq mac-option-modifier 'meta)
+(put 'upcase-region 'disabled nil)
