@@ -168,6 +168,7 @@
     :ensure t)
   
   (load-theme 'zenburn t)
+  (setq zenburn-scale-org-headlines t)
   (add-to-list 'default-frame-alist
                '(font . "DejavuSans Mono-14"))
   (setq org-agenda-files nil) ; zero out for testing

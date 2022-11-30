@@ -271,25 +271,29 @@
 #+begin_src emacs-lisp
   (ryo-modal-key
    "SPC m" '(("t" treemacs)
-	     ("g" magit-status)
-	     ("q" save-buffers-kill-terminal)
-	     ("8" reload-init)
-	     ("|" display-fill-column-indicator-mode)
-	     ("a" org-agenda)
-	     ("G" golden-ratio-mode)
-	     ))
+             ("g" magit-status)
+             ("q" save-buffers-kill-terminal)
+             ("8" reload-init)
+             ("|" display-fill-column-indicator-mode)
+             ("a" org-agenda)
+             ("G" golden-ratio-mode)
+             ("r u" org-roam-ui-mode)
+             ("r c" org-roam-capture)
+             ))
 #+end_src
 * Treemacs
 #+begin_src emacs-lisp
   (use-package treemacs
     :bind(:map treemacs-mode-map
-	       ("w" . other-window)
-	       ("SPC m t" . treemacs)
-	       ("SPC m a" . org-agenda)
-	       ("i" . treemacs-previous-line)
-	       ("I" . beginning-of-buffer)
-	       ("k" . treemacs-next-line)
-	       ("K" . end-of-buffer)))
+               ("w" . other-window)
+               ("SPC m t" . treemacs)
+               ("SPC m a" . org-agenda)
+               ("SPC m r u" . org-roam-ui-mode)
+               ("SPC m r c" . org-roam-capture)
+               ("i" . treemacs-previous-line)
+               ("I" . beginning-of-buffer)
+               ("k" . treemacs-next-line)
+               ("K" . end-of-buffer)))
 #+end_src
 * Vterm
 #+begin_src emacs-lisp
