@@ -98,14 +98,24 @@
 #+end_src
 * Roam UI mode
 #+begin_src emacs-lisp
+    ;; For viewing
+    ;;;;; Org roam UI for visualization of note-links
+  (use-package websocket
+    :ensure t
+    :after org-roam-ui)
+
+  (use-package simple-httpd
+    :ensure t
+    :after org-roam-ui)
+
   (use-package org-roam-ui
-  :ensure t
-  :after org-roam
-  :config
-  (setq org-roam-ui-sync-theme t
-        org-roam-ui-follow t
-        org-roam-ui-update-on-save t
-        org-roam-ui-open-on-start t))
+    :ensure t
+    :after org-roam
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
 #+end_src
 * TOC
 #+begin_src emacs-lisp
