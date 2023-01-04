@@ -271,15 +271,16 @@
 #+begin_src emacs-lisp
   (ryo-modal-key
    "SPC m" '(("t" treemacs)
-             ("g" magit-status)
-             ("q" save-buffers-kill-terminal)
-             ("8" reload-init)
-             ("|" display-fill-column-indicator-mode)
-             ("a" org-agenda)
-             ("G" golden-ratio-mode)
-             ("r u" org-roam-ui-mode)
-             ("r c" org-roam-capture)
-             ))
+	     ("g" magit-status)
+	     ("q" save-buffers-kill-terminal)
+	     ("8" reload-init)
+	     ("|" display-fill-column-indicator-mode)
+	     ("a" org-agenda)
+	     ("G" golden-ratio-mode)
+	     ("r u" org-roam-ui-mode)
+	     ("r c" org-roam-capture)
+	     ("r f" org-roam-node-find)
+	     ))
 #+end_src
 * Treemacs
 #+begin_src emacs-lisp

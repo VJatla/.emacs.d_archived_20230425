@@ -147,32 +147,18 @@
 
 ;; Theme and fonts based on system name
 (cond
- ((string-equal (system-name) "aurora")
-  (use-package zenburn-theme
-    :ensure t)
-  
-  (load-theme 'zenburn t)
-  (add-to-list 'default-frame-alist
-               '(font . "Fira Code Retina-13"))
-  (setq org-agenda-files nil) ; zero out for testing
-  (org-set-agenda-files-recursively "/home/vj/Dropbox/org/")
-  (setq diary-file "/home/vj/Dropbox/org/diary-file")
-  ;; Python environment
-  (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
-  (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
-  );; aurora
 
-
-  ((string-equal (upcase (system-name)) "NILGIRI")
+ ((string-equal (upcase (system-name)) "AURORA")
   (use-package nord-theme
     :ensure t)
   
-  (load-theme 'zenburn t)
+  (load-theme 'nord t)
   (setq zenburn-scale-org-headlines t)
   (add-to-list 'default-frame-alist
-               '(font . "DejavuSans Mono-14"))
+               '(font . "Victor Mono-14"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
+  (org-set-agenda-files-recursively "/home/vj/Dropbox/VJ_PPTs_Docs/meetings/sprint_dec24_to_Jan08/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   ;; Python environment
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")

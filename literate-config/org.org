@@ -14,7 +14,6 @@
 					      " %i %-12:c %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
 					(search . " %i %-12:c"))
 	     )
-       (add-hook 'org-mode-hook 'org-indent-mode)
      #+end_src
 ** org-todo
 #+begin_src emacs-lisp
@@ -25,7 +24,7 @@
 	 (setq org-agenda-clockreport-parameter-plist
 	       (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80)))
 	 (setq org-agenda-tags-column 77)
-	 (setq org-todo-keywords '((sequence "TODO(t)" "ACTIVE(v)" "DOING(o)" "PAUSED(p)" "WAITING(w)" "FEEDBACK(f)" "|" "DONE(d)" "CANCELLED(c)" "ARCHIVED(a)")))
+	 (setq org-todo-keywords '((sequence "TODO(t)" "IN-PROGRESS(i)" "PAUSED(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" "ARCHIVED(a)")))
 	 (setq org-agenda-include-diary nil)
 	 (setq org-agenda-span 1)
 	 (use-package org-agenda-property
@@ -35,8 +34,7 @@
 	       ;; Inspired from Gruvbox dark theme
 	       '(
 		 ("TODO" . (:foreground "#CC241D" :background "#282828" :weight bold :box t))
-		 ("ACTIVE" . (:foreground "#AED6F1" :background "#282828" :weight bold :box t))
-		 ("DOING" . (:foreground "#AED6F1" :background "#282828" :weight bold :box t))
+		 ("IN-PROGRESS" . (:foreground "#AED6F1" :background "#282828" :weight bold :box t))
 		 ("PAUSED" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
 		 ("WAITING" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
 		 ("FEEDBACK" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
@@ -51,6 +49,8 @@
 	  '(org-headline-done 
 	    ((((class color) (min-colors 16) (background dark)) 
 	      (:strike-through t)))))
+
+	 (setq org-clock-in-switch-to-state "IN-PROGRESS")
        #+end_src
 ** Agenda timeline
 #+begin_src emacs-lisp
