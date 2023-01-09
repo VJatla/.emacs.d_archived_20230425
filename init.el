@@ -111,7 +111,7 @@
   (custom-set-variables '(wakatime-cli-path "/opt/anaconda3/bin/wakatime"))
   
   (add-to-list 'default-frame-alist
-               '(font . "Menlo-13"))
+               '(font . "Menlo-12"))
   (use-package color-theme-sanityinc-tomorrow
     :ensure t)
   (load-theme 'sanityinc-tomorrow-day t)
@@ -148,17 +148,20 @@
 ;; Theme and fonts based on system name
 (cond
 
- ((string-equal (upcase (system-name)) "AURORA")
-  (use-package nord-theme
+ ((string-equal (upcase (system-name)) "NILGIRI")
+  (use-package monokai-pro-theme
+    :ensure t)
+  (use-package dracula-theme
+    :ensure t)
+    (use-package color-theme-sanityinc-tomorrow
     :ensure t)
   
-  (load-theme 'nord t)
+  (load-theme 'sanityinc-tomorrow-eighties t)
   (setq zenburn-scale-org-headlines t)
   (add-to-list 'default-frame-alist
-               '(font . "Victor Mono-14"))
+               '(font . "DejaVu Sans Mono-13"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
-  (org-set-agenda-files-recursively "/home/vj/Dropbox/VJ_PPTs_Docs/meetings/sprint_dec24_to_Jan08/")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   ;; Python environment
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")

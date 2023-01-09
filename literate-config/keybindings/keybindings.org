@@ -157,11 +157,12 @@
    #+end_src
 ** Buffer editing
 #+begin_src emacs-lisp
-  (ryo-modal-keys
-   ("C" comment-or-uncomment-region)
-   ("8" undo)
-   ("4" insert-4-space)
-   ("," delete-backward-char))
+    (ryo-modal-keys
+     ("C" comment-or-uncomment-region)
+     ("8" undo)
+     ("4" insert-4-space)
+     ("," delete-backward-char)
+     ("a a" align-current))
 #+end_src
 ** Copy/paste
 #+begin_src emacs-lisp
