@@ -183,7 +183,7 @@
   ((string-equal (system-name) "P7920")
 
   ;; Theme
-  (load-theme 'tango-dark t)
+  (load-theme 'spacemacs-dark t)
   
 
   ;; Font 
