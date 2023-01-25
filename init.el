@@ -148,15 +148,9 @@
 ;; Theme and fonts based on system name
 (cond
 
- ((string-equal (upcase (system-name)) "NILGIRI")
-  (use-package monokai-pro-theme
-    :ensure t)
-  (use-package dracula-theme
-    :ensure t)
-    (use-package color-theme-sanityinc-tomorrow
-    :ensure t)
+ ((string-equal (upcase (system-name)) "SS0")
   
-  (load-theme 'sanityinc-tomorrow-eighties t)
+  (load-theme 'zenburn t)
   (setq zenburn-scale-org-headlines t)
   (add-to-list 'default-frame-alist
                '(font . "DejaVu Sans Mono-13"))
