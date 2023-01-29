@@ -111,10 +111,13 @@
   (custom-set-variables '(wakatime-cli-path "/opt/anaconda3/bin/wakatime"))
   
   (add-to-list 'default-frame-alist
-               '(font . "Menlo-12"))
-  (use-package color-theme-sanityinc-tomorrow
+               '(font . "Menlo-16"))
+  (use-package gruvbox-theme
     :ensure t)
-  (load-theme 'sanityinc-tomorrow-day t)
+  (load-theme 'gruvbox-dark-soft t)
+  
+  (setq mac-option-key-is-meta t)
+
   
   )
  
@@ -200,9 +203,7 @@
   ;; Python environment
   (setenv "WORKON_HOME" "/Users/vj/opt/anaconda3/envs/")
 
-
-  (setq mac-command-modifier 'control)
-  (setq mac-control-modifier 'meta)
+  (setq mac-control-modifier 'control)
   (setq mac-option-modifier 'meta)
   
   );; mrmoose
@@ -254,6 +255,6 @@
 (define-key global-map (kbd "C-x C-w") 'wsl-cut-region-to-clipboard)
 
   (setq mac-command-modifier 'control)
-  (setq mac-control-modifier 'meta)
+  (setq mac-control-modifier 'nil)
 (setq mac-option-modifier 'meta)
 (put 'upcase-region 'disabled nil)

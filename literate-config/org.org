@@ -75,26 +75,26 @@
   #+end_src
 * Roam
 #+begin_src emacs-lisp
-  (use-package org-roam
-:ensure t
-:init
-(setq org-roam-v2-ack t)
-:custom
-(org-roam-directory "~/Dropbox/org-roam")
-(org-roam-completion-everywhere t)
-:config
-(org-roam-setup))
+      (use-package org-roam
+    :ensure t
+    :init
+    (setq org-roam-v2-ack t)
+    :custom
+    (org-roam-directory "~/Dropbox/org-roam")
+    (org-roam-completion-everywhere t)
+    :config
+    (org-roam-setup))
 
-(setq org-roam-capture-templates
-'(
-("o" "others" plain (file "~/Dropbox/org-roam/others/others_template.org")
-:target (file+head "others/%<%Y%m%d%H%M%S>-${slug}.org"
-"#+title: ${title}\n") :unnarrowed t)
-("b" "research" plain (file "~/Dropbox/org-roam/research/research_template.org")
-:target (file+head "research/%<%Y%m%d%H%M%S>-${slug}.org"
-"#+title: ${title}\n") :unnarrowed t)
-)
-)
+    (setq org-roam-capture-templates
+    '(
+    ("o" "others" plain (file "~/Dropbox/org-roam/others/others_template.org")
+    :target (file+head "others/%<%Y%m%d%H%M%S>-${slug}.org"
+    "#+title: ${title}\n") :unnarrowed t)
+    ("b" "research" plain (file "~/Dropbox/org-roam/research/research_template.org")
+    :target (file+head "research/%<%Y%m%d%H%M%S>-${slug}.org"
+    "#+title: ${title}\n") :unnarrowed t)
+    )
+    )
 #+end_src
 * Roam UI mode
 #+begin_src emacs-lisp
