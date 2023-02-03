@@ -134,6 +134,14 @@ Delete trailing whitespaces on save.
     :init (setq markdown-command "multimarkdown"))
 #+end_src
 * Productivity tools
+** CSV files
+#+begin_src emacs-lisp
+  (use-package csv-mode
+    :ensure t)
+#+end_src
+
+#+RESULTS:
+
 ** Terminal
 #+begin_src emacs-lisp
   (defun open-terminal-in-workdir ()

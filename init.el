@@ -148,12 +148,14 @@
 ;; Theme and fonts based on system name
 (cond
 
- ((string-equal (upcase (system-name)) "SS0")
+ ((string-equal (upcase (system-name)) "SSTR")
+
+  (use-package grayscale-theme
+    :ensure t)
   
-  (load-theme 'zenburn t)
-  (setq zenburn-scale-org-headlines t)
+  (load-theme 'grayscale t)
   (add-to-list 'default-frame-alist
-               '(font . "DejaVu Sans Mono-13"))
+               '(font . "Fira Code-13"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
