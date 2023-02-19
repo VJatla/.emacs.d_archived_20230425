@@ -9,9 +9,9 @@
       )
     (push '((nil . "ryo:.*:") . (nil . "")) which-key-replacement-alist)
     (setq ryo-modal-cursor-type 'box)
-    (setq ryo-modal-cursor-color "Yellow")
+    (setq ryo-modal-cursor-color "Orange")
     (setq-default cursor-type 'bar)
-    (set-cursor-color "#ffffff") 
+    (set-cursor-color "#000000") 
     (add-hook 'text-mode-hook 'ryo-modal-mode)
     (add-hook 'prog-mode-hook 'ryo-modal-mode)
 

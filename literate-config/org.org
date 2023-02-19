@@ -33,14 +33,25 @@
 	 (setq org-todo-keyword-faces
 	       ;; Inspired from Gruvbox dark theme
 	       '(
-		 ("TODO" . (:foreground "#CC241D" :background "#282828" :weight bold :box t))
-		 ("IN-PROGRESS" . (:foreground "#AED6F1" :background "#282828" :weight bold :box t))
-		 ("PAUSED" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
-		 ("WAITING" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
-		 ("FEEDBACK" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
-		 ("DONE" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))
-		 ("CANCELLED" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))
-		 ("ARCHIVED" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))
+		 ;; Dark theme
+		 ;; ("TODO" . (:foreground "#CC241D" :background "#282828" :weight bold :box t))
+		 ;; ("IN-PROGRESS" . (:foreground "#AED6F1" :background "#282828" :weight bold :box t))
+		 ;; ("PAUSED" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
+		 ;; ("WAITING" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
+		 ;; ("FEEDBACK" . (:foreground "#D79921" :background "#282828" :weight bold :box t))
+		 ;; ("DONE" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))
+		 ;; ("CANCELLED" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))
+		 ;; ("ARCHIVED" . (:foreground "#689D6A" :background "#282828" :weight bold  :box t :strike-through t))
+
+		 ;; Light them
+		 ("TODO" . (:foreground "#CC241D"  :weight bold :box t))
+		 ("IN-PROGRESS" . (:foreground "#AED6F1"  :weight bold :box t))
+		 ("PAUSED" . (:foreground "#D79921"  :weight bold :box t))
+		 ("WAITING" . (:foreground "#D79921"  :weight bold :box t))
+		 ("FEEDBACK" . (:foreground "#D79921"  :weight bold :box t))
+		 ("DONE" . (:foreground "#689D6A"  :weight bold  :box t :strike-through t))
+		 ("CANCELLED" . (:foreground "#689D6A"  :weight bold  :box t :strike-through t))
+		 ("ARCHIVED" . (:foreground "#689D6A"  :weight bold  :box t :strike-through t))
 		 ))
 
 

@@ -191,16 +191,16 @@
      );; xps-win
 
 
-  ((string-equal (upcase (system-name)) "IVORY.LOCAL")
+  ((string-equal (upcase (system-name)) "IVORY")
   
   (load-theme 'solarized-light t)
   (add-to-list 'default-frame-alist
-                '(font . "Victor Mono-16"))
+                '(font . "Fira Code-10"))
   (setq org-agenda-files nil) ; zero out for testing
-  (org-set-agenda-files-recursively "/Users/vj/Dropbox/org/tasks/active")
-  (setq diary-file "/Users/vj/Dropbox/org/diary-file")
+  (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
+  (setq diary-file "/home/vj/Dropbox/org/diary-file")
   ;; Python environment
-  (setenv "WORKON_HOME" "/Users/vj/opt/anaconda3/envs/")
+  (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
 
 
   (setq mac-command-modifier 'control)
@@ -226,7 +226,7 @@
        :ensure t)
      (load-theme 'gruvbox-dark-soft t)
      (add-to-list 'default-frame-alist
-		  '(font . "Fira Code-12"))
+		  '(font . "Fira Code-14"))
      );; EMBER - Linux
 
 
