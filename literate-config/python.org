@@ -13,7 +13,6 @@
 #+end_src
 
 * Configuration
-
 ** Elpy
 #+begin_src emacs-lisp
   (custom-set-variables
@@ -24,6 +23,7 @@
 ** pyvenv
 #+begin_src emacs-lisp
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs")
+  (pyvenv-workon "haq")
 #+end_src
 ** elpy-rpc-virtualenv-path
 #+begin_src emacs-lisp
