@@ -1,5 +1,8 @@
 * AUCTEX
   #+begin_src emacs-lisp
+    (use-package auctex
+      :defer t
+      :ensure t)
     (setq TeX-auto-save t)
     (setq TeX-parse-self t)
     (setq-default TeX-master nil)

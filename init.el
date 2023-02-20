@@ -195,7 +195,7 @@
   
   (load-theme 'solarized-light t)
   (add-to-list 'default-frame-alist
-                '(font . "Fira Code-10"))
+                '(font . "JetBrains Mono-12"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
