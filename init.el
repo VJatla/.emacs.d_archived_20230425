@@ -134,7 +134,6 @@
 
 ;; Loading literate config files
 (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
-(org-babel-load-file "~/.emacs.d/literate-config/keybindings/keybindings.org")
 (org-babel-load-file "~/.emacs.d/literate-config/json.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
 (org-babel-load-file "~/.emacs.d/literate-config/latex.org")
@@ -143,25 +142,30 @@
 
 (org-babel-load-file "~/.emacs.d/literate-config/cpp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
+(org-babel-load-file "~/.emacs.d/literate-config/keybindings/keybindings.org")
 
 
 ;; Theme and fonts based on system name
 (cond
 
- ((string-equal (upcase (system-name)) "SSTR")
-
-  (use-package grayscale-theme
-    :ensure t)
+ ((string-equal (upcase (system-name)) "AURORA")
   
-  (load-theme 'grayscale t)
+  (load-theme 'solarized-dark t)
   (add-to-list 'default-frame-alist
-               '(font . "Fira Code-13"))
+               '(font . "Dejavu Sans Mono-11"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
   ;; Python environment
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
   (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
+
+  (global-hl-line-mode 1)
+  (setq ryo-modal-cursor-type 'box)
+  (setq ryo-modal-cursor-color "Orange")
+  (set-cursor-color "#FFFFFF")
+  (setq-default cursor-type 'bar)
+    
   );; mrmoose
 
 
