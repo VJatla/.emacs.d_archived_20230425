@@ -172,7 +172,7 @@
   ((string-equal (system-name) "P7920")
 
   ;; Theme
-  (load-theme 'spacemacs-dark t)
+  (load-theme 'gruvbox-dark-soft t)
   
 
   ;; Font 
