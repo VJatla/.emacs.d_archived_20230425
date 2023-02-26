@@ -149,10 +149,12 @@
 (cond
 
  ((string-equal (upcase (system-name)) "AURORA")
+  (use-package nord-theme
+    :ensure t)
   
-  (load-theme 'solarized-dark t)
+  (load-theme 'nord t)
   (add-to-list 'default-frame-alist
-               '(font . "Dejavu Sans Mono-11"))
+               '(font . "Victor Mono Medium-11"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")

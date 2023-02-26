@@ -7,3 +7,15 @@
     (setq TeX-parse-self t)
     (setq-default TeX-master nil)
   #+end_src
+** Auctex latexmk
+#+begin_src emacs-lisp
+  (use-package auctex-latexmk
+    :ensure t)
+#+end_src
+** Keybindings
+#+begin_src emacs-lisp
+     (ryo-modal-major-mode-keys
+  'tex-mode
+  ("SPC SPC" TeX-command-run-all)
+  )
+#+end_src
