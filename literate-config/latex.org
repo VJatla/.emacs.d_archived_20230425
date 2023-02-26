@@ -7,15 +7,30 @@
     (setq TeX-parse-self t)
     (setq-default TeX-master nil)
   #+end_src
-** Auctex latexmk
+* RefTex
 #+begin_src emacs-lisp
-  (use-package auctex-latexmk
-    :ensure t)
+  (reftex-mode 1)
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex) 
 #+end_src
-** Keybindings
+* Tex fold mode
 #+begin_src emacs-lisp
-     (ryo-modal-major-mode-keys
-  'tex-mode
-  ("SPC SPC" TeX-command-run-all)
-  )
+(add-hook 'LaTeX-mode-hook (lambda ()
+                             (TeX-fold-mode 1)))
+#+end_src
+* Evince sync
+#+begin_src emacs-lisp
+    (setq TeX-view-program-list '(("Evince" "evince --page-index=%(outpage) %o")))
+    (setq TeX-view-program-selection '((output-pdf "Evince")))
+  (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+  (setq TeX-source-correlate-start-server t)
+#+end_src
+* Keybindings
+#+begin_src emacs-lisp
+  (require 'tex)
+  (ryo-modal-major-mode-keys
+   'tex-mode
+   ("SPC SPC" TeX-command-run-all)
+   ("SPC r t" reftex-toc )
+
+   )
 #+end_src
