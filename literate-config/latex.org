@@ -7,6 +7,10 @@
     (setq TeX-parse-self t)
     (setq-default TeX-master nil)
   #+end_src
+* Use LaTex as default compilation
+#+begin_src emacs-lisp
+  (setq TeX-command-force "LaTex")  
+#+end_src
 * RefTex
 #+begin_src emacs-lisp
   (reftex-mode 1)
@@ -19,8 +23,15 @@
 #+end_src
 * Evince sync
 #+begin_src emacs-lisp
-    (setq TeX-view-program-list '(("Evince" "evince --page-index=%(outpage) %o")))
-    (setq TeX-view-program-selection '((output-pdf "Evince")))
+  ;;   (setq TeX-view-program-list '(("Evince" "evince --page-index=%(outpage) %o")))
+  ;;   (setq TeX-view-program-selection '((output-pdf "Evince")))
+  ;; (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+  ;; (setq TeX-source-correlate-start-server t)
+#+end_src
+* Okular sync
+#+begin_src emacs-lisp
+    (setq TeX-view-program-list '(("Okular" "okular --unique %o#src:%n%b")))
+    (setq TeX-view-program-selection '((output-pdf "Okular")))
   (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
   (setq TeX-source-correlate-start-server t)
 #+end_src

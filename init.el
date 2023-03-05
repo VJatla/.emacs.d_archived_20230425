@@ -133,16 +133,17 @@
  )
 
 ;; Loading literate config files
+
 (org-babel-load-file "~/.emacs.d/literate-config/configuration.org")
 (org-babel-load-file "~/.emacs.d/literate-config/json.org")
 (org-babel-load-file "~/.emacs.d/literate-config/web.org")
 (org-babel-load-file "~/.emacs.d/literate-config/latex.org")
 (org-babel-load-file "~/.emacs.d/literate-config/elisp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/org.org")
-
+(org-babel-load-file "~/.emacs.d/literate-config/keybindings/keybindings.org")
 (org-babel-load-file "~/.emacs.d/literate-config/cpp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
-(org-babel-load-file "~/.emacs.d/literate-config/keybindings/keybindings.org")
+
 
 
 ;; Theme and fonts based on system name
@@ -151,8 +152,10 @@
  ((string-equal (upcase (system-name)) "AURORA")
   (use-package nord-theme
     :ensure t)
+    (use-package zenburn-theme
+    :ensure t)
   
-  (load-theme 'nord t)
+  (load-theme 'zenburn t)
   (add-to-list 'default-frame-alist
                '(font . "Victor Mono Medium-11"))
   (setq org-agenda-files nil) ; zero out for testing
