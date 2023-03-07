@@ -122,7 +122,7 @@
   (global-set-key (kbd "M-l") 'windmove-right)
   (global-set-key (kbd "M-x") 'counsel-M-x)
 #+end_src
-* Modalka keybindings
+* Keybindings
 ** Buffer movements
 #+begin_src emacs-lisp
   (ryo-modal-keys
@@ -340,4 +340,13 @@ The following are markdown keybindings.
   (ryo-modal-major-mode-keys
    'markdown-mode
    ("SPC t" markdown-toc-generate-or-refresh-toc))
+#+end_src
+* Cursor color
+#+begin_src emacs-lisp
+  (setq ryo-modal-cursor-type 'box)
+  (setq ryo-modal-cursor-color "Orange")
+
+  (setq-default cursor-type 'box)
+  (setq ryo-modal-default-cursor-color "White")
+  (set-cursor-color "White")
 #+end_src

@@ -15,7 +15,7 @@
 (setq package-archives
       '(
 	("melpa" . "https://melpa.org/packages/")
-	 ("gnu-devel" ."https://elpa.gnu.org/devel/")
+	("gnu-devel" ."https://elpa.gnu.org/devel/")
 	)
       )
 
@@ -51,16 +51,16 @@
 (defun wsl-clipboard-to-string ()
   "Return Windows clipboard as string."
   (let ((coding-system-for-read 'dos))
-(substring; remove added trailing \n
- (shell-command-to-string
-  "powershell.exe -Command Get-Clipboard") 0 -1)))
+    (substring; remove added trailing \n
+     (shell-command-to-string
+      "powershell.exe -Command Get-Clipboard") 0 -1)))
 
 (defun wsl-paste-from-clipboard (arg)
   "Insert Windows clipboard at point. With prefix ARG, also add to kill-ring"
   (interactive "P")
   (let ((clip (wsl-clipboard-to-string)))
-(insert clip)
-(if arg (kill-new clip))))
+    (insert clip)
+    (if arg (kill-new clip))))
 
 
 
@@ -140,9 +140,9 @@
 (org-babel-load-file "~/.emacs.d/literate-config/latex.org")
 (org-babel-load-file "~/.emacs.d/literate-config/elisp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/org.org")
-(org-babel-load-file "~/.emacs.d/literate-config/keybindings/keybindings.org")
 (org-babel-load-file "~/.emacs.d/literate-config/cpp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
+(org-babel-load-file "~/.emacs.d/literate-config/keybindings/keybindings.org")
 
 
 
@@ -150,14 +150,14 @@
 (cond
 
  ((string-equal (upcase (system-name)) "AURORA")
-  (use-package nord-theme
+    (use-package color-theme-sanityinc-tomorrow
+      :ensure t)
+        (use-package zenburn-theme
     :ensure t)
-    (use-package zenburn-theme
-    :ensure t)
-  
   (load-theme 'zenburn t)
+  
   (add-to-list 'default-frame-alist
-               '(font . "Victor Mono Medium-11"))
+               '(font . "JetBrainsMono Nerd Font-11"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
@@ -165,16 +165,11 @@
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
   (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
 
-  (global-hl-line-mode 1)
-  (setq ryo-modal-cursor-type 'box)
-  (setq ryo-modal-cursor-color "Orange")
-  (set-cursor-color "#FFFFFF")
-  (setq-default cursor-type 'bar)
-    
+  
   );; mrmoose
 
 
-  ((string-equal (system-name) "P7920")
+ ((string-equal (system-name) "P7920")
 
   ;; Theme
   (load-theme 'gruvbox-dark-soft t)
@@ -193,18 +188,18 @@
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
   );; 
  
-  ((string-equal (system-name) "XPS-WIN")
+ ((string-equal (system-name) "XPS-WIN")
   (load-theme 'sanityinc-tomorrow-eighties t)
-     (add-to-list 'default-frame-alist
-		'(font . "FiraCode-Retina-13"))
-     );; xps-win
+  (add-to-list 'default-frame-alist
+	       '(font . "FiraCode-Retina-13"))
+  );; xps-win
 
 
-  ((string-equal (upcase (system-name)) "IVORY")
+ ((string-equal (upcase (system-name)) "IVORY")
   
   (load-theme 'solarized-light t)
   (add-to-list 'default-frame-alist
-                '(font . "JetBrains Mono-12"))
+               '(font . "JetBrains Mono-12"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
@@ -218,37 +213,37 @@
   
   );; mrmoose
 
-  
+ 
 
-    ((string-equal (system-name) "EM0456E55E16C2")
-     (use-package monokai-pro-theme
-       :ensure t)
+ ((string-equal (system-name) "EM0456E55E16C2")
+  (use-package monokai-pro-theme
+    :ensure t)
   (load-theme 'monokai-pro t)
-     (add-to-list 'default-frame-alist
-		  '(font . "JetBrains Mono Regular Nerd Font Complete Mono Windows Compatible-11"))
+  (add-to-list 'default-frame-alist
+	       '(font . "JetBrains Mono Regular Nerd Font Complete Mono Windows Compatible-11"))
 
-     (custom-set-variables '(wakatime-cli-path "c:/Users/vj/anaconda3/Scripts/wakatime"))
-     );; EMED latitude 7420 laptop
+  (custom-set-variables '(wakatime-cli-path "c:/Users/vj/anaconda3/Scripts/wakatime"))
+  );; EMED latitude 7420 laptop
 
-    ((string-equal (system-name) "ember")
-     (use-package gruvbox-theme
-       :ensure t)
-     (load-theme 'gruvbox-dark-soft t)
-     (add-to-list 'default-frame-alist
-		  '(font . "Fira Code-14"))
-     );; EMBER - Linux
+ ((string-equal (system-name) "ember")
+  (use-package gruvbox-theme
+    :ensure t)
+  (load-theme 'gruvbox-dark-soft t)
+  (add-to-list 'default-frame-alist
+	       '(font . "Fira Code-14"))
+  );; EMBER - Linux
 
 
-        ((string-equal (system-name) "onyx")
-     (use-package zenburn-theme
-       :ensure t)
-     (load-theme 'zenburn t)
-     (add-to-list 'default-frame-alist
-		  '(font . "JetBrains Mono-12"))
-     );; EMBER - Linux
+ ((string-equal (system-name) "onyx")
+  (use-package zenburn-theme
+    :ensure t)
+  (load-theme 'zenburn t)
+  (add-to-list 'default-frame-alist
+	       '(font . "JetBrains Mono-12"))
+  );; EMBER - Linux
 
-	
-    )
+ 
+ )
 
 
 ;; Use putty for windows <-- Cygwin doesn not need this
@@ -264,7 +259,9 @@
 (define-key global-map (kbd "C-x M-w") 'wsl-copy-region-to-clipboard)
 (define-key global-map (kbd "C-x C-w") 'wsl-cut-region-to-clipboard)
 
-  (setq mac-command-modifier 'control)
-  (setq mac-control-modifier 'meta)
+(setq mac-command-modifier 'control)
+(setq mac-control-modifier 'meta)
 (setq mac-option-modifier 'meta)
 (put 'upcase-region 'disabled nil)
+
+
