@@ -346,7 +346,7 @@ The following are markdown keybindings.
   (setq ryo-modal-cursor-type 'box)
   (setq ryo-modal-cursor-color "Orange")
 
-  (setq-default cursor-type 'box)
-  (setq ryo-modal-default-cursor-color "White")
-  (set-cursor-color "White")
+  (setq-default cursor-type 'bar)
+  (setq ryo-modal-default-cursor-color "black")
+  (set-cursor-color "black")
 #+end_src

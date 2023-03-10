@@ -197,7 +197,7 @@
 
  ((string-equal (upcase (system-name)) "IVORY")
   
-  (load-theme 'solarized-light t)
+  (load-theme 'solo-jazz t)
   (add-to-list 'default-frame-alist
                '(font . "JetBrains Mono-12"))
   (setq org-agenda-files nil) ; zero out for testing
