@@ -178,6 +178,7 @@ This blinks the line where ther cursor is located after jumping.
 + Code completion
   #+begin_src emacs-lisp
     (use-package company
+    :ensure t
     :defer 2
     :diminish
     :custom
@@ -192,6 +193,7 @@ This blinks the line where ther cursor is located after jumping.
       (require 'company-files)
       (add-to-list 'company-files--regexps "^\\(?:\\./\\|/\\)" t)  ; add regex pattern for "./" paths
     (use-package company-box
+    :ensure t
   :after company
   :diminish
   :hook (company-mode . company-box-mode))

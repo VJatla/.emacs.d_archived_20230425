@@ -197,9 +197,10 @@
 
  ((string-equal (upcase (system-name)) "IVORY")
   
-  (load-theme 'solo-jazz t)
+  (load-theme 'solarized-light t)
   (add-to-list 'default-frame-alist
-               '(font . "JetBrains Mono-12"))
+               '(font . "InputMono-11"))
+  (global-hl-line-mode 1)
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
