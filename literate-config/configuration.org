@@ -178,9 +178,23 @@ This blinks the line where ther cursor is located after jumping.
 + Code completion
   #+begin_src emacs-lisp
     (use-package company
-      :ensure t
-      :config
-      (add-hook 'after-init-hook 'global-company-mode))
+    :defer 2
+    :diminish
+    :custom
+    (company-begin-commands '(self-insert-command))
+    (company-idle-delay .1)
+    (company-minimum-prefix-length 2)
+    (company-show-numbers t)
+    (company-tooltip-align-annotations 't)
+    (global-company-mode t))
+
+      (add-hook 'after-init-hook 'global-company-mode)
+      (require 'company-files)
+      (add-to-list 'company-files--regexps "^\\(?:\\./\\|/\\)" t)  ; add regex pattern for "./" paths
+    (use-package company-box
+  :after company
+  :diminish
+  :hook (company-mode . company-box-mode))
   #+end_src
 + Minibuffer completion
   #+begin_src emacs-lisp

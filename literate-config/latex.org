@@ -7,6 +7,12 @@
     (setq TeX-parse-self t)
     (setq-default TeX-master nil)
   #+end_src
+* company-auctex
+#+begin_src emacs-lisp
+  (use-package company-auctex
+    :ensure t)
+  (company-auctex-init)
+#+end_src
 * Use LaTex as default compilation
 #+begin_src emacs-lisp
   (setq TeX-command-force "LaTex")  
