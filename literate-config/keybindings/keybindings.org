@@ -346,12 +346,3 @@ The following are markdown keybindings.
   (define-key company-active-map (kbd "M-p") 'company-select-previous)
   (define-key company-active-map (kbd "M-SPC") 'company-complete-selection)
 #+end_src
-* Cursor color
-#+begin_src emacs-lisp
-  (setq ryo-modal-cursor-type 'box)
-  (setq ryo-modal-cursor-color "Orange")
-
-  (setq-default cursor-type 'bar)
-  (setq ryo-modal-default-cursor-color "black")
-  (set-cursor-color "black")
-#+end_src

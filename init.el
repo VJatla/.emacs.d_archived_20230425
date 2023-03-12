@@ -165,8 +165,13 @@
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
   (custom-set-variables '(wakatime-cli-path "/home/vj/anaconda3/bin/wakatime"))
 
-  
-  );; mrmoose
+  (setq ryo-modal-cursor-type 'box)
+  (setq ryo-modal-cursor-color "Orange")
+
+  (setq-default cursor-type 'bar)
+  (setq ryo-modal-default-cursor-color "Yellow")
+  (set-cursor-color "black")
+  );; Aurora
 
 
  ((string-equal (system-name) "P7920")
