@@ -199,7 +199,7 @@
   
   (load-theme 'solarized-light t)
   (add-to-list 'default-frame-alist
-               '(font . "InputMono-11"))
+               '(font . "MonoLisa vj-12"))
   (global-hl-line-mode 1)
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")

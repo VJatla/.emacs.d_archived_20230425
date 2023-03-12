@@ -341,6 +341,12 @@ The following are markdown keybindings.
    'markdown-mode
    ("SPC t" markdown-toc-generate-or-refresh-toc))
 #+end_src
+* Company mode
+#+begin_src emacs-lisp
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous)
+  (define-key company-active-map (kbd "SPC") 'company-complete-selection)
+#+end_src
 * Cursor color
 #+begin_src emacs-lisp
   (setq ryo-modal-cursor-type 'box)
