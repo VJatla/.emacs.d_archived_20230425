@@ -4,7 +4,6 @@
   #+begin_src emacs-lisp
     ;; Ryo
     (use-package ryo-modal
-      :ensure t
       :commands ryo-modal-mode
       )
     (push '((nil . "ryo:.*:") . (nil . "")) which-key-replacement-alist)
@@ -342,10 +341,10 @@ The following are markdown keybindings.
    ("SPC t" markdown-toc-generate-or-refresh-toc))
 #+end_src
 * Company mode
-#+begin_src emacs-lisp
-  (define-key company-active-map (kbd "C-n") 'company-select-next)
-  (define-key company-active-map (kbd "C-p") 'company-select-previous)
-  (define-key company-active-map (kbd "SPC") 'company-complete-selection)
+#+begin_src emacs-lisp 
+  (define-key company-active-map (kbd "M-n") 'company-select-next)
+  (define-key company-active-map (kbd "M-p") 'company-select-previous)
+  (define-key company-active-map (kbd "M-SPC") 'company-complete-selection)
 #+end_src
 * Cursor color
 #+begin_src emacs-lisp
