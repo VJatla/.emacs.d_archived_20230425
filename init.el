@@ -157,7 +157,7 @@
   (load-theme 'zenburn t)
   
   (add-to-list 'default-frame-alist
-               '(font . "JetBrainsMono Nerd Font-11"))
+               '(font . "DankMono-28"))
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
   (setq diary-file "/home/vj/Dropbox/org/diary-file")
@@ -171,6 +171,11 @@
   (setq-default cursor-type 'bar)
   (setq ryo-modal-default-cursor-color "Yellow")
   (set-cursor-color "black")
+
+  (setq TeX-view-program-list '(("Evince" "evince --page-index=%(outpage) %o")))
+  (setq TeX-view-program-selection '((output-pdf "Evince")))
+  (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+  (setq TeX-source-correlate-start-server t)
   );; Aurora
 
 
@@ -216,8 +221,13 @@
   (setq mac-command-modifier 'control)
   (setq mac-control-modifier 'meta)
   (setq mac-option-modifier 'meta)
+
+    (setq TeX-view-program-list '(("Okular" "okular --unique %o#src:%n%b")))
+  (setq TeX-view-program-selection '((output-pdf "Okular")))
+  (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+  (setq TeX-source-correlate-start-server t)
   
-  );; mrmoose
+  );; Ivory
 
  
 
