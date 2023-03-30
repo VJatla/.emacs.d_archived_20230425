@@ -207,7 +207,7 @@
 
  ((string-equal (upcase (system-name)) "IVORY")
   
-  (load-theme 'solarized-light t)
+  (load-theme 'tsdh-light t)
   (add-to-list 'default-frame-alist
                '(font . "MonoLisa vj-12"))
   (global-hl-line-mode 1)
@@ -222,11 +222,17 @@
   (setq mac-control-modifier 'meta)
   (setq mac-option-modifier 'meta)
 
-    (setq TeX-view-program-list '(("Okular" "okular --unique %o#src:%n%b")))
-  (setq TeX-view-program-selection '((output-pdf "Okular")))
+    (setq TeX-view-program-list '(("Evince" "evince --page-index=%(outpage) %o")))
+  (setq TeX-view-program-selection '((output-pdf "Evince")))
   (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
   (setq TeX-source-correlate-start-server t)
-  
+
+  (setq ryo-modal-cursor-type 'box)
+  (setq ryo-modal-cursor-color "Orange")
+
+  (setq-default cursor-type 'bar)
+  (setq ryo-modal-default-cursor-color "Black")
+  (set-cursor-color "Black")
   );; Ivory
 
  

@@ -352,6 +352,18 @@ This blinks the line where ther cursor is located after jumping.
      (use-package yasnippet-snippets
        :ensure t)
    #+end_src
+** Fly check grammarly
+#+begin_src emacs-lisp
+  (use-package flycheck-grammarly
+    :ensure t)
+  (with-eval-after-load 'flycheck
+    (flycheck-grammarly-setup))
+  (setq flycheck-grammarly-check-time 0.8)
+  (setq flycheck-checker-error-threshold 1000)
+  (setq flycheck-great-and-powerful-checker "grammarly")
+  (setq flycheck-grammarly-login-email "venkatesh.jatla@gmail.com")
+  (setq flycheck-grammarly-login-password "cs84nMFUmHboqA")
+#+end_src
 * Mermaid mode
 #+begin_src emacs-lisp
   (use-package mermaid-mode
