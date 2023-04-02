@@ -182,6 +182,8 @@
  ((string-equal (system-name) "P7920")
 
   ;; Theme
+  (use-package gruvbox-theme
+    :ensure t)
   (load-theme 'gruvbox-dark-soft t)
   
 
@@ -196,6 +198,11 @@
   (setq python-python-command "/home/vj/anaconda3/envs/haq/bin/python")
   (setq elpy-rpc-virtualenv-path "/home/vj/anaconda3/envs/haq/")
   (setenv "WORKON_HOME" "/home/vj/anaconda3/envs/")
+
+      (setq TeX-view-program-list '(("Okular" "okular --unique %o#src:%n%b")))
+  (setq TeX-view-program-selection '((output-pdf "Okular")))
+  (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+  (setq TeX-source-correlate-start-server t)
   );; 
  
  ((string-equal (system-name) "XPS-WIN")
