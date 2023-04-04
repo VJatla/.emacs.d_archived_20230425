@@ -209,7 +209,7 @@
   
   (load-theme 'tsdh-light t)
   (add-to-list 'default-frame-alist
-               '(font . "MonoLisa vj-12"))
+               '(font . "MonoLisa vj-11"))
   (global-hl-line-mode 1)
   (setq org-agenda-files nil) ; zero out for testing
   (org-set-agenda-files-recursively "/home/vj/Dropbox/org/tasks/active")
@@ -287,3 +287,7 @@
 (put 'upcase-region 'disabled nil)
 
 
+;; Do not let company mode to audto suggest
+(setq company-idle-delay nil)
+;; Use tab to initiate ; commentmpletion at a point
+(global-set-key (kbd "TAB") #'company-indent-or-complete-common)

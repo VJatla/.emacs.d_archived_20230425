@@ -41,20 +41,20 @@ Delete trailing whitespaces on save.
 #+end_src
 ** WSL2 copy paste
 #+begin_src emacs-lisp
-; wsl-copy
-(defun wsl-copy (start end)
-  (interactive "r")
-  (shell-command-on-region start end "clip.exe")
-  (deactivate-mark))
+					  ; wsl-copy
+  (defun wsl-copy (start end)
+    (interactive "r")
+    (shell-command-on-region start end "clip.exe")
+    (deactivate-mark))
 
-; wsl-paste
-(defun wsl-paste ()
-  (interactive)
-  (let ((clipboard
-     (shell-command-to-string "powershell.exe -command 'Get-Clipboard' 2> /dev/null")))
-    (setq clipboard (replace-regexp-in-string "\r" "" clipboard)) ; Remove Windows ^M characters
-    (setq clipboard (substring clipboard 0 -1)) ; Remove newline added by Powershell
-    (insert clipboard)))
+					  ; wsl-paste
+  (defun wsl-paste ()
+    (interactive)
+    (let ((clipboard
+	   (shell-command-to-string "powershell.exe -command 'Get-Clipboard' 2> /dev/null")))
+      (setq clipboard (replace-regexp-in-string "\r" "" clipboard)) ; Remove Windows ^M characters
+      (setq clipboard (substring clipboard 0 -1)) ; Remove newline added by Powershell
+      (insert clipboard)))
 #+end_src
 * Look and feel
 ** Feel
@@ -86,8 +86,8 @@ Delete trailing whitespaces on save.
 ** Look
 + Themes
   #+BEGIN_SRC emacs-lisp
-  (use-package zenburn-theme
-  :ensure t)
+    (use-package zenburn-theme
+      :ensure t)
   #+END_SRC
   + Startup screen
     #+BEGIN_SRC emacs-lisp
@@ -190,25 +190,25 @@ This blinks the line where ther cursor is located after jumping.
 + Code completion
   #+begin_src emacs-lisp
     (use-package company
-    :ensure t
-    :defer 2
-    :diminish
-    :custom
-    (company-begin-commands '(self-insert-command))
-    (company-idle-delay .1)
-    (company-minimum-prefix-length 2)
-    (company-show-numbers t)
-    (company-tooltip-align-annotations 't)
-    (global-company-mode t))
+      :ensure t
+      :defer 2
+      :diminish
+      :custom
+      (company-begin-commands '(self-insert-command))
+      (company-idle-delay .1)
+      (company-minimum-prefix-length 2)
+      (company-show-numbers t)
+      (company-tooltip-align-annotations 't)
+      (global-company-mode t))
 
-      (add-hook 'after-init-hook 'global-company-mode)
-      (require 'company-files)
-      (add-to-list 'company-files--regexps "^\\(?:\\./\\|/\\)" t)  ; add regex pattern for "./" paths
+    (add-hook 'after-init-hook 'global-company-mode)
+    (require 'company-files)
+    (add-to-list 'company-files--regexps "^\\(?:\\./\\|/\\)" t)  ; add regex pattern for "./" paths
     (use-package company-box
-    :ensure t
-  :after company
-  :diminish
-  :hook (company-mode . company-box-mode))
+      :ensure t
+      :after company
+      :diminish
+      :hook (company-mode . company-box-mode))
   #+end_src
 + Minibuffer completion
   #+begin_src emacs-lisp
