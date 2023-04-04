@@ -142,6 +142,7 @@
 (org-babel-load-file "~/.emacs.d/literate-config/org.org")
 (org-babel-load-file "~/.emacs.d/literate-config/cpp.org")
 (org-babel-load-file "~/.emacs.d/literate-config/python.org")
+(org-babel-load-file "~/.emacs.d/literate-config/denote.org")
 (org-babel-load-file "~/.emacs.d/literate-config/keybindings/keybindings.org")
 
 
